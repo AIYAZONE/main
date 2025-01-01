@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import DemoView from '@/views/Demo.vue';
-import HomeView from '@/views/Home.vue';
-import BrandView from '@/views/Brand.vue';
-import NoneView from '@/views/404.vue';
-import HelloWorld from '@/components/HelloWorld.vue';
+import DemoView from '../views/Demo.vue';
+import HomeView from '../views/Home.vue';
+import BrandView from '../views/Brand.vue';
+import NoneView from '../views/404.vue';
+import HelloWorld from '../components/HelloWorld.vue';
 
 const routes = [
 	{
