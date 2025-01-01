@@ -2,7 +2,7 @@
   <div class="wscn-http404-container">
     <div class="wscn-http404">
       <div class="pic-404">
-        <img class="pic-404__parent" :src="`@/assets/images/404/404.png`" alt="404" />
+        <img class="pic-404__parent" :src="`/assets/images/404/404.png`" alt="404" />
         <img
           class="pic-404__child left"
           :src="`/assets/images/404/404_cloud.png`"
