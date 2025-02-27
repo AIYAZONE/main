@@ -21,7 +21,7 @@ export default {
   name: "Header",
   data() {
     return {
-      title: "AIYA领域",
+      title: "AIYAZONE",
       desc: "Bruce Wang · 90后 · 前端工程师 · 项目管理探索者",
       nav: [
         {
@@ -61,6 +61,7 @@ header {
 
   a.logo {
     color: #fff;
+    font-weight: bold;
     font-size: 1.5rem;
   }
   .desc {
