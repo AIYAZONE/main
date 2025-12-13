@@ -1,252 +1,416 @@
 <template>
-  <div class="home">
-    <section v-for="project in projects" :key="project.title">
+  <div class="home-editorial">
+    <!-- Hero Section -->
+    <section class="hero">
       <div class="middle-box">
-        <h2>{{ project.title }}</h2>
-        <div class="description">{{ project.description }}</div>
-        <ul>
-          <li v-for="item in project.list" :key="item.name">
-            <a :href="item.href" :target="item.target ? item.target : '_blank'">
-              <div class="title">
-                <img
-                  v-if="item.logo"
-                  class="item-logo"
-                  :src="`/assets/images/logo${item.logo}`"
-                  alt=""
-                />
-                <span>{{ item.name }}</span>
-              </div>
-              <div class="info" v-if="item.info">
-                <h3>{{ item.info.title }}</h3>
-                <p class="info" v-html="item.info.description"></p>
+        <div class="hero-content">
+          <h1 class="main-title">{{ content.hero.title }}</h1>
+          <div class="hero-divider"></div>
+          <p class="subtitle">{{ content.hero.subtitle }}</p>
+          <p class="intro" v-html="content.hero.intro"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project List Section -->
+    <section class="content-list">
+      <div class="middle-box">
+        <div v-for="(group, index) in content.projects" :key="index" class="group-section">
+          <div class="group-header">
+            <h2 class="group-title">
+              <span class="group-icon">#</span>
+              {{ group.title }}
+            </h2>
+          </div>
+          
+          <div class="project-grid">
+            <a 
+              v-for="item in group.list" 
+              :key="item.name" 
+              :href="item.href"
+              :target="item.target || '_blank'"
+              class="tech-card"
+            >
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="tech-icon-box">
+                    <span class="tech-icon">/></span>
+                  </div>
+                  <span class="external-link-icon">↗</span>
+                </div>
+                
+                <h3 class="card-title">{{ item.name }}</h3>
+                
+                <div class="card-body" v-if="item.info">
+                  <span class="tech-tag">{{ item.info.title }}</span>
+                  <p class="card-desc" v-html="item.info.description"></p>
+                </div>
+                
+                <div class="card-footer">
+                  <span class="status-dot"></span>
+                  <span class="status-text">Online</span>
+                </div>
               </div>
             </a>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
     </section>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-interface Item {
-  name: string;
-  info?: {
-    title: string;
-    description: string;
-  };
-  href: string;
-  logo: string;
-  target?: string; // 添加 target 属性
-}
+import { defineComponent, computed } from "vue";
+import { useLangStore } from '../store/lang';
 
-interface Project {
-  title: string;
-  description: string;
-  list: Item[];
-}
-
-const myProjects: Project[] = [
-  {
-    title: "我的站点",
-    description: "聚焦个人IP打造，促进品牌价值形成",
-    list: [
+const contentData = {
+  zh: {
+    hero: {
+      title: "AIYAZONE",
+      subtitle: "前端开发工程师 & 项目管理探索者",
+      intro: "打造个人品牌，追求工程卓越，探索产品思维。<br>在数字花园中沉淀价值。",
+    },
+    projects: [
       {
-        name: "AIYA领域",
-        info: {
-          title: "我的全新博客站",
-          description:
-            "路漫漫其修远兮，吾将上下而求索 <br/>记录自己的灵感、重走前端路、搭建网站、我的项目、项目管理学习、日常总结和品牌建设等等知识。",
-        },
-        href: "https://blog.aiyazone.com/",
-        logo: "/aiya.png",
+        title: "数字花园",
+        list: [
+          {
+            name: "博客",
+            info: { title: "Blog", description: "记录灵感、技术积累与个人成长。" },
+            href: "https://blog.aiyazone.com/",
+          },
+          {
+            name: "前端",
+            info: { title: "Engineering", description: "前端技术栈全景图：性能优化、工程化与算法。" },
+            href: "https://fe.aiyazone.com/",
+          },
+          {
+            name: "项目管理",
+            info: { title: "PM", description: "PM知识体系构建，思维导图与实战经验。" },
+            href: "https://pm.aiyazone.com/",
+          },
+        ],
       },
       {
-        name: "AIYA FE SITE",
-        info: {
-          title: "AIYA前端站",
-          description:
-            "前端基础/前端技术栈/前端性能/前端安全/前端算法/前端工程化/大前端/微前端",
-        },
-        href: "https://fe.aiyazone.com/",
-        logo: "/aiya.png",
+        title: "精选作品",
+        list: [
+          {
+            name: "ZenParticles",
+            info: { title: "Web AI", description: "使用 Gemini 生成的手势控制 3D 粒子系统。" },
+            href: "https://zepa.aiyazone.com/",
+          },
+          {
+            name: "Sun Travel",
+            info: { title: "Web App", description: "沉浸式旅游体验平台。" },
+            href: "https://travel.aiyazone.com/",
+          },
+        ],
       },
       {
-        name: "AIYA PM SITE",
-        info: {
-          title: "AIYA项目管理站",
-          description: "PM知识体系/PM思维导图/PM实战学习",
-        },
-        href: "https://pm.aiyazone.com/",
-        logo: "/aiya.png",
+        title: "社区",
+        list: [
+          {
+            name: "GitHub",
+            info: { title: "Open Source", description: "查看我的开源项目和代码贡献。" },
+            href: "https://github.com/AIYAZONE/",
+          },
+        ],
       },
-    ],
+    ]
   },
-  {
-    title: "我的项目",
-    description: "迈出全栈开发的一小步",
-    list: [
+  en: {
+    hero: {
+      title: "AIYAZONE",
+      subtitle: "Frontend Developer & Project Manager",
+      intro: "Crafting digital experiences with precision and purpose. <br>Focusing on personal branding, engineering excellence, and product thinking.",
+    },
+    projects: [
       {
-        name: "",
-        info: {
-          title: "Enjoy Your Dream Vacation",
-          description:
-            "Travel to the any corner of the world, without going around in circles.",
-        },
-        href: "https://travel.aiyazone.com/",
-        logo: "/suntravel-light.png",
+        title: "Digital Garden",
+        list: [
+          {
+            name: "Blog",
+            info: { title: "Blog", description: "Recording inspiration, tech accumulation, and personal growth." },
+            href: "https://blog.aiyazone.com/",
+          },
+          {
+            name: "Frontend",
+            info: { title: "Engineering", description: "Frontend tech stack panorama: Performance, Engineering & Algorithms." },
+            href: "https://fe.aiyazone.com/",
+          },
+          {
+            name: "Management",
+            info: { title: "PM", description: "PM knowledge system, mind maps, and practical experience." },
+            href: "https://pm.aiyazone.com/",
+          },
+        ],
       },
       {
-        name: "AIYA DevOps",
-        info: {
-          title: "感谢RuoYi开源，着手搭建自己的平台",
-          description:
-            "一个Java EE企业级快速开发平台，基于经典技术组合（Spring Boot、Spring Security、MyBatis、Jwt、Vue）",
-        },
-        href: "https://devops.aiyazone.com/",
-        logo: "/aiya.png",
+        title: "Selected Works",
+        list: [
+          {
+            name: "ZenParticles",
+            info: { title: "Web AI", description: "A real-time interactive 3D particle system controlled by hand gestures." },
+            href: "https://zepa.aiyazone.com/",
+          },
+          {
+            name: "Sun Travel",
+            info: { title: "Web App", description: "Immersive travel experience platform." },
+            href: "https://travel.aiyazone.com/",
+          },
+        ],
       },
-    ],
-  },
-  {
-    title: "我的工具",
-    description: "感谢开源，站在巨人的肩膀上，面向前方",
-    list: [
       {
-        name: "AIYA Font Editor",
-        info: {
-          title: "字体在线编辑工具，感谢百度开源",
-          description:
-            "在线编辑、转换、预览字体文件 <br> 支持导入的字体格式有 ttf, woff, woff2, svg font, eot, otf等字体格式，支持ttf, woff, woff2等格式字体导出。",
-        },
-        href: "https://fonteditor.aiyazone.com/",
-        logo: "/aiya.png",
+        title: "Community",
+        list: [
+          {
+            name: "GitHub",
+            info: { title: "Open Source", description: "Check out my open source projects and contributions." },
+            href: "https://github.com/AIYAZONE/",
+          },
+        ],
       },
-    ],
-  },
-];
+    ]
+  }
+};
 
 export default defineComponent({
   name: "Home",
-  data() {
+  setup() {
+    const langStore = useLangStore();
+    const content = computed(() => contentData[langStore.language]);
+    
     return {
-      projects: myProjects,
+      content,
     };
   },
 });
 </script>
 
 <style lang="less" scoped>
-section {
-  padding: 4rem 0;
+.home-editorial {
+  padding-bottom: 8rem;
+  background-color: #F8F9FB; /* Cooler, lighter background */
+}
+
+/* Hero Section */
+.hero {
+  padding: 12rem 0 8rem;
   text-align: center;
-  &:nth-child(2n) {
-    background-color: #ddd;
+  
+  .hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    
+    .main-title {
+      font-family: var(--font-serif);
+      font-size: 6rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 2rem;
+      line-height: 1.1;
+      color: var(--text-primary);
+    }
+    
+    .hero-divider {
+      width: 80px;
+      height: 4px;
+      background-color: var(--accent-gold);
+      margin: 0 auto 2.5rem;
+    }
+    
+    .subtitle {
+      font-family: var(--font-sans);
+      font-size: 1.25rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    
+    .intro {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      line-height: 1.8;
+      color: var(--text-primary);
+      opacity: 0.9;
+      text-align: center;
+    }
   }
-  &:nth-child(2n + 1) {
-    background-color: #f5f5f5;
-  }
-  h2 {
-    margin: 0 -1.25rem 0.75rem;
-    padding: 0 1.5rem 1.05rem;
-    font-size: 36px;
-    font-weight: normal;
-  }
-  .description {
-    margin-bottom: 2rem;
-  }
-  ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 0 -1.25rem;
+}
 
-    li {
-      margin: 0 1.25rem 0.9375rem;
-      color: #666;
-      min-width: 280px;
-      max-width: 95%;
-      cursor: pointer;
+/* Projects List - Tech/Engineer Style */
+.group-section {
+  margin-bottom: 6rem;
+  
+  .group-header {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #E5E7EB;
+    
+    .group-title {
+      font-family: var(--font-sans);
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #1F2937;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      
+      .group-icon {
+        color: #3B82F6; /* Tech Blue */
+        font-weight: 900;
+      }
+    }
+  }
+  
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 2rem;
+    
+    .tech-card {
+      display: block;
+      background: #FFFFFF;
+      border: 1px solid #E5E7EB;
       border-radius: 12px;
-      transition: all 0.3s cubic-bezier(0.44, 0.9, 0.6, 0.94);
-      background-color: #fff;
-      box-shadow: 0 1px 10px 0 rgb(0 0 0 / 10%);
-
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      
+      /* Hover Effect */
       &:hover {
         transform: translateY(-4px);
+        box-shadow: 0 12px 24px -8px rgba(59, 130, 246, 0.15); /* Blue-ish shadow */
+        border-color: #3B82F6;
+        
+        .card-top .tech-icon-box {
+          background-color: #EFF6FF;
+          color: #3B82F6;
+        }
+        
+        .card-top .external-link-icon {
+          opacity: 1;
+          transform: translate(2px, -2px);
+          color: #3B82F6;
+        }
       }
-
-      a {
-        display: block;
-        padding-bottom: 2rem;
-        line-height: 1.25rem;
-        .title {
+      
+      .card-inner {
+        padding: 1.75rem;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .card-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 1.25rem;
+        
+        .tech-icon-box {
+          width: 48px;
+          height: 48px;
+          border-radius: 10px;
+          background-color: #F3F4F6;
           display: flex;
-          flex-wrap: wrap;
-          margin-bottom: 0.75rem;
-          font-size: 1.25rem;
-          line-height: 2rem;
-          justify-content: center;
-          height: 160px;
           align-items: center;
-          color: #fff;
-          border-radius: 6px 6px 0 0;
-          background: #56a1f1;
+          justify-content: center;
+          transition: all 0.3s ease;
+          
+          .tech-icon {
+            font-family: monospace;
+            font-weight: 700;
+            color: #6B7280;
+            font-size: 1.1rem;
+          }
         }
-
-        .item-logo {
-          width: auto;
-          height: 32px;
-          margin-right: 12px;
+        
+        .external-link-icon {
+          font-size: 1.2rem;
+          color: #9CA3AF;
+          opacity: 0.7;
+          transition: all 0.3s ease;
         }
-
-        .info {
-          margin: 0 1rem;
+      }
+      
+      .card-title {
+        font-family: var(--font-sans);
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #111827;
+        margin-bottom: 0.75rem;
+      }
+      
+      .card-body {
+        flex: 1;
+        
+        .tech-tag {
+          display: inline-block;
+          font-family: monospace;
           font-size: 0.75rem;
-          h3 {
-            margin-bottom: 0.625rem;
-            font-weight: bold;
-          }
+          color: #3B82F6;
+          background-color: rgba(59, 130, 246, 0.1);
+          padding: 0.25rem 0.6rem;
+          border-radius: 4px;
+          margin-bottom: 0.75rem;
+          font-weight: 600;
+        }
+        
+        .card-desc {
+          font-family: var(--font-sans);
+          font-size: 0.95rem;
+          line-height: 1.6;
+          color: #4B5563;
+          margin-bottom: 1.5rem;
+        }
+      }
+      
+      .card-footer {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding-top: 1rem;
+        border-top: 1px solid #F3F4F6;
+        
+        .status-dot {
+          width: 8px;
+          height: 8px;
+          background-color: #10B981; /* Green status */
+          border-radius: 50%;
+          box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+        }
+        
+        .status-text {
+          font-family: monospace;
+          font-size: 0.75rem;
+          color: #6B7280;
         }
       }
     }
   }
 }
 
-@media screen and (min-width: 992px) {
-  section ul li {
-    max-width: 280px;
-  }
-}
-
-@media screen and (max-width: 991px) {
-  section {
-    padding: 2rem 0;
-    h2 {
-      margin: 0;
-      font-size: 24px;
-    }
-
-    ul {
-      margin: 0;
-      li {
-        width: 100%;
-        max-width: initial;
-        a {
-          display: block;
-          .info {
-            font-size: 0.875rem;
-          }
-        }
+@media screen and (max-width: 768px) {
+  .hero {
+    padding: 8rem 0 5rem;
+    
+    .hero-content {
+      .main-title {
+        font-size: 3.5rem;
+      }
+      .subtitle {
+        font-size: 1rem;
       }
     }
   }
-}
-
-@media screen and (max-width: 375px) {
-  section ul li a .info {
-    font-size: 0.75rem;
+  
+  .project-grid {
+    grid-template-columns: 1fr;
   }
 }
 </style>

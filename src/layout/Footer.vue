@@ -1,22 +1,32 @@
 <template>
   <footer>
-    <div class="copyright">
-      <span>© {{ year }} </span>
-      <a :href="copyright.siteLink" v-html="copyright.title" class="site-link"></a>
-      <a :href="copyright.link" target="_blank" rel="nofollow">{{ copyright.info }}</a>
+    <div class="middle-box">
+      <div class="footer-content">
+        <div class="copyright">
+          <p>&copy; {{ year }} AIYAZONE. All Rights Reserved.</p>
+        </div>
+        
+        <div class="legal">
+          <a :href="copyright.siteLink" class="site-link">{{ copyright.title }}</a>
+          <span class="sep">/</span>
+          <a :href="copyright.link" target="_blank" rel="nofollow">{{ copyright.info }}</a>
+        </div>
+      </div>
     </div>
   </footer>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+export default defineComponent({
   name: "Footer",
   data() {
     return {
       copyright: {
-        year: "",
+        year: new Date().getFullYear(),
         siteLink: "",
-        title: "AIYA领域",
+        title: "AIYAZONE",
         link: "https://beian.miit.gov.cn/",
         info: "粤ICP备2022083499号",
       },
@@ -24,7 +34,6 @@ export default {
   },
   created() {
     this.getCurrentSite();
-    this.getCurrenYear();
   },
   methods: {
     getCurrentSite: function () {
@@ -33,10 +42,6 @@ export default {
         this.copyright.info = "鲁ICP备14028542号-2";
       }
     },
-    getCurrenYear: function () {
-      const currTime = new Date();
-      this.copyright.year = currTime.getFullYear();
-    },
   },
   computed: {
     year: function () {
@@ -44,26 +49,55 @@ export default {
       return time.getFullYear();
     },
   },
-};
+});
 </script>
 
 <style lang="less" scoped>
 footer {
-  padding: 0 2.5rem;
-  line-height: 40px;
-  text-align: center;
-  font-size: 0.75rem;
-  color: #fff;
-  background-color: #000;
-  a {
-    color: #fff;
-    &:hover {
-      color: #409eff;
+  padding: 4rem 0 2rem;
+  background-color: var(--bg-color);
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    
+    .copyright {
+      p {
+        font-family: var(--font-sans);
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+      }
+    }
+    
+    .legal {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      
+      a {
+        color: var(--text-secondary);
+        transition: color 0.3s ease;
+        
+        &:hover {
+          color: var(--accent-gold);
+        }
+      }
+      
+      .sep {
+        margin: 0 0.5rem;
+        color: var(--border-color);
+      }
     }
   }
-  .site-link {
-    margin-left: 2px;
-    margin-right: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
   }
 }
 </style>

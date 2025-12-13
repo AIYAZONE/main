@@ -1,119 +1,203 @@
 <template>
-  <header>
+  <header :class="{ scrolled: isScrolled }">
     <div class="middle-box">
-      <a href="/" class="logo">{{ title }}</a>
-      <p class="desc" hidden>{{ desc }}</p>
-      <nav>
-        <ul>
-          <li v-for="item in nav" :key="item.text">
-            <a :href="item.href" :target="item.target ? item.target : '_blank'">{{
-              item.text
-            }}</a>
-          </li>
-        </ul>
-      </nav>
+      <div class="header-inner">
+        <a href="/" class="brand-signature">
+          AIYAZONE<span class="dot">.</span>
+        </a>
+        
+        <div class="right-panel">
+          <!-- Navigation removed as requested -->
+          <!-- <nav class="desktop-nav">...</nav> -->
+
+          <button class="lang-switch" @click="langStore.toggleLang">
+            {{ langStore.language === 'zh' ? 'EN' : '中' }}
+          </button>
+
+          <!-- Mobile Menu Toggle -->
+          <div class="mobile-menu-btn">
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent, ref, onMounted, onUnmounted, computed } from 'vue';
+import { useLangStore } from '../store/lang';
+
+export default defineComponent({
   name: "Header",
-  data() {
+  setup() {
+    const langStore = useLangStore();
+    const isScrolled = ref(false);
+    
+    const handleScroll = () => {
+      // Add hysteresis (buffer zone) to prevent flickering at the threshold
+      const scrollY = window.scrollY;
+      if (scrollY > 60 && !isScrolled.value) {
+        isScrolled.value = true;
+      } else if (scrollY < 40 && isScrolled.value) {
+        isScrolled.value = false;
+      }
+    };
+
+    onMounted(() => {
+      window.addEventListener('scroll', handleScroll);
+    });
+
+    onUnmounted(() => {
+      window.removeEventListener('scroll', handleScroll);
+    });
+
+    const nav = computed(() => {
+      if (langStore.language === 'zh') {
+        return [
+          { href: "/brand", text: "个人品牌", target: "_self" },
+          { href: "https://fe.aiyazone.com/", text: "前端之路" },
+          { href: "https://pm.aiyazone.com/", text: "项目管理" },
+          { href: "https://blog.aiyazone.com/brand/about.html", text: "关于我" },
+        ];
+      } else {
+        return [
+          { href: "/brand", text: "Brand", target: "_self" },
+          { href: "https://fe.aiyazone.com/", text: "Frontend" },
+          { href: "https://pm.aiyazone.com/", text: "Management" },
+          { href: "https://blog.aiyazone.com/brand/about.html", text: "About" },
+        ];
+      }
+    });
+
     return {
-      title: "AIYAZONE",
-      desc: "Bruce Wang · 90后 · 前端工程师 · 项目管理探索者",
-      nav: [
-        {
-          href: "/brand",
-          text: "个人品牌",
-          target: "_self",
-        },
-        {
-          href: "https://fe.aiyazone.com/",
-          text: "前端之路",
-        },
-        {
-          href: "https://pm.aiyazone.com/",
-          text: "项目管理",
-        },
-        {
-          href: "https://blog.aiyazone.com/brand/about.html",
-          text: "关于我",
-        },
-      ],
+      isScrolled,
+      nav,
+      langStore,
     };
   },
-  methods: {},
-};
+});
 </script>
 
 <style lang="less" scoped>
 header {
-  position: sticky;
+  position: fixed; /* Changed from sticky to fixed for stability */
   top: 0;
   left: 0;
-  z-index: 1;
-  padding: 15px 0;
-
-  background-color: #000;
-  color: #fff;
-
-  a.logo {
-    color: #fff;
-    font-weight: bold;
-    font-size: 1.5rem;
+  z-index: 100;
+  width: 100%;
+  padding: 1.5rem 0;
+  background-color: transparent;
+  /* Use specific transitions to avoid jitter */
+  transition: background-color 0.4s ease, padding 0.4s ease, border-color 0.4s ease, backdrop-filter 0.4s ease;
+  /* Default transparent border to occupy space */
+  border-bottom: 1px solid transparent;
+  
+  &.scrolled {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    border-bottom-color: var(--border-color); /* Only transition color */
   }
-  .desc {
-    margin-top: 10px;
-    font-size: 14px;
+
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
-  .middle-box,
-  nav ul {
+
+  .brand-signature {
+    font-family: var(--font-serif);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.5px;
+    
+    .dot {
+      color: var(--accent-gold);
+    }
+  }
+
+  .right-panel {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 2rem;
   }
-  nav ul li {
-    position: relative;
-    margin: 0 15px;
-    line-height: 30px;
 
-    &:hover::after {
-      position: absolute;
-      bottom: 0;
-      display: block;
-      content: " ";
-      width: 100%;
-      height: 2px;
-      background-color: #007dff;
-      transition: 0.3s all ease;
+  .desktop-nav {
+    ul {
+      display: flex;
+      gap: 3rem;
+      
+      li {
+        .nav-link {
+          font-family: var(--font-sans);
+          font-size: 0.9rem;
+          font-weight: 400;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          color: var(--text-primary);
+          position: relative;
+          padding: 0.5rem 0;
+          
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--accent-gold);
+            transition: width 0.3s ease;
+          }
+          
+          &:hover {
+            color: var(--accent-gold);
+            &::after {
+              width: 100%;
+            }
+          }
+        }
+      }
     }
+  }
 
-    &:last-child {
-      margin-right: 0;
+  .lang-switch {
+    background: none;
+    border: 1px solid var(--border-color);
+    padding: 0.25rem 0.75rem;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+    border-radius: 4px;
+
+    &:hover {
+      color: var(--accent-gold);
+      border-color: var(--accent-gold);
     }
-    a {
-      color: #fff;
-    }
+  }
+
+  .mobile-menu-btn {
+    display: none;
   }
 }
-@media screen and (max-width: 992px) {
+
+@media screen and (max-width: 768px) {
   header {
-    a.logo {
-      font-size: 16px;
-      font-weight: bold;
+    .desktop-nav {
+      display: none;
     }
-    nav ul li {
-      margin: 0 10px;
-      font-size: 14px;
+    
+    .mobile-menu-btn {
+      display: block;
     }
-  }
-}
-@media screen and (max-width: 375px) {
-  header nav ul li {
-    margin: 0 8px;
-    font-size: 13px;
+    
+    .right-panel {
+      gap: 1rem;
+    }
   }
 }
 </style>
