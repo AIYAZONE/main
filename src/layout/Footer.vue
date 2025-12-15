@@ -5,11 +5,13 @@
         <div class="copyright">
           <p>&copy; {{ year }} AIYAZONE. All Rights Reserved.</p>
         </div>
-        
+
         <div class="legal">
           <a :href="copyright.siteLink" class="site-link">{{ copyright.title }}</a>
           <span class="sep">/</span>
-          <a :href="copyright.link" target="_blank" rel="nofollow">{{ copyright.info }}</a>
+          <a :href="copyright.link" target="_blank" rel="nofollow">{{
+            copyright.info
+          }}</a>
         </div>
       </div>
     </div>
@@ -17,7 +19,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "Footer",
@@ -32,7 +34,7 @@ export default defineComponent({
       },
     };
   },
-  created() {
+  mounted() {
     this.getCurrentSite();
   },
   methods: {
@@ -54,16 +56,19 @@ export default defineComponent({
 
 <style lang="less" scoped>
 footer {
-  padding: 4rem 0 2rem;
+  position: relative;
+  z-index: 200;
+  /* 适当留一点上边距，让内容和 Footer 有呼吸感 */
+  padding: 1.5rem 0 2rem;
   background-color: var(--bg-color);
-  
+
   .footer-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 2rem;
+    padding-top: 0.75rem;
     border-top: 1px solid var(--border-color);
-    
+
     .copyright {
       p {
         font-family: var(--font-sans);
@@ -71,20 +76,20 @@ footer {
         color: var(--text-secondary);
       }
     }
-    
+
     .legal {
       font-size: 0.85rem;
       color: var(--text-secondary);
-      
+
       a {
         color: var(--text-secondary);
         transition: color 0.3s ease;
-        
+
         &:hover {
           color: var(--accent-gold);
         }
       }
-      
+
       .sep {
         margin: 0 0.5rem;
         color: var(--border-color);

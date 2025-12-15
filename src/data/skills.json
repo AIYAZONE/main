@@ -1,0 +1,204 @@
+{
+  "skillCategories": [
+    {
+      "id": "frontend",
+      "name": "前端开发",
+      "type": "frontend",
+      "skills": [
+        {
+          "id": "vue",
+          "name": "Vue.js",
+          "level": 9,
+          "yearsOfExperience": 6,
+          "projects": ["AIYAZONE个人网站", "企业级管理系统", "移动端应用"],
+          "description": "深度掌握Vue 2/3生态系统，包括Composition API、Pinia状态管理等"
+        },
+        {
+          "id": "typescript",
+          "name": "TypeScript",
+          "level": 8,
+          "yearsOfExperience": 5,
+          "projects": ["大型前端项目", "组件库开发", "工程化工具"],
+          "description": "熟练使用TypeScript进行大型项目开发，类型系统设计经验丰富"
+        },
+        {
+          "id": "react",
+          "name": "React",
+          "level": 7,
+          "yearsOfExperience": 4,
+          "projects": ["企业级应用", "组件库", "移动端混合应用"],
+          "description": "具备React生态系统开发经验，包括Hooks、Redux等"
+        },
+        {
+          "id": "javascript",
+          "name": "JavaScript",
+          "level": 9,
+          "yearsOfExperience": 10,
+          "projects": ["所有前端项目", "Node.js后端", "工具脚本"],
+          "description": "JavaScript语言专家，深入理解ES6+特性和异步编程"
+        },
+        {
+          "id": "css",
+          "name": "CSS/Less/Sass",
+          "level": 8,
+          "yearsOfExperience": 10,
+          "projects": ["响应式网站", "组件库样式", "移动端适配"],
+          "description": "精通CSS3、预处理器和现代布局技术，具备设计系统构建经验"
+        },
+        {
+          "id": "webpack",
+          "name": "Webpack/Vite",
+          "level": 8,
+          "yearsOfExperience": 6,
+          "projects": ["构建系统优化", "多环境配置", "性能优化"],
+          "description": "深度掌握现代前端构建工具，具备复杂项目构建优化经验"
+        },
+        {
+          "id": "performance",
+          "name": "性能优化",
+          "level": 8,
+          "yearsOfExperience": 7,
+          "projects": ["大型应用优化", "移动端性能", "首屏加载优化"],
+          "description": "具备丰富的前端性能优化经验，包括代码分割、缓存策略等"
+        }
+      ]
+    },
+    {
+      "id": "management",
+      "name": "项目管理",
+      "type": "management",
+      "skills": [
+        {
+          "id": "pmp",
+          "name": "项目管理(PMP)",
+          "level": 8,
+          "yearsOfExperience": 3,
+          "projects": ["大型前端项目", "跨部门协作项目", "产品迭代管理"],
+          "description": "PMP认证持有者，具备完整的项目管理理论知识和实践经验"
+        },
+        {
+          "id": "agile",
+          "name": "敏捷开发(ACP)",
+          "level": 8,
+          "yearsOfExperience": 4,
+          "projects": ["敏捷团队管理", "Scrum实践", "持续交付"],
+          "description": "ACP认证持有者，熟练运用Scrum、Kanban等敏捷方法论"
+        },
+        {
+          "id": "risk-management",
+          "name": "风险管理",
+          "level": 7,
+          "yearsOfExperience": 3,
+          "projects": ["项目风险评估", "技术风险控制", "进度风险管理"],
+          "description": "具备项目风险识别、评估和应对的实践经验"
+        },
+        {
+          "id": "stakeholder",
+          "name": "干系人管理",
+          "level": 7,
+          "yearsOfExperience": 4,
+          "projects": ["跨部门沟通", "客户需求管理", "团队协调"],
+          "description": "擅长与不同层级和部门的干系人进行有效沟通和协调"
+        }
+      ]
+    },
+    {
+      "id": "leadership",
+      "name": "团队领导",
+      "type": "leadership",
+      "skills": [
+        {
+          "id": "team-building",
+          "name": "团队建设",
+          "level": 7,
+          "yearsOfExperience": 4,
+          "projects": ["前端团队组建", "技能培训", "团队文化建设"],
+          "description": "具备团队组建、培养和激励的实践经验"
+        },
+        {
+          "id": "mentoring",
+          "name": "技术指导",
+          "level": 8,
+          "yearsOfExperience": 5,
+          "projects": ["新人培养", "技术分享", "代码评审"],
+          "description": "擅长指导初中级开发者技术成长，建立技术标准和最佳实践"
+        },
+        {
+          "id": "architecture",
+          "name": "技术架构",
+          "level": 7,
+          "yearsOfExperience": 4,
+          "projects": ["前端架构设计", "技术选型", "系统重构"],
+          "description": "具备前端架构设计和技术决策能力，关注可维护性和扩展性"
+        },
+        {
+          "id": "communication",
+          "name": "沟通协调",
+          "level": 8,
+          "yearsOfExperience": 6,
+          "projects": ["跨团队协作", "需求澄清", "技术方案讲解"],
+          "description": "优秀的沟通能力，能够清晰表达技术概念和项目进展"
+        }
+      ]
+    }
+  ],
+  "experienceItems": [
+    {
+      "id": "current-role",
+      "company": "深圳某互联网公司",
+      "position": "高级前端工程师/技术负责人",
+      "startDate": "2021-03-01",
+      "endDate": null,
+      "achievements": [
+        "负责前端团队技术架构设计和技术选型决策",
+        "建立前端工程化体系，提升团队开发效率30%",
+        "主导大型项目重构，性能提升50%以上",
+        "培养3名初级开发者成长为中级工程师",
+        "获得PMP和ACP双认证，提升项目管理能力"
+      ],
+      "technologies": ["Vue 3", "TypeScript", "Vite", "Pinia", "Element Plus", "微前端"]
+    },
+    {
+      "id": "previous-role-1",
+      "company": "深圳某科技公司",
+      "position": "前端工程师",
+      "startDate": "2018-06-01",
+      "endDate": "2021-02-28",
+      "achievements": [
+        "独立负责多个中大型前端项目的开发和维护",
+        "建立组件库和设计系统，提升开发效率",
+        "优化项目构建流程，减少构建时间60%",
+        "参与移动端混合应用开发，积累跨平台经验"
+      ],
+      "technologies": ["Vue 2", "React", "Webpack", "Less", "Ant Design", "React Native"]
+    },
+    {
+      "id": "previous-role-2",
+      "company": "深圳某创业公司",
+      "position": "前端开发工程师",
+      "startDate": "2015-09-01",
+      "endDate": "2018-05-31",
+      "achievements": [
+        "从零开始搭建前端技术栈和开发规范",
+        "负责公司官网和管理后台的前端开发",
+        "实现响应式设计，支持多终端访问",
+        "参与产品需求分析和技术方案设计"
+      ],
+      "technologies": ["jQuery", "Bootstrap", "Gulp", "Sass", "PHP", "MySQL"]
+    },
+    {
+      "id": "early-career",
+      "company": "深圳某传统企业",
+      "position": "初级前端开发工程师",
+      "startDate": "2014-07-01",
+      "endDate": "2015-08-31",
+      "achievements": [
+        "学习现代前端开发技术和工具",
+        "参与企业内部系统的前端开发",
+        "掌握基础的HTML、CSS、JavaScript技能",
+        "建立良好的编程习惯和代码规范意识"
+      ],
+      "technologies": ["HTML", "CSS", "JavaScript", "jQuery", "Bootstrap"]
+    }
+  ]
+}

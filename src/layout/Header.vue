@@ -3,12 +3,18 @@
     <div class="middle-box">
       <div class="header-inner">
         <a href="/" class="brand-signature">
-          AIYAZONE<span class="dot">.</span>
+          <img src="/logo.jpg" alt="AIYAZONE Logo" class="brand-logo" />
+          <span class="brand-name">AIYAZONE<span class="dot">.</span></span>
         </a>
         
         <div class="right-panel">
-          <!-- Navigation removed as requested -->
-          <!-- <nav class="desktop-nav">...</nav> -->
+          <nav class="desktop-nav">
+            <ul>
+              <li v-for="item in nav" :key="item.text">
+                <a :href="item.href" class="nav-link" :target="item.target || '_self'">{{ item.text }}</a>
+              </li>
+            </ul>
+          </nav>
 
           <button class="lang-switch" @click="langStore.toggleLang">
             {{ langStore.language === 'zh' ? 'EN' : '中' }}
@@ -56,17 +62,15 @@ export default defineComponent({
     const nav = computed(() => {
       if (langStore.language === 'zh') {
         return [
-          { href: "/brand", text: "个人品牌", target: "_self" },
-          { href: "https://fe.aiyazone.com/", text: "前端之路" },
-          { href: "https://pm.aiyazone.com/", text: "项目管理" },
-          { href: "https://blog.aiyazone.com/brand/about.html", text: "关于我" },
+          { href: "/fe/", text: "前端之路", target: "_self" },
+          { href: "/pm/", text: "项目管理", target: "_self" },
+          { href: "/blog/", text: "博客", target: "_self" },
         ];
       } else {
         return [
-          { href: "/brand", text: "Brand", target: "_self" },
-          { href: "https://fe.aiyazone.com/", text: "Frontend" },
-          { href: "https://pm.aiyazone.com/", text: "Management" },
-          { href: "https://blog.aiyazone.com/brand/about.html", text: "About" },
+          { href: "/fe/", text: "Frontend", target: "_self" },
+          { href: "/pm/", text: "Management", target: "_self" },
+          { href: "/blog/", text: "Blog", target: "_self" },
         ];
       }
     });
@@ -108,14 +112,34 @@ header {
   }
 
   .brand-signature {
-    font-family: var(--font-serif);
-    font-size: 1.75rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
     
-    .dot {
-      color: var(--accent-gold);
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .brand-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      letter-spacing: -0.5px;
+      
+      .dot {
+        color: #3b82f6;
+      }
+    }
+    
+    &:hover .brand-logo {
+      transform: scale(1.1);
     }
   }
 
@@ -197,6 +221,19 @@ header {
     
     .right-panel {
       gap: 1rem;
+    }
+    
+    .brand-signature {
+      gap: 0.5rem;
+      
+      .brand-logo {
+        width: 32px;
+        height: 32px;
+      }
+      
+      .brand-name {
+        font-size: 1.5rem;
+      }
     }
   }
 }

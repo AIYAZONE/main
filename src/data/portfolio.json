@@ -1,0 +1,243 @@
+{
+  "projectGroups": [
+    {
+      "id": "digital-garden",
+      "title": "数字花园",
+      "description": "个人技术博客和知识分享平台，记录技术成长和项目管理实践",
+      "projects": [
+        {
+          "id": "aiyazone-blog",
+          "name": "AIYAZONE Blog",
+          "description": "基于VitePress的技术博客，分享前端开发和项目管理经验",
+          "category": "digital-garden",
+          "techStack": ["VitePress", "Vue 3", "TypeScript", "Markdown", "GitHub Actions"],
+          "status": "online",
+          "url": "https://blog.aiyazone.com",
+          "githubUrl": "https://github.com/aiyazone/blog",
+          "imageUrl": "/assets/images/mind/bruce-brand.png",
+          "features": [
+            "技术文章分享",
+            "项目管理知识体系",
+            "前端技术栈深度解析",
+            "自动化部署流程",
+            "SEO优化实践"
+          ],
+          "metrics": {
+            "visitors": 5200,
+            "performance": {
+              "loadTime": 1200,
+              "firstContentfulPaint": 800,
+              "largestContentfulPaint": 1500,
+              "cumulativeLayoutShift": 0.1
+            }
+          }
+        },
+        {
+          "id": "fe-docs",
+          "name": "前端技术栈文档",
+          "description": "系统化的前端技术知识体系，涵盖基础、进阶到架构设计",
+          "category": "digital-garden",
+          "techStack": ["VitePress", "Vue 3", "TypeScript", "Mermaid"],
+          "status": "online",
+          "url": "https://fe.aiyazone.com",
+          "githubUrl": "https://github.com/aiyazone/fe-docs",
+          "imageUrl": "/assets/images/mind/bruce-brand.png",
+          "features": [
+            "前端技术体系梳理",
+            "最佳实践总结",
+            "案例分析和代码示例",
+            "性能优化指南",
+            "工程化实践"
+          ],
+          "metrics": {
+            "visitors": 3800,
+            "stars": 45,
+            "forks": 12
+          }
+        },
+        {
+          "id": "pm-knowledge",
+          "name": "项目管理知识体系",
+          "description": "PMP/ACP学习资料和实践经验分享，助力项目管理能力提升",
+          "category": "digital-garden",
+          "techStack": ["VitePress", "Markdown", "Mermaid", "PlantUML"],
+          "status": "online",
+          "url": "https://pm.aiyazone.com",
+          "githubUrl": "https://github.com/aiyazone/pm-docs",
+          "imageUrl": "/assets/images/mind/bruce-brand.png",
+          "features": [
+            "PMP知识点整理",
+            "ACP敏捷实践",
+            "项目管理案例分析",
+            "工具和模板分享",
+            "认证考试经验"
+          ],
+          "metrics": {
+            "visitors": 2100,
+            "stars": 28,
+            "forks": 8
+          }
+        }
+      ]
+    },
+    {
+      "id": "featured-work",
+      "title": "精选作品",
+      "description": "核心技术项目和创新实践，展示前端技术深度和架构能力",
+      "projects": [
+        {
+          "id": "zenparticles",
+          "name": "ZenParticles",
+          "description": "基于WebGL的粒子系统可视化项目，探索前端图形渲染技术",
+          "category": "featured-work",
+          "techStack": ["WebGL", "Three.js", "TypeScript", "Canvas", "GLSL"],
+          "status": "online",
+          "url": "https://zenparticles.aiyazone.com",
+          "githubUrl": "https://github.com/aiyazone/zenparticles",
+          "imageUrl": "/assets/images/mind/bruce-brand.png",
+          "features": [
+            "实时粒子系统渲染",
+            "GPU加速计算",
+            "交互式参数调节",
+            "性能监控面板",
+            "多种粒子效果预设"
+          ],
+          "metrics": {
+            "stars": 156,
+            "forks": 32,
+            "visitors": 1800,
+            "performance": {
+              "loadTime": 2100,
+              "firstContentfulPaint": 1200,
+              "largestContentfulPaint": 2800,
+              "cumulativeLayoutShift": 0.05
+            }
+          }
+        },
+        {
+          "id": "sun-travel",
+          "name": "Sun Travel",
+          "description": "现代化的旅游规划应用，集成地图、路线规划和行程管理功能",
+          "category": "featured-work",
+          "techStack": ["Vue 3", "TypeScript", "Pinia", "Element Plus", "高德地图API"],
+          "status": "development",
+          "url": "https://sun-travel.aiyazone.com",
+          "githubUrl": "https://github.com/aiyazone/sun-travel",
+          "imageUrl": "/assets/images/logo/suntravel-light.png",
+          "features": [
+            "智能路线规划",
+            "景点推荐系统",
+            "行程管理工具",
+            "地图集成服务",
+            "用户评价系统"
+          ],
+          "metrics": {
+            "stars": 23,
+            "forks": 7,
+            "visitors": 650
+          }
+        },
+        {
+          "id": "personal-brand-system",
+          "name": "个人品牌展示系统",
+          "description": "当前正在开发的个人品牌网站，展示完整的技术栈和项目管理能力",
+          "category": "featured-work",
+          "techStack": ["Vue 3", "TypeScript", "Pinia", "Vue I18n", "Less", "Vite"],
+          "status": "development",
+          "url": "https://aiyazone.com",
+          "githubUrl": "https://github.com/aiyazone/personal-brand",
+          "imageUrl": "/assets/images/mind/bruce-brand.png",
+          "features": [
+            "响应式品牌展示",
+            "技能可视化展示",
+            "作品集管理系统",
+            "SWOT分析展示",
+            "职业规划路线图",
+            "多语言国际化支持"
+          ],
+          "metrics": {
+            "stars": 12,
+            "forks": 3,
+            "visitors": 420
+          }
+        }
+      ]
+    },
+    {
+      "id": "community",
+      "title": "社区项目",
+      "description": "开源贡献和社区参与，推动技术生态发展",
+      "projects": [
+        {
+          "id": "vue-performance-toolkit",
+          "name": "Vue性能优化工具包",
+          "description": "Vue.js应用性能分析和优化工具集，帮助开发者提升应用性能",
+          "category": "community",
+          "techStack": ["Vue 3", "TypeScript", "Rollup", "Jest", "Performance API"],
+          "status": "online",
+          "url": "https://vue-perf-toolkit.aiyazone.com",
+          "githubUrl": "https://github.com/aiyazone/vue-performance-toolkit",
+          "imageUrl": "/assets/images/mind/bruce-brand.png",
+          "features": [
+            "组件性能分析",
+            "内存泄漏检测",
+            "渲染性能监控",
+            "优化建议生成",
+            "性能报告导出"
+          ],
+          "metrics": {
+            "stars": 89,
+            "forks": 21,
+            "visitors": 1200
+          }
+        },
+        {
+          "id": "frontend-interview-guide",
+          "name": "前端面试指南",
+          "description": "系统化的前端面试准备资料，涵盖技术和项目管理双重维度",
+          "category": "community",
+          "techStack": ["VitePress", "Markdown", "TypeScript"],
+          "status": "online",
+          "url": "https://interview.aiyazone.com",
+          "githubUrl": "https://github.com/aiyazone/frontend-interview-guide",
+          "imageUrl": "/assets/images/mind/bruce-brand.png",
+          "features": [
+            "技术面试题库",
+            "项目管理面试准备",
+            "简历优化建议",
+            "面试经验分享",
+            "职业发展规划"
+          ],
+          "metrics": {
+            "stars": 234,
+            "forks": 67,
+            "visitors": 4500
+          }
+        },
+        {
+          "id": "open-source-contributions",
+          "name": "开源贡献集合",
+          "description": "参与的各类开源项目贡献，包括Vue生态、工具库等",
+          "category": "community",
+          "techStack": ["Vue", "TypeScript", "JavaScript", "Node.js"],
+          "status": "online",
+          "url": "https://github.com/aiyazone",
+          "githubUrl": "https://github.com/aiyazone",
+          "imageUrl": "/assets/images/mind/bruce-brand.png",
+          "features": [
+            "Vue生态贡献",
+            "工具库开发",
+            "文档完善",
+            "Bug修复",
+            "功能增强"
+          ],
+          "metrics": {
+            "stars": 45,
+            "forks": 12,
+            "visitors": 800
+          }
+        }
+      ]
+    }
+  ]
+}

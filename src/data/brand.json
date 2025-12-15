@@ -1,0 +1,40 @@
+{
+  "brandInfo": {
+    "id": "1",
+    "name": "AIYAZONE",
+    "title": "前端架构师 & 技术管理者",
+    "subtitle": "Frontend Architect & Tech Lead",
+    "intro": "10年前端开发经验，PMP/ACP认证，专注于前端架构、性能优化和工程化",
+    "profileImage": "/logo.jpg",
+    "location": "深圳",
+    "age": 34,
+    "experience": 10,
+    "tagline": "技术深度与管理广度的完美结合",
+    "valueProposition": [
+      "前端架构设计与实施",
+      "性能优化与监控",
+      "工程化体系建设",
+      "技术团队管理"
+    ]
+  },
+  "certifications": [
+    {
+      "id": "1",
+      "name": "Project Management Professional (PMP)",
+      "issuer": "Project Management Institute",
+      "issueDate": "2022-06-15",
+      "credentialId": "PMP-2022-001",
+      "imageUrl": "/assets/images/pmp-cert.jpg",
+      "verificationUrl": "https://www.pmi.org/certifications/verify"
+    },
+    {
+      "id": "2",
+      "name": "Agile Certified Practitioner (ACP)",
+      "issuer": "Project Management Institute",
+      "issueDate": "2023-03-20",
+      "credentialId": "ACP-2023-001",
+      "imageUrl": "/assets/images/acp-cert.jpg",
+      "verificationUrl": "https://www.pmi.org/certifications/verify"
+    }
+  ]
+}

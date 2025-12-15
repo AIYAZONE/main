@@ -11,7 +11,9 @@
 		},
 		"outDir": "./dist", // 将生成的文件输出到 dist 目录
 		"esModuleInterop": true,
-		"skipLibCheck": true
+		"skipLibCheck": true,
+		"resolveJsonModule": true,
+		"allowSyntheticDefaultImports": true
 	},
 	"include": [
 		"src/**/*.ts",

@@ -1,0 +1,1 @@
+export { default as SocialIntegration } from './SocialIntegration.vue';

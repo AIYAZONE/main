@@ -1,3 +1,9 @@
+/* 引入品牌视觉识别系统 */
+@import './style/brand-identity.css';
+
+/* 引入响应式设计优化 */
+@import './style/responsive.css';
+
 :root {
   /* Color Palette - Modern Tech */
   --bg-color: #fafafa;

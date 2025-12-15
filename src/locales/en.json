@@ -1,0 +1,506 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "portfolio": "Portfolio",
+    "career": "Career",
+    "contact": "Contact",
+    "quickLinks": "Quick Links"
+  },
+  "brand": {
+    "title": "AIYAZONE",
+    "subtitle": "Frontend Architect & Tech Lead",
+    "intro": "10 years of frontend development experience, PMP/ACP certified, focusing on frontend architecture, performance optimization and engineering",
+    "valueProposition": {
+      "architecture": "Frontend Architecture Design & Implementation",
+      "performance": "Performance Optimization & Monitoring",
+      "engineering": "Engineering System Development",
+      "management": "Technical Team Management"
+    }
+  },
+  "skills": {
+    "title": "Professional Skills",
+    "frontend": "Frontend Development",
+    "management": "Project Management",
+    "leadership": "Team Leadership", 
+    "yearsExp": "Years Experience",
+    "level": "Proficiency",
+    "allSkills": "All Skills",
+    "skillDetails": "Skill Details",
+    "relatedProjects": "Related Projects",
+    "skillDescription": "Skill Description",
+    "proficiencyLevel": "Proficiency Level",
+    "experienceYears": "Experience Years",
+    "projectCount": "Project Count",
+    "radarChart": "Radar Chart",
+    "barChart": "Bar Chart",
+    "skillMatrix": "Skill Matrix",
+    "careerTimeline": "Career Timeline",
+    "careerMilestones": "Career Milestones",
+    "keyAchievements": "Key Achievements",
+    "techStack": "Tech Stack",
+    "workExperience": "Work Experience",
+    "companies": "Companies",
+    "achievements": "Key Achievements",
+    "currentPosition": "Present",
+    "months": "months",
+    "years": "years"
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "digitalGarden": "Digital Garden",
+    "featuredWork": "Featured Work",
+    "community": "Community Projects",
+    "viewProject": "View Project",
+    "viewCode": "View Code",
+    "visitProject": "Visit Project",
+    "viewSource": "View Source",
+    "searchPlaceholder": "Search projects...",
+    "category": "Category",
+    "allCategories": "All Categories",
+    "status": "Status",
+    "allStatus": "All Status",
+    "online": "Online",
+    "development": "In Development",
+    "archived": "Archived",
+    "technology": "Technology",
+    "allTech": "All Technologies",
+    "clearFilters": "Clear Filters",
+    "showingResults": "Showing {count} projects",
+    "noProjectsFound": "No projects found",
+    "tryDifferentFilters": "Try adjusting your filters",
+    "loading": "Loading...",
+    "errorTitle": "Failed to load",
+    "retry": "Retry",
+    "techStack": "Tech Stack",
+    "keyFeatures": "Key Features",
+    "performanceScore": "Performance Score",
+    "githubStars": "GitHub Stars",
+    "totalVisitors": "Total Visitors",
+    "githubForks": "GitHub Forks"
+  },
+  "career": {
+    "title": "Career Planning",
+    "swot": {
+      "title": "SWOT Analysis",
+      "description": "Comprehensive analysis of personal strengths, weaknesses, opportunities and threats to develop scientific career strategies",
+      "strengths": "Strengths",
+      "weaknesses": "Weaknesses",
+      "opportunities": "Opportunities", 
+      "threats": "Threats",
+      "keyInsights": "Key Insights",
+      "recommendations": "Strategic Recommendations",
+      "actionItems": "Action Items",
+      "modes": {
+        "quadrant": "Quadrant",
+        "radar": "Radar Chart",
+        "matrix": "Matrix"
+      },
+      "impact": {
+        "high": "High Impact",
+        "medium": "Medium Impact",
+        "low": "Low Impact"
+      },
+      "categories": {
+        "technical": "Technical Skills",
+        "management": "Management Skills",
+        "market": "Market Opportunities",
+        "personal": "Personal Factors"
+      },
+      "priority": {
+        "high": "High Priority",
+        "medium": "Medium Priority",
+        "low": "Low Priority"
+      },
+      "status": {
+        "pending": "Pending",
+        "in-progress": "In Progress",
+        "completed": "Completed"
+      },
+      "deadline": "Deadline",
+      "matrix": {
+        "internal": "Internal Factors",
+        "external": "External Factors"
+      }
+    },
+    "roadmap": {
+      "title": "Career Development Roadmap",
+      "description": "24-month phased learning + practical roadmap, targeting frontend architect position with 40-60K salary in Shenzhen market",
+      "targetRole": "Target Role",
+      "targetSalary": "Target Salary",
+      "currentPhase": "Current Phase",
+      "notStarted": "Not Started",
+      "objectives": "Phase Objectives",
+      "keyMilestones": "Key Milestones",
+      "learningGoals": "Learning Goals",
+      "deliverables": "Deliverables",
+      "progress": "Progress",
+      "completed": "Completed",
+      "pending": "Pending",
+      "metrics": "Metrics",
+      "dueDate": "Due Date",
+      "categories": {
+        "architecture": "Architecture",
+        "performance": "Performance",
+        "engineering": "Engineering"
+      },
+      "resources": "Resources",
+      "practicalProjects": "Practical Projects",
+      "successCriteria": "Success Criteria",
+      "resourceTypes": {
+        "book": "Book",
+        "course": "Course",
+        "article": "Article",
+        "video": "Video",
+        "documentation": "Documentation"
+      },
+      "difficulty": {
+        "beginner": "Beginner",
+        "intermediate": "Intermediate",
+        "advanced": "Advanced"
+      },
+      "outputs": "Outputs",
+      "deliverableTypes": {
+        "code": "Code",
+        "document": "Document",
+        "presentation": "Presentation",
+        "analysis": "Analysis"
+      },
+      "deliverableStatus": {
+        "pending": "Pending",
+        "in-progress": "In Progress",
+        "completed": "Completed"
+      }
+    },
+    "learning": {
+      "title": "Learning Path",
+      "description": "Systematic learning path with three parallel tracks: frontend architecture, performance, and engineering",
+      "totalDuration": "Total Duration",
+      "focusAreas": "Focus Areas",
+      "threeFocus": "Three Parallel Tracks",
+      "approach": "Approach",
+      "parallelLearning": "Parallel Learning",
+      "parallelTracks": "Three Parallel Learning Tracks",
+      "tracks": {
+        "architecture": "Frontend Architecture",
+        "architectureDesc": "System design, architecture patterns, technology selection",
+        "performance": "Performance Optimization",
+        "performanceDesc": "Monitoring systems, optimization strategies, performance analysis",
+        "engineering": "Engineering",
+        "engineeringDesc": "Build tools, CI/CD, code quality"
+      },
+      "phaseTimeline": "Phase Timeline",
+      "focus": {
+        "architecture": "Architecture",
+        "performance": "Performance",
+        "engineering": "Engineering"
+      },
+      "learningGoals": "Learning Goals",
+      "practicalProjects": "Practical Projects",
+      "successCriteria": "Success Criteria",
+      "difficulty": {
+        "beginner": "Beginner",
+        "intermediate": "Intermediate",
+        "advanced": "Advanced"
+      },
+      "expectedOutputs": "Expected Outputs",
+      "recommendedResources": "Recommended Resources",
+      "resources": {
+        "books": "Recommended Books",
+        "courses": "Recommended Courses",
+        "practices": "Practice Recommendations"
+      },
+      "priority": {
+        "high": "High Priority",
+        "medium": "Medium Priority",
+        "low": "Low Priority"
+      },
+      "successMetrics": "Success Metrics",
+      "metrics": {
+        "technical": "Technical Metrics",
+        "career": "Career Metrics",
+        "impact": "Impact Metrics",
+        "technicalItems": {
+          "architecture": "Independently design large-scale system architecture",
+          "performance": "Establish comprehensive performance optimization system",
+          "engineering": "Build enterprise-level engineering platform"
+        },
+        "careerItems": {
+          "position": "Obtain frontend architect position",
+          "salary": "Achieve 40-60K salary target",
+          "recognition": "Gain industry technical recognition"
+        },
+        "impactItems": {
+          "team": "Guide team technical growth",
+          "projects": "Lead important project success",
+          "industry": "Build technical influence"
+        }
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact Me",
+    "subtitle": "Let's connect and explore opportunities for collaboration",
+    "name": "Name",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message",
+    "category": "Category",
+    "categories": {
+      "business": "Business Collaboration",
+      "collaboration": "Technical Exchange",
+      "general": "General Inquiry"
+    },
+    "send": "Send Message",
+    "required": "Required field",
+    "invalidEmail": "Please enter a valid email address",
+    "form": {
+      "title": "Send a Message",
+      "description": "Have a project in mind or want to discuss technical topics? I'd love to hear from you."
+    },
+    "info": {
+      "title": "Get in Touch",
+      "description": "Choose your preferred way to connect with me."
+    },
+    "emailDescription": "Best for detailed discussions and project inquiries",
+    "linkedinDescription": "Professional networking and career opportunities",
+    "wechat": "WeChat",
+    "wechatDescription": "Quick communication and casual conversations",
+    "social": {
+      "title": "Follow Me"
+    },
+    "responseTime": {
+      "title": "Response Time",
+      "description": "I typically respond within 24-48 hours during business days"
+    },
+    "preferredContact": {
+      "title": "Preferred Contact",
+      "description": "Email is preferred for business inquiries and detailed discussions"
+    }
+  },
+  "certifications": {
+    "title": "Professional Certifications",
+    "subtitle": "Validated expertise and continuous learning",
+    "issued": "Issued",
+    "expires": "Expires",
+    "credential": "Credential ID",
+    "verify": "Verify Certificate",
+    "empty": {
+      "title": "No Certifications",
+      "description": "Certifications will appear here when available."
+    }
+  },
+  "brandStory": {
+    "title": "My Journey",
+    "subtitle": "From frontend developer to technical leader",
+    "timeline": {
+      "title": "Career Timeline",
+      "start": "Started Frontend Development",
+      "startDesc": "Began journey in frontend development with HTML, CSS, and JavaScript"
+    },
+    "philosophy": {
+      "title": "Professional Philosophy",
+      "technical": "Technology should serve business goals and user needs",
+      "management": "Great teams are built on trust, communication, and shared vision",
+      "growth": "Continuous learning and adaptation are essential for long-term success"
+    },
+    "journey": {
+      "title": "Professional Journey",
+      "content": "A decade-long journey from frontend developer to technical leader, combining deep technical expertise with strategic thinking and team leadership."
+    }
+  },
+  "ui": {
+    "button": {
+      "primary": "Primary Button",
+      "secondary": "Secondary Button",
+      "success": "Success",
+      "warning": "Warning",
+      "danger": "Danger",
+      "info": "Info",
+      "light": "Light",
+      "dark": "Dark"
+    },
+    "card": {
+      "title": "Card Title",
+      "content": "Card Content",
+      "footer": "Card Footer"
+    },
+    "modal": {
+      "title": "Modal",
+      "close": "Close",
+      "confirm": "Confirm",
+      "cancel": "Cancel"
+    },
+    "form": {
+      "required": "This field is required",
+      "invalid": "Invalid input format",
+      "tooShort": "Input is too short",
+      "tooLong": "Input is too long",
+      "emailInvalid": "Please enter a valid email address",
+      "phoneInvalid": "Please enter a valid phone number",
+      "urlInvalid": "Please enter a valid URL",
+      "passwordWeak": "Password is too weak",
+      "passwordMismatch": "Passwords do not match"
+    },
+    "navigation": {
+      "home": "Home",
+      "back": "Back",
+      "next": "Next",
+      "previous": "Previous",
+      "breadcrumb": "Breadcrumb Navigation",
+      "menu": "Menu",
+      "search": "Search",
+      "filter": "Filter",
+      "sort": "Sort"
+    },
+    "status": {
+      "online": "Online",
+      "offline": "Offline",
+      "loading": "Loading",
+      "success": "Success",
+      "error": "Error",
+      "warning": "Warning",
+      "info": "Info",
+      "pending": "Pending",
+      "completed": "Completed",
+      "cancelled": "Cancelled"
+    },
+    "actions": {
+      "add": "Add",
+      "create": "Create",
+      "edit": "Edit",
+      "update": "Update",
+      "delete": "Delete",
+      "remove": "Remove",
+      "copy": "Copy",
+      "paste": "Paste",
+      "cut": "Cut",
+      "undo": "Undo",
+      "redo": "Redo",
+      "refresh": "Refresh",
+      "reset": "Reset",
+      "clear": "Clear",
+      "submit": "Submit",
+      "send": "Send",
+      "download": "Download",
+      "upload": "Upload",
+      "import": "Import",
+      "export": "Export",
+      "print": "Print",
+      "share": "Share"
+    }
+  },
+  "errors": {
+    "network": {
+      "title": "Network Error",
+      "description": "Network connection failed, please check your network settings",
+      "timeout": "Request timeout, please try again later",
+      "serverError": "Server error, please try again later",
+      "notFound": "The requested resource was not found",
+      "forbidden": "You don't have permission to access this resource",
+      "unauthorized": "Please log in first"
+    },
+    "validation": {
+      "required": "This field is required",
+      "minLength": "Must be at least {min} characters",
+      "maxLength": "Must be no more than {max} characters",
+      "email": "Please enter a valid email address",
+      "phone": "Please enter a valid phone number",
+      "url": "Please enter a valid URL",
+      "number": "Please enter a valid number",
+      "integer": "Please enter an integer",
+      "positive": "Please enter a positive number",
+      "range": "Please enter a value between {min} and {max}"
+    },
+    "system": {
+      "title": "System Error",
+      "description": "A system error occurred, please try again later",
+      "maintenance": "System is under maintenance, please visit later",
+      "upgrade": "System is being upgraded, please visit later"
+    }
+  },
+  "messages": {
+    "success": {
+      "saved": "Saved successfully",
+      "updated": "Updated successfully",
+      "deleted": "Deleted successfully",
+      "created": "Created successfully",
+      "sent": "Sent successfully",
+      "uploaded": "Uploaded successfully",
+      "downloaded": "Downloaded successfully"
+    },
+    "info": {
+      "noData": "No data available",
+      "noResults": "No results found",
+      "loading": "Loading...",
+      "processing": "Processing...",
+      "saving": "Saving...",
+      "uploading": "Uploading...",
+      "downloading": "Downloading..."
+    },
+    "warning": {
+      "unsavedChanges": "You have unsaved changes",
+      "confirmDelete": "Are you sure you want to delete?",
+      "confirmLeave": "Are you sure you want to leave this page?",
+      "dataLoss": "This action may result in data loss"
+    }
+  },
+  "accessibility": {
+    "skipToContent": "Skip to main content",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "toggleTheme": "Toggle theme",
+    "toggleLanguage": "Toggle language",
+    "previousPage": "Previous page",
+    "nextPage": "Next page",
+    "currentPage": "Current page",
+    "pageOf": "Page {current} of {total}",
+    "sortBy": "Sort by {field}",
+    "filterBy": "Filter by {field}",
+    "searchResults": "Search results: {count} items",
+    "noSearchResults": "No search results",
+    "loadingContent": "Loading content",
+    "errorLoadingContent": "Error loading content",
+    "backToTop": "Back to top"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Retry",
+    "close": "Close",
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "edit": "Edit",
+    "delete": "Delete",
+    "view": "View",
+    "more": "More",
+    "yes": "Yes",
+    "no": "No",
+    "ok": "OK",
+    "apply": "Apply",
+    "reset": "Reset",
+    "clear": "Clear",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "refresh": "Refresh",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "submit": "Submit",
+    "send": "Send",
+    "copy": "Copy",
+    "share": "Share",
+    "download": "Download",
+    "upload": "Upload",
+    "print": "Print"
+  },
+  "search": {
+    "suggestions": "Search Suggestions"
+  },
+  "footer": {
+    "allRightsReserved": "All rights reserved.",
+    "builtWith": "Built with"
+  }
+}
