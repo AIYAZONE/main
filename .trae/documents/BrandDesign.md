@@ -1,105 +1,139 @@
-# AIYAZONE 品牌设计规范 (Brand Design Guidelines)
+# AIYAZONE 智性极简品牌设计规范 (AIYAZONE Premium Brand Design System) v2.0
 
-## 1. 品牌核心 (Brand Core)
-
-**AIYAZONE** 是一个融合技术深度与管理智慧的个人 IP。品牌设计旨在传递 **"专业 (Professional)"**、**"高级 (Premium)"** 与 **"智慧 (Intellectual)"** 的核心气质。
-
-### 1.1 设计理念：智性极简 (Intellectual Minimalism)
-我们的设计不追求繁复的装饰，而是通过**极致的留白**、**考究的排版**与**细腻的质感**，展现技术管理者的理性与从容。
-
--   **高级感来源**：
-    -   **克制 (Restraint)**：少即是多，去除干扰元素。
-    -   **秩序 (Order)**：严格的网格系统与对齐。
-    -   **质感 (Texture)**：微妙的渐变、柔和的阴影与玻璃拟态。
+> **核心愿景 (Vision)**: 打造一个融合"技术深度"与"艺术美学"的个人 IP 数字殿堂。网站不应只是信息的罗列，而应是一场关于"智性 (Intellect)"与"品味 (Taste)"的视觉叙事。
 
 ---
 
-## 2. 视觉识别系统 (Visual Identity)
+## 1. 设计哲学：智性奢华 (Intellectual Luxury)
 
-### 2.1 色彩体系 (Color Palette)
+我们需要超越常规的"工程师博客"风格，转向**"艺术画廊"**或**"高端杂志"**的视觉语言。
 
-基于现有的 `brand-identity.css`，我们提炼出打造"高级感"的核心配色方案：
-
-#### 主色调 (Primary)
--   **深邃蓝 (Midnight Blue)**: `#1F2937` (用于标题渐变起始色) —— 象征稳重、深度。
--   **专业蓝 (Professional Blue)**: `#3B82F6` (品牌主色) —— 象征科技、信任、连接。
--   **流光渐变**: 标题文字使用 `linear-gradient(135deg, #1F2937 0%, #3B82F6 100%)`，营造金属光泽感。
-
-#### 背景色 (Background)
--   **空气白 (Airy White)**: `#FFFFFF` —— 纯净的内容底色。
--   **迷雾灰 (Mist Gray)**: `#F8F9FB` —— 用于 Hero 区域背景，营造微弱的层次感。
--   **光晕 (Glow)**: `rgba(59, 130, 246, 0.05)` —— 极淡的径向渐变，增加空间的流动感。
-
-#### 点缀色 (Accent)
--   **香槟金 (Champagne Gold)**: (建议引入) 用于分割线、高亮小图标，与深蓝色形成雅致对比，提升奢华感。
--   **极光绿 (Aurora Green)**: `#10B981` —— 仅用于认证徽章 (Certifications)，代表通过与成就。
-
-### 2.2 字体排印 (Typography)
-
-"高级感"在排版上的体现是：**衬线体与无衬线体的完美结合**。
-
-#### 标题 (Headings)
--   **字体**: `Playfair Display`, `Noto Serif SC`, serif
--   **应用**: H1, H2, H3 以及 Hero 区域的大标题。
--   **特征**: 衬线字体具有人文气息和经典美感，能瞬间提升页面的格调。
--   **规范**:
-    -   Hero Title: `5rem` (PC端), 字重 `700`，行高 `1.1`。
-    -   Section Title: `2.5rem`，居中，配合装饰性分割线。
-
-#### 正文 (Body)
--   **字体**: `Lato`, system-ui, sans-serif
--   **应用**: 导航、正文段落、列表、Footer。
--   **特征**: 现代、清晰、中性。
--   **规范**:
-    -   Hero Subtitle: 全大写 (Uppercase)，字间距 `0.15em` (Wide Tracking)，颜色淡化。这种排版方式是奢侈品牌常用的手法。
-    -   Body Text: 字号 `1rem`，行高 `1.6` - `1.8`，保证阅读的舒适与呼吸感。
+*   **关键词**: 沉静 (Calm)、秩序 (Order)、通透 (Airy)、精致 (Exquisite)。
+*   **设计原则**:
+    1.  **超级留白 (Macro Whitespace)**: 敢于浪费空间。屏幕的 40% 应该是空白，用以衬托核心内容。
+    2.  **非对称平衡 (Asymmetrical Balance)**: 打破死板的居中对齐，使用错位排版创造动态张力。
+    3.  **电影感叙事 (Cinematic Storytelling)**: 页面滚动即是镜头推拉，通过视差滚动 (Parallax) 和元素显隐控制节奏。
 
 ---
 
-## 3. UI 设计规范 (UI Design System)
+## 2. 视觉识别系统 (Visual Identity System)
 
-### 3.1 布局与留白 (Layout & Spacing)
-高级感来源于"浪费"空间。不要试图填满每一个角落。
+### 2.1 升级色彩体系 (Refined Color Palette)
 
--   **Hero 区域**: 上下内边距至少 `8rem` (128px)。让视觉焦点完全集中在人物形象与核心价值主张上。
--   **板块间距**: 板块之间保持 `6rem` - `8rem` 的间距。
--   **中心法则**: 核心内容（如 Banner 文字）采用居中对齐，营造庄重感。
+放弃高饱和度的"科技蓝"，转向更深沉、更具质感的色盘。
 
-### 3.2 组件设计 (Component Design)
+#### 核心色盘 (Core Palette)
+*   **Canvas (画布)**:
+    *   Day: `#FAFAFA` (雪青白 - 比纯白更有质感)
+    *   Night: `#0F172A` (深海蓝黑 - 比纯黑更深邃)
+    *   *Noise Texture*: 所有背景叠加 3% 透明度的噪点纹理，增加纸张质感。
+*   **Primary (主色)**:
+    *   **Midnight Royal**: `#1E293B` (用于标题，深沉的蓝灰色)
+    *   **Obsidian**: `#000000` (纯黑，仅用于超大标题强调)
+*   **Accent (点缀)**:
+    *   **Electric Blue**: `#3B82F6` (仅用于交互反馈，如光标点、Focus态)
+    *   **Champagne Gold**: `linear-gradient(135deg, #D4AF37 0%, #F3E5AB 50%, #D4AF37 100%)` (金属流光，用于徽章、边框高光)
 
-#### 首屏 Banner (Hero Section) - *用户最爱*
--   **背景**: 极简灰白渐变 + 极淡的蓝色光晕，模拟自然光感。
--   **人像**: 圆形头像，带白色边框和多层柔和阴影 (`box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15)`)，制造悬浮感。
--   **文字**: 巨大的衬线标题，配合金属质感的渐变填充。
--   **装饰**: 底部使用渐变短横线 (`width: 80px`) 进行视觉收束。
+#### 功能色 (Functional Colors)
+*   **Border**: `rgba(0, 0, 0, 0.06)` (极细微的边界)
+*   **Glass**: `rgba(255, 255, 255, 0.7)` + `backdrop-filter: blur(20px)`
+*   **Shadow**:
+    *   *Float*: `0 20px 40px -10px rgba(0, 0, 0, 0.08)`
+    *   *Glow*: `0 0 20px rgba(212, 175, 55, 0.3)` (金色光晕)
 
-#### 卡片 (Cards)
--   **风格**: 极简主义。
--   **边框**: 极细的浅色边框 (`1px solid rgba(0,0,0,0.05)`)。
--   **阴影**: 默认状态下几乎不可见，悬停时浮现大范围弥散阴影 (`box-shadow: 0 20px 50px rgba(0,0,0,0.1)`)。
--   **圆角**: 较大的圆角 (`border-radius: 16px` 或 `24px`)，增加亲和力。
+### 2.2 字体排印 (Typography Hierarchy)
 
-#### 页脚 (Footer) - *用户最爱*
--   **风格**: 极致的"空"。
--   **结构**: 仅保留版权信息和必要的法律链接。
--   **视觉**: 上边框极细 (`1px solid #eee`)，文字灰度高 (`color: #999`)，字号小 (`0.85rem`)，不抢占主体内容的注意力。
-
-### 3.3 交互动效 (Micro-interactions)
--   **原则**: 缓慢、优雅。
--   **时长**: 避免急促的闪现，使用 `0.3s` - `0.5s` 的 `ease-out` 曲线。
--   **效果**: 悬停时，元素轻微上浮 (`translateY(-5px)`) 并伴随阴影加深。
-
----
-
-## 4. 实施建议 (Implementation Notes)
-
-为了将现有的代码库完全对齐到此高级感设计，建议进行以下微调（基于现有 `BrandHero.vue` 和 `Footer.vue` 的成功经验）：
-
-1.  **全局字体统一**: 确保所有页面的 H1-H3 标题都强制使用 `font-serif` (Playfair Display)，而不仅仅是首页。
-2.  **统一间距**: 检查其他页面（如 About, Portfolio），增加板块间的 `padding`，避免内容过于拥挤。
-3.  **图片处理**: 所有展示的图片（作品集封面等）建议统一添加一层极淡的灰色遮罩，悬停时移除，以保持色彩的统一性。
-4.  **导航栏优化**: 导航栏背景建议使用高斯模糊 (Backdrop Filter)，增加通透感。
+*   **Display Font (大标题)**: `Playfair Display` (Serif)
+    *   *设置*: `font-weight: 700`, `letter-spacing: -0.03em`, `line-height: 1.05`
+    *   *H1 (Hero)*: `clamp(3.5rem, 5vw + 1rem, 6rem)`
+    *   *H2 (Section)*: `3rem`
+*   **Body Font (正文)**: `Inter` 或 `Lato` (Sans-serif)
+    *   *设置*: `font-weight: 300` (Light), `line-height: 1.8`, `color: #4B5563`
+    *   *Size*: `1.05rem` (略大于标准 16px，增加阅读舒适度)
+*   **Label/Meta (微标)**: `JetBrains Mono`
+    *   *设置*: `text-transform: uppercase`, `letter-spacing: 0.15em`, `font-size: 0.75rem`
 
 ---
 
-*这份文档基于用户对首页 Banner 和 Footer 的审美偏好整理而成，旨在确立 AIYAZONE "高端个人 IP" 的设计基调。*
+## 3. UI 组件与布局 (Component & Layout Specs)
+
+### 3.1 栅格系统 (Grid System)
+*   **PC端**: 12 列栅格，Gutter `24px`，最大宽度 `1400px` (更宽的视野)。
+*   **留白阶梯 (Spacing Scale)**:
+    *   `--space-xs`: 0.5rem (8px)
+    *   `--space-md`: 2rem (32px)
+    *   `--space-xl`: 5rem (80px)
+    *   `--space-huge`: 10rem (160px) - *用于板块间距*
+
+### 3.2 导航栏 (The Invisible Navigation)
+*   **常态**: 透明背景，Logo 黑色，菜单项隐藏，仅显示 Menu 图标（汉堡菜单）。
+*   **滚动态**:
+    *   背景: `rgba(255, 255, 255, 0.8)`
+    *   模糊: `backdrop-filter: blur(24px)`
+    *   边框: 底部 `1px solid rgba(0,0,0,0.03)`
+*   **交互**: 菜单项 Hover 时不改变颜色，而是显示一条 2px 高的金色短线 (`width: 12px`) 在下方。
+
+### 3.3 首屏 (Hero Section) - "杂志封面"
+*   **构图**: 左侧 7 列文字，右侧 5 列图像（或留白）。
+*   **标题**: 多行大标题，左对齐。单词之间可能穿插 *Italic* (斜体) 强调。
+*   **装饰**: 标题右上方悬浮一个极小的旋转徽章 (Rotating Badge)，内容为 "Est. 2024" 或 "AIYAZONE"。
+*   **背景**: 纯色背景 + 噪点 + 右下角极淡的径向渐变光晕 (`#3B82F6` at 3% opacity)。
+
+### 3.4 作品集 (Portfolio) - "Bento Grid"
+*   **容器**: CSS Grid 布局。
+*   **卡片类型**:
+    1.  **Feature Card (2x2)**: 全图背景 + 底部文字蒙版。
+    2.  **Standard Card (1x1)**: 上图下文，极简边框。
+    3.  **Info Card (1x1)**: 纯色块背景 (Midnight Blue) + 金色大数字数据。
+*   **悬停效果 (Hover)**:
+    *   整体上浮 `y: -8px`
+    *   阴影扩散
+    *   图片比例放大 `scale(1.03)`
+    *   鼠标位置出现"磁性"光标跟随。
+
+### 3.5 页脚 (Footer) - "极简宣言"
+*   **布局**: 上下结构。
+*   **上部**: 巨大的 "AIYAZONE" 衬线体文字横跨屏幕 (font-size: 12vw)，透明度 10%。
+*   **下部**: 左右两端对齐。左侧版权，右侧社交链接 (纯文字: Github, Twitter, Email)。
+
+---
+
+## 4. 动效与交互 (Motion & Interaction)
+
+高级感的核心在于**"非线性"**与**"物理感"**。
+
+### 4.1 动画曲线 (Bezier Curves)
+*   **Premium Ease**: `cubic-bezier(0.22, 1, 0.36, 1)` - 快速启动，极慢停止（如丝般顺滑）。
+*   **Bouncy**: `cubic-bezier(0.34, 1.56, 0.64, 1)` - 用于微小的图标回弹。
+
+### 4.2 滚动体验 (Scroll Experience)
+*   **Scroll Reveal**: 元素进入视口时，不要简单的 FadeIn。
+    *   文字: `translateY(40px)` -> `0`, `opacity: 0` -> `1`, `duration: 1s`.
+    *   图片: 蒙版揭示 (Clip-path inset 0 100% 0 0 -> inset 0 0 0 0)。
+*   **Parallax**: 背景光晕移动速度是前景的 50%。
+
+### 4.3 微交互 (Micro-interactions)
+*   **链接 Hover**: 颜色渐变至金色，下划线从左向右生长。
+*   **图片 Hover**: 鼠标变成圆形的 "VIEW" 提示器。
+
+---
+
+## 5. 实施清单 (Implementation Checklist)
+
+1.  **Global Styles**:
+    *   [ ] 引入 `Playfair Display` (Google Fonts).
+    *   [ ] 定义 CSS Variables (`colors`, `spacing`, `easing`).
+    *   [ ] 添加全局噪点背景图层.
+
+2.  **Layout Refactor**:
+    *   [ ] 将 `middle-box` 最大宽度提升至 `1400px`.
+    *   [ ] 重构 `BrandHero` 为左右/非对称布局.
+
+3.  **Components**:
+    *   [ ] **Navbar**: 实现滚动侦测与玻璃态切换.
+    *   [ ] **ProjectCard**: 实现 Bento Grid 样式支持 (props: `size="large" | "medium"`).
+    *   [ ] **Footer**: 实现大字号背景装饰.
+
+4.  **Polish**:
+    *   [ ] 添加 `lenis` 或类似平滑滚动库.
+    *   [ ] 调整所有动画曲线为 `Premium Ease`.
