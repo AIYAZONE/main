@@ -236,14 +236,15 @@ const getPerformanceScore = (performance: PerformanceMetrics): number => {
 <style lang="less" scoped>
 .project-card {
   display: block;
-  background: #FFFFFF;
-  border: 1px solid #E5E7EB;
-  border-radius: 12px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: var(--color-bg-primary);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 16px; /* Larger border radius for friendly feel */
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Slower, smoother transition */
   position: relative;
   overflow: hidden;
   cursor: pointer;
   height: 100%;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
   animation: fadeInUp 0.6s ease-out;
 
   @keyframes fadeInUp {
@@ -258,13 +259,13 @@ const getPerformanceScore = (performance: PerformanceMetrics): number => {
   }
 
   &:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 40px -12px rgba(59, 130, 246, 0.25);
-    border-color: #3B82F6;
+    transform: translateY(-5px); /* Gentle float */
+    box-shadow: var(--brand-shadow-float); /* Diffuse shadow */
+    border-color: rgba(0, 0, 0, 0.05); /* Keep border subtle */
 
     .card-header .project-icon-box {
-      background-color: #EFF6FF;
-      color: #3B82F6;
+      background-color: var(--brand-primary-50);
+      color: var(--brand-primary);
       transform: scale(1.05);
     }
 
@@ -284,25 +285,25 @@ const getPerformanceScore = (performance: PerformanceMetrics): number => {
     }
 
     .project-title {
-      color: #3B82F6;
+      color: var(--brand-primary);
     }
 
     .tech-tags .tech-tag {
-      background-color: #EFF6FF;
-      color: #3B82F6;
+      background-color: var(--brand-primary-50);
+      color: var(--brand-primary);
     }
   }
 
   &.status-online {
-    border-left: 4px solid #10B981;
+    border-left: 4px solid var(--brand-success);
   }
 
   &.status-development {
-    border-left: 4px solid #F59E0B;
+    border-left: 4px solid var(--brand-warning);
   }
 
   &.status-archived {
-    border-left: 4px solid #6B7280;
+    border-left: 4px solid var(--color-text-tertiary);
   }
 
   .card-inner {
@@ -321,8 +322,8 @@ const getPerformanceScore = (performance: PerformanceMetrics): number => {
     .project-icon-box {
       width: 48px;
       height: 48px;
-      border-radius: 10px;
-      background-color: #F3F4F6;
+      border-radius: 12px;
+      background-color: var(--color-bg-tertiary);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -340,23 +341,23 @@ const getPerformanceScore = (performance: PerformanceMetrics): number => {
       .action-link {
         width: 32px;
         height: 32px;
-        border-radius: 6px;
-        background-color: #F9FAFB;
+        border-radius: 8px;
+        background-color: var(--color-bg-tertiary);
         display: flex;
         align-items: center;
         justify-content: center;
         text-decoration: none;
-        color: #6B7280;
+        color: var(--text-secondary);
         opacity: 0.7;
         transition: all 0.3s ease;
 
         &:hover {
-          background-color: #3B82F6;
+          background-color: var(--brand-primary);
           color: white;
         }
 
         &.github-link:hover {
-          background-color: #1F2937;
+          background-color: var(--brand-midnight);
         }
 
         .external-link-icon,
@@ -370,7 +371,7 @@ const getPerformanceScore = (performance: PerformanceMetrics): number => {
   .project-image {
     position: relative;
     margin-bottom: 1rem;
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
     height: 160px;
 
@@ -378,7 +379,7 @@ const getPerformanceScore = (performance: PerformanceMetrics): number => {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.3s ease;
+      transition: transform 0.5s ease; /* Slower zoom */
     }
 
     .image-overlay {
@@ -398,6 +399,7 @@ const getPerformanceScore = (performance: PerformanceMetrics): number => {
         color: white;
         font-weight: 600;
         font-size: 0.875rem;
+        font-family: var(--brand-font-primary);
       }
     }
   }
@@ -413,20 +415,22 @@ const getPerformanceScore = (performance: PerformanceMetrics): number => {
       .project-title {
         font-size: 1.25rem;
         font-weight: 700;
-        color: #111827;
+        color: var(--text-primary);
         margin-bottom: 0.5rem;
         line-height: 1.3;
+        font-family: var(--brand-font-secondary);
       }
 
       .project-category {
         .category-tag {
           display: inline-block;
           font-size: 0.75rem;
-          color: #3B82F6;
-          background-color: rgba(59, 130, 246, 0.1);
+          color: var(--brand-primary);
+          background-color: var(--brand-primary-50);
           padding: 0.25rem 0.6rem;
           border-radius: 4px;
           font-weight: 600;
+          font-family: var(--brand-font-primary);
         }
       }
     }
@@ -434,9 +438,10 @@ const getPerformanceScore = (performance: PerformanceMetrics): number => {
     .project-description {
       font-size: 0.95rem;
       line-height: 1.6;
-      color: #4B5563;
+      color: var(--text-secondary);
       margin-bottom: 1rem;
       flex: 1;
+      font-family: var(--brand-font-primary);
     }
 
     .tech-stack {
@@ -448,9 +453,10 @@ const getPerformanceScore = (performance: PerformanceMetrics): number => {
         .tech-label {
           font-size: 0.75rem;
           font-weight: 600;
-          color: #6B7280;
+          color: var(--text-tertiary);
           text-transform: uppercase;
           letter-spacing: 0.05em;
+          font-family: var(--brand-font-primary);
         }
       }
 
@@ -461,17 +467,18 @@ const getPerformanceScore = (performance: PerformanceMetrics): number => {
 
         .tech-tag {
           font-size: 0.75rem;
-          color: #374151;
-          background-color: #F3F4F6;
+          color: var(--text-secondary);
+          background-color: var(--color-bg-tertiary);
           padding: 0.25rem 0.5rem;
           border-radius: 4px;
           font-weight: 500;
+          font-family: var(--brand-font-primary);
         }
 
         .tech-more {
           font-size: 0.75rem;
-          color: #6B7280;
-          background-color: #F9FAFB;
+          color: var(--text-tertiary);
+          background-color: var(--color-bg-tertiary);
           padding: 0.25rem 0.5rem;
           border-radius: 4px;
           font-weight: 500;
@@ -488,7 +495,7 @@ const getPerformanceScore = (performance: PerformanceMetrics): number => {
         .features-label {
           font-size: 0.75rem;
           font-weight: 600;
-          color: #6B7280;
+          color: var(--text-tertiary);
           text-transform: uppercase;
           letter-spacing: 0.05em;
         }
@@ -501,14 +508,15 @@ const getPerformanceScore = (performance: PerformanceMetrics): number => {
 
         .feature-item {
           font-size: 0.875rem;
-          color: #4B5563;
+          color: var(--text-secondary);
           padding: 0.25rem 0;
           position: relative;
           padding-left: 1rem;
+          font-family: var(--brand-font-primary);
 
           &::before {
             content: '•';
-            color: #3B82F6;
+            color: var(--brand-primary);
             position: absolute;
             left: 0;
           }
@@ -522,7 +530,7 @@ const getPerformanceScore = (performance: PerformanceMetrics): number => {
     justify-content: space-between;
     align-items: center;
     padding-top: 1rem;
-    border-top: 1px solid #F3F4F6;
+    border-top: 1px solid var(--border-color);
 
     .project-status {
       display: flex;
@@ -535,25 +543,26 @@ const getPerformanceScore = (performance: PerformanceMetrics): number => {
         border-radius: 50%;
 
         &.status-online {
-          background-color: #10B981;
+          background-color: var(--brand-success);
           box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
         }
 
         &.status-development {
-          background-color: #F59E0B;
+          background-color: var(--brand-warning);
           box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2);
         }
 
         &.status-archived {
-          background-color: #6B7280;
+          background-color: var(--text-tertiary);
           box-shadow: 0 0 0 2px rgba(107, 114, 128, 0.2);
         }
       }
 
       .status-text {
         font-size: 0.75rem;
-        color: #6B7280;
+        color: var(--text-tertiary);
         font-weight: 500;
+        font-family: var(--brand-font-primary);
       }
     }
 
@@ -572,7 +581,7 @@ const getPerformanceScore = (performance: PerformanceMetrics): number => {
 
         .metric-value {
           font-size: 0.75rem;
-          color: #6B7280;
+          color: var(--text-tertiary);
           font-weight: 500;
         }
       }
@@ -583,7 +592,7 @@ const getPerformanceScore = (performance: PerformanceMetrics): number => {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    background: linear-gradient(135deg, #10B981, #059669);
+    background: linear-gradient(135deg, var(--brand-success), #059669);
     color: white;
     padding: 0.25rem 0.5rem;
     border-radius: 6px;

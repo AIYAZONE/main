@@ -58,35 +58,34 @@ export default defineComponent({
 footer {
   position: relative;
   z-index: 200;
-  /* 适当留一点上边距，让内容和 Footer 有呼吸感 */
-  padding: 1.5rem 0 2rem;
-  background-color: var(--bg-color);
+  padding: 2rem 0;
+  background-color: var(--color-bg-primary);
 
   .footer-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 0.75rem;
-    border-top: 1px solid var(--border-color);
+    padding-top: 1rem;
+    border-top: 1px solid rgba(229, 231, 235, 0.3);
 
     .copyright {
       p {
-        font-family: var(--font-sans);
+        font-family: var(--brand-font-primary);
         font-size: 0.85rem;
-        color: var(--text-secondary);
+        color: #999999;
       }
     }
 
     .legal {
       font-size: 0.85rem;
-      color: var(--text-secondary);
+      color: #999999;
 
       a {
-        color: var(--text-secondary);
+        color: #999999;
         transition: color 0.3s ease;
 
         &:hover {
-          color: var(--accent-gold);
+          color: var(--brand-primary);
         }
       }
 

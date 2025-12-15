@@ -282,9 +282,12 @@ onUnmounted(() => {
 .main-navigation {
   position: sticky;
   top: 0;
-  background: #ffffff;
-  border-bottom: 1px solid #e5e7eb;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(229, 231, 235, 0.5);
   z-index: 100;
+  transition: all 0.3s ease;
 
   .nav-container {
     max-width: 1200px;
@@ -314,10 +317,10 @@ onUnmounted(() => {
       }
 
       .brand-text {
-        font-family: 'Playfair Display', serif;
+        font-family: var(--brand-font-secondary);
         font-size: 1.5rem;
         font-weight: 700;
-        color: #1a1a1a;
+        color: var(--brand-midnight);
       }
 
       &:hover {

@@ -2,22 +2,25 @@
 
 :root {
   /* 品牌主色调 - Brand Primary Colors */
-  --brand-primary: #3b82f6;        /* 主品牌蓝 - Professional Blue */
-  --brand-primary-light: #60a5fa;  /* 浅蓝 - Light Blue */
-  --brand-primary-dark: #1d4ed8;   /* 深蓝 - Dark Blue */
+  --brand-primary: #3b82f6; /* 主品牌蓝 - Professional Blue */
+  --brand-primary-light: #60a5fa; /* 浅蓝 - Light Blue */
+  --brand-primary-dark: #1d4ed8; /* 深蓝 - Dark Blue */
+  --brand-midnight: #1f2937; /* 深邃蓝 - Midnight Blue */
   --brand-primary-50: rgba(59, 130, 246, 0.05);
   --brand-primary-100: rgba(59, 130, 246, 0.1);
   --brand-primary-200: rgba(59, 130, 246, 0.2);
   --brand-primary-300: rgba(59, 130, 246, 0.3);
 
   /* 品牌辅助色 - Brand Secondary Colors */
-  --brand-secondary: #64748b;      /* 专业灰 - Professional Gray */
-  --brand-accent: #10b981;         /* 成功绿 - Success Green */
-  --brand-warning: #f59e0b;        /* 警告橙 - Warning Orange */
-  --brand-error: #ef4444;          /* 错误红 - Error Red */
+  --brand-secondary: #64748b; /* 专业灰 - Professional Gray */
+  --brand-accent: #d4af37; /* 香槟金 - Champagne Gold */
+  --brand-success: #10b981; /* 极光绿 - Aurora Green */
+  --brand-warning: #f59e0b; /* 警告橙 - Warning Orange */
+  --brand-error: #ef4444; /* 错误红 - Error Red */
 
   /* 品牌中性色 - Brand Neutral Colors */
-  --brand-gray-50: #f8fafc;
+  --brand-gray-50: #f8f9fb; /* 迷雾灰 - Mist Gray */
+  --brand-bg-glow: rgba(59, 130, 246, 0.05); /* 光晕 */
   --brand-gray-100: #f1f5f9;
   --brand-gray-200: #e2e8f0;
   --brand-gray-300: #cbd5e1;
@@ -29,21 +32,24 @@
   --brand-gray-900: #0f172a;
 
   /* 品牌字体 - Brand Typography */
-  --brand-font-primary: 'Lato', system-ui, -apple-system, sans-serif;
-  --brand-font-secondary: 'Playfair Display', 'Noto Serif SC', serif;
-  --brand-font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --brand-font-primary: "Lato", system-ui, -apple-system, sans-serif;
+  --brand-font-secondary: "Playfair Display", "Noto Serif SC", serif;
+  --brand-font-mono: "JetBrains Mono", "Fira Code", monospace;
+
+  /* 品牌排版 - Typography Extras */
+  --brand-tracking-wide: 0.15em;
 
   /* 字体大小系统 - Typography Scale */
-  --brand-text-xs: 0.75rem;        /* 12px */
-  --brand-text-sm: 0.875rem;       /* 14px */
-  --brand-text-base: 1rem;         /* 16px */
-  --brand-text-lg: 1.125rem;       /* 18px */
-  --brand-text-xl: 1.25rem;        /* 20px */
-  --brand-text-2xl: 1.5rem;        /* 24px */
-  --brand-text-3xl: 1.875rem;      /* 30px */
-  --brand-text-4xl: 2.25rem;       /* 36px */
-  --brand-text-5xl: 3rem;          /* 48px */
-  --brand-text-6xl: 3.75rem;       /* 60px */
+  --brand-text-xs: 0.75rem; /* 12px */
+  --brand-text-sm: 0.875rem; /* 14px */
+  --brand-text-base: 1rem; /* 16px */
+  --brand-text-lg: 1.125rem; /* 18px */
+  --brand-text-xl: 1.25rem; /* 20px */
+  --brand-text-2xl: 1.5rem; /* 24px */
+  --brand-text-3xl: 1.875rem; /* 30px */
+  --brand-text-4xl: 2.25rem; /* 36px */
+  --brand-text-5xl: 3rem; /* 48px */
+  --brand-text-6xl: 3.75rem; /* 60px */
 
   /* 字重系统 - Font Weight Scale */
   --brand-weight-light: 300;
@@ -62,37 +68,41 @@
 
   /* 间距系统 - Spacing Scale */
   --brand-space-0: 0;
-  --brand-space-1: 0.25rem;        /* 4px */
-  --brand-space-2: 0.5rem;         /* 8px */
-  --brand-space-3: 0.75rem;        /* 12px */
-  --brand-space-4: 1rem;           /* 16px */
-  --brand-space-5: 1.25rem;        /* 20px */
-  --brand-space-6: 1.5rem;         /* 24px */
-  --brand-space-8: 2rem;           /* 32px */
-  --brand-space-10: 2.5rem;        /* 40px */
-  --brand-space-12: 3rem;          /* 48px */
-  --brand-space-16: 4rem;          /* 64px */
-  --brand-space-20: 5rem;          /* 80px */
-  --brand-space-24: 6rem;          /* 96px */
+  --brand-space-1: 0.25rem; /* 4px */
+  --brand-space-2: 0.5rem; /* 8px */
+  --brand-space-3: 0.75rem; /* 12px */
+  --brand-space-4: 1rem; /* 16px */
+  --brand-space-5: 1.25rem; /* 20px */
+  --brand-space-6: 1.5rem; /* 24px */
+  --brand-space-8: 2rem; /* 32px */
+  --brand-space-10: 2.5rem; /* 40px */
+  --brand-space-12: 3rem; /* 48px */
+  --brand-space-16: 4rem; /* 64px */
+  --brand-space-20: 5rem; /* 80px */
+  --brand-space-24: 6rem; /* 96px */
 
   /* 圆角系统 - Border Radius Scale */
   --brand-radius-none: 0;
-  --brand-radius-sm: 0.125rem;     /* 2px */
-  --brand-radius-base: 0.25rem;    /* 4px */
-  --brand-radius-md: 0.375rem;     /* 6px */
-  --brand-radius-lg: 0.5rem;       /* 8px */
-  --brand-radius-xl: 0.75rem;      /* 12px */
-  --brand-radius-2xl: 1rem;        /* 16px */
-  --brand-radius-3xl: 1.5rem;      /* 24px */
+  --brand-radius-sm: 0.125rem; /* 2px */
+  --brand-radius-base: 0.25rem; /* 4px */
+  --brand-radius-md: 0.375rem; /* 6px */
+  --brand-radius-lg: 0.5rem; /* 8px */
+  --brand-radius-xl: 0.75rem; /* 12px */
+  --brand-radius-2xl: 1rem; /* 16px */
+  --brand-radius-3xl: 1.5rem; /* 24px */
   --brand-radius-full: 9999px;
 
   /* 阴影系统 - Shadow Scale */
   --brand-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --brand-shadow-base: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   --brand-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --brand-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --brand-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --brand-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --brand-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
   --brand-shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --brand-shadow-float: 0 20px 50px rgba(0, 0, 0, 0.1);
+  --brand-shadow-avatar: 0 12px 40px rgba(0, 0, 0, 0.15);
 
   /* 品牌特定阴影 */
   --brand-shadow-primary: 0 4px 14px 0 rgba(59, 130, 246, 0.2);
@@ -189,97 +199,249 @@
 }
 
 /* 品牌文本大小类 - Brand Text Size Classes */
-.brand-text-xs { font-size: var(--brand-text-xs); }
-.brand-text-sm { font-size: var(--brand-text-sm); }
-.brand-text-base { font-size: var(--brand-text-base); }
-.brand-text-lg { font-size: var(--brand-text-lg); }
-.brand-text-xl { font-size: var(--brand-text-xl); }
-.brand-text-2xl { font-size: var(--brand-text-2xl); }
-.brand-text-3xl { font-size: var(--brand-text-3xl); }
-.brand-text-4xl { font-size: var(--brand-text-4xl); }
-.brand-text-5xl { font-size: var(--brand-text-5xl); }
-.brand-text-6xl { font-size: var(--brand-text-6xl); }
+.brand-text-xs {
+  font-size: var(--brand-text-xs);
+}
+.brand-text-sm {
+  font-size: var(--brand-text-sm);
+}
+.brand-text-base {
+  font-size: var(--brand-text-base);
+}
+.brand-text-lg {
+  font-size: var(--brand-text-lg);
+}
+.brand-text-xl {
+  font-size: var(--brand-text-xl);
+}
+.brand-text-2xl {
+  font-size: var(--brand-text-2xl);
+}
+.brand-text-3xl {
+  font-size: var(--brand-text-3xl);
+}
+.brand-text-4xl {
+  font-size: var(--brand-text-4xl);
+}
+.brand-text-5xl {
+  font-size: var(--brand-text-5xl);
+}
+.brand-text-6xl {
+  font-size: var(--brand-text-6xl);
+}
 
 /* 品牌字重类 - Brand Font Weight Classes */
-.brand-weight-light { font-weight: var(--brand-weight-light); }
-.brand-weight-normal { font-weight: var(--brand-weight-normal); }
-.brand-weight-medium { font-weight: var(--brand-weight-medium); }
-.brand-weight-semibold { font-weight: var(--brand-weight-semibold); }
-.brand-weight-bold { font-weight: var(--brand-weight-bold); }
-.brand-weight-extrabold { font-weight: var(--brand-weight-extrabold); }
+.brand-weight-light {
+  font-weight: var(--brand-weight-light);
+}
+.brand-weight-normal {
+  font-weight: var(--brand-weight-normal);
+}
+.brand-weight-medium {
+  font-weight: var(--brand-weight-medium);
+}
+.brand-weight-semibold {
+  font-weight: var(--brand-weight-semibold);
+}
+.brand-weight-bold {
+  font-weight: var(--brand-weight-bold);
+}
+.brand-weight-extrabold {
+  font-weight: var(--brand-weight-extrabold);
+}
 
 /* 品牌颜色类 - Brand Color Classes */
-.brand-text-primary { color: var(--brand-primary); }
-.brand-text-secondary { color: var(--brand-secondary); }
-.brand-text-accent { color: var(--brand-accent); }
-.brand-text-warning { color: var(--brand-warning); }
-.brand-text-error { color: var(--brand-error); }
+.brand-text-primary {
+  color: var(--brand-primary);
+}
+.brand-text-secondary {
+  color: var(--brand-secondary);
+}
+.brand-text-accent {
+  color: var(--brand-accent);
+}
+.brand-text-warning {
+  color: var(--brand-warning);
+}
+.brand-text-error {
+  color: var(--brand-error);
+}
 
-.brand-bg-primary { background-color: var(--brand-primary); }
-.brand-bg-secondary { background-color: var(--brand-secondary); }
-.brand-bg-accent { background-color: var(--brand-accent); }
-.brand-bg-warning { background-color: var(--brand-warning); }
-.brand-bg-error { background-color: var(--brand-error); }
+.brand-bg-primary {
+  background-color: var(--brand-primary);
+}
+.brand-bg-secondary {
+  background-color: var(--brand-secondary);
+}
+.brand-bg-accent {
+  background-color: var(--brand-accent);
+}
+.brand-bg-warning {
+  background-color: var(--brand-warning);
+}
+.brand-bg-error {
+  background-color: var(--brand-error);
+}
 
 /* 品牌边框类 - Brand Border Classes */
-.brand-border-primary { border-color: var(--brand-primary); }
-.brand-border-secondary { border-color: var(--brand-secondary); }
-.brand-border-accent { border-color: var(--brand-accent); }
-.brand-border-warning { border-color: var(--brand-warning); }
-.brand-border-error { border-color: var(--brand-error); }
+.brand-border-primary {
+  border-color: var(--brand-primary);
+}
+.brand-border-secondary {
+  border-color: var(--brand-secondary);
+}
+.brand-border-accent {
+  border-color: var(--brand-accent);
+}
+.brand-border-warning {
+  border-color: var(--brand-warning);
+}
+.brand-border-error {
+  border-color: var(--brand-error);
+}
 
 /* 品牌阴影类 - Brand Shadow Classes */
-.brand-shadow-sm { box-shadow: var(--brand-shadow-sm); }
-.brand-shadow-base { box-shadow: var(--brand-shadow-base); }
-.brand-shadow-md { box-shadow: var(--brand-shadow-md); }
-.brand-shadow-lg { box-shadow: var(--brand-shadow-lg); }
-.brand-shadow-xl { box-shadow: var(--brand-shadow-xl); }
-.brand-shadow-2xl { box-shadow: var(--brand-shadow-2xl); }
+.brand-shadow-sm {
+  box-shadow: var(--brand-shadow-sm);
+}
+.brand-shadow-base {
+  box-shadow: var(--brand-shadow-base);
+}
+.brand-shadow-md {
+  box-shadow: var(--brand-shadow-md);
+}
+.brand-shadow-lg {
+  box-shadow: var(--brand-shadow-lg);
+}
+.brand-shadow-xl {
+  box-shadow: var(--brand-shadow-xl);
+}
+.brand-shadow-2xl {
+  box-shadow: var(--brand-shadow-2xl);
+}
 
-.brand-shadow-primary { box-shadow: var(--brand-shadow-primary); }
-.brand-shadow-success { box-shadow: var(--brand-shadow-success); }
-.brand-shadow-warning { box-shadow: var(--brand-shadow-warning); }
-.brand-shadow-error { box-shadow: var(--brand-shadow-error); }
+.brand-shadow-primary {
+  box-shadow: var(--brand-shadow-primary);
+}
+.brand-shadow-success {
+  box-shadow: var(--brand-shadow-success);
+}
+.brand-shadow-warning {
+  box-shadow: var(--brand-shadow-warning);
+}
+.brand-shadow-error {
+  box-shadow: var(--brand-shadow-error);
+}
 
 /* 品牌圆角类 - Brand Border Radius Classes */
-.brand-radius-none { border-radius: var(--brand-radius-none); }
-.brand-radius-sm { border-radius: var(--brand-radius-sm); }
-.brand-radius-base { border-radius: var(--brand-radius-base); }
-.brand-radius-md { border-radius: var(--brand-radius-md); }
-.brand-radius-lg { border-radius: var(--brand-radius-lg); }
-.brand-radius-xl { border-radius: var(--brand-radius-xl); }
-.brand-radius-2xl { border-radius: var(--brand-radius-2xl); }
-.brand-radius-3xl { border-radius: var(--brand-radius-3xl); }
-.brand-radius-full { border-radius: var(--brand-radius-full); }
+.brand-radius-none {
+  border-radius: var(--brand-radius-none);
+}
+.brand-radius-sm {
+  border-radius: var(--brand-radius-sm);
+}
+.brand-radius-base {
+  border-radius: var(--brand-radius-base);
+}
+.brand-radius-md {
+  border-radius: var(--brand-radius-md);
+}
+.brand-radius-lg {
+  border-radius: var(--brand-radius-lg);
+}
+.brand-radius-xl {
+  border-radius: var(--brand-radius-xl);
+}
+.brand-radius-2xl {
+  border-radius: var(--brand-radius-2xl);
+}
+.brand-radius-3xl {
+  border-radius: var(--brand-radius-3xl);
+}
+.brand-radius-full {
+  border-radius: var(--brand-radius-full);
+}
 
 /* 品牌间距类 - Brand Spacing Classes */
-.brand-p-0 { padding: var(--brand-space-0); }
-.brand-p-1 { padding: var(--brand-space-1); }
-.brand-p-2 { padding: var(--brand-space-2); }
-.brand-p-3 { padding: var(--brand-space-3); }
-.brand-p-4 { padding: var(--brand-space-4); }
-.brand-p-5 { padding: var(--brand-space-5); }
-.brand-p-6 { padding: var(--brand-space-6); }
-.brand-p-8 { padding: var(--brand-space-8); }
-.brand-p-10 { padding: var(--brand-space-10); }
-.brand-p-12 { padding: var(--brand-space-12); }
-.brand-p-16 { padding: var(--brand-space-16); }
-.brand-p-20 { padding: var(--brand-space-20); }
-.brand-p-24 { padding: var(--brand-space-24); }
+.brand-p-0 {
+  padding: var(--brand-space-0);
+}
+.brand-p-1 {
+  padding: var(--brand-space-1);
+}
+.brand-p-2 {
+  padding: var(--brand-space-2);
+}
+.brand-p-3 {
+  padding: var(--brand-space-3);
+}
+.brand-p-4 {
+  padding: var(--brand-space-4);
+}
+.brand-p-5 {
+  padding: var(--brand-space-5);
+}
+.brand-p-6 {
+  padding: var(--brand-space-6);
+}
+.brand-p-8 {
+  padding: var(--brand-space-8);
+}
+.brand-p-10 {
+  padding: var(--brand-space-10);
+}
+.brand-p-12 {
+  padding: var(--brand-space-12);
+}
+.brand-p-16 {
+  padding: var(--brand-space-16);
+}
+.brand-p-20 {
+  padding: var(--brand-space-20);
+}
+.brand-p-24 {
+  padding: var(--brand-space-24);
+}
 
-.brand-m-0 { margin: var(--brand-space-0); }
-.brand-m-1 { margin: var(--brand-space-1); }
-.brand-m-2 { margin: var(--brand-space-2); }
-.brand-m-3 { margin: var(--brand-space-3); }
-.brand-m-4 { margin: var(--brand-space-4); }
-.brand-m-5 { margin: var(--brand-space-5); }
-.brand-m-6 { margin: var(--brand-space-6); }
-.brand-m-8 { margin: var(--brand-space-8); }
-.brand-m-10 { margin: var(--brand-space-10); }
-.brand-m-12 { margin: var(--brand-space-12); }
-.brand-m-16 { margin: var(--brand-space-16); }
-.brand-m-20 { margin: var(--brand-space-20); }
-.brand-m-24 { margin: var(--brand-space-24); }
+.brand-m-0 {
+  margin: var(--brand-space-0);
+}
+.brand-m-1 {
+  margin: var(--brand-space-1);
+}
+.brand-m-2 {
+  margin: var(--brand-space-2);
+}
+.brand-m-3 {
+  margin: var(--brand-space-3);
+}
+.brand-m-4 {
+  margin: var(--brand-space-4);
+}
+.brand-m-5 {
+  margin: var(--brand-space-5);
+}
+.brand-m-6 {
+  margin: var(--brand-space-6);
+}
+.brand-m-8 {
+  margin: var(--brand-space-8);
+}
+.brand-m-10 {
+  margin: var(--brand-space-10);
+}
+.brand-m-12 {
+  margin: var(--brand-space-12);
+}
+.brand-m-16 {
+  margin: var(--brand-space-16);
+}
+.brand-m-20 {
+  margin: var(--brand-space-20);
+}
+.brand-m-24 {
+  margin: var(--brand-space-24);
+}
 
 /* 品牌Logo样式 - Brand Logo Styles */
 .brand-logo {
@@ -296,11 +458,21 @@
   transform: scale(1.05);
 }
 
-.brand-logo--xs { font-size: var(--brand-logo-xs); }
-.brand-logo--sm { font-size: var(--brand-logo-sm); }
-.brand-logo--md { font-size: var(--brand-logo-md); }
-.brand-logo--lg { font-size: var(--brand-logo-lg); }
-.brand-logo--xl { font-size: var(--brand-logo-xl); }
+.brand-logo--xs {
+  font-size: var(--brand-logo-xs);
+}
+.brand-logo--sm {
+  font-size: var(--brand-logo-sm);
+}
+.brand-logo--md {
+  font-size: var(--brand-logo-md);
+}
+.brand-logo--lg {
+  font-size: var(--brand-logo-lg);
+}
+.brand-logo--xl {
+  font-size: var(--brand-logo-xl);
+}
 
 /* 品牌按钮样式 - Brand Button Styles */
 .brand-button {

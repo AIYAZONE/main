@@ -1,0 +1,93 @@
+@import './brand-identity.css';
+
+/* Global Reset & Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--brand-font-primary);
+  color: var(--text-primary);
+  background-color: var(--bg-secondary);
+  line-height: var(--brand-leading-relaxed);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography Hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--brand-font-secondary);
+  color: var(--text-primary);
+  font-weight: var(--brand-weight-bold);
+  line-height: var(--brand-leading-tight);
+}
+
+/* Links */
+a {
+  color: var(--brand-primary);
+  text-decoration: none;
+  transition: color var(--brand-transition-base);
+
+  &:hover {
+    color: var(--brand-primary-dark);
+  }
+}
+
+/* Utility Classes for Intellectual Minimalism */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--brand-midnight) 0%, var(--brand-primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gold {
+  color: var(--brand-accent);
+}
+
+/* Layout Utilities */
+.middle-box {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+.section-spacing {
+  padding: 6rem 0;
+  
+  @media (min-width: 768px) {
+    padding: 8rem 0;
+  }
+}
+
+/* Image Utilities */
+.img-overlay {
+  position: relative;
+  overflow: hidden;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.03);
+    transition: background var(--brand-transition-base);
+    pointer-events: none;
+  }
+  
+  &:hover::after {
+    background: transparent;
+  }
+}

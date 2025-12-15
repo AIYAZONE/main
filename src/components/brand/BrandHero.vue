@@ -93,7 +93,7 @@ const getCertificationAbbr = (certName: string): string => {
 .brand-hero {
   padding: 8rem 0 6rem;
   text-align: center;
-  background: linear-gradient(135deg, #F8F9FB 0%, #FFFFFF 100%);
+  background: linear-gradient(135deg, var(--brand-gray-50) 0%, #FFFFFF 100%);
   position: relative;
   
   &::before {
@@ -103,7 +103,7 @@ const getCertificationAbbr = (certName: string): string => {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 30% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
+    background: radial-gradient(circle at 30% 20%, var(--brand-bg-glow) 0%, transparent 50%);
     pointer-events: none;
   }
   
@@ -123,25 +123,25 @@ const getCertificationAbbr = (certName: string): string => {
         border-radius: 50%;
         object-fit: cover;
         border: 4px solid #FFFFFF;
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        box-shadow: var(--brand-shadow-avatar);
         transition: all 0.3s ease;
         
         &:hover {
           transform: scale(1.05);
-          box-shadow: 0 16px 50px rgba(59, 130, 246, 0.2);
+          box-shadow: var(--brand-shadow-float);
         }
       }
     }
     
     .hero-title {
-      font-family: var(--font-serif);
+      font-family: var(--brand-font-secondary);
       font-size: 5rem;
       font-weight: 700;
       letter-spacing: -0.02em;
       margin-bottom: 2rem;
       line-height: 1.1;
       color: var(--text-primary);
-      background: linear-gradient(135deg, #1F2937 0%, #3B82F6 100%);
+      background: linear-gradient(135deg, var(--brand-midnight) 0%, var(--brand-primary) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -150,13 +150,13 @@ const getCertificationAbbr = (certName: string): string => {
     .hero-divider {
       width: 80px;
       height: 4px;
-      background: linear-gradient(90deg, var(--accent-gold) 0%, #3B82F6 100%);
+      background: linear-gradient(90deg, var(--brand-accent) 0%, var(--brand-primary) 100%);
       margin: 0 auto 2.5rem;
       border-radius: 2px;
     }
     
     .hero-subtitle {
-      font-family: var(--font-sans);
+      font-family: var(--brand-font-primary);
       font-size: 1.25rem;
       font-weight: 500;
       text-transform: uppercase;
@@ -167,7 +167,7 @@ const getCertificationAbbr = (certName: string): string => {
     }
     
     .hero-intro {
-      font-family: var(--font-serif);
+      font-family: var(--brand-font-secondary);
       font-size: 1.4rem;
       line-height: 1.8;
       color: var(--text-primary);
