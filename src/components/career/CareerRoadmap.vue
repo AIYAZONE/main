@@ -1,38 +1,38 @@
 <template>
   <div class="career-roadmap">
     <div class="roadmap-header">
-      <h2 class="roadmap-title">{{ roadmapData?.title || $t('career.roadmap.title') }}</h2>
-      <p class="roadmap-description">{{ roadmapData?.description || $t('career.roadmap.description') }}</p>
+      <h2 class="roadmap-title">{{ displayRoadmapData?.title || $t('career.roadmap.title') }}</h2>
+      <p class="roadmap-description">{{ displayRoadmapData?.description || $t('career.roadmap.description') }}</p>
       
       <div class="roadmap-overview">
         <div class="overview-item">
           <span class="overview-label">{{ $t('career.roadmap.targetRole') }}</span>
-          <span class="overview-value">{{ roadmapData?.targetRole }}</span>
+          <span class="overview-value">{{ displayRoadmapData?.targetRole }}</span>
         </div>
         <div class="overview-item">
           <span class="overview-label">{{ $t('career.roadmap.targetSalary') }}</span>
-          <span class="overview-value">{{ roadmapData?.targetSalaryRange }}</span>
+          <span class="overview-value">{{ displayRoadmapData?.targetSalaryRange }}</span>
         </div>
         <div class="overview-item">
           <span class="overview-label">{{ $t('career.roadmap.currentPhase') }}</span>
-          <span class="overview-value">{{ getCurrentPhaseName() }}</span>
+          <span class="overview-value">{{ currentPhaseName }}</span>
         </div>
       </div>
     </div>
 
-    <div class="roadmap-timeline" v-if="phases && phases.length > 0">
+    <div class="roadmap-timeline" v-if="displayPhases && displayPhases.length > 0">
       <div class="timeline-container">
         <div class="timeline-line"></div>
         
         <div 
-          v-for="(phase, index) in phases" 
+          v-for="(phase, index) in displayPhases" 
           :key="phase.id"
           :class="[
             'timeline-phase',
             { 
-              'active': index === currentPhase,
-              'completed': index < currentPhase,
-              'upcoming': index > currentPhase
+              'active': index === displayCurrentPhase,
+              'completed': index < displayCurrentPhase,
+              'upcoming': index > displayCurrentPhase
             }
           ]"
         >
@@ -172,7 +172,7 @@
       </div>
     </div>
 
-    <div class="roadmap-progress" v-if="phases && phases.length > 0">
+    <div class="roadmap-progress" v-if="displayPhases && displayPhases.length > 0">
       <h3>{{ $t('career.roadmap.progress') }}</h3>
       <div class="progress-overview">
         <div class="progress-bar">
@@ -186,7 +186,7 @@
       
       <div class="progress-phases">
         <div 
-          v-for="(phase, index) in phases" 
+          v-for="(phase, index) in displayPhases" 
           :key="phase.id"
           class="progress-phase"
         >
@@ -205,14 +205,15 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed, onMounted } from 'vue';
 import { useI18n } from 'vue-i18n';
+import { useCareerStore } from '../../stores/careerStore';
 import type { RoadmapData, RoadmapPhase } from '../../types/career';
 
 interface Props {
-  roadmapData: RoadmapData | null;
-  phases: RoadmapPhase[];
-  currentPhase: number;
+  roadmapData?: RoadmapData | null;
+  phases?: RoadmapPhase[];
+  currentPhase?: number;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -221,6 +222,28 @@ const props = withDefaults(defineProps<Props>(), {
 });
 
 const { t } = useI18n();
+const careerStore = useCareerStore();
+
+onMounted(() => {
+  if (!careerStore.roadmapData) {
+    careerStore.loadCareerData();
+  }
+});
+
+// Computed properties to handle data source (Props priority > Store fallback)
+const displayRoadmapData = computed(() => props.roadmapData || careerStore.roadmapData);
+
+const displayPhases = computed(() => {
+  if (props.phases && props.phases.length > 0) return props.phases;
+  return displayRoadmapData.value?.phases || [];
+});
+
+const displayCurrentPhase = computed(() => {
+  // If roadmapData is provided via props, trust the currentPhase prop (even if 0)
+  if (props.roadmapData) return props.currentPhase;
+  // Otherwise use the store's currentPhase
+  return displayRoadmapData.value?.currentPhase || 0;
+});
 
 const formatDate = (date: Date) => {
   return new Intl.DateTimeFormat('zh-CN', {
@@ -230,18 +253,22 @@ const formatDate = (date: Date) => {
   }).format(date);
 };
 
-const getCurrentPhaseName = () => {
-  if (props.phases && props.phases[props.currentPhase]) {
-    return props.phases[props.currentPhase].name;
+const currentPhaseName = computed(() => {
+  const phases = displayPhases.value;
+  const current = displayCurrentPhase.value;
+  if (phases && phases[current]) {
+    return phases[current].name;
   }
   return t('career.roadmap.notStarted');
-};
+});
 
 const getPhaseProgress = (phaseIndex: number): number => {
-  if (phaseIndex < props.currentPhase) {
+  const current = displayCurrentPhase.value;
+  
+  if (phaseIndex < current) {
     return 100;
-  } else if (phaseIndex === props.currentPhase) {
-    const phase = props.phases[phaseIndex];
+  } else if (phaseIndex === current) {
+    const phase = displayPhases.value[phaseIndex];
     if (!phase || !phase.keyMilestones.length) return 0;
     
     const completedMilestones = phase.keyMilestones.filter(m => m.completed).length;
@@ -252,11 +279,12 @@ const getPhaseProgress = (phaseIndex: number): number => {
 };
 
 const getOverallProgress = (): number => {
-  if (!props.phases.length) return 0;
+  const phases = displayPhases.value;
+  if (!phases.length) return 0;
   
-  const totalPhases = props.phases.length;
-  const completedPhases = props.currentPhase;
-  const currentPhaseProgress = getPhaseProgress(props.currentPhase) / 100;
+  const totalPhases = phases.length;
+  const completedPhases = displayCurrentPhase.value;
+  const currentPhaseProgress = getPhaseProgress(completedPhases) / 100;
   
   return Math.round(((completedPhases + currentPhaseProgress) / totalPhases) * 100);
 };
