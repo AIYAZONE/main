@@ -5,7 +5,7 @@
     @click="handleCardClick"
   >
     <div class="card-inner">
-      <!-- Card Header -->
+      <!-- Card Header (Icons & Actions) -->
       <div class="card-header">
         <div class="project-icon-box">
           <span class="project-icon">{{ getProjectIcon(project.category) }}</span>
@@ -47,7 +47,7 @@
           @error="handleImageError"
         />
         <div class="image-overlay">
-          <span class="view-project">{{ $t('portfolio.viewProject') }}</span>
+          <span class="view-btn">VIEW</span>
         </div>
       </div>
 
@@ -64,9 +64,6 @@
 
         <!-- Tech Stack -->
         <div class="tech-stack" v-if="project.techStack.length > 0">
-          <div class="tech-stack-header">
-            <span class="tech-label">{{ $t('portfolio.techStack') }}</span>
-          </div>
           <div class="tech-tags">
             <span 
               v-for="tech in displayedTechStack" 
@@ -83,22 +80,6 @@
             </span>
           </div>
         </div>
-
-        <!-- Features (shown when showDetails is true) -->
-        <div class="project-features" v-if="showDetails && project.features.length > 0">
-          <div class="features-header">
-            <span class="features-label">{{ $t('portfolio.keyFeatures') }}</span>
-          </div>
-          <ul class="features-list">
-            <li 
-              v-for="feature in displayedFeatures" 
-              :key="feature" 
-              class="feature-item"
-            >
-              {{ feature }}
-            </li>
-          </ul>
-        </div>
       </div>
 
       <!-- Card Footer -->
@@ -110,31 +91,11 @@
 
         <!-- Project Metrics -->
         <div class="project-metrics" v-if="project.metrics">
-          <div class="metric" v-if="project.metrics.stars" :title="$t('portfolio.githubStars')">
+          <div class="metric" v-if="project.metrics.stars">
             <span class="metric-icon">⭐</span>
             <span class="metric-value">{{ formatNumber(project.metrics.stars) }}</span>
           </div>
-          
-          <div class="metric" v-if="project.metrics.visitors" :title="$t('portfolio.totalVisitors')">
-            <span class="metric-icon">👁️</span>
-            <span class="metric-value">{{ formatNumber(project.metrics.visitors) }}</span>
-          </div>
-          
-          <div class="metric" v-if="project.metrics.forks" :title="$t('portfolio.githubForks')">
-            <span class="metric-icon">🔀</span>
-            <span class="metric-value">{{ formatNumber(project.metrics.forks) }}</span>
-          </div>
         </div>
-      </div>
-
-      <!-- Performance Badge (if available) -->
-      <div 
-        class="performance-badge" 
-        v-if="project.metrics?.performance && showDetails"
-        :title="$t('portfolio.performanceScore')"
-      >
-        <span class="perf-icon">⚡</span>
-        <span class="perf-score">{{ getPerformanceScore(project.metrics.performance) }}</span>
       </div>
     </div>
   </div>
@@ -172,10 +133,6 @@ const { t } = useI18n();
 // Computed properties
 const displayedTechStack = computed(() => {
   return props.project.techStack.slice(0, props.maxDisplayedTech);
-});
-
-const displayedFeatures = computed(() => {
-  return props.project.features.slice(0, props.maxDisplayedFeatures);
 });
 
 // Methods
@@ -221,89 +178,42 @@ const formatNumber = (num: number): string => {
   }
   return num.toString();
 };
-
-const getPerformanceScore = (performance: PerformanceMetrics): number => {
-  // Calculate a simple performance score based on load time and other metrics
-  const loadTimeScore = Math.max(0, 100 - (performance.loadTime / 50));
-  const fcpScore = Math.max(0, 100 - (performance.firstContentfulPaint / 30));
-  const lcpScore = Math.max(0, 100 - (performance.largestContentfulPaint / 50));
-  const clsScore = Math.max(0, 100 - (performance.cumulativeLayoutShift * 100));
-  
-  return Math.round((loadTimeScore + fcpScore + lcpScore + clsScore) / 4);
-};
 </script>
 
 <style lang="less" scoped>
 .project-card {
   display: block;
-  background: var(--color-bg-primary);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  border-radius: 16px; /* Larger border radius for friendly feel */
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Slower, smoother transition */
+  background: var(--brand-canvas-day);
+  border: 1px solid var(--brand-border);
+  border-radius: 12px;
+  transition: all 0.4s var(--brand-ease-premium);
   position: relative;
   overflow: hidden;
   cursor: pointer;
   height: 100%;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
-  animation: fadeInUp 0.6s ease-out;
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
+  box-shadow: var(--brand-shadow-card);
+  
   &:hover {
-    transform: translateY(-5px); /* Gentle float */
-    box-shadow: var(--brand-shadow-float); /* Diffuse shadow */
-    border-color: rgba(0, 0, 0, 0.05); /* Keep border subtle */
-
-    .card-header .project-icon-box {
-      background-color: var(--brand-primary-50);
-      color: var(--brand-primary);
-      transform: scale(1.05);
-    }
-
-    .card-actions .action-link {
-      opacity: 1;
-      transform: translate(2px, -2px) scale(1.1);
-    }
+    transform: translateY(-8px);
+    box-shadow: var(--brand-shadow-float);
+    border-color: var(--brand-border-hover);
 
     .project-image {
       .project-img {
-        transform: scale(1.05);
+        transform: scale(1.03);
       }
       
       .image-overlay {
         opacity: 1;
+        .view-btn {
+          transform: scale(1);
+        }
       }
     }
 
     .project-title {
-      color: var(--brand-primary);
+      color: var(--brand-electric);
     }
-
-    .tech-tags .tech-tag {
-      background-color: var(--brand-primary-50);
-      color: var(--brand-primary);
-    }
-  }
-
-  &.status-online {
-    border-left: 4px solid var(--brand-success);
-  }
-
-  &.status-development {
-    border-left: 4px solid var(--brand-warning);
-  }
-
-  &.status-archived {
-    border-left: 4px solid var(--color-text-tertiary);
   }
 
   .card-inner {
@@ -317,20 +227,19 @@ const getPerformanceScore = (performance: PerformanceMetrics): number => {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
 
     .project-icon-box {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      background-color: var(--color-bg-tertiary);
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background-color: rgba(0,0,0,0.03);
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: all 0.3s ease;
-
+      
       .project-icon {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
       }
     }
 
@@ -341,28 +250,20 @@ const getPerformanceScore = (performance: PerformanceMetrics): number => {
       .action-link {
         width: 32px;
         height: 32px;
-        border-radius: 8px;
-        background-color: var(--color-bg-tertiary);
+        border-radius: 50%;
+        background-color: transparent;
+        border: 1px solid var(--brand-border);
         display: flex;
         align-items: center;
         justify-content: center;
         text-decoration: none;
-        color: var(--text-secondary);
-        opacity: 0.7;
+        color: var(--brand-text-tertiary);
         transition: all 0.3s ease;
 
         &:hover {
-          background-color: var(--brand-primary);
-          color: white;
-        }
-
-        &.github-link:hover {
           background-color: var(--brand-midnight);
-        }
-
-        .external-link-icon,
-        .github-icon {
-          font-size: 1rem;
+          color: white;
+          border-color: var(--brand-midnight);
         }
       }
     }
@@ -370,16 +271,17 @@ const getPerformanceScore = (performance: PerformanceMetrics): number => {
 
   .project-image {
     position: relative;
-    margin-bottom: 1rem;
-    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    border-radius: 6px;
     overflow: hidden;
-    height: 160px;
+    aspect-ratio: 16/9;
+    background: var(--brand-border);
 
     .project-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.5s ease; /* Slower zoom */
+      transition: transform 0.6s var(--brand-ease-premium);
     }
 
     .image-overlay {
@@ -388,18 +290,30 @@ const getPerformanceScore = (performance: PerformanceMetrics): number => {
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(59, 130, 246, 0.9);
+      background: rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(2px);
       display: flex;
       align-items: center;
       justify-content: center;
       opacity: 0;
       transition: opacity 0.3s ease;
 
-      .view-project {
-        color: white;
-        font-weight: 600;
-        font-size: 0.875rem;
-        font-family: var(--brand-font-primary);
+      .view-btn {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: white;
+        color: var(--brand-midnight);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--brand-font-mono);
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        transform: scale(0.8);
+        transition: transform 0.4s var(--brand-ease-bouncy);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
       }
     }
   }
@@ -413,52 +327,37 @@ const getPerformanceScore = (performance: PerformanceMetrics): number => {
       margin-bottom: 0.75rem;
 
       .project-title {
-        font-size: 1.25rem;
+        font-family: var(--brand-font-display);
+        font-size: 1.5rem;
         font-weight: 700;
-        color: var(--text-primary);
+        color: var(--brand-midnight);
         margin-bottom: 0.5rem;
-        line-height: 1.3;
-        font-family: var(--brand-font-secondary);
+        line-height: 1.2;
+        transition: color 0.3s ease;
       }
 
       .project-category {
         .category-tag {
-          display: inline-block;
-          font-size: 0.75rem;
-          color: var(--brand-primary);
-          background-color: var(--brand-primary-50);
-          padding: 0.25rem 0.6rem;
-          border-radius: 4px;
-          font-weight: 600;
-          font-family: var(--brand-font-primary);
+          font-family: var(--brand-font-mono);
+          font-size: 0.7rem;
+          color: var(--brand-text-tertiary);
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
         }
       }
     }
 
     .project-description {
+      font-family: var(--brand-font-body);
       font-size: 0.95rem;
       line-height: 1.6;
-      color: var(--text-secondary);
-      margin-bottom: 1rem;
+      color: var(--brand-text-secondary);
+      margin-bottom: 1.5rem;
       flex: 1;
-      font-family: var(--brand-font-primary);
     }
 
     .tech-stack {
-      margin-bottom: 1rem;
-
-      .tech-stack-header {
-        margin-bottom: 0.5rem;
-
-        .tech-label {
-          font-size: 0.75rem;
-          font-weight: 600;
-          color: var(--text-tertiary);
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
-          font-family: var(--brand-font-primary);
-        }
-      }
+      margin-bottom: 1.5rem;
 
       .tech-tags {
         display: flex;
@@ -466,60 +365,20 @@ const getPerformanceScore = (performance: PerformanceMetrics): number => {
         gap: 0.5rem;
 
         .tech-tag {
-          font-size: 0.75rem;
-          color: var(--text-secondary);
-          background-color: var(--color-bg-tertiary);
+          font-family: var(--brand-font-mono);
+          font-size: 0.7rem;
+          color: var(--brand-text-secondary);
+          background-color: transparent;
+          border: 1px solid var(--brand-border);
           padding: 0.25rem 0.5rem;
           border-radius: 4px;
-          font-weight: 500;
-          font-family: var(--brand-font-primary);
         }
 
         .tech-more {
-          font-size: 0.75rem;
-          color: var(--text-tertiary);
-          background-color: var(--color-bg-tertiary);
+          font-family: var(--brand-font-mono);
+          font-size: 0.7rem;
+          color: var(--brand-text-tertiary);
           padding: 0.25rem 0.5rem;
-          border-radius: 4px;
-          font-weight: 500;
-        }
-      }
-    }
-
-    .project-features {
-      margin-bottom: 1rem;
-
-      .features-header {
-        margin-bottom: 0.5rem;
-
-        .features-label {
-          font-size: 0.75rem;
-          font-weight: 600;
-          color: var(--text-tertiary);
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
-        }
-      }
-
-      .features-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-
-        .feature-item {
-          font-size: 0.875rem;
-          color: var(--text-secondary);
-          padding: 0.25rem 0;
-          position: relative;
-          padding-left: 1rem;
-          font-family: var(--brand-font-primary);
-
-          &::before {
-            content: '•';
-            color: var(--brand-primary);
-            position: absolute;
-            left: 0;
-          }
         }
       }
     }
@@ -530,7 +389,7 @@ const getPerformanceScore = (performance: PerformanceMetrics): number => {
     justify-content: space-between;
     align-items: center;
     padding-top: 1rem;
-    border-top: 1px solid var(--border-color);
+    border-top: 1px solid var(--brand-border);
 
     .project-status {
       display: flex;
@@ -538,73 +397,32 @@ const getPerformanceScore = (performance: PerformanceMetrics): number => {
       gap: 0.5rem;
 
       .status-dot {
-        width: 8px;
-        height: 8px;
+        width: 6px;
+        height: 6px;
         border-radius: 50%;
 
-        &.status-online {
-          background-color: var(--brand-success);
-          box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
-        }
-
-        &.status-development {
-          background-color: var(--brand-warning);
-          box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2);
-        }
-
-        &.status-archived {
-          background-color: var(--text-tertiary);
-          box-shadow: 0 0 0 2px rgba(107, 114, 128, 0.2);
-        }
+        &.status-online { background-color: #10B981; }
+        &.status-development { background-color: #F59E0B; }
+        &.status-archived { background-color: #9CA3AF; }
       }
 
       .status-text {
-        font-size: 0.75rem;
-        color: var(--text-tertiary);
-        font-weight: 500;
-        font-family: var(--brand-font-primary);
+        font-family: var(--brand-font-mono);
+        font-size: 0.7rem;
+        color: var(--brand-text-tertiary);
+        text-transform: uppercase;
       }
     }
 
     .project-metrics {
-      display: flex;
-      gap: 1rem;
-
       .metric {
         display: flex;
         align-items: center;
         gap: 0.25rem;
-
-        .metric-icon {
-          font-size: 0.75rem;
-        }
-
-        .metric-value {
-          font-size: 0.75rem;
-          color: var(--text-tertiary);
-          font-weight: 500;
-        }
+        font-family: var(--brand-font-mono);
+        font-size: 0.75rem;
+        color: var(--brand-text-secondary);
       }
-    }
-  }
-
-  .performance-badge {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: linear-gradient(135deg, var(--brand-success), #059669);
-    color: white;
-    padding: 0.25rem 0.5rem;
-    border-radius: 6px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
-    .perf-icon {
-      font-size: 0.75rem;
     }
   }
 }
@@ -614,15 +432,9 @@ const getPerformanceScore = (performance: PerformanceMetrics): number => {
     .card-inner {
       padding: 1.25rem;
     }
-
+    
     .project-image {
-      height: 140px;
-    }
-
-    .card-footer {
-      flex-direction: column;
-      gap: 0.75rem;
-      align-items: flex-start;
+      aspect-ratio: 16/10;
     }
   }
 }

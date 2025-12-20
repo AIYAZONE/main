@@ -1,46 +1,95 @@
 <template>
   <div class="about-view">
-    <!-- 品牌英雄区域 -->
-    <section class="hero-section">
-      <BrandHero 
-        :title="brandInfo.title"
-        :subtitle="brandInfo.subtitle"
-        :intro="brandInfo.intro"
-        :profile-image="brandInfo.profileImage"
-        :certifications="certifications"
-        :value-proposition="brandInfo.valueProposition"
-      />
+    <!-- Brand Hero Section -->
+    <section class="about-hero">
+      <div class="middle-box">
+        <div class="hero-content">
+          <div class="hero-meta">
+            <span class="meta-label">ABOUT ME</span>
+            <div class="meta-line"></div>
+          </div>
+          <h1 class="hero-title">{{ brandInfo.title }}</h1>
+          <p class="hero-subtitle">{{ brandInfo.subtitle }}</p>
+          <div class="hero-intro">{{ brandInfo.intro }}</div>
+        </div>
+      </div>
     </section>
 
-    <!-- 品牌故事 -->
+    <!-- Editorial Story Section -->
     <section class="story-section">
-      <div class="container">
-        <BrandStory 
-          :story="storyData.story"
-          :timeline="storyData.timeline"
-          :philosophy="storyData.philosophy"
-        />
+      <div class="middle-box">
+        <div class="story-grid">
+          <!-- Image Column -->
+          <div class="story-image-col">
+            <div class="image-wrapper">
+              <img src="/assets/images/mind/bruce-brand.png" alt="My Journey" class="story-img" />
+              <div class="image-caption">
+                <span class="caption-num">01</span>
+                <span class="caption-text">THE JOURNEY</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Text Column -->
+          <div class="story-text-col">
+            <h2 class="story-title">{{ t('brandStory.journey.title') }}</h2>
+            <div class="story-body">
+              <p>{{ t('brandStory.journey.content') }}</p>
+              
+              <div class="philosophy-list">
+                <div 
+                  v-for="(item, index) in storyData.philosophy" 
+                  :key="index"
+                  class="philosophy-item"
+                >
+                  <span class="item-marker"></span>
+                  <span class="item-text">{{ item }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- 技能展示 -->
+    <!-- Certifications & Skills (Magazine Style) -->
     <section class="skills-section">
-      <div class="container">
-        <SkillShowcase />
-      </div>
-    </section>
+      <div class="middle-box">
+        <div class="section-header">
+          <h2 class="section-title">EXPERTISE & <br/><span class="text-gradient-gold">CERTIFICATIONS</span></h2>
+        </div>
 
-    <!-- 认证展示 -->
-    <section class="certifications-section">
-      <div class="container">
-        <CertificationDisplay :certifications="certifications" />
-      </div>
-    </section>
+        <div class="skills-grid">
+          <!-- Certifications Column -->
+          <div class="certs-col">
+            <div class="certs-list">
+              <div 
+                v-for="cert in certifications" 
+                :key="cert.id"
+                class="cert-item"
+              >
+                <div class="cert-icon">{{ getCertificationAbbr(cert.name) }}</div>
+                <div class="cert-info">
+                  <h3 class="cert-name">{{ cert.name }}</h3>
+                  <p class="cert-org">{{ cert.issuer }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-    <!-- 职业时间线 -->
-    <section class="timeline-section">
-      <div class="container">
-        <ExperienceTimeline :experience-items="experienceItems" />
+          <!-- Skills Column -->
+          <div class="skills-col">
+            <div class="skill-tags">
+              <span 
+                v-for="(value, index) in brandInfo.valueProposition" 
+                :key="index"
+                class="skill-tag"
+              >
+                {{ value }}
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </div>
@@ -50,23 +99,15 @@
 import { onMounted, computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useBrandStore } from '../stores/brandStore';
-import { useSkillStore } from '../stores/skillStore';
-import BrandHero from '../components/brand/BrandHero.vue';
-import BrandStory from '../components/brand/BrandStory.vue';
-import SkillShowcase from '../components/skills/SkillShowcase.vue';
-import CertificationDisplay from '../components/brand/CertificationDisplay.vue';
-import ExperienceTimeline from '../components/skills/ExperienceTimeline.vue';
 
 const { t } = useI18n();
 const brandStore = useBrandStore();
-const skillStore = useSkillStore();
 
 // 品牌信息
 const brandInfo = computed(() => ({
   title: 'AIYAZONE',
   subtitle: t('brand.subtitle'),
   intro: t('brand.intro'),
-  profileImage: '/assets/images/profile.jpg',
   valueProposition: [
     t('brand.valueProposition.architecture'),
     t('brand.valueProposition.performance'),
@@ -75,29 +116,9 @@ const brandInfo = computed(() => ({
   ]
 }));
 
-// 认证信息
 const certifications = computed(() => brandStore.certifications || []);
 
-// 故事数据
 const storyData = computed(() => ({
-  story: [
-    {
-      id: '1',
-      title: t('brandStory.journey.title'),
-      content: t('brandStory.journey.content'),
-      image: '/assets/images/journey.jpg',
-      order: 1
-    }
-  ],
-  timeline: [
-    {
-      id: '1',
-      date: new Date('2014-01-01'),
-      title: t('brandStory.timeline.start'),
-      description: t('brandStory.timeline.startDesc'),
-      type: 'milestone' as const
-    }
-  ],
   philosophy: [
     t('brandStory.philosophy.technical'),
     t('brandStory.philosophy.management'),
@@ -105,16 +126,16 @@ const storyData = computed(() => ({
   ]
 }));
 
-// 经验数据
-const experienceItems = computed(() => skillStore.experienceItems || []);
+const getCertificationAbbr = (certName: string): string => {
+  if (certName.includes('PMP')) return 'PMP';
+  if (certName.includes('ACP')) return 'ACP';
+  if (certName.includes('CSM')) return 'CSM';
+  if (certName.includes('PSM')) return 'PSM';
+  return 'CERT';
+};
 
 onMounted(() => {
-  // 设置页面标题
-  document.title = `${t('nav.about')} - AIYAZONE`;
-  
-  // 加载数据
   brandStore.loadBrandInfo();
-  skillStore.loadSkillsData();
 });
 </script>
 
@@ -123,58 +144,244 @@ onMounted(() => {
   min-height: 100vh;
 }
 
-.hero-section {
-  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
-  padding: 2rem 0;
-}
-
-.story-section,
-.skills-section,
-.certifications-section,
-.timeline-section {
-  padding: 4rem 0;
-
-  &:nth-child(even) {
-    background: var(--bg-secondary);
+/* Hero Section */
+.about-hero {
+  padding: var(--brand-space-huge) 0 var(--brand-space-xl);
+  
+  .hero-content {
+    max-width: 800px;
+    
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      
+      .meta-label {
+        font-family: var(--brand-font-mono);
+        font-size: 0.75rem;
+        letter-spacing: 0.15em;
+        color: var(--brand-text-tertiary);
+      }
+      
+      .meta-line {
+        width: 60px;
+        height: 1px;
+        background: var(--brand-gold-start);
+      }
+    }
+    
+    .hero-title {
+      font-size: clamp(3rem, 5vw, 5rem);
+      margin-bottom: 1rem;
+    }
+    
+    .hero-subtitle {
+      font-family: var(--brand-font-display);
+      font-size: 1.5rem;
+      color: var(--brand-text-secondary);
+      font-style: italic;
+      margin-bottom: 2rem;
+    }
+    
+    .hero-intro {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      max-width: 600px;
+    }
   }
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-// 移动端适配
-@media screen and (max-width: 767px) {
-  .story-section,
-  .skills-section,
-  .certifications-section,
-  .timeline-section {
-    padding: 2rem 0;
+/* Story Section */
+.story-section {
+  padding: var(--brand-space-xl) 0;
+  
+  .story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--brand-space-xl);
+    align-items: center;
+    
+    .story-image-col {
+      .image-wrapper {
+        position: relative;
+        
+        .story-img {
+          width: 100%;
+          border-radius: 2px;
+          filter: grayscale(100%);
+          transition: filter 0.6s ease;
+          
+          &:hover {
+            filter: grayscale(0%);
+          }
+        }
+        
+        .image-caption {
+          position: absolute;
+          bottom: -2rem;
+          right: -2rem;
+          background: var(--brand-canvas-day);
+          padding: 1rem 2rem;
+          border: 1px solid var(--brand-border);
+          display: flex;
+          flex-direction: column;
+          
+          .caption-num {
+            font-family: var(--brand-font-display);
+            font-size: 2rem;
+            color: var(--brand-gold-start);
+          }
+          
+          .caption-text {
+            font-family: var(--brand-font-mono);
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+          }
+        }
+      }
+    }
+    
+    .story-text-col {
+      padding-left: 2rem;
+      
+      .story-title {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+      }
+      
+      .story-body {
+        font-size: 1.05rem;
+        color: var(--brand-text-secondary);
+        
+        .philosophy-list {
+          margin-top: 2rem;
+          
+          .philosophy-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            
+            .item-marker {
+              width: 6px;
+              height: 6px;
+              background: var(--brand-gold-start);
+              border-radius: 50%;
+            }
+            
+            .item-text {
+              font-family: var(--brand-font-display);
+              font-style: italic;
+              color: var(--brand-midnight);
+            }
+          }
+        }
+      }
+    }
   }
 }
 
-// 页面加载动画
-.about-view {
-  animation: fadeIn 0.6s ease-out;
+/* Skills Section */
+.skills-section {
+  padding: var(--brand-space-huge) 0;
+  
+  .section-header {
+    margin-bottom: var(--brand-space-xl);
+    
+    .section-title {
+      font-size: 3rem;
+      line-height: 1.1;
+    }
+  }
+  
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    
+    .certs-list {
+      display: grid;
+      gap: 1.5rem;
+      
+      .cert-item {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 1.5rem;
+        border: 1px solid var(--brand-border);
+        transition: all 0.3s ease;
+        
+        &:hover {
+          border-color: var(--brand-gold-start);
+          transform: translateX(10px);
+        }
+        
+        .cert-icon {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          background: var(--brand-midnight);
+          color: var(--brand-gold-start);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-family: var(--brand-font-mono);
+          font-size: 0.8rem;
+        }
+        
+        .cert-info {
+          .cert-name {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+          }
+          
+          .cert-org {
+            font-size: 0.85rem;
+            color: var(--brand-text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+          }
+        }
+      }
+    }
+    
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-content: flex-start;
+      
+      .skill-tag {
+        font-family: var(--brand-font-mono);
+        font-size: 0.9rem;
+        padding: 0.75rem 1.5rem;
+        border: 1px solid var(--brand-border);
+        color: var(--brand-text-secondary);
+        
+        &:hover {
+          background: var(--brand-midnight);
+          color: white;
+          border-color: var(--brand-midnight);
+        }
+      }
+    }
+  }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+@media screen and (max-width: 768px) {
+  .story-section .story-grid,
+  .skills-section .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  
+  .story-text-col {
+    padding-left: 0 !important;
   }
-}
-
-// 减少动画模式
-@media (prefers-reduced-motion: reduce) {
-  .about-view {
-    animation: none;
+  
+  .image-caption {
+    right: 0 !important;
   }
 }
 </style>

@@ -5,7 +5,6 @@
         :navigation-variant="navigationVariant"
         :navigation-position="navigationPosition"
         :show-search="showSearch"
-        :show-breadcrumb="showBreadcrumb"
         :show-footer="showFooter"
         :transition-name="transitionName"
       />
@@ -36,11 +35,6 @@ const navigationPosition = computed((): 'static' | 'sticky' | 'fixed' => {
 const showSearch = computed(() => {
   // 在作品集页面显示搜索功能
   return route.path.startsWith('/portfolio');
-});
-
-const showBreadcrumb = computed(() => {
-  // 首页不显示面包屑
-  return route.path !== '/';
 });
 
 const showFooter = computed(() => {

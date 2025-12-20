@@ -1,36 +1,12 @@
-/* 引入品牌视觉识别系统 */
+/* Global Styles - AIYAZONE Premium v2.0 */
 @import './style/brand-identity.css';
 
-/* 引入响应式设计优化 */
-@import './style/responsive.css';
-
+/* 1. Global Reset & Base */
 :root {
-  /* Color Palette - Modern Tech */
-  --bg-color: #fafafa;
-  --bg-secondary: #ffffff;
-  --text-primary: #1a1a1a;
-  --text-secondary: #64748b;
-  
-  /* Primary Brand Color - Tech Blue */
-  --accent-gold: #3b82f6; /* Replaced gold with blue */
-  --accent-slate: #94a3b8;
-  
-  /* Borders & Lines */
-  --border-color: rgba(0, 0, 0, 0.06);
-  --border-active: #3b82f6; /* Replaced gold with blue */
-
-  /* Typography */
-  --font-serif: 'Playfair Display', 'Noto Serif SC', serif;
-  --font-sans: 'Lato', system-ui, -apple-system, sans-serif;
-  
-  font-family: var(--font-sans);
-  line-height: 1.6;
-  font-weight: 300;
-
-  color-scheme: light;
-  color: var(--text-primary);
-  background-color: var(--bg-color);
-
+  font-family: var(--brand-font-body);
+  color: var(--brand-text-primary);
+  background-color: var(--brand-canvas-day);
+  line-height: 1.8;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -43,80 +19,100 @@
   padding: 0;
 }
 
-html,
-body {
+html, body {
   width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
-  background-color: var(--bg-color);
+  position: relative;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-serif);
+/* 2. Noise Texture Overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* 3. Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--brand-font-display);
+  color: var(--brand-midnight);
   font-weight: 700;
-  line-height: 1.2;
-  color: var(--text-primary);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
 }
 
 p {
-  color: var(--text-secondary);
-  font-size: 1rem;
-  line-height: 1.8;
-  /* 优化中文阅读体验 */
-  text-align: justify;
-  text-justify: inter-ideograph;
+  color: var(--brand-text-secondary);
+  margin-bottom: 1rem;
 }
 
 a {
-  text-decoration: none;
   color: inherit;
-  transition: all 0.3s ease;
+  text-decoration: none;
+  transition: color var(--brand-transition-base);
 }
 
-ul,
-li {
-  list-style: none;
+a:hover {
+  color: var(--brand-electric);
 }
 
+/* 4. Layout Utilities */
 .wrapper {
-  position: relative;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
 .middle-box {
-  width: 90%;
-  max-width: 1400px; /* Wider container for editorial look */
+  width: 100%;
+  max-width: var(--brand-max-width);
   margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
 }
 
 main.app-main {
   flex: 1;
 }
 
-/* Scrollbar */
+/* 5. Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+
 ::-webkit-scrollbar-thumb {
-  background: #e2e8f0;
-  border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-gold);
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
 }
 
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* 6. Utility Classes */
+.text-gradient-gold {
+  background: var(--brand-gradient-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Responsive */
 @media screen and (max-width: 768px) {
   .middle-box {
-    width: 92%;
+    padding: 0 1rem;
   }
 }

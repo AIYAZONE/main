@@ -1,58 +1,90 @@
 <template>
   <section class="brand-hero">
     <div class="middle-box">
-      <div class="hero-content">
-        <!-- Profile Image -->
-        <div class="profile-image" v-if="profileImage">
-          <img 
-            :src="profileImage" 
-            :alt="`${title} profile photo`"
-            loading="eager"
-          />
+      <div class="hero-grid">
+        <!-- Left: Text Content -->
+        <div class="hero-text-column">
+          <div class="hero-meta">
+            <span class="meta-label">Personal IP & Tech Leader</span>
+            <div class="meta-line"></div>
+          </div>
+          
+          <h1 class="hero-title">
+            <span class="title-line">{{ title }}</span>
+          </h1>
+          
+          <p class="hero-subtitle">{{ subtitle }}</p>
+          
+          <div class="hero-intro" v-html="intro"></div>
+
+          <!-- Value Proposition -->
+          <div class="value-proposition" v-if="valueProposition && valueProposition.length > 0">
+            <div class="value-tags">
+              <span 
+                v-for="(value, index) in valueProposition" 
+                :key="index"
+                class="value-tag"
+              >
+                {{ value }}
+              </span>
+            </div>
+          </div>
+
+          <!-- Certifications -->
+          <div class="certifications-preview" v-if="certifications && certifications.length > 0">
+            <div class="cert-badges">
+              <span 
+                v-for="cert in certifications" 
+                :key="cert.id"
+                class="cert-badge"
+                :title="cert.name"
+              >
+                {{ getCertificationAbbr(cert.name) }}
+              </span>
+            </div>
+          </div>
         </div>
 
-        <!-- Main Title -->
-        <h1 class="hero-title">{{ title }}</h1>
-        
-        <!-- Hero Divider -->
-        <div class="hero-divider"></div>
-        
-        <!-- Subtitle -->
-        <p class="hero-subtitle">{{ subtitle }}</p>
-        
-        <!-- Introduction -->
-        <p class="hero-intro" v-html="intro"></p>
-
-        <!-- Value Proposition -->
-        <div class="value-proposition" v-if="valueProposition && valueProposition.length > 0">
-          <ul class="value-list">
-            <li 
-              v-for="(value, index) in valueProposition" 
-              :key="index"
-              class="value-item"
-            >
-              {{ value }}
-            </li>
-          </ul>
-        </div>
-
-        <!-- Certifications Preview -->
-        <div class="certifications-preview" v-if="certifications && certifications.length > 0">
-          <div class="cert-badges">
-            <span 
-              v-for="cert in certifications" 
-              :key="cert.id"
-              class="cert-badge"
-              :title="cert.name"
-            >
-              {{ getCertificationAbbr(cert.name) }}
-            </span>
+        <!-- Right: Visual -->
+        <div class="hero-visual-column">
+          <div class="image-container">
+            <img 
+              v-if="profileImage"
+              :src="profileImage" 
+              :alt="title"
+              class="hero-image"
+            />
+            <div class="image-overlay"></div>
+          </div>
+          
+          <!-- Rotating Badge -->
+          <div class="rotating-badge">
+            <svg viewBox="0 0 100 100" width="120" height="120">
+              <defs>
+                <path id="circle" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" />
+              </defs>
+              <text font-size="11">
+                <textPath xlink:href="#circle">
+                  AIYAZONE • EST. 2024 • PREMIUM DESIGN •
+                </textPath>
+              </text>
+            </svg>
+            <div class="badge-center">A</div>
           </div>
         </div>
       </div>
     </div>
+    
+    <!-- Background Decor -->
+    <div class="hero-glow"></div>
   </section>
 </template>
+
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+export default defineComponent({ name: 'BrandHero' });
+</script>
 
 <script setup lang="ts">
 import type { Certification } from '../../types/brand';
@@ -72,14 +104,12 @@ const props = withDefaults(defineProps<Props>(), {
   valueProposition: () => []
 });
 
-// Helper function to get certification abbreviation
 const getCertificationAbbr = (certName: string): string => {
   if (certName.includes('PMP')) return 'PMP';
   if (certName.includes('ACP')) return 'ACP';
   if (certName.includes('CSM')) return 'CSM';
   if (certName.includes('PSM')) return 'PSM';
   
-  // Default: take first letters of each word
   return certName
     .split(' ')
     .map(word => word.charAt(0))
@@ -91,207 +121,238 @@ const getCertificationAbbr = (certName: string): string => {
 
 <style lang="less" scoped>
 .brand-hero {
-  padding: 8rem 0 6rem;
-  text-align: center;
-  background: linear-gradient(135deg, var(--brand-gray-50) 0%, #FFFFFF 100%);
   position: relative;
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at 30% 20%, var(--brand-bg-glow) 0%, transparent 50%);
-    pointer-events: none;
-  }
-  
-  .hero-content {
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: center;
+  padding: var(--brand-space-huge) 0 var(--brand-space-xl);
+  overflow: hidden;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: var(--brand-space-lg);
+    align-items: center;
     position: relative;
-    z-index: 1;
+    z-index: 2;
+  }
+
+  /* Left Column */
+  .hero-text-column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--brand-space-md);
     
-    .profile-image {
-      margin-bottom: 2.5rem;
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
       
-      img {
-        width: 140px;
-        height: 140px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 4px solid #FFFFFF;
-        box-shadow: var(--brand-shadow-avatar);
-        transition: all 0.3s ease;
-        
-        &:hover {
-          transform: scale(1.05);
-          box-shadow: var(--brand-shadow-float);
-        }
+      .meta-label {
+        font-family: var(--brand-font-mono);
+        font-size: 0.75rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--brand-text-tertiary);
+      }
+      
+      .meta-line {
+        height: 1px;
+        width: 40px;
+        background: var(--brand-gold-start);
+      }
+    }
+
+    .hero-title {
+      font-family: var(--brand-font-display);
+      font-size: clamp(3.5rem, 5vw + 1rem, 6rem);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: var(--brand-midnight);
+      
+      .title-line {
+        display: block;
+        background: linear-gradient(135deg, var(--brand-midnight) 0%, #3B82F6 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
       }
     }
     
-    .hero-title {
-      font-family: var(--brand-font-secondary);
-      font-size: 5rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: 2rem;
-      line-height: 1.1;
-      color: var(--text-primary);
-      background: linear-gradient(135deg, var(--brand-midnight) 0%, var(--brand-primary) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    
-    .hero-divider {
-      width: 80px;
-      height: 4px;
-      background: linear-gradient(90deg, var(--brand-accent) 0%, var(--brand-primary) 100%);
-      margin: 0 auto 2.5rem;
-      border-radius: 2px;
-    }
-    
     .hero-subtitle {
-      font-family: var(--brand-font-primary);
-      font-size: 1.25rem;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--text-secondary);
-      margin-bottom: 1.5rem;
-      text-align: center;
+      font-family: var(--brand-font-body);
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: var(--brand-text-secondary);
+      max-width: 90%;
     }
     
     .hero-intro {
-      font-family: var(--brand-font-secondary);
-      font-size: 1.4rem;
+      font-family: var(--brand-font-body);
+      font-size: 1.1rem;
       line-height: 1.8;
-      color: var(--text-primary);
-      opacity: 0.9;
-      text-align: center;
-      margin-bottom: 2.5rem;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
+      color: var(--brand-text-secondary);
+      max-width: 85%;
+      border-left: 2px solid var(--brand-gold-start);
+      padding-left: 1.5rem;
     }
-
+    
     .value-proposition {
-      margin-bottom: 2.5rem;
+      margin-top: 1rem;
       
-      .value-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
+      .value-tags {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
-        max-width: 800px;
-        margin: 0 auto;
+        gap: 0.75rem;
         
-        .value-item {
-          background: rgba(59, 130, 246, 0.08);
-          color: #1E40AF;
-          padding: 0.75rem 1.5rem;
-          border-radius: 25px;
-          font-family: var(--font-sans);
-          font-size: 0.9rem;
-          font-weight: 500;
-          border: 1px solid rgba(59, 130, 246, 0.2);
+        .value-tag {
+          font-family: var(--brand-font-mono);
+          font-size: 0.75rem;
+          padding: 0.5rem 1rem;
+          border: 1px solid var(--brand-border-hover);
+          border-radius: 4px;
+          color: var(--brand-text-secondary);
           transition: all 0.3s ease;
           
           &:hover {
-            background: rgba(59, 130, 246, 0.12);
-            border-color: rgba(59, 130, 246, 0.3);
+            border-color: var(--brand-electric);
+            color: var(--brand-electric);
             transform: translateY(-2px);
           }
         }
       }
     }
-
+    
     .certifications-preview {
       .cert-badges {
         display: flex;
-        justify-content: center;
         gap: 1rem;
         
         .cert-badge {
-          display: inline-flex;
+          width: 40px;
+          height: 40px;
+          display: flex;
           align-items: center;
           justify-content: center;
-          width: 48px;
-          height: 48px;
-          background: linear-gradient(135deg, #10B981 0%, #059669 100%);
-          color: white;
-          border-radius: 12px;
-          font-family: var(--font-sans);
-          font-size: 0.75rem;
-          font-weight: 700;
-          letter-spacing: 0.05em;
-          box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
-          transition: all 0.3s ease;
-          cursor: help;
+          background: var(--brand-midnight);
+          color: var(--brand-gold-start);
+          font-family: var(--brand-font-mono);
+          font-size: 0.7rem;
+          border-radius: 50%;
+          border: 1px solid var(--brand-gold-start);
+          transition: all 0.3s var(--brand-ease-bouncy);
           
           &:hover {
-            transform: translateY(-2px) scale(1.05);
-            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
           }
         }
       }
     }
   }
-}
 
-@media screen and (max-width: 768px) {
-  .brand-hero {
-    padding: 6rem 0 4rem;
+  /* Right Column */
+  .hero-visual-column {
+    position: relative;
+    height: 100%;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
-    .hero-content {
-      .profile-image img {
-        width: 110px;
-        height: 110px;
+    .image-container {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+      aspect-ratio: 3/4;
+      border-radius: 2px; /* Slight roundness */
+      overflow: hidden;
+      
+      .hero-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: grayscale(20%);
+        transition: all 0.6s var(--brand-ease-premium);
       }
       
-      .hero-title {
-        font-size: 3.5rem;
+      &:hover .hero-image {
+        filter: grayscale(0%);
+        transform: scale(1.05);
+      }
+    }
+    
+    .rotating-badge {
+      position: absolute;
+      top: 10%;
+      right: 0;
+      animation: rotate 20s linear infinite;
+      
+      svg {
+        fill: var(--brand-midnight);
+        letter-spacing: 0.2em;
+        font-family: var(--brand-font-mono);
+        font-weight: 700;
+        text-transform: uppercase;
       }
       
-      .hero-subtitle {
-        font-size: 1rem;
-      }
-      
-      .hero-intro {
-        font-size: 1.2rem;
-      }
-      
-      .value-proposition .value-list {
-        flex-direction: column;
-        align-items: center;
-        
-        .value-item {
-          max-width: 280px;
-          text-align: center;
-        }
+      .badge-center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: var(--brand-font-display);
+        font-size: 2rem;
+        color: var(--brand-electric);
       }
     }
   }
+
+  /* Background Glow */
+  .hero-glow {
+    position: absolute;
+    bottom: -20%;
+    right: -10%;
+    width: 60vw;
+    height: 60vw;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+  }
 }
 
-@media screen and (max-width: 480px) {
-  .brand-hero {
-    padding: 4rem 0 3rem;
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .brand-hero .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
     
-    .hero-content {
-      .hero-title {
-        font-size: 2.8rem;
-      }
+    .hero-text-column {
+      align-items: center;
       
       .hero-intro {
-        font-size: 1.1rem;
+        border-left: none;
+        padding-left: 0;
+        text-align: center;
+      }
+      
+      .value-tags, .cert-badges {
+        justify-content: center;
+      }
+    }
+    
+    .hero-visual-column {
+      min-height: 400px;
+      order: -1; /* Image on top on mobile */
+      
+      .rotating-badge {
+        right: 10%;
       }
     }
   }

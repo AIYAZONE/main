@@ -38,7 +38,6 @@
             @click="closeMenu"
             :class="{ active: $route.path === '/' }"
           >
-            <span class="nav-icon">🏠</span>
             {{ $t('nav.home') }}
           </router-link>
         </li>
@@ -49,7 +48,6 @@
             @click="closeMenu"
             :class="{ active: $route.path === '/about' }"
           >
-            <span class="nav-icon">👤</span>
             {{ $t('nav.about') }}
           </router-link>
         </li>
@@ -60,7 +58,6 @@
             @click="closeMenu"
             :class="{ active: $route.path === '/portfolio' }"
           >
-            <span class="nav-icon">💼</span>
             {{ $t('nav.portfolio') }}
           </router-link>
         </li>
@@ -71,7 +68,6 @@
             @click="closeMenu"
             :class="{ active: $route.path === '/career' }"
           >
-            <span class="nav-icon">🚀</span>
             {{ $t('nav.career') }}
           </router-link>
         </li>
@@ -82,7 +78,6 @@
             @click="closeMenu"
             :class="{ active: $route.path === '/contact' }"
           >
-            <span class="nav-icon">📧</span>
             {{ $t('nav.contact') }}
           </router-link>
         </li>
@@ -304,8 +299,7 @@ onUnmounted(() => {
 
     .mobile-nav-item {
       .mobile-nav-link {
-        display: flex;
-        align-items: center;
+        display: block;
         padding: 1rem 1.5rem;
         color: var(--text-primary);
         text-decoration: none;
@@ -313,11 +307,6 @@ onUnmounted(() => {
         font-weight: 500;
         transition: all 0.2s ease;
         border-left: 3px solid transparent;
-
-        .nav-icon {
-          margin-right: 0.75rem;
-          font-size: 1.25rem;
-        }
 
         &:hover {
           background: rgba(59, 130, 246, 0.05);

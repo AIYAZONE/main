@@ -10,9 +10,6 @@
       @logo-click="handleLogoClick"
     />
 
-    <!-- 面包屑导航 -->
-    <BreadcrumbNavigation v-if="showBreadcrumb" />
-
     <!-- 主要内容区域 -->
     <main class="main-content" role="main">
       <router-view v-slot="{ Component, route }">
@@ -78,19 +75,23 @@
   </div>
 </template>
 
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+export default defineComponent({ name: 'DefaultLayout' });
+</script>
+
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue';
 import { useRoute } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 import MainNavigation from '../components/navigation/MainNavigation.vue';
-import BreadcrumbNavigation from '../components/navigation/BreadcrumbNavigation.vue';
 import SearchModal from '../components/common/SearchModal.vue';
 
 interface Props {
   navigationVariant?: 'default' | 'transparent' | 'solid';
   navigationPosition?: 'static' | 'sticky' | 'fixed';
   showSearch?: boolean;
-  showBreadcrumb?: boolean;
   showFooter?: boolean;
   transitionName?: string;
 }
@@ -99,7 +100,6 @@ const props = withDefaults(defineProps<Props>(), {
   navigationVariant: 'default',
   navigationPosition: 'sticky',
   showSearch: false,
-  showBreadcrumb: true,
   showFooter: true,
   transitionName: 'page'
 });
@@ -193,9 +193,9 @@ onUnmounted(() => {
   margin-top: auto;
 
   .container {
-    max-width: 1200px;
+    max-width: var(--brand-max-width);
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 2rem;
   }
 
   .footer-content {
@@ -318,6 +318,10 @@ onUnmounted(() => {
 @media screen and (max-width: 767px) {
   .site-footer {
     padding: 2rem 0 1rem;
+
+    .container {
+      padding: 0 1rem;
+    }
 
     .footer-content {
       grid-template-columns: 1fr;
