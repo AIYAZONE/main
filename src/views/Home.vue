@@ -1,9 +1,9 @@
 <template>
   <div class="home-editorial">
     <BrandHero
-      :title="brandInfo?.name || content.hero.title"
-      :subtitle="brandInfo?.subtitle || content.hero.subtitle"
-      :intro="brandInfo?.intro || content.hero.intro"
+      :title="brandInfo?.name || content?.hero?.title"
+      :subtitle="brandInfo?.subtitle || content?.hero?.subtitle"
+      :intro="brandInfo?.intro || content?.hero?.intro"
       :profile-image="brandInfo?.profileImage"
       :certifications="certifications"
       :value-proposition="brandInfo?.valueProposition || []"
@@ -12,12 +12,12 @@
     <section class="home-section home-section--focus">
       <div class="middle-box">
         <div class="section-header">
-          <h2 class="section-title">{{ content.focus.title }}</h2>
-          <p class="section-description">{{ content.focus.subtitle }}</p>
+          <h2 class="section-title">{{ content?.focus?.title }}</h2>
+          <p class="section-description">{{ content?.focus?.subtitle }}</p>
         </div>
 
         <div class="focus-grid">
-          <div v-for="item in content.focus.items" :key="item.title" class="focus-card">
+          <div v-for="item in content?.focus?.items" :key="item.title" class="focus-card">
             <div class="focus-card__top">
               <div class="focus-card__icon">{{ item.icon }}</div>
               <div class="focus-card__title">{{ item.title }}</div>
@@ -35,18 +35,18 @@
       <div class="middle-box">
         <div class="section-header section-header--split">
           <div class="section-header__left">
-            <h2 class="section-title">{{ content.now.title }}</h2>
-            <p class="section-description">{{ content.now.subtitle }}</p>
+            <h2 class="section-title">{{ content?.now?.title }}</h2>
+            <p class="section-description">{{ content?.now?.subtitle }}</p>
           </div>
           <div class="section-header__right">
             <div class="now-chips">
-              <span v-for="chip in content.now.chips" :key="chip" class="now-chip">{{ chip }}</span>
+              <span v-for="chip in content?.now?.chips" :key="chip" class="now-chip">{{ chip }}</span>
             </div>
           </div>
         </div>
 
         <div class="now-grid">
-          <div v-for="item in content.now.items" :key="item.title" class="now-item">
+          <div v-for="item in content?.now?.items" :key="item.title" class="now-item">
             <div class="now-item__kicker">{{ item.kicker }}</div>
             <div class="now-item__title">{{ item.title }}</div>
             <div class="now-item__desc">{{ item.description }}</div>
@@ -59,14 +59,14 @@
       <div class="middle-box">
         <div class="cta-card">
           <div class="cta-card__content">
-            <div class="cta-kicker">{{ content.cta.kicker }}</div>
-            <div class="cta-title">{{ content.cta.title }}</div>
-            <div class="cta-subtitle">{{ content.cta.subtitle }}</div>
+            <div class="cta-kicker">{{ content?.cta?.kicker }}</div>
+            <div class="cta-title">{{ content?.cta?.title }}</div>
+            <div class="cta-subtitle">{{ content?.cta?.subtitle }}</div>
           </div>
           <div class="cta-card__actions">
-            <router-link to="/portfolio" class="cta-btn cta-btn--primary">{{ content.cta.actions.portfolio }}</router-link>
-            <router-link to="/career" class="cta-btn">{{ content.cta.actions.career }}</router-link>
-            <router-link to="/contact" class="cta-btn">{{ content.cta.actions.contact }}</router-link>
+            <router-link to="/portfolio" class="cta-btn cta-btn--primary">{{ content?.cta?.actions?.portfolio }}</router-link>
+            <router-link to="/career" class="cta-btn">{{ content?.cta?.actions?.career }}</router-link>
+            <router-link to="/contact" class="cta-btn">{{ content?.cta?.actions?.contact }}</router-link>
           </div>
         </div>
       </div>

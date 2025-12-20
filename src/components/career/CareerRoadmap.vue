@@ -38,7 +38,10 @@
         >
           <div class="phase-marker">
             <div class="marker-circle">
-              <span class="phase-number">{{ index + 1 }}</span>
+              <span class="phase-number" v-if="index >= displayCurrentPhase">{{ index + 1 }}</span>
+              <svg v-else class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
             </div>
             <div class="marker-line"></div>
           </div>
@@ -291,10 +294,10 @@ const getOverallProgress = (): number => {
 </script>
 
 <style scoped lang="less">
-.career-roadmap {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
+  .career-roadmap {
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 0;
 
   .roadmap-header {
     text-align: center;
@@ -375,28 +378,35 @@ const getOverallProgress = (): number => {
           top: 0;
 
           .marker-circle {
-            width: 4rem;
-            height: 4rem;
+            width: 3.5rem;
+            height: 3.5rem;
             border-radius: 50%;
-            background: var(--color-bg-secondary);
-            border: 3px solid var(--color-border);
+            background: var(--brand-bg-primary);
+            border: 2px solid var(--brand-border);
             display: flex;
             align-items: center;
             justify-content: center;
             z-index: 2;
             position: relative;
+            transition: all 0.3s var(--brand-ease-premium);
 
             .phase-number {
+              font-family: var(--brand-font-display);
               font-size: 1.2rem;
               font-weight: 700;
-              color: var(--color-text-secondary);
+              color: var(--brand-text-tertiary);
+            }
+            
+            .check-icon {
+              color: white;
             }
           }
         }
 
         &.completed .marker-circle {
-          background: var(--color-success);
-          border-color: var(--color-success);
+          background: var(--brand-success);
+          border-color: var(--brand-success);
+          box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
 
           .phase-number {
             color: white;
@@ -404,9 +414,10 @@ const getOverallProgress = (): number => {
         }
 
         &.active .marker-circle {
-          background: var(--color-primary);
-          border-color: var(--color-primary);
-          box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.2);
+          background: var(--brand-gold-start);
+          border-color: var(--brand-gold-start);
+          box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.15), 0 8px 20px rgba(212, 175, 55, 0.25);
+          transform: scale(1.1);
 
           .phase-number {
             color: white;
@@ -414,8 +425,8 @@ const getOverallProgress = (): number => {
         }
 
         &.upcoming .marker-circle {
-          background: var(--color-bg-tertiary);
-          border-color: var(--color-border);
+          background: var(--brand-bg-secondary);
+          border-color: var(--brand-border);
         }
 
         .phase-content {
