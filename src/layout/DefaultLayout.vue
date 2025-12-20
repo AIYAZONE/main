@@ -53,7 +53,7 @@
             © {{ currentYear }} AIYAZONE. {{ $t('footer.allRightsReserved') }}
           </p>
           <div class="footer-meta">
-            <span class="build-info">{{ $t('footer.builtWith') }} Vue 3 + TypeScript</span>
+            <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" class="build-info">粤ICP备2022083499号</a>
           </div>
         </div>
       </div>
