@@ -1,8 +1,12 @@
 {
-	"rewrites": [
-		{
-			"source": "/(.*)",
-			"destination": "/index.html"
-		}
+	"redirects": [
+		{ "source": "/fe", "destination": "/fe/", "permanent": true },
+		{ "source": "/pm", "destination": "/pm/", "permanent": true },
+		{ "source": "/blog", "destination": "/blog/", "permanent": true }
+	],
+	"routes": [
+		{ "handle": "filesystem" },
+		{ "src": "/(fe|pm|blog)/(.+)$", "dest": "/$1/$2.html" },
+		{ "src": "/(.*)", "dest": "/index.html" }
 	]
 }
