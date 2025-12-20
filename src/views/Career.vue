@@ -2,6 +2,7 @@
   <div class="career-page">
     <!-- Hero Header -->
     <header class="career-header">
+      <!-- Layout optimized: using middle-box for consistent width -->
       <div class="middle-box">
         <h1 class="page-title">CAREER <span class="italic text-gradient-gold">PATH</span></h1>
         
