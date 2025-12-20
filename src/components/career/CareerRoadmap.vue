@@ -388,7 +388,7 @@ const getOverallProgress = (): number => {
             justify-content: center;
             z-index: 2;
             position: relative;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); /* Bouncy effect */
+            transition: all 0.3s var(--brand-ease-premium);
 
             .phase-number {
               font-family: var(--brand-font-display);
@@ -399,7 +399,6 @@ const getOverallProgress = (): number => {
             
             .check-icon {
               color: white;
-              filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
             }
           }
         }
@@ -407,8 +406,7 @@ const getOverallProgress = (): number => {
         &.completed .marker-circle {
           background: var(--brand-success);
           border-color: var(--brand-success);
-          box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
-          transform: scale(1.05);
+          box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
 
           .phase-number {
             color: white;
@@ -418,8 +416,8 @@ const getOverallProgress = (): number => {
         &.active .marker-circle {
           background: var(--brand-gold-start);
           border-color: var(--brand-gold-start);
-          box-shadow: 0 0 0 6px rgba(212, 175, 55, 0.2), 0 8px 25px rgba(212, 175, 55, 0.4);
-          transform: scale(1.15);
+          box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.15), 0 8px 20px rgba(212, 175, 55, 0.25);
+          transform: scale(1.1);
 
           .phase-number {
             color: white;
