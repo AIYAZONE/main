@@ -1,12 +1,11 @@
 {
-	"redirects": [
-		{ "source": "/fe", "destination": "/fe/", "permanent": true },
-		{ "source": "/pm", "destination": "/pm/", "permanent": true },
-		{ "source": "/blog", "destination": "/blog/", "permanent": true }
-	],
-	"routes": [
-		{ "handle": "filesystem" },
-		{ "src": "/(fe|pm|blog)/(.+)$", "dest": "/$1/$2.html" },
-		{ "src": "/(.*)", "dest": "/index.html" }
+	"rewrites": [
+		{ "source": "/fe", "destination": "/fe/index.html" },
+		{ "source": "/fe/:path*", "destination": "/fe/:path*.html" },
+		{ "source": "/pm", "destination": "/pm/index.html" },
+		{ "source": "/pm/:path*", "destination": "/pm/:path*.html" },
+		{ "source": "/blog", "destination": "/blog/index.html" },
+		{ "source": "/blog/:path*", "destination": "/blog/:path*.html" },
+		{ "source": "/(.*)", "destination": "/index.html" }
 	]
 }
