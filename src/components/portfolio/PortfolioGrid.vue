@@ -11,7 +11,9 @@
             class="search-input"
             @input="handleSearch"
           />
-          <span class="search-icon">🔍</span>
+          <span class="search-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </span>
         </div>
       </div>
 
@@ -69,10 +71,16 @@
 
     <!-- Project Groups -->
     <div class="project-groups" v-if="!isLoading && filteredProjectGroups.length > 0">
-      <div v-for="group in filteredProjectGroups" :key="group.id" class="project-group">
+      <div 
+        v-for="group in filteredProjectGroups" 
+        :key="group.id" 
+        class="project-group"
+      >
         <div class="group-header">
           <h2 class="group-title">
-            <span class="group-icon">#</span>
+            <span class="group-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="9" x2="20" y2="9"></line><line x1="4" y1="15" x2="20" y2="15"></line><line x1="10" y1="3" x2="8" y2="21"></line><line x1="16" y1="3" x2="14" y2="21"></line></svg>
+            </span>
             {{ group.title }}
           </h2>
           <p class="group-description">{{ group.description }}</p>
@@ -92,8 +100,10 @@
 
     <!-- Empty State -->
     <div v-else-if="!isLoading && filteredProjectGroups.length === 0" class="empty-state">
-      <div class="empty-icon">📂</div>
-      <h3 class="empty-title">{{ $t("portfolio.noProjectsFound") }}</h3>
+      <div class="empty-icon">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+      </div>
+      <h3 class="empty-title">{{ $t('portfolio.noProjectsFound') }}</h3>
       <p class="empty-description">{{ $t("portfolio.tryDifferentFilters") }}</p>
       <button @click="clearFilters" class="clear-filters-btn">
         {{ $t("portfolio.clearFilters") }}
@@ -108,8 +118,10 @@
 
     <!-- Error State -->
     <div v-if="error" class="error-state">
-      <div class="error-icon">⚠️</div>
-      <h3 class="error-title">{{ $t("portfolio.errorTitle") }}</h3>
+      <div class="error-icon">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+      </div>
+      <h3 class="error-title">{{ $t('portfolio.errorTitle') }}</h3>
       <p class="error-message">{{ error }}</p>
       <button @click="retryLoad" class="retry-btn">
         {{ $t("portfolio.retry") }}
@@ -274,18 +286,20 @@ watch(
 <style lang="less" scoped>
 .portfolio-grid {
   width: 100%;
-  max-width: 1200px;
+  max-width: var(--brand-max-width);
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 2rem 0;
 }
 
 .portfolio-controls {
-  margin-bottom: 3rem;
+  margin-bottom: var(--brand-space-xl);
   padding: 2rem;
-  background: #ffffff;
-  border-radius: 12px;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 0;
+  border: 1px solid var(--brand-border);
+  box-shadow: var(--brand-shadow-card);
 }
 
 .search-section {
@@ -298,19 +312,23 @@ watch(
     .search-input {
       width: 100%;
       padding: 0.75rem 1rem 0.75rem 2.5rem;
-      border: 2px solid #e5e7eb;
-      border-radius: 8px;
+      border: 1px solid var(--brand-border);
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 0;
       font-size: 1rem;
-      transition: border-color 0.3s ease;
+      font-family: var(--brand-font-body);
+      color: var(--brand-text-primary);
+      transition: all 0.3s ease;
 
       &:focus {
         outline: none;
-        border-color: #3b82f6;
-        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        border-color: var(--brand-electric);
+        background: white;
+        box-shadow: none;
       }
 
       &::placeholder {
-        color: #9ca3af;
+        color: var(--brand-text-tertiary);
       }
     }
 
@@ -319,8 +337,10 @@ watch(
       left: 0.75rem;
       top: 50%;
       transform: translateY(-50%);
-      color: #6b7280;
-      font-size: 1rem;
+      color: var(--brand-text-tertiary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 }
@@ -339,53 +359,69 @@ watch(
   min-width: 150px;
 
   .filter-label {
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: #374151;
+    font-family: var(--brand-font-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--brand-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 
   .filter-select {
     padding: 0.5rem 0.75rem;
-    border: 2px solid #e5e7eb;
-    border-radius: 6px;
-    font-size: 0.875rem;
-    background: white;
+    border: 1px solid var(--brand-border);
+    border-radius: 0;
+    font-size: 0.9rem;
+    font-family: var(--brand-font-body);
+    background: rgba(255, 255, 255, 0.5);
+    color: var(--brand-text-primary);
     cursor: pointer;
-    transition: border-color 0.3s ease;
+    transition: all 0.3s ease;
 
     &:focus {
       outline: none;
-      border-color: #3b82f6;
-      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+      border-color: var(--brand-electric);
+      background: white;
+      box-shadow: none;
+    }
+    
+    &:hover {
+      border-color: var(--brand-border-hover);
     }
   }
 }
 
 .clear-filters-btn {
-  padding: 0.5rem 1rem;
-  background: #ef4444;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-size: 0.875rem;
+  padding: 0.5rem 1.5rem;
+  background: transparent;
+  color: var(--brand-text-secondary);
+  border: 1px solid var(--brand-border);
+  border-radius: 0;
+  font-family: var(--brand-font-mono);
+  font-size: 0.75rem;
   font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 
   &:hover {
-    background: #dc2626;
+    background: rgba(0, 0, 0, 0.03);
+    color: var(--brand-midnight);
+    border-color: var(--brand-text-secondary);
   }
 }
 
 .results-summary {
   margin-bottom: 2rem;
-  padding: 1rem;
-  background: #f3f4f6;
-  border-radius: 8px;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--brand-border);
+  background: transparent;
 
   .results-count {
-    font-size: 0.875rem;
-    color: #6b7280;
+    font-family: var(--brand-font-mono);
+    font-size: 0.8rem;
+    color: var(--brand-text-tertiary);
     font-weight: 500;
   }
 }
@@ -393,38 +429,52 @@ watch(
 .project-groups {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: var(--brand-space-xl);
 }
 
 .project-group {
   .group-header {
-    margin-bottom: 2rem;
+    margin-bottom: var(--brand-space-md);
+    padding-left: 1rem;
+    border-left: 2px solid var(--brand-gold-start);
 
     .group-title {
-      font-size: 1.75rem;
+      font-family: var(--brand-font-display);
+      font-size: 2rem;
       font-weight: 700;
-      color: #1f2937;
+      color: var(--brand-midnight);
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.75rem;
       margin-bottom: 0.5rem;
+      line-height: 1.2;
 
       .group-icon {
-        color: #3b82f6;
-        font-weight: 900;
+        color: var(--brand-gold-start);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 0;
+
+        svg {
+          display: block;
+        }
       }
     }
 
     .group-description {
-      font-size: 1rem;
-      color: #6b7280;
+      font-family: var(--brand-font-body);
+      font-size: 1.1rem;
+      color: var(--brand-text-secondary);
       line-height: 1.6;
+      font-weight: 300;
     }
   }
 
   .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-flow: dense;
     gap: 2rem;
   }
 }

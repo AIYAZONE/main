@@ -19,6 +19,7 @@ export interface Project {
   imageUrl: string;
   features: string[];
   metrics?: ProjectMetrics;
+  size?: 'standard' | 'feature' | 'info';
 }
 
 export interface ProjectMetrics {

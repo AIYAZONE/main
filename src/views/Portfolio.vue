@@ -195,16 +195,20 @@ onMounted(() => {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.5rem;
-      border: 1px solid var(--brand-border);
+      padding: 1.5rem 0;
+      border: none;
+      border-bottom: 1px solid var(--brand-border);
+      border-radius: 0;
       transition: all 0.3s ease;
+      background: transparent;
       
       &:hover {
         border-color: var(--brand-midnight);
-        background: var(--brand-midnight);
+        background: transparent;
+        padding-left: 1rem;
         
-        .tech-name, .tech-count {
-          color: white;
+        .tech-name {
+          color: var(--brand-midnight);
         }
       }
       
@@ -212,6 +216,7 @@ onMounted(() => {
         font-family: var(--brand-font-mono);
         font-size: 0.9rem;
         color: var(--brand-text-secondary);
+        transition: color 0.3s ease;
       }
       
       .tech-count {
