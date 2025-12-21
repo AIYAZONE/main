@@ -1,6 +1,7 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { mount } from '@vue/test-utils';
 import * as fc from 'fast-check';
+import { createPinia, setActivePinia } from 'pinia';
 import SWOTAnalysis from '../SWOTAnalysis.vue';
 import CareerRoadmap from '../CareerRoadmap.vue';
 import LearningPath from '../LearningPath.vue';
@@ -12,6 +13,8 @@ describe('Career Components', () => {
   let mockLearningPath: LearningPathType;
 
   beforeEach(() => {
+    setActivePinia(createPinia());
+
     mockSWOTData = {
       id: '1',
       lastUpdated: new Date(),
@@ -318,6 +321,9 @@ describe('Career Components', () => {
           roadmapData: mockRoadmapData,
           phases: mockRoadmapData.phases,
           currentPhase: 0
+        },
+        global: {
+          plugins: [createPinia()]
         }
       });
 
@@ -332,6 +338,9 @@ describe('Career Components', () => {
           roadmapData: mockRoadmapData,
           phases: mockRoadmapData.phases,
           currentPhase: 0
+        },
+        global: {
+          plugins: [createPinia()]
         }
       });
 
@@ -346,6 +355,9 @@ describe('Career Components', () => {
           roadmapData: mockRoadmapData,
           phases: mockRoadmapData.phases,
           currentPhase: 0
+        },
+        global: {
+          plugins: [createPinia()]
         }
       });
 

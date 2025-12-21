@@ -1,9 +1,9 @@
 <template>
   <div class="contact-form">
     <div class="form-header">
-      <h2 class="form-title">{{ $t('contact.title') }}</h2>
+      <h2 class="form-title">{{ $t("contact.title") }}</h2>
       <p class="form-description">
-        {{ $t('contact.description', '欢迎与我联系，我会尽快回复您的消息。') }}
+        {{ $t("contact.description", "欢迎与我联系，我会尽快回复您的消息。") }}
       </p>
     </div>
 
@@ -11,7 +11,7 @@
       <!-- 姓名字段 -->
       <div class="form-group">
         <label for="name" class="form-label">
-          {{ $t('contact.name') }}
+          {{ $t("contact.name") }}
           <span class="required-indicator" :aria-label="$t('contact.required')">*</span>
         </label>
         <input
@@ -29,6 +29,22 @@
           @input="clearFieldError('name')"
         />
         <div v-if="errors.name" id="name-error" class="form-error" role="alert">
+          <span class="form-error-icon" aria-hidden="true">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.75"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"
+              />
+              <path d="M12 9v4" />
+              <path d="M12 17h.01" />
+            </svg>
+          </span>
           {{ errors.name }}
         </div>
       </div>
@@ -36,7 +52,7 @@
       <!-- 邮箱字段 -->
       <div class="form-group">
         <label for="email" class="form-label">
-          {{ $t('contact.email') }}
+          {{ $t("contact.email") }}
           <span class="required-indicator" :aria-label="$t('contact.required')">*</span>
         </label>
         <input
@@ -54,6 +70,22 @@
           @input="clearFieldError('email')"
         />
         <div v-if="errors.email" id="email-error" class="form-error" role="alert">
+          <span class="form-error-icon" aria-hidden="true">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.75"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"
+              />
+              <path d="M12 9v4" />
+              <path d="M12 17h.01" />
+            </svg>
+          </span>
           {{ errors.email }}
         </div>
       </div>
@@ -61,7 +93,7 @@
       <!-- 主题字段 -->
       <div class="form-group">
         <label for="subject" class="form-label">
-          {{ $t('contact.subject') }}
+          {{ $t("contact.subject") }}
           <span class="required-indicator" :aria-label="$t('contact.required')">*</span>
         </label>
         <input
@@ -78,6 +110,22 @@
           @input="clearFieldError('subject')"
         />
         <div v-if="errors.subject" id="subject-error" class="form-error" role="alert">
+          <span class="form-error-icon" aria-hidden="true">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.75"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"
+              />
+              <path d="M12 9v4" />
+              <path d="M12 17h.01" />
+            </svg>
+          </span>
           {{ errors.subject }}
         </div>
       </div>
@@ -85,7 +133,7 @@
       <!-- 类别字段 -->
       <div class="form-group">
         <label for="category" class="form-label">
-          {{ $t('contact.category') }}
+          {{ $t("contact.category") }}
         </label>
         <select
           id="category"
@@ -95,14 +143,34 @@
           :aria-describedby="errors.category ? 'category-error' : undefined"
           @change="clearFieldError('category')"
         >
-          <option value="">{{ $t('contact.selectCategory', '请选择联系类别') }}</option>
-          <option value="business">{{ $t('contact.categories.business') }}</option>
-          <option value="collaboration">{{ $t('contact.categories.collaboration') }}</option>
-          <option value="general">{{ $t('contact.categories.general') }}</option>
-          <option value="feedback">{{ $t('contact.categories.feedback', '反馈建议') }}</option>
-          <option value="other">{{ $t('contact.categories.other', '其他') }}</option>
+          <option value="">{{ $t("contact.selectCategory", "请选择联系类别") }}</option>
+          <option value="business">{{ $t("contact.categories.business") }}</option>
+          <option value="collaboration">
+            {{ $t("contact.categories.collaboration") }}
+          </option>
+          <option value="general">{{ $t("contact.categories.general") }}</option>
+          <option value="feedback">
+            {{ $t("contact.categories.feedback", "反馈建议") }}
+          </option>
+          <option value="other">{{ $t("contact.categories.other", "其他") }}</option>
         </select>
         <div v-if="errors.category" id="category-error" class="form-error" role="alert">
+          <span class="form-error-icon" aria-hidden="true">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.75"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"
+              />
+              <path d="M12 9v4" />
+              <path d="M12 17h.01" />
+            </svg>
+          </span>
           {{ errors.category }}
         </div>
       </div>
@@ -110,7 +178,7 @@
       <!-- 消息字段 -->
       <div class="form-group">
         <label for="message" class="form-label">
-          {{ $t('contact.message') }}
+          {{ $t("contact.message") }}
           <span class="required-indicator" :aria-label="$t('contact.required')">*</span>
         </label>
         <textarea
@@ -127,9 +195,30 @@
           @input="clearFieldError('message')"
         ></textarea>
         <div v-if="!errors.message" id="message-help" class="form-help">
-          {{ $t('contact.messageHelp', '请详细描述您的需求或问题，这将帮助我更好地为您提供帮助。') }}
+          {{
+            $t(
+              "contact.messageHelp",
+              "请详细描述您的需求或问题，这将帮助我更好地为您提供帮助。"
+            )
+          }}
         </div>
         <div v-if="errors.message" id="message-error" class="form-error" role="alert">
+          <span class="form-error-icon" aria-hidden="true">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.75"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"
+              />
+              <path d="M12 9v4" />
+              <path d="M12 17h.01" />
+            </svg>
+          </span>
           {{ errors.message }}
         </div>
         <div class="character-count">
@@ -151,15 +240,36 @@
           />
           <span class="checkbox-indicator"></span>
           <span class="checkbox-text">
-            {{ $t('contact.privacyAgreement', '我同意') }}
+            {{ $t("contact.privacyAgreement", "我同意") }}
             <a href="/privacy" target="_blank" class="privacy-link">
-              {{ $t('contact.privacyPolicy', '隐私政策') }}
+              {{ $t("contact.privacyPolicy", "隐私政策") }}
             </a>
-            {{ $t('contact.privacyAgreementSuffix', '并允许处理我的个人信息') }}
+            {{ $t("contact.privacyAgreementSuffix", "并允许处理我的个人信息") }}
             <span class="required-indicator" :aria-label="$t('contact.required')">*</span>
           </span>
         </label>
-        <div v-if="errors.agreeToPrivacy" id="privacy-error" class="form-error" role="alert">
+        <div
+          v-if="errors.agreeToPrivacy"
+          id="privacy-error"
+          class="form-error"
+          role="alert"
+        >
+          <span class="form-error-icon" aria-hidden="true">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.75"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"
+              />
+              <path d="M12 9v4" />
+              <path d="M12 17h.01" />
+            </svg>
+          </span>
           {{ errors.agreeToPrivacy }}
         </div>
       </div>
@@ -175,11 +285,23 @@
           class="submit-button"
         >
           <template v-if="!isSubmitting">
-            <span class="button-icon">📧</span>
-            {{ $t('contact.send') }}
+            <span class="button-icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.75"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M4 6h16v12H4z" />
+                <path d="m22 7-10 7L2 7" />
+              </svg>
+            </span>
+            {{ $t("contact.send") }}
           </template>
           <template v-else>
-            {{ $t('contact.sending', '发送中...') }}
+            {{ $t("contact.sending", "发送中...") }}
           </template>
         </TouchButton>
 
@@ -189,16 +311,59 @@
           :disabled="isSubmitting"
           @click="resetForm"
         >
-          {{ $t('common.reset') }}
+          {{ $t("common.reset") }}
         </button>
       </div>
 
       <!-- 表单状态消息 -->
-      <div v-if="submitStatus" class="form-status" :class="`form-status--${submitStatus.type}`" role="alert">
+      <div
+        v-if="submitStatus"
+        class="form-status"
+        :class="`form-status--${submitStatus.type}`"
+        role="alert"
+      >
         <div class="status-icon">
-          <span v-if="submitStatus.type === 'success'">✅</span>
-          <span v-else-if="submitStatus.type === 'error'">❌</span>
-          <span v-else>ℹ️</span>
+          <svg
+            v-if="submitStatus.type === 'success'"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.75"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+            <path d="m22 4-10 10-3-3" />
+          </svg>
+          <svg
+            v-else-if="submitStatus.type === 'error'"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.75"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+            <circle cx="12" cy="12" r="10" />
+          </svg>
+          <svg
+            v-else
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.75"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="12" r="10" />
+            <path d="M12 16v-4" />
+            <path d="M12 8h.01" />
+          </svg>
         </div>
         <div class="status-content">
           <h4 class="status-title">{{ submitStatus.title }}</h4>
@@ -209,44 +374,100 @@
 
     <!-- 其他联系方式 -->
     <div class="alternative-contact">
-      <h3 class="alt-contact-title">{{ $t('contact.alternativeContact', '其他联系方式') }}</h3>
+      <h3 class="alt-contact-title">
+        {{ $t("contact.alternativeContact", "其他联系方式") }}
+      </h3>
       <div class="contact-methods">
-        <a 
-          href="mailto:contact@aiyazone.com" 
+        <a
+          href="mailto:aiyazone@163.com"
           class="contact-method"
           :aria-label="$t('contact.emailDirect', '直接发送邮件')"
         >
-          <span class="method-icon">📧</span>
-          <span class="method-text">contact@aiyazone.com</span>
+          <span class="method-icon" aria-hidden="true">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.75"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M4 6h16v12H4z" />
+              <path d="m22 7-10 7L2 7" />
+            </svg>
+          </span>
+          <span class="method-text">aiyazone@163.com</span>
         </a>
-        
-        <a 
-          href="https://linkedin.com/in/aiyazone" 
-          target="_blank" 
+
+        <a
+          href="https://linkedin.com/in/aiyazone"
+          target="_blank"
           rel="noopener noreferrer"
           class="contact-method"
           aria-label="LinkedIn"
         >
-          <span class="method-icon">💼</span>
+          <span class="method-icon" aria-hidden="true">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.75"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M10 7V6a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v1" />
+              <path d="M4 9h16v11H4z" />
+              <path d="M8 9v11" />
+              <path d="M16 9v11" />
+              <path d="M4 13h16" />
+            </svg>
+          </span>
           <span class="method-text">LinkedIn</span>
         </a>
-        
-        <a 
-          href="https://github.com/AIYAZONE" 
-          target="_blank" 
+
+        <a
+          href="https://github.com/AIYAZONE"
+          target="_blank"
           rel="noopener noreferrer"
           class="contact-method"
           aria-label="GitHub"
         >
-          <span class="method-icon">🐱</span>
+          <span class="method-icon" aria-hidden="true">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.75"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M8 8h8" />
+              <path d="M9 12h6" />
+              <path d="M10 16h4" />
+              <path d="M7 3h10l4 4v14H3V3h4Z" />
+              <path d="M7 3v6h10V3" />
+            </svg>
+          </span>
           <span class="method-text">GitHub</span>
         </a>
       </div>
-      
+
       <div class="response-time">
         <p class="response-info">
-          <span class="info-icon">⏰</span>
-          {{ $t('contact.responseTime', '通常在24小时内回复') }}
+          <span class="info-icon" aria-hidden="true">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.75"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M12 7v6l4 2" />
+              <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+            </svg>
+          </span>
+          {{ $t("contact.responseTime", "通常在24小时内回复") }}
         </p>
       </div>
     </div>
@@ -254,9 +475,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, reactive } from 'vue';
-import { useI18n } from 'vue-i18n';
-import TouchButton from '../ui/TouchButton.vue';
+import { ref, computed, reactive } from "vue";
+import { useI18n } from "vue-i18n";
+import { TouchButton } from "../ui";
 
 interface ContactFormData {
   name: string;
@@ -277,7 +498,7 @@ interface FormErrors {
 }
 
 interface SubmitStatus {
-  type: 'success' | 'error' | 'info';
+  type: "success" | "error" | "info";
   title: string;
   message: string;
 }
@@ -289,12 +510,12 @@ const isSubmitting = ref(false);
 const submitStatus = ref<SubmitStatus | null>(null);
 
 const formData = reactive<ContactFormData>({
-  name: '',
-  email: '',
-  subject: '',
-  category: '',
-  message: '',
-  agreeToPrivacy: false
+  name: "",
+  email: "",
+  subject: "",
+  category: "",
+  message: "",
+  agreeToPrivacy: false,
 });
 
 const errors = reactive<FormErrors>({});
@@ -321,43 +542,43 @@ const validateField = (fieldName: keyof ContactFormData) => {
   clearFieldError(fieldName);
 
   switch (fieldName) {
-    case 'name':
+    case "name":
       if (!formData.name.trim()) {
-        errors.name = t('errors.validation.required');
+        errors.name = t("errors.validation.required");
       } else if (formData.name.trim().length < 2) {
-        errors.name = t('errors.validation.minLength', { min: 2 });
+        errors.name = t("errors.validation.minLength", { min: 2 });
       }
       break;
 
-    case 'email':
+    case "email":
       if (!formData.email.trim()) {
-        errors.email = t('errors.validation.required');
+        errors.email = t("errors.validation.required");
       } else if (!isValidEmail(formData.email)) {
-        errors.email = t('errors.validation.email');
+        errors.email = t("errors.validation.email");
       }
       break;
 
-    case 'subject':
+    case "subject":
       if (!formData.subject.trim()) {
-        errors.subject = t('errors.validation.required');
+        errors.subject = t("errors.validation.required");
       } else if (formData.subject.trim().length < 5) {
-        errors.subject = t('errors.validation.minLength', { min: 5 });
+        errors.subject = t("errors.validation.minLength", { min: 5 });
       }
       break;
 
-    case 'message':
+    case "message":
       if (!formData.message.trim()) {
-        errors.message = t('errors.validation.required');
+        errors.message = t("errors.validation.required");
       } else if (formData.message.trim().length < 10) {
-        errors.message = t('errors.validation.minLength', { min: 10 });
+        errors.message = t("errors.validation.minLength", { min: 10 });
       } else if (formData.message.length > maxMessageLength) {
-        errors.message = t('errors.validation.maxLength', { max: maxMessageLength });
+        errors.message = t("errors.validation.maxLength", { max: maxMessageLength });
       }
       break;
 
-    case 'agreeToPrivacy':
+    case "agreeToPrivacy":
       if (!formData.agreeToPrivacy) {
-        errors.agreeToPrivacy = t('contact.privacyRequired', '请同意隐私政策');
+        errors.agreeToPrivacy = t("contact.privacyRequired", "请同意隐私政策");
       }
       break;
   }
@@ -371,12 +592,12 @@ const clearFieldError = (fieldName: keyof ContactFormData) => {
 
 const validateForm = (): boolean => {
   // 清除之前的错误
-  Object.keys(errors).forEach(key => {
+  Object.keys(errors).forEach((key) => {
     delete errors[key as keyof FormErrors];
   });
 
   // 验证所有字段
-  (Object.keys(formData) as Array<keyof ContactFormData>).forEach(field => {
+  (Object.keys(formData) as Array<keyof ContactFormData>).forEach((field) => {
     validateField(field);
   });
 
@@ -386,9 +607,9 @@ const validateForm = (): boolean => {
 const handleSubmit = async () => {
   if (!validateForm()) {
     submitStatus.value = {
-      type: 'error',
-      title: t('contact.validationError', '表单验证失败'),
-      message: t('contact.validationErrorMessage', '请检查并修正表单中的错误')
+      type: "error",
+      title: t("contact.validationError", "表单验证失败"),
+      message: t("contact.validationErrorMessage", "请检查并修正表单中的错误"),
     };
     return;
   }
@@ -398,25 +619,28 @@ const handleSubmit = async () => {
 
   try {
     // 模拟API调用
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    await new Promise((resolve) => setTimeout(resolve, 2000));
 
     // 这里应该调用实际的API
-    console.log('Form submitted:', formData);
+    console.log("Form submitted:", formData);
 
     submitStatus.value = {
-      type: 'success',
-      title: t('contact.submitSuccess', '消息发送成功'),
-      message: t('contact.submitSuccessMessage', '感谢您的联系！我会尽快回复您的消息。')
+      type: "success",
+      title: t("contact.submitSuccess", "消息发送成功"),
+      message: t("contact.submitSuccessMessage", "感谢您的联系！我会尽快回复您的消息。"),
     };
 
     // 重置表单
     resetForm();
   } catch (error) {
-    console.error('Form submission error:', error);
+    console.error("Form submission error:", error);
     submitStatus.value = {
-      type: 'error',
-      title: t('contact.submitError', '发送失败'),
-      message: t('contact.submitErrorMessage', '抱歉，消息发送失败。请稍后重试或使用其他联系方式。')
+      type: "error",
+      title: t("contact.submitError", "发送失败"),
+      message: t(
+        "contact.submitErrorMessage",
+        "抱歉，消息发送失败。请稍后重试或使用其他联系方式。"
+      ),
     };
   } finally {
     isSubmitting.value = false;
@@ -425,15 +649,15 @@ const handleSubmit = async () => {
 
 const resetForm = () => {
   Object.assign(formData, {
-    name: '',
-    email: '',
-    subject: '',
-    category: '',
-    message: '',
-    agreeToPrivacy: false
+    name: "",
+    email: "",
+    subject: "",
+    category: "",
+    message: "",
+    agreeToPrivacy: false,
   });
 
-  Object.keys(errors).forEach(key => {
+  Object.keys(errors).forEach((key) => {
     delete errors[key as keyof FormErrors];
   });
 
@@ -443,6 +667,12 @@ const resetForm = () => {
 
 <style scoped lang="less">
 .contact-form {
+  --bg-primary: var(--brand-canvas-day);
+  --bg-secondary: rgba(0, 0, 0, 0.02);
+  --text-primary: var(--brand-text-primary);
+  --text-secondary: var(--brand-text-secondary);
+  --border-color: var(--brand-border);
+  --accent-gold: var(--brand-gold-start);
   max-width: 600px;
   margin: 0 auto;
   padding: 2rem;
@@ -532,11 +762,15 @@ const resetForm = () => {
 
   .form-select {
     cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
-    background-position: right 0.5rem center;
-    background-repeat: no-repeat;
-    background-size: 1.5em 1.5em;
-    padding-right: 2.5rem;
+    background-position: right 0.75rem calc(50% - 0.35em),
+      right 0.75rem calc(50% + 0.35em);
+    background-repeat: no-repeat, no-repeat;
+    background-size: 1.1em 1.1em, 1.1em 1.1em;
+    padding-right: 2.75rem;
   }
 
   .form-checkbox-label {
@@ -583,7 +817,7 @@ const resetForm = () => {
       margin-top: 0.125rem;
 
       &::after {
-        content: '';
+        content: "";
         position: absolute;
         top: 2px;
         left: 6px;
@@ -623,10 +857,17 @@ const resetForm = () => {
     display: flex;
     align-items: center;
     gap: 0.25rem;
+  }
 
-    &::before {
-      content: '⚠️';
-      font-size: 0.75rem;
+  .form-error-icon {
+    width: 1rem;
+    height: 1rem;
+    display: grid;
+    place-items: center;
+
+    svg {
+      width: 1rem;
+      height: 1rem;
     }
   }
 
@@ -698,8 +939,16 @@ const resetForm = () => {
     }
 
     .status-icon {
-      font-size: 1.25rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      display: grid;
+      place-items: center;
       flex-shrink: 0;
+
+      svg {
+        width: 1.4rem;
+        height: 1.4rem;
+      }
     }
 
     .status-content {
@@ -759,8 +1008,44 @@ const resetForm = () => {
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
+        &:hover .method-icon {
+          background: linear-gradient(
+            135deg,
+            rgba(212, 175, 55, 0.25) 0%,
+            rgba(212, 175, 55, 0.12) 100%
+          );
+          border-color: var(--accent-gold);
+          box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.12), 0 10px 22px rgba(0, 0, 0, 0.08);
+          transform: translateY(-1px) scale(1.02);
+        }
+
+        &:hover .method-icon svg {
+          transform: scale(1.06);
+        }
+
+        &:focus-visible {
+          outline: 2px solid var(--accent-gold);
+          outline-offset: 4px;
+        }
+
         .method-icon {
-          font-size: 1.25rem;
+          width: 2.25rem;
+          height: 2.25rem;
+          display: grid;
+          place-items: center;
+          border-radius: 999px;
+          background: rgba(212, 175, 55, 0.12);
+          border: 1px solid var(--border-color);
+          color: var(--text-primary);
+          transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+            background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease,
+            color 0.35s ease;
+
+          svg {
+            width: 1.15rem;
+            height: 1.15rem;
+            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+          }
         }
 
         .method-text {
@@ -784,7 +1069,16 @@ const resetForm = () => {
         margin: 0;
 
         .info-icon {
-          font-size: 1rem;
+          width: 1.25rem;
+          height: 1.25rem;
+          display: grid;
+          place-items: center;
+          color: var(--brand-midnight);
+
+          svg {
+            width: 1.1rem;
+            height: 1.1rem;
+          }
         }
       }
     }
@@ -839,6 +1133,22 @@ const resetForm = () => {
   .contact-form {
     .form-select {
       background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%9ca3af' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-form {
+    .contact-method,
+    .method-icon,
+    .method-icon svg {
+      transition: none;
+    }
+
+    .contact-method:hover,
+    .contact-method:hover .method-icon,
+    .contact-method:hover .method-icon svg {
+      transform: none;
     }
   }
 }

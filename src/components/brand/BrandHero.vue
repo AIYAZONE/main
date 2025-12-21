@@ -8,20 +8,23 @@
             <span class="meta-label">Personal IP & Tech Leader</span>
             <div class="meta-line"></div>
           </div>
-          
+
           <h1 class="hero-title">
             <span class="title-line">{{ title }}</span>
           </h1>
-          
+
           <p class="hero-subtitle">{{ subtitle }}</p>
-          
+
           <div class="hero-intro" v-html="intro"></div>
 
           <!-- Value Proposition -->
-          <div class="value-proposition" v-if="valueProposition && valueProposition.length > 0">
+          <div
+            class="value-proposition"
+            v-if="valueProposition && valueProposition.length > 0"
+          >
             <div class="value-tags">
-              <span 
-                v-for="(value, index) in valueProposition" 
+              <span
+                v-for="(value, index) in valueProposition"
                 :key="index"
                 class="value-tag"
               >
@@ -31,10 +34,13 @@
           </div>
 
           <!-- Certifications -->
-          <div class="certifications-preview" v-if="certifications && certifications.length > 0">
+          <div
+            class="certifications-preview"
+            v-if="certifications && certifications.length > 0"
+          >
             <div class="cert-badges">
-              <span 
-                v-for="cert in certifications" 
+              <span
+                v-for="cert in certifications"
                 :key="cert.id"
                 class="cert-badge"
                 :title="cert.name"
@@ -48,24 +54,27 @@
         <!-- Right: Visual -->
         <div class="hero-visual-column">
           <div class="image-container">
-            <img 
+            <img
               v-if="profileImage"
-              :src="profileImage" 
+              :src="profileImage"
               :alt="title"
               class="hero-image"
             />
             <div class="image-overlay"></div>
           </div>
-          
+
           <!-- Rotating Badge -->
           <div class="rotating-badge">
             <svg viewBox="0 0 100 100" width="120" height="120">
               <defs>
-                <path id="circle" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" />
+                <path
+                  id="circle"
+                  d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
+                />
               </defs>
               <text font-size="11">
                 <textPath xlink:href="#circle">
-                  AIYAZONE • EST. 2024 • PREMIUM DESIGN •
+                  AIYAZONE • EST. 2025 • PREMIUM DESIGN •
                 </textPath>
               </text>
             </svg>
@@ -74,20 +83,20 @@
         </div>
       </div>
     </div>
-    
+
     <!-- Background Decor -->
     <div class="hero-glow"></div>
   </section>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent } from "vue";
 
-export default defineComponent({ name: 'BrandHero' });
+export default defineComponent({ name: "BrandHero" });
 </script>
 
 <script setup lang="ts">
-import type { Certification } from '../../types/brand';
+import type { Certification } from "../../types/brand";
 
 interface Props {
   title: string;
@@ -99,21 +108,21 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  profileImage: '',
+  profileImage: "",
   certifications: () => [],
-  valueProposition: () => []
+  valueProposition: () => [],
 });
 
 const getCertificationAbbr = (certName: string): string => {
-  if (certName.includes('PMP')) return 'PMP';
-  if (certName.includes('ACP')) return 'ACP';
-  if (certName.includes('CSM')) return 'CSM';
-  if (certName.includes('PSM')) return 'PSM';
-  
+  if (certName.includes("PMP")) return "PMP";
+  if (certName.includes("ACP")) return "ACP";
+  if (certName.includes("CSM")) return "CSM";
+  if (certName.includes("PSM")) return "PSM";
+
   return certName
-    .split(' ')
-    .map(word => word.charAt(0))
-    .join('')
+    .split(" ")
+    .map((word) => word.charAt(0))
+    .join("")
     .toUpperCase()
     .slice(0, 3);
 };
@@ -142,12 +151,12 @@ const getCertificationAbbr = (certName: string): string => {
     display: flex;
     flex-direction: column;
     gap: var(--brand-space-md);
-    
+
     .hero-meta {
       display: flex;
       align-items: center;
       gap: 1rem;
-      
+
       .meta-label {
         font-family: var(--brand-font-mono);
         font-size: 0.75rem;
@@ -155,7 +164,7 @@ const getCertificationAbbr = (certName: string): string => {
         text-transform: uppercase;
         color: var(--brand-text-tertiary);
       }
-      
+
       .meta-line {
         height: 1px;
         width: 40px;
@@ -170,16 +179,16 @@ const getCertificationAbbr = (certName: string): string => {
       line-height: 1.05;
       letter-spacing: -0.03em;
       color: var(--brand-midnight);
-      
+
       .title-line {
         display: block;
-        background: linear-gradient(135deg, var(--brand-midnight) 0%, #3B82F6 100%);
+        background: linear-gradient(135deg, var(--brand-midnight) 0%, #3b82f6 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
       }
     }
-    
+
     .hero-subtitle {
       font-family: var(--brand-font-body);
       font-size: 1.5rem;
@@ -187,7 +196,7 @@ const getCertificationAbbr = (certName: string): string => {
       color: var(--brand-text-secondary);
       max-width: 90%;
     }
-    
+
     .hero-intro {
       font-family: var(--brand-font-body);
       font-size: 1.1rem;
@@ -197,15 +206,15 @@ const getCertificationAbbr = (certName: string): string => {
       border-left: 2px solid var(--brand-gold-start);
       padding-left: 1.5rem;
     }
-    
+
     .value-proposition {
       margin-top: 1rem;
-      
+
       .value-tags {
         display: flex;
         flex-wrap: wrap;
         gap: 0.75rem;
-        
+
         .value-tag {
           font-family: var(--brand-font-mono);
           font-size: 0.75rem;
@@ -214,7 +223,7 @@ const getCertificationAbbr = (certName: string): string => {
           border-radius: 4px;
           color: var(--brand-text-secondary);
           transition: all 0.3s ease;
-          
+
           &:hover {
             border-color: var(--brand-electric);
             color: var(--brand-electric);
@@ -223,12 +232,12 @@ const getCertificationAbbr = (certName: string): string => {
         }
       }
     }
-    
+
     .certifications-preview {
       .cert-badges {
         display: flex;
         gap: 1rem;
-        
+
         .cert-badge {
           width: 40px;
           height: 40px;
@@ -242,7 +251,7 @@ const getCertificationAbbr = (certName: string): string => {
           border-radius: 50%;
           border: 1px solid var(--brand-gold-start);
           transition: all 0.3s var(--brand-ease-bouncy);
-          
+
           &:hover {
             transform: scale(1.1);
             box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
@@ -260,7 +269,7 @@ const getCertificationAbbr = (certName: string): string => {
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
     .image-container {
       position: relative;
       width: 100%;
@@ -268,7 +277,7 @@ const getCertificationAbbr = (certName: string): string => {
       aspect-ratio: 3/4;
       border-radius: 2px; /* Slight roundness */
       overflow: hidden;
-      
+
       .hero-image {
         width: 100%;
         height: 100%;
@@ -276,19 +285,19 @@ const getCertificationAbbr = (certName: string): string => {
         filter: grayscale(20%);
         transition: all 0.6s var(--brand-ease-premium);
       }
-      
+
       &:hover .hero-image {
         filter: grayscale(0%);
         transform: scale(1.05);
       }
     }
-    
+
     .rotating-badge {
       position: absolute;
       top: 10%;
       right: 0;
       animation: rotate 20s linear infinite;
-      
+
       svg {
         fill: var(--brand-midnight);
         letter-spacing: 0.2em;
@@ -296,7 +305,7 @@ const getCertificationAbbr = (certName: string): string => {
         font-weight: 700;
         text-transform: uppercase;
       }
-      
+
       .badge-center {
         position: absolute;
         top: 50%;
@@ -323,8 +332,12 @@ const getCertificationAbbr = (certName: string): string => {
 }
 
 @keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Responsive */
@@ -332,25 +345,26 @@ const getCertificationAbbr = (certName: string): string => {
   .brand-hero .hero-grid {
     grid-template-columns: 1fr;
     text-align: center;
-    
+
     .hero-text-column {
       align-items: center;
-      
+
       .hero-intro {
         border-left: none;
         padding-left: 0;
         text-align: center;
       }
-      
-      .value-tags, .cert-badges {
+
+      .value-tags,
+      .cert-badges {
         justify-content: center;
       }
     }
-    
+
     .hero-visual-column {
       min-height: 400px;
       order: -1; /* Image on top on mobile */
-      
+
       .rotating-badge {
         right: 10%;
       }

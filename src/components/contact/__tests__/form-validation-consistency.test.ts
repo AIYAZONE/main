@@ -237,13 +237,22 @@ describe('Form Validation Consistency', () => {
               
               switch (submitStatusType) {
                 case 'success':
-                  expect(statusIcon.text()).toContain('✅');
+                  expect(statusIcon.find('svg').exists()).toBe(true);
+                  expect(
+                    statusIcon.find('path[d="m22 4-10 10-3-3"]').exists()
+                  ).toBe(true);
                   break;
                 case 'error':
-                  expect(statusIcon.text()).toContain('❌');
+                  expect(statusIcon.find('svg').exists()).toBe(true);
+                  expect(
+                    statusIcon.find('path[d="M18 6 6 18"]').exists()
+                  ).toBe(true);
                   break;
                 case 'info':
-                  expect(statusIcon.text()).toContain('ℹ️');
+                  expect(statusIcon.find('svg').exists()).toBe(true);
+                  expect(
+                    statusIcon.find('path[d="M12 16v-4"]').exists()
+                  ).toBe(true);
                   break;
               }
             } else {

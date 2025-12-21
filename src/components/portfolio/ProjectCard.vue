@@ -77,7 +77,7 @@
           @error="handleImageError"
         />
         <div class="image-overlay">
-          <span class="view-btn">VIEW</span>
+          <span class="view-btn view-project">{{ $t('portfolio.viewProject') }}</span>
         </div>
       </div>
 

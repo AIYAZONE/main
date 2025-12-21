@@ -105,7 +105,7 @@ describe('Brand Information Completeness Property Tests', () => {
           
           // Profile image should be displayed when provided
           if (brandInfo.profileImage) {
-            const profileImage = wrapper.find('.profile-image img');
+            const profileImage = wrapper.find('.image-container img.hero-image');
             expect(profileImage.exists()).toBe(true);
             expect(profileImage.attributes('src')).toBe(brandInfo.profileImage);
             expect(profileImage.attributes('alt')).toContain(brandInfo.name);
@@ -153,7 +153,7 @@ describe('Brand Information Completeness Property Tests', () => {
           expect(displayedIntro.replace(/\s+/g, ' ')).toBe(expectedIntro.replace(/\s+/g, ' '));
           
           // Optional elements should not cause errors when missing
-          expect(wrapper.find('.profile-image').exists()).toBe(false);
+          expect(wrapper.find('img.hero-image').exists()).toBe(false);
           expect(wrapper.findAll('.cert-badge').length).toBe(0);
           
           return true;

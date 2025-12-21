@@ -39,97 +39,145 @@
   </component>
 </template>
 
-<script setup lang="ts">
-import { computed, ref } from 'vue';
+<script lang="ts">
+import { defineComponent, computed, ref, toRefs, onBeforeUnmount, type PropType } from 'vue';
 
-interface Props {
-  variant?: 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'info' | 'light' | 'dark' | 'ghost';
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-  disabled?: boolean;
-  loading?: boolean;
-  block?: boolean;
-  rounded?: boolean;
-  outlined?: boolean;
-  icon?: string;
-  iconPosition?: 'left' | 'right';
-  badge?: string | number;
-  hapticFeedback?: boolean;
-  touchOptimized?: boolean;
-  tag?: string;
-  type?: 'button' | 'submit' | 'reset';
-  href?: string;
-  target?: string;
-  rel?: string;
-}
+type Variant =
+  | 'primary'
+  | 'secondary'
+  | 'success'
+  | 'warning'
+  | 'danger'
+  | 'info'
+  | 'light'
+  | 'dark'
+  | 'ghost';
 
-const props = withDefaults(defineProps<Props>(), {
-  variant: 'primary',
-  size: 'md',
-  disabled: false,
-  loading: false,
-  block: false,
-  rounded: false,
-  outlined: false,
-  iconPosition: 'left',
-  hapticFeedback: false,
-  touchOptimized: false,
-  tag: 'button',
-  type: 'button'
+type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+
+export default defineComponent({
+  name: 'TouchButton',
+  inheritAttrs: false,
+  props: {
+    variant: { type: String as PropType<Variant>, default: 'primary' },
+    size: { type: String as PropType<Size>, default: 'md' },
+    disabled: { type: Boolean, default: false },
+    loading: { type: Boolean, default: false },
+    block: { type: Boolean, default: false },
+    rounded: { type: Boolean, default: false },
+    outlined: { type: Boolean, default: false },
+    icon: { type: String, default: '' },
+    iconPosition: { type: String as PropType<'left' | 'right'>, default: 'left' },
+    badge: { type: [String, Number] as PropType<string | number>, default: '' },
+    hapticFeedback: { type: Boolean, default: false },
+    touchOptimized: { type: Boolean, default: false },
+    touchSize: { type: String as PropType<'normal' | 'large'>, default: 'normal' },
+    touchPadding: { type: Boolean, default: false },
+    longPress: { type: Boolean, default: false },
+    longPressDelay: { type: Number, default: 500 },
+    tag: { type: String, default: 'button' },
+    type: { type: String as PropType<'button' | 'submit' | 'reset'>, default: 'button' },
+    href: { type: String, default: '' },
+    target: { type: String, default: '' },
+    rel: { type: String, default: '' }
+  },
+  emits: {
+    click: (_event: Event) => true,
+    touchStart: (_event: TouchEvent) => true,
+    touchEnd: (_event: TouchEvent) => true,
+    longpress: (_event: Event) => true
+  },
+  setup(props, { emit }) {
+    const isPressed = ref(false);
+    const didTouch = ref(false);
+    const longPressTriggered = ref(false);
+    const longPressTimeoutId = ref<number | null>(null);
+
+    const isTouchLarge = computed(() => props.touchOptimized || props.touchSize === 'large');
+    const isTouchPadding = computed(() => props.touchOptimized || props.touchPadding);
+
+    const buttonClasses = computed(() => [
+      'touch-button',
+      'btn--touch',
+      `touch-button--${props.variant}`,
+      `touch-button--${props.size}`,
+      {
+        'touch-button--disabled': props.disabled,
+        'touch-button--loading': props.loading,
+        'touch-button--block': props.block,
+        'touch-button--rounded': props.rounded,
+        'touch-button--outlined': props.outlined,
+        'touch-button--pressed': isPressed.value,
+        'touch-button--with-icon': !!props.icon,
+        'touch-button--with-badge': !!props.badge,
+        'btn--active': isPressed.value,
+        'btn--touch-large': isTouchLarge.value,
+        'btn--touch-padding': isTouchPadding.value
+      }
+    ]);
+
+    const handleClick = (event: Event) => {
+      if (props.disabled || props.loading) {
+        event.preventDefault();
+        return;
+      }
+      if (didTouch.value) return;
+      emit('click', event);
+    };
+
+    const handleTouchStart = (event: TouchEvent) => {
+      if (props.disabled || props.loading) return;
+      isPressed.value = true;
+      didTouch.value = true;
+      longPressTriggered.value = false;
+
+      if (props.longPress) {
+        if (longPressTimeoutId.value) window.clearTimeout(longPressTimeoutId.value);
+        longPressTimeoutId.value = window.setTimeout(() => {
+          if (props.disabled || props.loading) return;
+          longPressTriggered.value = true;
+          emit('longpress', new Event('longpress'));
+        }, props.longPressDelay);
+      }
+
+      if (props.hapticFeedback && 'vibrate' in navigator) {
+        navigator.vibrate(50);
+      }
+
+      emit('touchStart', event);
+    };
+
+    const handleTouchEnd = (event: TouchEvent) => {
+      if (props.disabled || props.loading) return;
+      isPressed.value = false;
+      if (longPressTimeoutId.value) {
+        window.clearTimeout(longPressTimeoutId.value);
+        longPressTimeoutId.value = null;
+      }
+      emit('touchEnd', event);
+      if (!longPressTriggered.value) {
+        emit('click', event as unknown as Event);
+      }
+      window.setTimeout(() => {
+        didTouch.value = false;
+      }, 350);
+    };
+
+    onBeforeUnmount(() => {
+      if (longPressTimeoutId.value) {
+        window.clearTimeout(longPressTimeoutId.value);
+      }
+    });
+
+    return {
+      ...toRefs(props),
+      buttonClasses,
+      handleClick,
+      handleTouchStart,
+      handleTouchEnd
+    };
+  }
 });
-
-const emit = defineEmits<{
-  click: [event: Event];
-  touchStart: [event: TouchEvent];
-  touchEnd: [event: TouchEvent];
-}>();
-
-const isPressed = ref(false);
-
-const buttonClasses = computed(() => [
-  'touch-button',
-  'btn--touch', // For backward compatibility with tests
-  `touch-button--${props.variant}`,
-  `touch-button--${props.size}`,
-  {
-    'touch-button--disabled': props.disabled,
-    'touch-button--loading': props.loading,
-    'touch-button--block': props.block,
-    'touch-button--rounded': props.rounded,
-    'touch-button--outlined': props.outlined,
-    'touch-button--pressed': isPressed.value,
-    'touch-button--with-icon': props.icon,
-    'touch-button--with-badge': props.badge,
-    'btn--active': isPressed.value, // For test compatibility
-    'btn--touch-large': props.touchOptimized,
-    'btn--touch-padding': props.touchOptimized
-  }
-]);
-
-const handleClick = (event: Event) => {
-  if (props.disabled || props.loading) {
-    event.preventDefault();
-    return;
-  }
-  emit('click', event);
-};
-
-const handleTouchStart = (event: TouchEvent) => {
-  if (props.disabled || props.loading) return;
-  isPressed.value = true;
-  
-  // Haptic feedback
-  if (props.hapticFeedback && 'vibrate' in navigator) {
-    navigator.vibrate(50);
-  }
-  
-  emit('touchStart', event);
-};
-
-const handleTouchEnd = (event: TouchEvent) => {
-  if (props.disabled || props.loading) return;
-  isPressed.value = false;
-  emit('touchEnd', event);
-};
 </script>
 
 <style scoped lang="less">

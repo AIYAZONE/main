@@ -8,7 +8,7 @@
           v-for="mode in visualModes" 
           :key="mode.value"
           :class="['mode-btn', { active: currentMode === mode.value }]"
-          @click="currentMode = mode.value as 'quadrant' | 'radar' | 'matrix'"
+          @click="setMode(mode.value)"
         >
           {{ $t(mode.label) }}
         </button>
@@ -172,7 +172,7 @@
             <div class="action-meta">
               <span class="action-priority">{{ $t(`career.swot.priority.${action.priority}`) }}</span>
               <span class="action-status">{{ $t(`career.swot.status.${action.status}`) }}</span>
-              <span v-if="action.deadline" class="action-deadline">
+              <span v-if="hasValidDeadline(action.deadline)" class="action-deadline">
                 {{ $t('career.swot.deadline') }}: {{ formatDate(action.deadline) }}
               </span>
             </div>
@@ -188,9 +188,11 @@ import { ref, onMounted, watch, nextTick } from 'vue';
 import { useI18n } from 'vue-i18n';
 import type { SWOTData } from '../../types/career';
 
+type VisualMode = 'quadrant' | 'radar' | 'matrix';
+
 interface Props {
   analysis: SWOTData | null;
-  visualMode?: 'quadrant' | 'radar' | 'matrix';
+  visualMode?: VisualMode;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -199,10 +201,10 @@ const props = withDefaults(defineProps<Props>(), {
 
 const { t } = useI18n();
 
-const currentMode = ref(props.visualMode);
+const currentMode = ref<VisualMode>(props.visualMode);
 const radarCanvas = ref<HTMLCanvasElement>();
 
-const visualModes = [
+const visualModes: Array<{ value: VisualMode; label: string }> = [
   { value: 'quadrant', label: 'career.swot.modes.quadrant' },
   { value: 'radar', label: 'career.swot.modes.radar' },
   { value: 'matrix', label: 'career.swot.modes.matrix' }
@@ -214,6 +216,15 @@ const radarCategories = [
   { key: 'market', label: 'career.swot.categories.market' },
   { key: 'personal', label: 'career.swot.categories.personal' }
 ];
+
+const setMode = (mode: VisualMode) => {
+  currentMode.value = mode;
+};
+
+const hasValidDeadline = (deadline: unknown): deadline is Date => {
+  if (!(deadline instanceof Date)) return false;
+  return Number.isFinite(deadline.getTime());
+};
 
 const formatDate = (date: Date) => {
   return new Intl.DateTimeFormat('zh-CN', {

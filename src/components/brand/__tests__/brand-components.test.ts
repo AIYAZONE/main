@@ -138,7 +138,7 @@ describe('Brand Components', () => {
         }
       });
 
-      const profileImg = wrapper.find('.profile-image img');
+      const profileImg = wrapper.find('.image-container img.hero-image');
       expect(profileImg.exists()).toBe(true);
       expect(profileImg.attributes('src')).toBe(mockBrandInfo.profileImage);
       expect(profileImg.attributes('alt')).toContain(mockBrandInfo.name);
@@ -177,7 +177,7 @@ describe('Brand Components', () => {
       });
 
       expect(wrapper.find('.brand-hero').exists()).toBe(true);
-      expect(wrapper.find('.profile-image').exists()).toBe(false);
+      expect(wrapper.find('img.hero-image').exists()).toBe(false);
       expect(wrapper.findAll('.cert-badge').length).toBe(0);
     });
   });

@@ -174,6 +174,7 @@ export class LazyLoadingService {
     const bgSrc = element.dataset.bgSrc;
     if (bgSrc) {
       element.style.backgroundImage = `url(${bgSrc})`;
+      element.classList.add('bg-loaded');
     }
   }
 

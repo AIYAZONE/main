@@ -334,57 +334,79 @@ export class NetworkErrorHandler {
     return navigator.onLine;
   }
 
-  async handleFetchError(url: string): Promise<{ success: boolean; error?: string }> {
+  async handleFetchError(
+    url: string
+  ): Promise<{ success: boolean; error?: Error; retry?: () => Promise<Response> }> {
+    const retry = () => fetch(url);
     try {
-      const response = await fetch(url);
+      const response = await retry();
       if (!response.ok) {
         throw new Error(`HTTP ${response.status}`);
       }
-      return { success: true };
+      return { success: true, retry };
     } catch (error) {
+      const normalizedError =
+        error instanceof Error ? error : new Error('Network error');
       return { 
         success: false, 
-        error: error instanceof Error ? error.message : 'Network error' 
+        error: normalizedError,
+        retry
       };
     }
   }
 
-  async retryRequest(url: string, options: { maxRetries?: number } = {}): Promise<{ success: boolean; error?: string }> {
+  async retryRequest(
+    url: string,
+    options: { maxRetries?: number } = {}
+  ): Promise<Response> {
     const { maxRetries = 3 } = options;
-    let lastError: Error;
+    let lastError: Error | undefined;
 
     for (let i = 0; i < maxRetries; i++) {
       try {
         const response = await fetch(url);
         if (response.ok) {
-          return { success: true };
+          return response;
         }
         throw new Error(`HTTP ${response.status}`);
       } catch (error) {
-        lastError = error as Error;
+        lastError = error instanceof Error ? error : new Error('Network error');
         await new Promise(resolve => setTimeout(resolve, 1000 * (i + 1)));
       }
     }
 
-    return { 
-      success: false, 
-      error: lastError!.message 
-    };
+    throw lastError ?? new Error('Network error');
   }
 
-  async handleTimeout(url: string, timeout: number): Promise<{ success: boolean; error?: string }> {
+  async handleTimeout(
+    url: string,
+    timeout: number
+  ): Promise<{ success: boolean; error?: Error }> {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), timeout);
+    const abortTimeoutId = setTimeout(() => controller.abort(), timeout);
+    let raceTimeoutId: ReturnType<typeof setTimeout> | undefined;
 
     try {
-      const response = await fetch(url, { signal: controller.signal });
-      clearTimeout(timeoutId);
+      const response = await Promise.race([
+        fetch(url, { signal: controller.signal }),
+        new Promise<never>((_, reject) => {
+          raceTimeoutId = setTimeout(() => reject(new Error('Request timeout')), timeout);
+        })
+      ]);
+      clearTimeout(abortTimeoutId);
+      if (raceTimeoutId) clearTimeout(raceTimeoutId);
+      if (!(response instanceof Response)) {
+        throw new Error('Invalid response');
+      }
       return { success: response.ok };
     } catch (error) {
-      clearTimeout(timeoutId);
+      clearTimeout(abortTimeoutId);
+      if (raceTimeoutId) clearTimeout(raceTimeoutId);
+      const normalizedError =
+        error instanceof Error ? error : new Error('Timeout error');
       return { 
         success: false, 
-        error: error instanceof Error ? error.message : 'Timeout error' 
+        error: normalizedError
       };
     }
   }

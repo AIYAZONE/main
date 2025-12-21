@@ -1,64 +1,50 @@
 <template>
   <div class="contact-view">
-    <!-- Editorial Header -->
-    <header class="contact-header">
+    <div class="contact-hero">
       <div class="middle-box">
-        <h1 class="page-title">
-          <span class="block">GET IN</span>
-          <span class="block italic text-gradient-gold">TOUCH</span>
-        </h1>
-        <p class="page-subtitle">{{ $t('contact.subtitle') }}</p>
+        <div class="hero-title" role="heading" aria-level="1">
+          <div class="hero-line">GET IN</div>
+          <div class="hero-line hero-line--accent">TOUCH</div>
+        </div>
+        <div class="hero-subtitle">{{ $t("contact.subtitle") }}</div>
       </div>
-    </header>
-
-    <!-- Content Grid -->
-    <section class="contact-content">
+    </div>
+    <div class="contact-content">
       <div class="middle-box">
-        <div class="contact-grid">
-          <!-- Left: Contact Methods -->
-          <div class="contact-methods">
-            <div class="method-card">
-              <span class="method-label">EMAIL</span>
-              <a href="mailto:contact@aiyazone.com" class="method-value">contact@aiyazone.com</a>
-            </div>
-            
-            <div class="method-card">
-              <span class="method-label">SOCIAL</span>
-              <div class="social-links">
-                <a href="https://github.com/AIYAZONE" target="_blank" class="social-link">GitHub</a>
-                <a href="https://linkedin.com/in/aiyazone" target="_blank" class="social-link">LinkedIn</a>
-                <span class="social-link" title="AIYAZONE2024">WeChat</span>
+        <div class="panel panel--primary">
+          <div class="panel-kicker">{{ $t("contact.title") }}</div>
+          <div class="contact-details-list">
+            <div class="contact-detail">
+              <div class="contact-detail-label">
+                {{ $t("contact.email", "邮箱") }}
               </div>
+              <div class="contact-detail-value">aiyazone@163.com</div>
             </div>
-
-            <div class="method-card">
-              <span class="method-label">AVAILABILITY</span>
-              <p class="method-text">{{ $t('contact.responseTime.description') }}</p>
+            <div class="contact-detail">
+              <div class="contact-detail-label">GitHub</div>
+              <div class="contact-detail-value">github.com/AIYAZONE</div>
             </div>
-          </div>
-
-          <!-- Right: Contact Form -->
-          <div class="contact-form-wrapper">
-            <div class="form-header">
-              <h2 class="form-title">{{ $t('contact.form.title') }}</h2>
+            <div class="contact-detail">
+              <div class="contact-detail-label">
+                {{ $t("contact.wechat", "微信") }}
+              </div>
+              <div class="contact-detail-value">AIYAZONE2045</div>
             </div>
-            <ContactForm />
           </div>
         </div>
       </div>
-    </section>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { onMounted } from 'vue';
-import { useI18n } from 'vue-i18n';
-import ContactForm from '../components/contact/ContactForm.vue';
+import { onMounted } from "vue";
+import { useI18n } from "vue-i18n";
 
 const { t } = useI18n();
 
 onMounted(() => {
-  document.title = `${t('contact.title')} - AIYAZONE`;
+  document.title = `${t("contact.title")} - AIYAZONE`;
 });
 </script>
 
@@ -67,116 +53,169 @@ onMounted(() => {
   min-height: 100vh;
 }
 
-.contact-header {
+.contact-hero {
   padding: var(--brand-space-huge) 0 var(--brand-space-xl);
-  
-  .page-title {
-    font-size: clamp(4rem, 8vw, 8rem);
-    line-height: 0.9;
-    margin-bottom: 2rem;
-    
-    .block {
-      display: block;
-    }
-    
-    .italic {
-      font-family: var(--brand-font-display);
-      font-style: italic;
-    }
-  }
-  
-  .page-subtitle {
-    font-size: 1.25rem;
-    color: var(--brand-text-secondary);
-    max-width: 500px;
-  }
+}
+
+.hero-title {
+  font-size: clamp(4rem, 8vw, 8rem);
+  line-height: 0.9;
+  margin-bottom: 2rem;
+}
+
+.hero-line {
+  display: block;
+}
+
+.hero-line--accent {
+  font-family: var(--brand-font-display);
+  font-style: italic;
+  background: var(--brand-gradient-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: var(--brand-text-secondary);
+  max-width: 520px;
+  line-height: 1.6;
 }
 
 .contact-content {
   padding-bottom: var(--brand-space-huge);
-  
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 6rem;
-    
-    .contact-methods {
-      display: flex;
-      flex-direction: column;
-      gap: 3rem;
-      
-      .method-card {
-        padding-top: 1.5rem;
-        border-top: 1px solid var(--brand-border);
-        
-        .method-label {
-          display: block;
-          font-family: var(--brand-font-mono);
-          font-size: 0.75rem;
-          letter-spacing: 0.1em;
-          color: var(--brand-text-tertiary);
-          margin-bottom: 1rem;
-        }
-        
-        .method-value {
-          font-family: var(--brand-font-display);
-          font-size: 1.5rem;
-          color: var(--brand-text-primary);
-          text-decoration: none;
-          transition: color 0.3s ease;
-          
-          &:hover {
-            color: var(--brand-electric);
-          }
-        }
-        
-        .method-text {
-          color: var(--brand-text-secondary);
-          line-height: 1.6;
-        }
-        
-        .social-links {
-          display: flex;
-          flex-direction: column;
-          gap: 0.5rem;
-          
-          .social-link {
-            font-size: 1.1rem;
-            color: var(--brand-text-primary);
-            text-decoration: none;
-            cursor: pointer;
-            transition: color 0.3s ease;
-            
-            &:hover {
-              color: var(--brand-electric);
-            }
-          }
-        }
-      }
-    }
-    
-    .contact-form-wrapper {
-      background: var(--brand-canvas-day);
-      border: 1px solid var(--brand-border);
-      padding: 3rem;
-      border-radius: 2px;
-      
-      .form-header {
-        margin-bottom: 2rem;
-        
-        .form-title {
-          font-size: 2rem;
-          font-family: var(--brand-font-display);
-        }
-      }
-    }
-  }
+}
+
+.panel {
+  position: relative;
+  background: var(--brand-canvas-day);
+  border: 1px solid var(--brand-border);
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: var(--brand-shadow-card);
+  overflow: hidden;
+  transition: transform var(--brand-transition-base),
+    box-shadow var(--brand-transition-base), border-color var(--brand-transition-base);
+}
+
+.panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--brand-gradient-gold);
+  opacity: 0.9;
+}
+
+.panel-kicker {
+  font-family: var(--brand-font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brand-text-tertiary);
+  margin-bottom: 1rem;
+}
+
+.contact-details-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.contact-detail {
+  position: relative;
+  display: grid;
+  grid-template-columns: 140px minmax(0, 1fr);
+  gap: 1.25rem;
+  padding: 1.1rem 1.25rem;
+  border: 1px solid var(--brand-border);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  transition: transform var(--brand-transition-base),
+    box-shadow var(--brand-transition-base), border-color var(--brand-transition-base),
+    background var(--brand-transition-base);
+  overflow: hidden;
+}
+
+.contact-detail::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--brand-gradient-gold);
+  opacity: 0.75;
+}
+
+.contact-detail:hover {
+  transform: translateY(-4px);
+  border-color: var(--brand-border-hover);
+  box-shadow: var(--brand-shadow-float);
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.contact-detail-label {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  font-family: var(--brand-font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brand-text-tertiary);
+  line-height: 1.6;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid var(--brand-border);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.contact-detail-value {
+  font-family: var(--brand-font-mono);
+  font-size: 1rem;
+  color: var(--brand-text-primary);
+  line-height: 1.6;
+  word-break: break-word;
+  letter-spacing: 0.01em;
 }
 
 @media screen and (max-width: 1024px) {
-  .contact-content .contact-grid {
+  .panel {
+    padding: 2rem;
+  }
+
+  .contact-detail {
     grid-template-columns: 1fr;
-    gap: 4rem;
+    gap: 0.35rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .panel {
+    border-radius: 10px;
+    padding: 1.5rem;
+  }
+
+  .contact-detail {
+    border-radius: 10px;
+    padding: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panel,
+  .contact-detail {
+    transition: none;
+  }
+
+  .contact-detail:hover {
+    transform: none;
   }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <Teleport to="body">
+  <Teleport v-if="useTeleport" to="body">
     <Transition name="modal" appear>
       <div 
         v-if="modelValue || visible"
@@ -16,8 +16,7 @@
           @click.stop
           ref="modalRef"
         >
-          <!-- 模态框头部 -->
-          <header v-if="$slots.header || title" class="modal-header">
+          <header v-if="$slots.header || title || closable" class="modal-header">
             <slot name="header">
               <h2 v-if="title" :id="titleId" class="modal-title">{{ title }}</h2>
             </slot>
@@ -32,12 +31,10 @@
             </button>
           </header>
 
-          <!-- 模态框内容 -->
           <div :id="contentId" class="modal-content">
             <slot />
           </div>
 
-          <!-- 模态框底部 -->
           <footer v-if="$slots.footer" class="modal-footer">
             <slot name="footer" />
           </footer>
@@ -45,6 +42,47 @@
       </div>
     </Transition>
   </Teleport>
+  <Transition v-else name="modal" appear>
+    <div 
+      v-if="modelValue || visible"
+      class="modal-overlay"
+      @click="handleOverlayClick"
+      @keydown="handleKeydown"
+      role="dialog"
+      :aria-modal="true"
+      :aria-labelledby="titleId"
+      :aria-describedby="contentId"
+    >
+      <div 
+        :class="modalClasses"
+        @click.stop
+        ref="modalRef"
+      >
+        <header v-if="$slots.header || title || closable" class="modal-header">
+          <slot name="header">
+            <h2 v-if="title" :id="titleId" class="modal-title">{{ title }}</h2>
+          </slot>
+          <button
+            v-if="closable"
+            class="modal-close"
+            @click="handleClose"
+            :aria-label="$t('ui.modal.close')"
+            type="button"
+          >
+            <span class="close-icon">✕</span>
+          </button>
+        </header>
+
+        <div :id="contentId" class="modal-content">
+          <slot />
+        </div>
+
+        <footer v-if="$slots.footer" class="modal-footer">
+          <slot name="footer" />
+        </footer>
+      </div>
+    </div>
+  </Transition>
 </template>
 
 <script setup lang="ts">
@@ -55,7 +93,7 @@ interface Props {
   modelValue?: boolean;
   visible?: boolean; // For backward compatibility with tests
   title?: string;
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'full';
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'full' | 'small' | 'medium' | 'large' | 'fullscreen';
   closable?: boolean;
   closeOnOverlay?: boolean;
   closeOnEscape?: boolean;
@@ -91,13 +129,31 @@ const modalRef = ref<HTMLElement>();
 const titleId = computed(() => `modal-title-${Math.random().toString(36).substr(2, 9)}`);
 const contentId = computed(() => `modal-content-${Math.random().toString(36).substr(2, 9)}`);
 
+const useTeleport = computed(() => !props.visible);
+
+const normalizedSize = computed(() => {
+  if (props.size === 'small') return 'sm';
+  if (props.size === 'medium') return 'md';
+  if (props.size === 'large') return 'lg';
+  if (props.size === 'fullscreen') return 'fullscreen';
+  return props.size;
+});
+
+const legacySizeClass = computed(() => {
+  if (props.size === 'small' || props.size === 'medium' || props.size === 'large' || props.size === 'fullscreen') {
+    return props.size;
+  }
+  return '';
+});
+
 const modalClasses = computed(() => [
   'modal-container',
-  `modal--${props.size}`,
+  `modal--${normalizedSize.value}`,
+  legacySizeClass.value ? `modal--${legacySizeClass.value}` : '',
   {
     'modal-container--centered': props.centered,
     'modal-container--scrollable': props.scrollable,
-    'modal-container--fullscreen': props.fullscreen
+    'modal-container--fullscreen': props.fullscreen || props.size === 'fullscreen'
   }
 ]);
 
@@ -239,27 +295,30 @@ onUnmounted(() => {
   outline: none;
 
   // 尺寸变体
-  &--xs {
+  &.modal--xs {
     max-width: 300px;
   }
 
-  &--sm {
+  &.modal--sm,
+  &.modal--small {
     max-width: 400px;
   }
 
-  &--md {
+  &.modal--md,
+  &.modal--medium {
     max-width: 500px;
   }
 
-  &--lg {
+  &.modal--lg,
+  &.modal--large {
     max-width: 700px;
   }
 
-  &--xl {
+  &.modal--xl {
     max-width: 900px;
   }
 
-  &--full {
+  &.modal--full {
     max-width: 95vw;
     max-height: 95vh;
   }
@@ -275,7 +334,8 @@ onUnmounted(() => {
     }
   }
 
-  &--fullscreen {
+  &--fullscreen,
+  &.modal--fullscreen {
     width: 100vw;
     height: 100vh;
     max-width: none;
