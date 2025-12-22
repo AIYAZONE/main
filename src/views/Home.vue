@@ -387,14 +387,55 @@ onMounted(() => {
 }
 
 .cta-card {
-  border: 1px solid var(--brand-border);
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.12);
   background: var(--brand-midnight);
-  color: white;
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  color: rgba(255, 255, 255, 0.9);
+  border-radius: 0;
   padding: 2.25rem 2.25rem 2rem;
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   align-items: center;
   gap: 2rem;
+  overflow: hidden;
+  box-shadow: 0 14px 36px -28px rgba(0, 0, 0, 0.6);
+  transition: border-color var(--brand-transition-base),
+    box-shadow var(--brand-transition-base),
+    background-position var(--brand-transition-base);
+}
+
+.cta-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--brand-gradient-gold);
+  opacity: 0.85;
+}
+
+.cta-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 15% 10%,
+    rgba(255, 255, 255, 0.08) 0%,
+    transparent 55%
+  );
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+.cta-card:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 18px 44px -30px rgba(0, 0, 0, 0.65);
 }
 
 .cta-kicker {
@@ -410,10 +451,11 @@ onMounted(() => {
   font-size: 2rem;
   letter-spacing: -0.02em;
   margin-bottom: 0.75rem;
+  color: rgba(255, 255, 255, 0.96);
 }
 
 .cta-subtitle {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.78);
   line-height: 1.7;
 }
 
@@ -421,6 +463,13 @@ onMounted(() => {
   display: grid;
   gap: 0.75rem;
   justify-items: stretch;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-card__content {
+  position: relative;
+  z-index: 1;
 }
 
 .cta-btn {
@@ -428,29 +477,42 @@ onMounted(() => {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  padding: 0.9rem 1.1rem;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  color: white;
+  padding: 0.95rem 1.15rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.88);
   font-family: var(--brand-font-mono);
   letter-spacing: 0.08em;
   font-size: 0.82rem;
-  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.04);
+  transition: color var(--brand-transition-base),
+    border-color var(--brand-transition-base),
+    background var(--brand-transition-base),
+    box-shadow var(--brand-transition-base);
 
   &:hover {
-    transform: translateY(-2px);
-    border-color: rgba(255, 255, 255, 0.5);
-    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.32);
+    color: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 -2px 0 rgba(212, 175, 55, 0.55);
+  }
+
+  &:focus-visible {
+    outline: 2px solid rgba(212, 175, 55, 0.85);
+    outline-offset: 3px;
   }
 }
 
 .cta-btn--primary {
-  border-color: rgba(255, 255, 255, 0.55);
-  background: linear-gradient(90deg, rgba(201, 153, 74, 0.85), rgba(227, 191, 132, 0.85));
+  border-color: rgba(212, 175, 55, 0.9);
+  background: var(--brand-gradient-gold);
   color: var(--brand-midnight);
+  font-weight: 700;
 
   &:hover {
-    background: linear-gradient(90deg, rgba(201, 153, 74, 1), rgba(227, 191, 132, 1));
-    border-color: rgba(255, 255, 255, 0.75);
+    border-color: rgba(255, 255, 255, 0.55);
+    filter: brightness(1.02);
+    box-shadow: inset 0 -2px 0 rgba(30, 41, 59, 0.25);
   }
 }
 
@@ -472,6 +534,39 @@ onMounted(() => {
   .cta-card {
     grid-template-columns: 1fr;
     gap: 1.25rem;
+    padding: 2.25rem 2rem 2rem;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .cta-card {
+    padding: 2rem 1.5rem 1.5rem;
+  }
+
+  .cta-title {
+    font-size: 1.75rem;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .cta-card:hover {
+    box-shadow: 0 14px 36px -28px rgba(0, 0, 0, 0.6);
+  }
+
+  .cta-btn:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-card,
+  .cta-btn {
+    transition: none;
+  }
+
+  .cta-card:hover,
+  .cta-btn:hover {
+    transform: none;
   }
 }
 </style>
