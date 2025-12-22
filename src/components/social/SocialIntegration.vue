@@ -1,8 +1,8 @@
 <template>
   <div class="social-integration">
     <div class="social-header">
-      <h2 class="social-title">{{ $t('social.title', '社交媒体') }}</h2>
-      <p class="social-description">{{ $t('social.description', '关注我的最新动态和技术分享') }}</p>
+      <h2 class="social-title">{{ $t('contact.social.title', '社交媒体') }}</h2>
+      <p class="social-description">{{ $t('contact.social.description', '关注我的最新动态和技术分享') }}</p>
     </div>
 
     <!-- 社交媒体链接 -->
@@ -24,9 +24,9 @@
           <h3 class="link-title">{{ link.name }}</h3>
           <p class="link-description">{{ link.description }}</p>
           <div class="link-meta">
-            <span class="link-type">{{ $t(`social.types.${link.type}`) }}</span>
+            <span class="link-type">{{ $t(`contact.social.types.${link.type}`) }}</span>
             <span v-if="link.followers" class="link-followers">
-              {{ formatNumber(link.followers) }} {{ $t('social.followers', '关注者') }}
+              {{ formatNumber(link.followers) }} {{ $t('contact.social.followers', '关注者') }}
             </span>
           </div>
         </div>
@@ -38,7 +38,7 @@
 
     <!-- 最新动态 -->
     <div class="blog-posts" v-if="showFeed">
-      <h3 class="feed-title">{{ $t('social.latestUpdates', '最新动态') }}</h3>
+      <h3 class="feed-title">{{ $t('contact.social.latestUpdates', '最新动态') }}</h3>
       
       <div v-if="isLoadingFeed" class="feed-loading">
         <div class="loading-spinner"></div>
@@ -111,7 +111,7 @@
               rel="noopener noreferrer"
               class="feed-link"
             >
-              {{ $t('social.viewPost', '查看原文') }}
+              {{ $t('contact.social.viewPost', '查看原文') }}
               <span class="external-icon">↗</span>
             </a>
           </div>
@@ -121,7 +121,7 @@
 
     <!-- GitHub Activity -->
     <div class="github-activity" v-if="showFeed && socialFeed.some(post => post.platform === 'github')">
-      <h3 class="activity-title">{{ $t('social.githubActivity', 'GitHub Activity') }}</h3>
+      <h3 class="activity-title">{{ $t('contact.social.githubActivity', 'GitHub Activity') }}</h3>
       <div class="activity-content">
         <div 
           v-for="post in socialFeed.filter(p => p.platform === 'github')" 
@@ -131,7 +131,7 @@
           <h4 class="activity-title">{{ post.title }}</h4>
           <p class="activity-description">{{ post.content }}</p>
           <a :href="post.url" target="_blank" rel="noopener noreferrer" class="activity-link">
-            {{ $t('social.viewOnGitHub', 'View on GitHub') }}
+            {{ $t('contact.social.viewOnGitHub', 'View on GitHub') }}
           </a>
         </div>
       </div>
@@ -140,7 +140,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, computed, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
 interface SocialLink {
   id: string;
@@ -179,17 +179,17 @@ const props = withDefaults(defineProps<Props>(), {
   maxFeedItems: 6
 });
 
-const { t } = useI18n();
+const { t, locale } = useI18n();
 
 const isLoadingFeed = ref(false);
 const feedError = ref<string | null>(null);
 const socialFeed = ref<SocialPost[]>([]);
 
-const socialLinks: SocialLink[] = [
+const socialLinks = computed<SocialLink[]>(() => [
   {
     id: 'blog',
-    name: 'AIYA Blog',
-    description: '技术博客和个人思考',
+    name: t('contact.social.links.blog.name', 'AIYA Blog'),
+    description: t('contact.social.links.blog.description', '技术博客和个人思考'),
     url: 'https://blog.aiyazone.com',
     platform: 'blog',
     type: 'blog',
@@ -199,8 +199,8 @@ const socialLinks: SocialLink[] = [
   },
   {
     id: 'github',
-    name: 'GitHub',
-    description: '开源项目和代码贡献',
+    name: t('contact.social.links.github.name', 'GitHub'),
+    description: t('contact.social.links.github.description', '开源项目和代码贡献'),
     url: 'https://github.com/AIYAZONE',
     platform: 'github',
     type: 'code',
@@ -210,8 +210,8 @@ const socialLinks: SocialLink[] = [
   },
   {
     id: 'frontend',
-    name: '前端技术栈',
-    description: '前端工程化和性能优化',
+    name: t('contact.social.links.frontend.name', '前端技术栈'),
+    description: t('contact.social.links.frontend.description', '前端工程化和性能优化'),
     url: 'https://fe.aiyazone.com',
     platform: 'website',
     type: 'blog',
@@ -220,8 +220,8 @@ const socialLinks: SocialLink[] = [
   },
   {
     id: 'pm',
-    name: '项目管理',
-    description: 'PMP知识体系和实践经验',
+    name: t('contact.social.links.pm.name', '项目管理'),
+    description: t('contact.social.links.pm.description', 'PMP知识体系和实践经验'),
     url: 'https://pm.aiyazone.com',
     platform: 'website',
     type: 'professional',
@@ -230,8 +230,8 @@ const socialLinks: SocialLink[] = [
   },
   {
     id: 'juejin',
-    name: '掘金',
-    description: '技术文章和社区交流',
+    name: t('contact.social.links.juejin.name', '掘金'),
+    description: t('contact.social.links.juejin.description', '技术文章和社区交流'),
     url: 'https://juejin.cn/user/aiyazone',
     platform: 'juejin',
     type: 'social',
@@ -239,7 +239,7 @@ const socialLinks: SocialLink[] = [
     external: true,
     followers: 2100
   }
-];
+]);
 
 const formatNumber = (num: number): string => {
   if (num >= 1000000) {
@@ -255,16 +255,16 @@ const formatRelativeTime = (date: Date): string => {
   const diffInSeconds = Math.floor((now.getTime() - date.getTime()) / 1000);
   
   if (diffInSeconds < 60) {
-    return t('social.timeAgo.seconds', '刚刚');
+    return t('contact.social.timeAgo.seconds', '刚刚');
   } else if (diffInSeconds < 3600) {
     const minutes = Math.floor(diffInSeconds / 60);
-    return t('social.timeAgo.minutes', `${minutes}分钟前`);
+    return t('contact.social.timeAgo.minutes', { n: minutes }, `${minutes}分钟前`);
   } else if (diffInSeconds < 86400) {
     const hours = Math.floor(diffInSeconds / 3600);
-    return t('social.timeAgo.hours', `${hours}小时前`);
+    return t('contact.social.timeAgo.hours', { n: hours }, `${hours}小时前`);
   } else if (diffInSeconds < 2592000) {
     const days = Math.floor(diffInSeconds / 86400);
-    return t('social.timeAgo.days', `${days}天前`);
+    return t('contact.social.timeAgo.days', { n: days }, `${days}天前`);
   } else {
     return date.toLocaleDateString();
   }
@@ -274,7 +274,6 @@ const getPlatformIcon = (platform: string): string => {
   const icons: Record<string, string> = {
     blog: '📝',
     github: '🐱',
-    linkedin: '💼',
     juejin: '💎',
     website: '🌐',
     twitter: '🐦'
@@ -293,54 +292,105 @@ const loadSocialFeed = async () => {
     await new Promise(resolve => setTimeout(resolve, 1500));
     
     // 模拟数据
-    const mockFeed: SocialPost[] = [
-      {
-        id: '1',
-        platform: 'blog',
-        platformName: 'AIYA Blog',
-        title: '前端架构设计的思考与实践',
-        content: '在大型前端项目中，架构设计的重要性不言而喻。本文分享了我在项目中的一些思考和实践经验...',
-        url: 'https://blog.aiyazone.com/frontend-architecture',
-        publishedAt: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000),
-        tags: ['前端架构', '工程化', '最佳实践'],
-        likes: 156,
-        comments: 23
-      },
-      {
-        id: '2',
-        platform: 'github',
-        platformName: 'GitHub',
-        title: 'ZenParticles v2.0 发布',
-        content: '新版本增加了手势识别功能，支持更多交互方式。欢迎体验和反馈！',
-        url: 'https://github.com/AIYAZONE/ZenParticles',
-        publishedAt: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000),
-        tags: ['WebGL', '3D', '交互设计'],
-        likes: 89,
-        shares: 12
-      },
-      {
-        id: '3',
-        platform: 'juejin',
-        platformName: '掘金',
-        title: 'Vue 3 性能优化实战指南',
-        content: '从组件设计到打包优化，全面提升Vue应用性能。包含实际案例和性能测试数据。',
-        url: 'https://juejin.cn/post/vue3-performance',
-        publishedAt: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000),
-        tags: ['Vue3', '性能优化', '前端'],
-        likes: 234,
-        comments: 45,
-        shares: 67
-      }
-    ];
+    const mockFeeds: Record<string, SocialPost[]> = {
+      zh: [
+        {
+          id: '1',
+          platform: 'blog',
+          platformName: 'AIYA Blog',
+          title: '前端架构设计的思考与实践',
+          content: '在大型前端项目中，架构设计的重要性不言而喻。本文分享了我在项目中的一些思考和实践经验...',
+          url: 'https://blog.aiyazone.com/frontend-architecture',
+          publishedAt: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000),
+          tags: ['前端架构', '工程化', '最佳实践'],
+          likes: 156,
+          comments: 23
+        },
+        {
+          id: '2',
+          platform: 'github',
+          platformName: 'GitHub',
+          title: 'ZenParticles v2.0 发布',
+          content: '新版本增加了手势识别功能，支持更多交互方式。欢迎体验和反馈！',
+          url: 'https://github.com/AIYAZONE/ZenParticles',
+          publishedAt: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000),
+          tags: ['WebGL', '3D', '交互设计'],
+          likes: 89,
+          shares: 12
+        },
+        {
+          id: '3',
+          platform: 'juejin',
+          platformName: '掘金',
+          title: 'Vue 3 性能优化实战指南',
+          content: '从组件设计到打包优化，全面提升Vue应用性能。包含实际案例和性能测试数据。',
+          url: 'https://juejin.cn/post/vue3-performance',
+          publishedAt: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000),
+          tags: ['Vue3', '性能优化', '前端'],
+          likes: 234,
+          comments: 45,
+          shares: 67
+        }
+      ],
+      en: [
+        {
+          id: '1',
+          platform: 'blog',
+          platformName: 'AIYA Blog',
+          title: 'Thoughts and Practices on Frontend Architecture Design',
+          content: 'The importance of architecture design in large frontend projects is self-evident. This article shares my thoughts and practical experiences...',
+          url: 'https://blog.aiyazone.com/frontend-architecture',
+          publishedAt: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000),
+          tags: ['Architecture', 'Engineering', 'Best Practices'],
+          likes: 156,
+          comments: 23
+        },
+        {
+          id: '2',
+          platform: 'github',
+          platformName: 'GitHub',
+          title: 'ZenParticles v2.0 Released',
+          content: 'New version adds gesture recognition and supports more interaction methods. Welcome to try and feedback!',
+          url: 'https://github.com/AIYAZONE/ZenParticles',
+          publishedAt: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000),
+          tags: ['WebGL', '3D', 'Interaction'],
+          likes: 89,
+          shares: 12
+        },
+        {
+          id: '3',
+          platform: 'juejin',
+          platformName: 'Juejin',
+          title: 'Vue 3 Performance Optimization Guide',
+          content: 'From component design to bundle optimization, comprehensively improve Vue application performance.',
+          url: 'https://juejin.cn/post/vue3-performance',
+          publishedAt: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000),
+          tags: ['Vue3', 'Performance', 'Frontend'],
+          likes: 234,
+          comments: 45,
+          shares: 67
+        }
+      ]
+    };
+    
+    // 根据当前语言选择 Mock 数据
+    const currentLang = (locale.value === 'zh' || locale.value === 'zh-CN') ? 'zh' : 'en';
+    const mockFeed = mockFeeds[currentLang] || mockFeeds.en;
     
     socialFeed.value = mockFeed.slice(0, props.maxFeedItems);
   } catch (error) {
     console.error('Failed to load social feed:', error);
-    feedError.value = t('social.feedError', '加载动态失败，请稍后重试');
+    feedError.value = t('contact.social.feedError', '加载动态失败，请稍后重试');
   } finally {
     isLoadingFeed.value = false;
   }
 };
+
+watch(locale, () => {
+  if (props.showFeed) {
+    loadSocialFeed();
+  }
+});
 
 onMounted(() => {
   if (props.showFeed) {

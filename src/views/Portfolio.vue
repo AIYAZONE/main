@@ -38,7 +38,7 @@
     <section class="tech-stack-section">
       <div class="middle-box">
         <div class="section-title-row">
-          <h2 class="section-title">TECH STACK</h2>
+          <h2 class="section-title">{{ t('portfolio.techStack.title') }}</h2>
           <div class="line"></div>
         </div>
         
@@ -61,24 +61,16 @@
 import { computed, onMounted } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { usePortfolioStore } from '../stores/portfolioStore';
-import { useLangStore } from '../store/lang';
 import PortfolioGrid from '../components/portfolio/PortfolioGrid.vue';
 import type { Project } from '../types/portfolio';
 
 const { t } = useI18n();
 const portfolioStore = usePortfolioStore();
-const langStore = useLangStore();
 
-const contentData = {
-  zh: {
-    portfolioDescription: "这里展示了我过去十年在前端工程与项目管理领域的探索。每一个项目都是对极致体验的追求。",
-  },
-  en: {
-    portfolioDescription: "A curation of my exploration in frontend engineering and project management over the last decade. Each project is a pursuit of excellence.",
-  }
-};
+const content = computed(() => ({
+  portfolioDescription: t('portfolio.hero.description')
+}));
 
-const content = computed(() => contentData[langStore.language as keyof typeof contentData]);
 const portfolioStatistics = computed(() => portfolioStore.projectStatistics);
 
 const handleProjectClick = (project: Project) => {

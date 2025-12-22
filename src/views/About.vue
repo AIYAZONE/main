@@ -25,7 +25,7 @@
               <img src="/assets/images/mind/bruce-brand.png" alt="My Journey" class="story-img" />
               <div class="image-caption">
                 <span class="caption-num">01</span>
-                <span class="caption-text">THE JOURNEY</span>
+                <span class="caption-text">{{ t('about.story.journeyLabel') }}</span>
               </div>
             </div>
           </div>
@@ -56,7 +56,7 @@
     <section class="skills-section">
       <div class="middle-box">
         <div class="section-header">
-          <h2 class="section-title">EXPERTISE & <br/><span class="text-gradient-gold">CERTIFICATIONS</span></h2>
+          <h2 class="section-title">{{ t('about.skills.titlePart1') }} <br/><span class="text-gradient-gold">{{ t('about.skills.titlePart2') }}</span></h2>
         </div>
 
         <div class="skills-grid">

@@ -7,7 +7,7 @@
       <div class="learning-overview">
         <div class="overview-item">
           <span class="overview-label">{{ $t('career.learning.totalDuration') }}</span>
-          <span class="overview-value">{{ learningPath?.totalDuration || '24个月' }}</span>
+          <span class="overview-value">{{ learningPath?.totalDuration || $t('career.learning.defaultDuration') }}</span>
         </div>
         <div class="overview-item">
           <span class="overview-label">{{ $t('career.learning.focusAreas') }}</span>
@@ -284,225 +284,28 @@ interface Props {
 }
 
 const props = defineProps<Props>();
-const { t } = useI18n();
+const { t, tm } = useI18n();
 
-// Mock data for three-track parallel learning
-const architecturePhases = ref([
-  {
-    id: '1',
-    title: '架构基础理论 (0-3个月)',
-    duration: '3个月',
-    goals: [
-      '掌握前端架构设计原理',
-      '理解微前端架构模式',
-      '学习系统设计方法论',
-      '建立架构思维框架'
-    ],
-    projects: [
-      { name: '个人网站架构重构', estimatedTime: '40小时' },
-      { name: '微前端Demo项目', estimatedTime: '60小时' }
-    ]
-  },
-  {
-    id: '2',
-    title: '架构实践应用 (3-9个月)',
-    duration: '6个月',
-    goals: [
-      '参与中大型项目架构设计',
-      '实践模块化架构方案',
-      '掌握架构决策方法',
-      '建立架构评估体系'
-    ],
-    projects: [
-      { name: '企业级前端架构设计', estimatedTime: '120小时' },
-      { name: '架构迁移项目', estimatedTime: '80小时' }
-    ]
-  },
-  {
-    id: '3',
-    title: '架构专家定位 (9-18个月)',
-    duration: '9个月',
-    goals: [
-      '具备大型系统架构能力',
-      '形成个人架构方法论',
-      '建立架构技术影响力',
-      '指导团队架构实践'
-    ],
-    projects: [
-      { name: '架构白皮书编写', estimatedTime: '100小时' },
-      { name: '开源架构工具开发', estimatedTime: '150小时' }
-    ]
-  }
-]);
+// Helper to transform i18n object to array
+const getListFromI18n = (key: string) => {
+  const items = tm(key) as Record<string, any>;
+  if (!items) return [];
+  return Object.keys(items).map(k => ({
+    id: k,
+    ...items[k]
+  }));
+};
 
-const performancePhases = ref([
-  {
-    id: '1',
-    title: '性能基础建设 (0-4个月)',
-    duration: '4个月',
-    goals: [
-      '掌握性能监控体系',
-      '理解性能优化原理',
-      '建立性能测试方法',
-      '学习性能分析工具'
-    ],
-    projects: [
-      { name: '性能监控平台搭建', estimatedTime: '50小时' },
-      { name: '性能优化案例分析', estimatedTime: '30小时' }
-    ]
-  },
-  {
-    id: '2',
-    title: '性能优化实战 (4-12个月)',
-    duration: '8个月',
-    goals: [
-      '实施全链路性能优化',
-      '建立性能优化流程',
-      '掌握高级优化技术',
-      '形成性能优化方案'
-    ],
-    projects: [
-      { name: '大型应用性能优化', estimatedTime: '100小时' },
-      { name: '性能优化工具开发', estimatedTime: '80小时' }
-    ]
-  },
-  {
-    id: '3',
-    title: '性能专家能力 (12-20个月)',
-    duration: '8个月',
-    goals: [
-      '建立性能优化体系',
-      '指导团队性能实践',
-      '形成性能技术影响力',
-      '推动行业性能标准'
-    ],
-    projects: [
-      { name: '性能优化最佳实践', estimatedTime: '120小时' },
-      { name: '性能优化培训体系', estimatedTime: '60小时' }
-    ]
-  }
-]);
+// Computed properties for three-track parallel learning
+const architecturePhases = computed(() => getListFromI18n('career.learning.trackPhases.architecture'));
+const performancePhases = computed(() => getListFromI18n('career.learning.trackPhases.performance'));
+const engineeringPhases = computed(() => getListFromI18n('career.learning.trackPhases.engineering'));
 
-const engineeringPhases = ref([
-  {
-    id: '1',
-    title: '工程化基础 (0-3个月)',
-    duration: '3个月',
-    goals: [
-      '掌握现代构建工具',
-      '理解CI/CD流程',
-      '学习代码质量管理',
-      '建立工程化思维'
-    ],
-    projects: [
-      { name: '工程化脚手架开发', estimatedTime: '40小时' },
-      { name: 'CI/CD流程搭建', estimatedTime: '30小时' }
-    ]
-  },
-  {
-    id: '2',
-    title: '工程化实践 (3-12个月)',
-    duration: '9个月',
-    goals: [
-      '建设前端工程化体系',
-      '实施自动化测试',
-      '推进代码规范化',
-      '优化开发效率工具'
-    ],
-    projects: [
-      { name: '前端工程化平台', estimatedTime: '150小时' },
-      { name: '自动化测试体系', estimatedTime: '100小时' }
-    ]
-  },
-  {
-    id: '3',
-    title: '工程化专家 (12-24个月)',
-    duration: '12个月',
-    goals: [
-      '设计企业级工程化方案',
-      '建立工程化标准',
-      '推广工程化最佳实践',
-      '培养工程化团队'
-    ],
-    projects: [
-      { name: '企业工程化标准制定', estimatedTime: '80小时' },
-      { name: '工程化开源项目', estimatedTime: '200小时' }
-    ]
-  }
-]);
+// Computed properties for recommended resources
+const recommendedBooks = computed(() => getListFromI18n('career.learning.resourceItems.books'));
+const recommendedCourses = computed(() => getListFromI18n('career.learning.resourceItems.courses'));
+const recommendedPractices = computed(() => getListFromI18n('career.learning.resourceItems.practices'));
 
-// Mock recommended resources
-const recommendedBooks = ref([
-  {
-    id: '1',
-    title: '前端架构：从入门到微前端',
-    description: '全面介绍前端架构设计理念和实践方法',
-    estimatedTime: '40小时',
-    priority: 'high'
-  },
-  {
-    id: '2',
-    title: 'Web性能权威指南',
-    description: '深入讲解Web性能优化的理论和实践',
-    estimatedTime: '35小时',
-    priority: 'high'
-  },
-  {
-    id: '3',
-    title: '前端工程化体系设计与实践',
-    description: '系统性介绍前端工程化建设方法',
-    estimatedTime: '30小时',
-    priority: 'medium'
-  }
-]);
-
-const recommendedCourses = ref([
-  {
-    id: '1',
-    title: '前端架构师成长训练营',
-    description: '系统性的前端架构师能力培养课程',
-    estimatedTime: '80小时',
-    priority: 'high'
-  },
-  {
-    id: '2',
-    title: 'Web性能优化实战',
-    description: '基于真实项目的性能优化实战课程',
-    estimatedTime: '60小时',
-    priority: 'high'
-  },
-  {
-    id: '3',
-    title: '现代前端工程化实践',
-    description: '涵盖构建、测试、部署的工程化实践',
-    estimatedTime: '50小时',
-    priority: 'medium'
-  }
-]);
-
-const recommendedPractices = ref([
-  {
-    id: '1',
-    title: '开源项目贡献',
-    description: '参与知名开源项目，提升技术影响力',
-    estimatedTime: '持续进行',
-    priority: 'high'
-  },
-  {
-    id: '2',
-    title: '技术博客写作',
-    description: '定期输出技术文章，建立个人品牌',
-    estimatedTime: '每周4小时',
-    priority: 'high'
-  },
-  {
-    id: '3',
-    title: '技术分享演讲',
-    description: '在技术会议和团队内部进行技术分享',
-    estimatedTime: '每月8小时',
-    priority: 'medium'
-  }
-]);
 </script>
 
 <style scoped lang="less">

@@ -1,505 +1,1811 @@
 {
-  "nav": {
-    "home": "首页",
-    "about": "关于",
-    "portfolio": "作品集",
-    "career": "职业规划",
-    "contact": "联系我",
-    "quickLinks": "快速链接"
-  },
-  "brand": {
-    "title": "AIYAZONE",
-    "subtitle": "前端架构师 & 技术管理者",
-    "intro": "10年前端开发经验，PMP/ACP认证，专注于前端架构、性能优化和工程化",
-    "valueProposition": {
-      "architecture": "前端架构设计与实施",
-      "performance": "性能优化与监控",
-      "engineering": "工程化体系建设",
-      "management": "技术团队管理"
-    }
-  },
-  "skills": {
-    "title": "专业技能",
-    "frontend": "前端开发",
-    "management": "项目管理", 
-    "leadership": "团队领导",
-    "yearsExp": "年经验",
-    "level": "熟练度",
-    "allSkills": "全部技能",
-    "skillDetails": "技能详情",
-    "relatedProjects": "相关项目",
-    "skillDescription": "技能描述",
-    "proficiencyLevel": "熟练度等级",
-    "experienceYears": "经验年限",
-    "projectCount": "项目数量",
-    "radarChart": "雷达图",
-    "barChart": "条形图",
-    "skillMatrix": "技能矩阵",
-    "careerTimeline": "职业时间线",
-    "careerMilestones": "职业里程碑",
-    "keyAchievements": "关键成就",
-    "techStack": "技术栈",
-    "workExperience": "工作经验",
-    "companies": "家公司",
-    "achievements": "项关键成就",
-    "currentPosition": "至今",
-    "months": "个月",
-    "years": "年"
-  },
-  "portfolio": {
-    "title": "作品集",
-    "digitalGarden": "数字花园",
-    "featuredWork": "精选作品",
-    "community": "社区项目",
-    "viewProject": "查看项目",
-    "viewCode": "查看代码",
-    "visitProject": "访问项目",
-    "viewSource": "查看源码",
-    "searchPlaceholder": "搜索项目...",
-    "category": "分类",
-    "allCategories": "全部分类",
-    "status": "状态",
-    "allStatus": "全部状态",
-    "online": "在线",
-    "development": "开发中",
-    "archived": "已归档",
-    "technology": "技术",
-    "allTech": "全部技术",
-    "clearFilters": "清除筛选",
-    "showingResults": "显示 {count} 个项目",
-    "noProjectsFound": "未找到项目",
-    "tryDifferentFilters": "尝试调整筛选条件",
-    "loading": "加载中...",
-    "errorTitle": "加载失败",
-    "retry": "重试",
-    "techStack": "技术栈",
-    "keyFeatures": "核心功能",
-    "performanceScore": "性能评分",
-    "githubStars": "GitHub 星标",
-    "totalVisitors": "总访问量",
-    "githubForks": "GitHub 分支"
-  },
-  "career": {
-    "title": "职业规划",
-    "swot": {
-      "title": "SWOT分析",
-      "description": "全面分析个人优势、劣势、机会和威胁，制定科学的职业发展策略",
-      "strengths": "优势",
-      "weaknesses": "劣势", 
-      "opportunities": "机会",
-      "threats": "威胁",
-      "keyInsights": "关键洞察",
-      "recommendations": "战略建议",
-      "actionItems": "行动计划",
-      "modes": {
-        "quadrant": "四象限",
-        "radar": "雷达图",
-        "matrix": "矩阵"
-      },
-      "impact": {
-        "high": "高影响",
-        "medium": "中等影响",
-        "low": "低影响"
-      },
-      "categories": {
-        "technical": "技术能力",
-        "management": "管理能力",
-        "market": "市场机会",
-        "personal": "个人因素"
-      },
-      "priority": {
-        "high": "高优先级",
-        "medium": "中优先级",
-        "low": "低优先级"
-      },
-      "status": {
-        "pending": "待开始",
-        "in-progress": "进行中",
-        "completed": "已完成"
-      },
-      "deadline": "截止日期",
-      "matrix": {
-        "internal": "内部因素",
-        "external": "外部因素"
-      }
-    },
-    "roadmap": {
-      "title": "职业发展路线图",
-      "description": "24个月分阶段学习+实战路线，目标成为深圳市场40-60K档位的前端架构师",
-      "targetRole": "目标职位",
-      "targetSalary": "目标薪资",
-      "currentPhase": "当前阶段",
-      "notStarted": "未开始",
-      "objectives": "阶段目标",
-      "keyMilestones": "关键里程碑",
-      "learningGoals": "学习目标",
-      "deliverables": "交付物",
-      "progress": "进度",
-      "completed": "已完成",
-      "pending": "待完成",
-      "metrics": "评估指标",
-      "dueDate": "截止日期",
-      "categories": {
-        "architecture": "架构设计",
-        "performance": "性能优化",
-        "engineering": "工程化"
-      },
-      "resources": "学习资源",
-      "practicalProjects": "实战项目",
-      "successCriteria": "成功标准",
-      "resourceTypes": {
-        "book": "书籍",
-        "course": "课程",
-        "article": "文章",
-        "video": "视频",
-        "documentation": "文档"
-      },
-      "difficulty": {
-        "beginner": "初级",
-        "intermediate": "中级",
-        "advanced": "高级"
-      },
-      "outputs": "输出物",
-      "deliverableTypes": {
-        "code": "代码",
-        "document": "文档",
-        "presentation": "演示",
-        "analysis": "分析"
-      },
-      "deliverableStatus": {
-        "pending": "待开始",
-        "in-progress": "进行中",
-        "completed": "已完成"
-      }
-    },
-    "learning": {
-      "title": "学习路径",
-      "description": "前端架构、性能、工程化三线并行的系统学习路径",
-      "totalDuration": "总时长",
-      "focusAreas": "专注领域",
-      "threeFocus": "三线并行",
-      "approach": "学习方式",
-      "parallelLearning": "并行学习",
-      "parallelTracks": "三线并行学习",
-      "tracks": {
-        "architecture": "前端架构",
-        "architectureDesc": "系统设计、架构模式、技术选型",
-        "performance": "性能优化",
-        "performanceDesc": "监控体系、优化策略、性能分析",
-        "engineering": "工程化",
-        "engineeringDesc": "构建工具、CI/CD、代码质量"
-      },
-      "phaseTimeline": "阶段时间线",
-      "focus": {
-        "architecture": "架构",
-        "performance": "性能",
-        "engineering": "工程化"
-      },
-      "learningGoals": "学习目标",
-      "practicalProjects": "实战项目",
-      "successCriteria": "成功标准",
-      "difficulty": {
-        "beginner": "初级",
-        "intermediate": "中级",
-        "advanced": "高级"
-      },
-      "expectedOutputs": "预期输出",
-      "recommendedResources": "推荐资源",
-      "resources": {
-        "books": "推荐书籍",
-        "courses": "推荐课程",
-        "practices": "实践建议"
-      },
-      "priority": {
-        "high": "高优先级",
-        "medium": "中优先级",
-        "low": "低优先级"
-      },
-      "successMetrics": "成功指标",
-      "metrics": {
-        "technical": "技术指标",
-        "career": "职业指标",
-        "impact": "影响力指标",
-        "technicalItems": {
-          "architecture": "独立设计大型系统架构",
-          "performance": "建立完整性能优化体系",
-          "engineering": "搭建企业级工程化平台"
-        },
-        "careerItems": {
-          "position": "获得前端架构师职位",
-          "salary": "达到40-60K薪资目标",
-          "recognition": "获得行业技术认可"
-        },
-        "impactItems": {
-          "team": "指导团队技术成长",
-          "projects": "主导重要项目成功",
-          "industry": "建立技术影响力"
-        }
-      }
-    }
-  },
-  "contact": {
-    "title": "联系我",
-    "subtitle": "让我们建立联系，探索合作机会",
-    "name": "姓名",
-    "email": "邮箱",
-    "subject": "主题",
-    "message": "消息",
-    "category": "类别",
-    "categories": {
-      "business": "商务合作",
-      "collaboration": "技术交流",
-      "general": "一般咨询"
-    },
-    "send": "发送消息",
-    "required": "必填项",
-    "invalidEmail": "请输入有效的邮箱地址",
-    "form": {
-      "title": "发送消息",
-      "description": "有项目想法或想讨论技术话题？我很乐意听到您的声音。"
-    },
-    "info": {
-      "title": "联系方式",
-      "description": "选择您喜欢的方式与我联系。"
-    },
-    "emailDescription": "适合详细讨论和项目咨询",
-    "wechat": "微信",
-    "wechatDescription": "快速沟通和日常交流",
-    "social": {
-      "title": "关注我"
-    },
-    "responseTime": {
-      "title": "响应时间",
-      "description": "我通常在工作日24-48小时内回复"
-    },
-    "preferredContact": {
-      "title": "首选联系方式",
-      "description": "商务咨询和详细讨论建议使用邮箱联系"
-    }
-  },
-  "certifications": {
-    "title": "专业认证",
-    "subtitle": "经过验证的专业技能和持续学习",
-    "issued": "颁发日期",
-    "expires": "到期日期",
-    "credential": "证书编号",
-    "verify": "验证证书",
-    "empty": {
-      "title": "暂无认证",
-      "description": "认证信息将在此处显示。"
-    }
-  },
-  "brandStory": {
-    "title": "我的历程",
-    "subtitle": "从前端开发者到技术领导者",
-    "timeline": {
-      "title": "职业时间线",
-      "start": "开始前端开发",
-      "startDesc": "从HTML、CSS和JavaScript开始前端开发之旅"
-    },
-    "philosophy": {
-      "title": "职业理念",
-      "technical": "技术应该服务于业务目标和用户需求",
-      "management": "优秀的团队建立在信任、沟通和共同愿景之上",
-      "growth": "持续学习和适应是长期成功的关键"
-    },
-    "journey": {
-      "title": "职业历程",
-      "content": "从前端开发者到技术领导者的十年历程，将深厚的技术专长与战略思维和团队领导力相结合。"
-    }
-  },
-  "ui": {
-    "button": {
-      "primary": "主要按钮",
-      "secondary": "次要按钮",
-      "success": "成功",
-      "warning": "警告",
-      "danger": "危险",
-      "info": "信息",
-      "light": "浅色",
-      "dark": "深色"
-    },
-    "card": {
-      "title": "卡片标题",
-      "content": "卡片内容",
-      "footer": "卡片底部"
-    },
-    "modal": {
-      "title": "模态框",
-      "close": "关闭",
-      "confirm": "确认",
-      "cancel": "取消"
-    },
-    "form": {
-      "required": "此字段为必填项",
-      "invalid": "输入格式不正确",
-      "tooShort": "输入内容过短",
-      "tooLong": "输入内容过长",
-      "emailInvalid": "请输入有效的邮箱地址",
-      "phoneInvalid": "请输入有效的手机号码",
-      "urlInvalid": "请输入有效的网址",
-      "passwordWeak": "密码强度过弱",
-      "passwordMismatch": "两次输入的密码不一致"
-    },
-    "navigation": {
-      "home": "首页",
-      "back": "返回",
-      "next": "下一步",
-      "previous": "上一步",
-      "breadcrumb": "面包屑导航",
-      "menu": "菜单",
-      "search": "搜索",
-      "filter": "筛选",
-      "sort": "排序"
-    },
-    "status": {
-      "online": "在线",
-      "offline": "离线",
-      "loading": "加载中",
-      "success": "成功",
-      "error": "错误",
-      "warning": "警告",
-      "info": "信息",
-      "pending": "待处理",
-      "completed": "已完成",
-      "cancelled": "已取消"
-    },
-    "actions": {
-      "add": "添加",
-      "create": "创建",
-      "edit": "编辑",
-      "update": "更新",
-      "delete": "删除",
-      "remove": "移除",
-      "copy": "复制",
-      "paste": "粘贴",
-      "cut": "剪切",
-      "undo": "撤销",
-      "redo": "重做",
-      "refresh": "刷新",
-      "reset": "重置",
-      "clear": "清除",
-      "submit": "提交",
-      "send": "发送",
-      "download": "下载",
-      "upload": "上传",
-      "import": "导入",
-      "export": "导出",
-      "print": "打印",
-      "share": "分享"
-    }
-  },
-  "errors": {
-    "network": {
-      "title": "网络错误",
-      "description": "网络连接失败，请检查网络设置",
-      "timeout": "请求超时，请稍后重试",
-      "serverError": "服务器错误，请稍后重试",
-      "notFound": "请求的资源不存在",
-      "forbidden": "没有权限访问此资源",
-      "unauthorized": "请先登录"
-    },
-    "validation": {
-      "required": "此字段为必填项",
-      "minLength": "至少需要 {min} 个字符",
-      "maxLength": "最多允许 {max} 个字符",
-      "email": "请输入有效的邮箱地址",
-      "phone": "请输入有效的手机号码",
-      "url": "请输入有效的网址",
-      "number": "请输入有效的数字",
-      "integer": "请输入整数",
-      "positive": "请输入正数",
-      "range": "请输入 {min} 到 {max} 之间的值"
-    },
-    "system": {
-      "title": "系统错误",
-      "description": "系统出现异常，请稍后重试",
-      "maintenance": "系统维护中，请稍后访问",
-      "upgrade": "系统升级中，请稍后访问"
-    }
-  },
-  "messages": {
-    "success": {
-      "saved": "保存成功",
-      "updated": "更新成功",
-      "deleted": "删除成功",
-      "created": "创建成功",
-      "sent": "发送成功",
-      "uploaded": "上传成功",
-      "downloaded": "下载成功"
-    },
-    "info": {
-      "noData": "暂无数据",
-      "noResults": "未找到相关结果",
-      "loading": "正在加载...",
-      "processing": "正在处理...",
-      "saving": "正在保存...",
-      "uploading": "正在上传...",
-      "downloading": "正在下载..."
-    },
-    "warning": {
-      "unsavedChanges": "有未保存的更改",
-      "confirmDelete": "确定要删除吗？",
-      "confirmLeave": "确定要离开此页面吗？",
-      "dataLoss": "此操作可能导致数据丢失"
-    }
-  },
-  "accessibility": {
-    "skipToContent": "跳转到主要内容",
-    "openMenu": "打开菜单",
-    "closeMenu": "关闭菜单",
-    "toggleTheme": "切换主题",
-    "toggleLanguage": "切换语言",
-    "previousPage": "上一页",
-    "nextPage": "下一页",
-    "currentPage": "当前页",
-    "pageOf": "第 {current} 页，共 {total} 页",
-    "sortBy": "按 {field} 排序",
-    "filterBy": "按 {field} 筛选",
-    "searchResults": "搜索结果：{count} 项",
-    "noSearchResults": "没有搜索结果",
-    "loadingContent": "正在加载内容",
-    "errorLoadingContent": "加载内容时出错",
-    "backToTop": "回到顶部"
-  },
-  "common": {
-    "loading": "加载中...",
-    "error": "出错了",
-    "retry": "重试",
-    "close": "关闭",
-    "save": "保存",
-    "cancel": "取消",
-    "confirm": "确认",
-    "edit": "编辑",
-    "delete": "删除",
-    "view": "查看",
-    "more": "更多",
-    "yes": "是",
-    "no": "否",
-    "ok": "确定",
-    "apply": "应用",
-    "reset": "重置",
-    "clear": "清除",
-    "search": "搜索",
-    "filter": "筛选",
-    "sort": "排序",
-    "refresh": "刷新",
-    "back": "返回",
-    "next": "下一步",
-    "previous": "上一步",
-    "submit": "提交",
-    "send": "发送",
-    "copy": "复制",
-    "share": "分享",
-    "download": "下载",
-    "upload": "上传",
-    "print": "打印"
-  },
-  "search": {
-    "suggestions": "搜索建议"
-  },
-  "footer": {
-    "allRightsReserved": "版权所有。",
-    "builtWith": "构建于"
-  }
+	"common": {
+		"errorDetails": "错误详情"
+	},
+	"nav": {
+		"home": "首页",
+		"about": "关于",
+		"portfolio": "作品集",
+		"career": "职业规划",
+		"contact": "联系我",
+		"quickLinks": "快速链接",
+		"frontend": "前端之路",
+		"management": "项目管理",
+		"blog": "博客"
+	},
+	"footer": {
+		"allRightsReserved": "版权所有",
+		"github": "GitHub",
+		"email": "邮件联系"
+	},
+	"home": {
+		"hero": {
+			"title": "AIYAZONE",
+			"subtitle": "前端开发工程师 & 项目管理探索者",
+			"intro": "打造个人品牌，追求工程卓越，探索产品思维。<br>在数字花园中沉淀价值。"
+		},
+		"focus": {
+			"title": "我擅长的",
+			"subtitle": "偏工程化与性能的前端体系建设，也能把复杂事情拆解成可交付的里程碑。",
+			"items": {
+				"architecture": {
+					"title": "架构与工程化",
+					"description": "从模块边界到构建策略，确保系统可扩展、可维护、可演进。",
+					"tags": ["架构设计", "组件体系", "工程规范"]
+				},
+				"performance": {
+					"title": "性能与体验",
+					"description": "以指标驱动优化，从加载到交互，把体验做到“快且稳”。",
+					"tags": ["性能分析", "渲染优化", "体验细节"]
+				},
+				"delivery": {
+					"title": "交付与协作",
+					"description": "用清晰的节奏与共识推进协作，把风险前置，把结果交付。",
+					"tags": ["项目推进", "跨团队协作", "质量保障"]
+				}
+			}
+		},
+		"now": {
+			"title": "当前在做",
+			"subtitle": "持续打磨个人品牌系统，同时沉淀可复用的工程方法论。",
+			"chips": ["系统化", "高质量", "可复用"],
+			"items": {
+				"brandSystem": {
+					"kicker": "01",
+					"title": "个人品牌展示系统",
+					"description": "统一视觉与信息架构，形成稳定的展示模块与设计语言。"
+				},
+				"engineering": {
+					"kicker": "02",
+					"title": "工程实践沉淀",
+					"description": "围绕性能、稳定性与可维护性整理方法，形成可迁移的模板。"
+				},
+				"learning": {
+					"kicker": "03",
+					"title": "长期学习路线",
+					"description": "以架构、性能、工程三条主线持续精进，并在项目中验证。"
+				}
+			}
+		},
+		"cta": {
+			"kicker": "NEXT",
+			"title": "想快速了解我？",
+			"subtitle": "从作品集看结果，从职业规划看方法，从联系页直接对话。",
+			"actions": {
+				"portfolio": "查看作品集",
+				"career": "职业规划",
+				"contact": "联系我"
+			}
+		}
+	},
+	"brand": {
+		"name": "AIYAZONE",
+		"title": "前端架构师 & 技术管理者",
+		"subtitle": "Frontend Architect & Tech Lead",
+		"intro": "{experience}年前端开发经验，PMP/ACP认证，专注于前端架构、性能优化和工程化",
+		"tagline": "技术深度与管理广度的完美结合",
+		"location": "深圳",
+		"valueProposition": {
+			"architecture": "前端架构设计与实施",
+			"performance": "性能优化与监控",
+			"engineering": "工程化体系建设",
+			"management": "技术团队管理"
+		},
+		"certificationsData": {
+			"1": {
+				"name": "Project Management Professional (PMP)",
+				"issuer": "Project Management Institute"
+			},
+			"2": {
+				"name": "Agile Certified Practitioner (ACP)",
+				"issuer": "Project Management Institute"
+			}
+		},
+		"story": {
+			"1": {
+				"title": "技术起点",
+				"content": "从前端开发工程师开始，深入学习现代前端技术栈"
+			},
+			"2": {
+				"title": "管理转型",
+				"content": "获得PMP/ACP认证，开始承担技术管理职责"
+			},
+			"3": {
+				"title": "架构进阶",
+				"content": "专注前端架构、性能优化和工程化体系建设"
+			}
+		},
+		"timeline": {
+			"1": {
+				"title": "开始前端开发职业生涯",
+				"description": "加入第一家互联网公司，开始前端开发工作"
+			},
+			"2": {
+				"title": "获得PMP认证",
+				"description": "通过项目管理专业人士认证考试"
+			},
+			"3": {
+				"title": "获得ACP认证",
+				"description": "通过敏捷认证从业者考试"
+			}
+		},
+		"philosophy": [
+			"技术与管理并重，深度与广度兼顾",
+			"持续学习，拥抱变化",
+			"以用户为中心，以价值为导向",
+			"团队协作，共同成长"
+		]
+	},
+	"skills": {
+		"title": "技能专长",
+		"yearsExp": "年经验",
+		"years": "年",
+		"count": "个",
+		"relatedProjects": "相关项目",
+		"allSkills": "全部技能",
+		"skillDescription": "技能描述",
+		"projects": "项目",
+		"categories": {
+			"frontend": {
+				"name": "前端开发",
+				"skills": {
+					"vue": {
+						"name": "Vue.js",
+						"description": "深度掌握Vue 2/3生态系统，包括Composition API、Pinia状态管理等",
+						"projects": [
+							"AIYAZONE个人网站",
+							"企业级管理系统",
+							"移动端应用"
+						]
+					},
+					"typescript": {
+						"name": "TypeScript",
+						"description": "熟练使用TypeScript进行大型项目开发，类型系统设计经验丰富",
+						"projects": ["大型前端项目", "组件库开发", "工程化工具"]
+					},
+					"react": {
+						"name": "React",
+						"description": "具备React生态系统开发经验，包括Hooks、Redux等",
+						"projects": ["企业级应用", "组件库", "移动端混合应用"]
+					},
+					"javascript": {
+						"name": "JavaScript",
+						"description": "JavaScript语言专家，深入理解ES6+特性和异步编程",
+						"projects": ["所有前端项目", "Node.js后端", "工具脚本"]
+					},
+					"css": {
+						"name": "CSS/Less/Sass",
+						"description": "精通CSS3、预处理器和现代布局技术，具备设计系统构建经验",
+						"projects": ["响应式网站", "组件库样式", "移动端适配"]
+					},
+					"webpack": {
+						"name": "Webpack/Vite",
+						"description": "深度掌握现代前端构建工具，具备复杂项目构建优化经验",
+						"projects": ["构建系统优化", "多环境配置", "性能优化"]
+					},
+					"performance": {
+						"name": "性能优化",
+						"description": "具备丰富的前端性能优化经验，包括代码分割、缓存策略等",
+						"projects": [
+							"大型应用优化",
+							"移动端性能",
+							"首屏加载优化"
+						]
+					}
+				}
+			},
+			"management": {
+				"name": "项目管理",
+				"skills": {
+					"pmp": {
+						"name": "项目管理(PMP)",
+						"description": "PMP认证持有者，具备完整的项目管理理论知识和实践经验",
+						"projects": [
+							"大型前端项目",
+							"跨部门协作项目",
+							"产品迭代管理"
+						]
+					},
+					"agile": {
+						"name": "敏捷开发(ACP)",
+						"description": "ACP认证持有者，熟练运用Scrum、Kanban等敏捷方法论",
+						"projects": ["敏捷团队管理", "Scrum实践", "持续交付"]
+					},
+					"risk-management": {
+						"name": "风险管理",
+						"description": "具备项目风险识别、评估和应对的实践经验",
+						"projects": [
+							"项目风险评估",
+							"技术风险控制",
+							"进度风险管理"
+						]
+					},
+					"stakeholder": {
+						"name": "干系人管理",
+						"description": "擅长与不同层级和部门的干系人进行有效沟通和协调",
+						"projects": ["跨部门沟通", "客户需求管理", "团队协调"]
+					}
+				}
+			},
+			"leadership": {
+				"name": "团队领导",
+				"skills": {
+					"team-building": {
+						"name": "团队建设",
+						"description": "具备团队组建、培养和激励的实践经验",
+						"projects": ["前端团队组建", "技能培训", "团队文化建设"]
+					},
+					"mentoring": {
+						"name": "技术指导",
+						"description": "擅长指导初中级开发者技术成长，建立技术标准和最佳实践",
+						"projects": ["新人培养", "技术分享", "代码评审"]
+					},
+					"architecture": {
+						"name": "技术架构",
+						"description": "具备前端架构设计和技术决策能力，关注可维护性和扩展性",
+						"projects": ["前端架构设计", "技术选型", "系统重构"]
+					},
+					"communication": {
+						"name": "沟通协调",
+						"description": "优秀的沟通能力，能够清晰表达技术概念和项目进展",
+						"projects": ["跨团队协作", "需求澄清", "技术方案讲解"]
+					}
+				}
+			}
+		},
+		"experience": {
+			"current-role": {
+				"company": "深圳某互联网公司",
+				"position": "高级前端工程师/技术负责人",
+				"achievements": [
+					"负责前端团队技术架构设计和技术选型决策",
+					"建立前端工程化体系，提升团队开发效率30%",
+					"主导大型项目重构，性能提升50%以上",
+					"培养3名初级开发者成长为中级工程师",
+					"获得PMP和ACP双认证，提升项目管理能力"
+				]
+			},
+			"previous-role-1": {
+				"company": "深圳某科技公司",
+				"position": "前端工程师",
+				"achievements": [
+					"独立负责多个中大型前端项目的开发和维护",
+					"建立组件库和设计系统，提升开发效率",
+					"优化项目构建流程，减少构建时间60%",
+					"参与移动端混合应用开发，积累跨平台经验"
+				]
+			},
+			"previous-role-2": {
+				"company": "深圳某创业公司",
+				"position": "前端开发工程师",
+				"achievements": [
+					"从零开始搭建前端技术栈和开发规范",
+					"负责公司官网和管理后台的前端开发",
+					"实现响应式设计，支持多终端访问",
+					"参与产品需求分析和技术方案设计"
+				]
+			},
+			"early-career": {
+				"company": "深圳某传统企业",
+				"position": "初级前端开发工程师",
+				"achievements": [
+					"学习现代前端开发技术和工具",
+					"参与企业内部系统的前端开发",
+					"掌握基础的HTML、CSS、JavaScript技能",
+					"建立良好的编程习惯和代码规范意识"
+				]
+			}
+		}
+	},
+	"portfolio": {
+		"hero": {
+			"titlePart1": "精选",
+			"titlePart2": "作品",
+			"description": "这里展示了我过去十年在前端工程与项目管理领域的探索。每一个项目都是对极致体验的追求。"
+		},
+		"stats": {
+			"projects": "项目总数",
+			"stars": "获得星标"
+		},
+		"techStack": {
+			"title": "技术栈"
+		},
+		"title": "作品集",
+		"digitalGarden": "数字花园",
+		"featuredWork": "精选作品",
+		"community": "社区项目",
+		"viewProject": "查看项目",
+		"viewCode": "查看代码",
+		"visitProject": "访问项目",
+		"viewSource": "查看源码",
+		"searchPlaceholder": "搜索项目...",
+		"category": "分类",
+		"allCategories": "全部分类",
+		"status": "状态",
+		"allStatus": "全部状态",
+		"online": "在线",
+		"development": "开发中",
+		"archived": "已归档",
+		"technology": "技术",
+		"allTech": "全部技术",
+		"clearFilters": "清除筛选",
+		"showingResults": "显示 {count} 个项目",
+		"noProjectsFound": "未找到项目",
+		"tryDifferentFilters": "尝试调整筛选条件",
+		"loading": "加载中...",
+		"errorTitle": "加载失败",
+		"retry": "重试",
+		"techStack": "技术栈",
+		"keyFeatures": "核心功能",
+		"performanceScore": "性能评分",
+		"githubStars": "GitHub 星标",
+		"totalVisitors": "总访问量",
+		"githubForks": "GitHub 分支"
+	},
+	"projectData": {
+		"groups": {
+			"digital-garden": {
+				"title": "数字花园",
+				"description": "个人技术博客和知识分享平台，记录技术成长和项目管理实践"
+			},
+			"featured-work": {
+				"title": "精选作品",
+				"description": "核心技术项目和创新实践，展示前端技术深度和架构能力"
+			},
+			"community": {
+				"title": "社区项目",
+				"description": "开源贡献和社区参与，推动技术生态发展"
+			}
+		},
+		"projects": {
+			"aiyazone-blog": {
+				"name": "AIYAZONE Blog",
+				"description": "基于VitePress的技术博客，分享前端开发和项目管理经验",
+				"features": [
+					"技术文章分享",
+					"项目管理知识体系",
+					"前端技术栈深度解析",
+					"自动化部署流程",
+					"SEO优化实践"
+				],
+				"fullDescription": "AIYAZONE Blog 是一个基于 VitePress 构建的现代化技术博客，旨在分享前端开发、架构设计以及项目管理的深度文章。通过 Markdown 编写内容，结合 Git 工作流实现自动化部署。",
+				"challenges": [
+					"如何实现高效的内容管理和发布流程",
+					"如何优化静态站点的SEO和加载性能",
+					"如何设计清晰的知识体系导航"
+				],
+				"solutions": [
+					"采用 VitePress 作为静态站点生成器，结合 GitHub Actions 实现自动化部署",
+					"使用自定义主题和布局优化阅读体验，配置 sitemap 和 meta 标签提升 SEO",
+					"设计多维度的分类和标签系统，方便用户快速检索内容"
+				],
+				"learnings": [
+					"深入理解了 VitePress 的构建原理和主题定制机制",
+					"掌握了 GitHub Actions 自动化部署流程",
+					"提升了技术写作和知识整理能力"
+				]
+			},
+			"fe-docs": {
+				"name": "前端技术栈文档",
+				"description": "系统化的前端技术知识体系，涵盖基础、进阶到架构设计",
+				"features": [
+					"前端技术体系梳理",
+					"最佳实践总结",
+					"案例分析和代码示例",
+					"性能优化指南",
+					"工程化实践"
+				],
+				"fullDescription": "前端技术栈文档是一个全面的前端知识库，涵盖了从 HTML/CSS/JS 基础到 Vue/React 框架原理，再到工程化、性能优化等高级主题。旨在帮助开发者建立完整的技术体系。",
+				"challenges": [
+					"前端技术栈更新迭代快，如何保持文档的时效性",
+					"如何将碎片化的知识点串联成体系",
+					"如何提供高质量的代码示例和实战案例"
+				],
+				"solutions": [
+					"定期审查和更新文档内容，关注社区动态",
+					"构建清晰的思维导图和知识图谱，关联相关知识点",
+					"编写可运行的代码示例，结合 StackBlitz 等在线工具"
+				],
+				"learnings": [
+					"系统化地梳理了前端技术体系",
+					"加深了对底层原理的理解",
+					"提升了文档编写和知识传播能力"
+				]
+			},
+			"pm-knowledge": {
+				"name": "项目管理知识体系",
+				"description": "PMP/ACP学习资料和实践经验分享，助力项目管理能力提升",
+				"features": [
+					"PMP知识点整理",
+					"ACP敏捷实践",
+					"项目管理案例分析",
+					"工具和模板分享",
+					"认证考试经验"
+				],
+				"fullDescription": "项目管理知识体系整合了 PMP（项目管理专业人士）和 ACP（敏捷认证从业者）的核心知识点，结合实际项目经验，提供了一套可落地的项目管理方法论。",
+				"challenges": [
+					"如何将理论知识与实际项目相结合",
+					"如何平衡传统瀑布模型与敏捷开发模式",
+					"如何解决项目管理中的常见痛点（如沟通、风险等）"
+				],
+				"solutions": [
+					"通过真实案例分析，演示理论在实践中的应用",
+					"总结混合模式下的最佳实践，灵活运用不同方法论",
+					"提供实用的沟通模板、风险登记册等工具"
+				],
+				"learnings": [
+					"深刻理解了项目管理的五大过程组和十大知识领域",
+					"掌握了敏捷开发的价值观和原则",
+					"提升了解决复杂项目问题的能力"
+				]
+			},
+			"zenparticles": {
+				"name": "ZenParticles",
+				"description": "基于WebGL的粒子系统可视化项目，探索前端图形渲染技术",
+				"features": [
+					"实时粒子系统渲染",
+					"GPU加速计算",
+					"交互式参数调节",
+					"性能监控面板",
+					"多种粒子效果预设"
+				],
+				"fullDescription": "ZenParticles 是一个专注于 WebGL 粒子效果的高性能可视化项目。利用 Three.js 和自定义 Shader，实现了百万级粒子的实时渲染和交互。",
+				"challenges": [
+					"如何在浏览器中高效渲染大量粒子",
+					"如何实现复杂的物理运动效果",
+					"如何保持高帧率和低内存占用"
+				],
+				"solutions": [
+					"使用 GPU 实例化渲染（Instanced Rendering）技术",
+					"编写自定义 Shader 进行位置和颜色的计算",
+					"优化内存管理，避免频繁的对象创建和销毁"
+				],
+				"learnings": [
+					"深入掌握了 WebGL 和 Shader 编程",
+					"理解了 GPU 渲染管线的工作原理",
+					"提升了图形算法和性能优化能力"
+				]
+			},
+			"sun-travel": {
+				"name": "Sun Travel",
+				"description": "现代化的旅游规划应用，集成地图、路线规划和行程管理功能",
+				"features": [
+					"智能路线规划",
+					"景点推荐系统",
+					"行程管理工具",
+					"地图集成服务",
+					"用户评价系统"
+				],
+				"fullDescription": "Sun Travel 是一款一站式旅游规划应用，旨在帮助用户轻松规划行程。集成了高德地图 API，提供智能路线规划、景点推荐和行程管理功能。",
+				"challenges": [
+					"如何处理复杂的地图交互和路线计算",
+					"如何实现多端数据同步和离线访问",
+					"如何提供个性化的景点推荐"
+				],
+				"solutions": [
+					"封装地图组件，统一管理地图状态和事件",
+					"使用 PWA 技术实现离线访问，结合本地存储和云端同步",
+					"基于用户偏好和历史数据，设计推荐算法"
+				],
+				"learnings": [
+					"熟练掌握了地图 API 的开发和集成",
+					"实践了 PWA 和离线优先的架构设计",
+					"提升了复杂业务逻辑的处理能力"
+				]
+			},
+			"personal-brand-system": {
+				"name": "个人品牌展示系统",
+				"description": "当前正在开发的个人品牌网站，展示完整的技术栈和项目管理能力",
+				"features": [
+					"响应式品牌展示",
+					"技能可视化展示",
+					"作品集管理系统",
+					"SWOT分析展示",
+					"职业规划路线图",
+					"多语言国际化支持"
+				],
+				"fullDescription": "个人品牌展示系统是我的数字名片，全方位展示了我的技术栈、项目经验、职业规划和个人品牌。采用最新的前端技术栈构建，注重设计美感和用户体验。",
+				"challenges": [
+					"如何设计独特且专业的视觉风格",
+					"如何构建可维护且易扩展的代码架构",
+					"如何实现流畅的动画和交互体验"
+				],
+				"solutions": [
+					"设计统一的视觉系统（字体、配色、间距）",
+					"采用模块化和组件化的架构设计，使用 Vue 3 Composition API",
+					"使用 CSS 动画和过渡效果，增强用户体验"
+				],
+				"learnings": [
+					"提升了全栈开发和产品设计能力",
+					"实践了大型项目的架构设计和工程化",
+					"深入理解了个人品牌建设的重要性"
+				]
+			},
+			"vue-performance-toolkit": {
+				"name": "Vue性能优化工具包",
+				"description": "Vue.js应用性能分析和优化工具集，帮助开发者提升应用性能",
+				"features": [
+					"组件性能分析",
+					"内存泄漏检测",
+					"渲染性能监控",
+					"优化建议生成",
+					"性能报告导出"
+				],
+				"fullDescription": "Vue性能优化工具包是一套专为 Vue.js 开发者设计的性能分析和优化工具。它可以帮助开发者快速定位性能瓶颈，提供优化建议。",
+				"challenges": [
+					"如何准确采集 Vue 组件的性能指标",
+					"如何最小化工具本身对应用性能的影响",
+					"如何提供直观易懂的分析报告"
+				],
+				"solutions": [
+					"利用 Vue Devtools API 和 Performance API 进行数据采集",
+					"采用轻量级的设计，按需加载分析模块",
+					"设计可视化的仪表盘，图表化展示性能数据"
+				],
+				"learnings": [
+					"深入理解了 Vue 源码和渲染机制",
+					"掌握了浏览器性能分析 API",
+					"提升了工具开发和开发者体验设计能力"
+				]
+			},
+			"frontend-interview-guide": {
+				"name": "前端面试指南",
+				"description": "系统化的前端面试准备资料，涵盖技术和项目管理双重维度",
+				"features": [
+					"技术面试题库",
+					"项目管理面试准备",
+					"简历优化建议",
+					"面试经验分享",
+					"职业发展规划"
+				],
+				"fullDescription": "前端面试指南不仅仅是题库，更是一套完整的面试准备方案。涵盖了从基础知识到系统设计，从技术深度到管理广度的全方位内容。",
+				"challenges": [
+					"如何覆盖广泛的前端知识点",
+					"如何提供有深度的答案解析",
+					"如何帮助候选人展示综合能力"
+				],
+				"solutions": [
+					"按照知识领域分类整理，建立知识图谱",
+					"结合原理分析和实战案例，深入浅出地讲解",
+					"增加软技能和项目管理相关内容"
+				],
+				"learnings": [
+					"巩固了前端基础知识",
+					"提升了总结归纳和表达能力",
+					"帮助了更多开发者成功通过面试"
+				]
+			},
+			"open-source-contributions": {
+				"name": "开源贡献集合",
+				"description": "参与的各类开源项目贡献，包括Vue生态、工具库等",
+				"features": [
+					"Vue生态贡献",
+					"工具库开发",
+					"文档完善",
+					"Bug修复",
+					"功能增强"
+				],
+				"fullDescription": "开源贡献集合记录了我参与开源社区的点点滴滴。通过提交 PR、修复 Bug、完善文档等方式，回馈社区，共同成长。",
+				"challenges": [
+					"如何快速理解大型开源项目的代码结构",
+					"如何遵循不同项目的贡献规范",
+					"如何与全球开发者高效沟通"
+				],
+				"solutions": [
+					"阅读源码和文档，从小问题入手",
+					"严格遵守代码规范和提交指南",
+					"保持开放和谦逊的心态，积极交流"
+				],
+				"learnings": [
+					"提升了代码阅读和调试能力",
+					"学习了优秀的开源项目架构和工程实践",
+					"结识了优秀的开发者，拓宽了视野"
+				]
+			}
+		}
+	},
+	"career": {
+		"header": {
+			"titlePart1": "职业",
+			"titlePart2": "路径"
+		},
+		"nav": {
+			"roadmap": "路线图",
+			"swot": "SWOT分析",
+			"learning": "学习路径"
+		},
+		"title": "职业规划",
+		"swot": {
+			"title": "SWOT分析",
+			"description": "全面分析个人优势、劣势、机会和威胁，制定科学的职业发展策略",
+			"strengths": "优势",
+			"weaknesses": "劣势",
+			"opportunities": "机会",
+			"threats": "威胁",
+			"keyInsights": "关键洞察",
+			"recommendations": "战略建议",
+			"actionItems": "行动计划",
+			"modes": {
+				"quadrant": "四象限",
+				"radar": "雷达图",
+				"matrix": "矩阵"
+			},
+			"impact": {
+				"high": "高影响",
+				"medium": "中等影响",
+				"low": "低影响"
+			},
+			"categories": {
+				"technical": "技术能力",
+				"management": "管理能力",
+				"market": "市场机会",
+				"personal": "个人因素"
+			},
+			"priority": {
+				"high": "高优先级",
+				"medium": "中优先级",
+				"low": "低优先级"
+			},
+			"status": {
+				"pending": "待开始",
+				"in-progress": "进行中",
+				"completed": "已完成"
+			},
+			"deadline": "截止日期",
+			"matrix": {
+				"internal": "内部因素",
+				"external": "外部因素"
+			}
+		},
+		"roadmap": {
+			"title": "职业发展路线图",
+			"description": "24个月分阶段学习+实战路线，目标成为深圳市场40-60K档位的前端架构师",
+			"targetRole": "目标职位",
+			"targetSalary": "目标薪资",
+			"currentPhase": "当前阶段",
+			"notStarted": "未开始",
+			"objectives": "阶段目标",
+			"keyMilestones": "关键里程碑",
+			"learningGoals": "学习目标",
+			"deliverables": "交付物",
+			"progress": "进度",
+			"completed": "已完成",
+			"pending": "待完成",
+			"metrics": "评估指标",
+			"dueDate": "截止日期",
+			"categories": {
+				"architecture": "架构设计",
+				"performance": "性能优化",
+				"engineering": "工程化"
+			},
+			"resources": "学习资源",
+			"practicalProjects": "实战项目",
+			"successCriteria": "成功标准",
+			"resourceTypes": {
+				"book": "书籍",
+				"course": "课程",
+				"article": "文章",
+				"video": "视频",
+				"documentation": "文档"
+			},
+			"difficulty": {
+				"beginner": "初级",
+				"intermediate": "中级",
+				"advanced": "高级"
+			},
+			"outputs": "输出物",
+			"deliverableTypes": {
+				"code": "代码",
+				"document": "文档",
+				"presentation": "演示",
+				"analysis": "分析"
+			},
+			"deliverableStatus": {
+				"pending": "待开始",
+				"in-progress": "进行中",
+				"completed": "已完成"
+			}
+		},
+		"timeline": {
+			"title": "职业发展历程",
+			"summary": {
+				"yearsExp": "年工作经验",
+				"companies": "家公司",
+				"achievements": "项关键成就"
+			},
+			"present": "至今",
+			"sections": {
+				"achievements": "关键成就",
+				"technologies": "技术栈"
+			},
+			"metrics": {
+				"achievements": "项成就",
+				"technologies": "项技术",
+				"level": "职级"
+			},
+			"levels": {
+				"techLead": "技术负责人",
+				"senior": "高级工程师",
+				"frontend": "前端工程师",
+				"junior": "初级工程师",
+				"engineer": "工程师"
+			},
+			"duration": {
+				"months": "个月",
+				"years": "年"
+			},
+			"milestones": {
+				"title": "职业里程碑",
+				"items": {
+					"pmp-cert": {
+						"title": "PMP认证获得",
+						"description": "获得项目管理专业人士认证，提升项目管理能力"
+					},
+					"acp-cert": {
+						"title": "ACP认证获得",
+						"description": "获得敏捷认证专家认证，掌握敏捷开发方法论"
+					},
+					"tech-lead": {
+						"title": "技术负责人",
+						"description": "晋升为技术负责人，开始承担团队管理职责"
+					},
+					"senior-dev": {
+						"title": "高级工程师",
+						"description": "晋升为高级前端工程师，技术能力得到认可"
+					},
+					"first-job": {
+						"title": "职业起步",
+						"description": "开始前端开发职业生涯，踏入互联网行业"
+					}
+				}
+			}
+		},
+		"learning": {
+			"title": "学习路径",
+			"description": "前端架构、性能、工程化三线并行的系统学习路径",
+			"totalDuration": "总时长",
+			"defaultDuration": "24个月",
+			"focusAreas": "专注领域",
+			"threeFocus": "三线并行",
+			"approach": "学习方式",
+			"parallelLearning": "并行学习",
+			"parallelTracks": "三线并行学习",
+			"tracks": {
+				"architecture": "前端架构",
+				"architectureDesc": "系统设计、架构模式、技术选型",
+				"performance": "性能优化",
+				"performanceDesc": "监控体系、优化策略、性能分析",
+				"engineering": "工程化",
+				"engineeringDesc": "构建工具、CI/CD、代码质量"
+			},
+			"phaseTimeline": "阶段时间线",
+			"focus": {
+				"architecture": "架构",
+				"performance": "性能",
+				"engineering": "工程化"
+			},
+			"learningGoals": "学习目标",
+			"practicalProjects": "实战项目",
+			"successCriteria": "成功标准",
+			"difficulty": {
+				"beginner": "初级",
+				"intermediate": "中级",
+				"advanced": "高级"
+			},
+			"expectedOutputs": "预期输出",
+			"recommendedResources": "推荐资源",
+			"resources": {
+				"books": "推荐书籍",
+				"courses": "推荐课程",
+				"practices": "实践建议"
+			},
+			"priority": {
+				"high": "高优先级",
+				"medium": "中优先级",
+				"low": "低优先级"
+			},
+			"successMetrics": "成功指标",
+			"metrics": {
+				"technical": "技术指标",
+				"career": "职业指标",
+				"impact": "影响力指标",
+				"technicalItems": {
+					"architecture": "独立设计大型系统架构",
+					"performance": "建立完整性能优化体系",
+					"engineering": "搭建企业级工程化平台"
+				},
+				"careerItems": {
+					"position": "获得前端架构师职位",
+					"salary": "达到40-60K薪资目标",
+					"recognition": "获得行业技术认可"
+				},
+				"impactItems": {
+					"team": "指导团队技术成长",
+					"projects": "主导重要项目成功",
+					"industry": "建立技术影响力"
+				}
+			},
+			"trackPhases": {
+				"architecture": {
+					"1": {
+						"title": "架构基础理论 (0-3个月)",
+						"duration": "3个月",
+						"goals": [
+							"掌握前端架构设计原理",
+							"理解微前端架构模式",
+							"学习系统设计方法论",
+							"建立架构思维框架"
+						],
+						"projects": [
+							{
+								"name": "个人网站架构重构",
+								"estimatedTime": "40小时"
+							},
+							{
+								"name": "微前端Demo项目",
+								"estimatedTime": "60小时"
+							}
+						]
+					},
+					"2": {
+						"title": "架构实践应用 (3-9个月)",
+						"duration": "6个月",
+						"goals": [
+							"参与中大型项目架构设计",
+							"实践模块化架构方案",
+							"掌握架构决策方法",
+							"建立架构评估体系"
+						],
+						"projects": [
+							{
+								"name": "企业级前端架构设计",
+								"estimatedTime": "120小时"
+							},
+							{
+								"name": "架构迁移项目",
+								"estimatedTime": "80小时"
+							}
+						]
+					},
+					"3": {
+						"title": "架构专家定位 (9-18个月)",
+						"duration": "9个月",
+						"goals": [
+							"具备大型系统架构能力",
+							"形成个人架构方法论",
+							"建立架构技术影响力",
+							"指导团队架构实践"
+						],
+						"projects": [
+							{
+								"name": "架构白皮书编写",
+								"estimatedTime": "100小时"
+							},
+							{
+								"name": "开源架构工具开发",
+								"estimatedTime": "150小时"
+							}
+						]
+					}
+				},
+				"performance": {
+					"1": {
+						"title": "性能基础建设 (0-4个月)",
+						"duration": "4个月",
+						"goals": [
+							"掌握性能监控体系",
+							"理解性能优化原理",
+							"建立性能测试方法",
+							"学习性能分析工具"
+						],
+						"projects": [
+							{
+								"name": "性能监控平台搭建",
+								"estimatedTime": "50小时"
+							},
+							{
+								"name": "性能优化案例分析",
+								"estimatedTime": "30小时"
+							}
+						]
+					},
+					"2": {
+						"title": "性能优化实战 (4-12个月)",
+						"duration": "8个月",
+						"goals": [
+							"实施全链路性能优化",
+							"建立性能优化流程",
+							"掌握高级优化技术",
+							"形成性能优化方案"
+						],
+						"projects": [
+							{
+								"name": "大型应用性能优化",
+								"estimatedTime": "100小时"
+							},
+							{
+								"name": "性能优化工具开发",
+								"estimatedTime": "80小时"
+							}
+						]
+					},
+					"3": {
+						"title": "性能专家能力 (12-20个月)",
+						"duration": "8个月",
+						"goals": [
+							"建立性能优化体系",
+							"指导团队性能实践",
+							"形成性能技术影响力",
+							"推动行业性能标准"
+						],
+						"projects": [
+							{
+								"name": "性能优化最佳实践",
+								"estimatedTime": "120小时"
+							},
+							{
+								"name": "性能优化培训体系",
+								"estimatedTime": "60小时"
+							}
+						]
+					}
+				},
+				"engineering": {
+					"1": {
+						"title": "工程化基础 (0-3个月)",
+						"duration": "3个月",
+						"goals": [
+							"掌握现代构建工具",
+							"理解CI/CD流程",
+							"学习代码质量管理",
+							"建立工程化思维"
+						],
+						"projects": [
+							{
+								"name": "工程化脚手架开发",
+								"estimatedTime": "40小时"
+							},
+							{
+								"name": "CI/CD流程搭建",
+								"estimatedTime": "30小时"
+							}
+						]
+					},
+					"2": {
+						"title": "工程化实践 (3-12个月)",
+						"duration": "9个月",
+						"goals": [
+							"建设前端工程化体系",
+							"实施自动化测试",
+							"推进代码规范化",
+							"优化开发效率工具"
+						],
+						"projects": [
+							{
+								"name": "前端工程化平台",
+								"estimatedTime": "150小时"
+							},
+							{
+								"name": "自动化测试体系",
+								"estimatedTime": "100小时"
+							}
+						]
+					},
+					"3": {
+						"title": "工程化专家 (12-24个月)",
+						"duration": "12个月",
+						"goals": [
+							"设计企业级工程化方案",
+							"建立工程化标准",
+							"推广工程化最佳实践",
+							"培养工程化团队"
+						],
+						"projects": [
+							{
+								"name": "企业工程化标准制定",
+								"estimatedTime": "80小时"
+							},
+							{
+								"name": "工程化开源项目",
+								"estimatedTime": "200小时"
+							}
+						]
+					}
+				}
+			},
+			"resourceItems": {
+				"books": {
+					"1": {
+						"title": "前端架构：从入门到微前端",
+						"description": "全面介绍前端架构设计理念和实践方法",
+						"estimatedTime": "40小时"
+					},
+					"2": {
+						"title": "Web性能权威指南",
+						"description": "深入讲解Web性能优化的理论和实践",
+						"estimatedTime": "35小时"
+					},
+					"3": {
+						"title": "前端工程化体系设计与实践",
+						"description": "系统性介绍前端工程化建设方法",
+						"estimatedTime": "30小时"
+					}
+				},
+				"courses": {
+					"1": {
+						"title": "前端架构师成长训练营",
+						"description": "系统性的前端架构师能力培养课程",
+						"estimatedTime": "80小时"
+					},
+					"2": {
+						"title": "Web性能优化实战",
+						"description": "基于真实项目的性能优化实战课程",
+						"estimatedTime": "60小时"
+					},
+					"3": {
+						"title": "现代前端工程化实践",
+						"description": "涵盖构建、测试、部署的工程化实践",
+						"estimatedTime": "50小时"
+					}
+				},
+				"practices": {
+					"1": {
+						"title": "开源项目贡献",
+						"description": "参与知名开源项目，提升技术影响力",
+						"estimatedTime": "持续进行"
+					},
+					"2": {
+						"title": "技术博客写作",
+						"description": "定期输出技术文章，建立个人品牌",
+						"estimatedTime": "每周4小时"
+					},
+					"3": {
+						"title": "技术分享演讲",
+						"description": "在技术会议和团队内部进行技术分享",
+						"estimatedTime": "每月8小时"
+					}
+				}
+			}
+		}
+	},
+	"contact": {
+		"hero": {
+			"getIn": "保持",
+			"touch": "联系"
+		},
+		"title": "联系我",
+		"subtitle": "让我们建立联系，探索合作机会",
+		"name": "姓名",
+		"email": "邮箱",
+		"subject": "主题",
+		"message": "消息",
+		"category": "类别",
+		"categories": {
+			"business": "商务合作",
+			"collaboration": "技术交流",
+			"general": "一般咨询"
+		},
+		"send": "发送消息",
+		"required": "必填项",
+		"invalidEmail": "请输入有效的邮箱地址",
+		"form": {
+			"title": "发送消息",
+			"description": "有项目想法或想讨论技术话题？我很乐意听到您的声音。"
+		},
+		"info": {
+			"title": "联系方式",
+			"description": "选择您喜欢的方式与我联系。"
+		},
+		"emailDescription": "适合详细讨论和项目咨询",
+		"wechat": "微信",
+		"wechatDescription": "快速沟通和日常交流",
+		"social": {
+			"feedError": "加载动态失败，请稍后重试",
+			"title": "关注我",
+			"description": "关注我的最新动态和技术分享",
+			"latestUpdates": "最新动态",
+			"followers": "关注者",
+			"viewPost": "查看原文",
+			"viewOnGitHub": "在 GitHub 上查看",
+			"githubActivity": "GitHub 动态",
+			"timeAgo": {
+				"seconds": "刚刚",
+				"minutes": "{n}分钟前",
+				"hours": "{n}小时前",
+				"days": "{n}天前"
+			},
+			"types": {
+				"blog": "博客",
+				"code": "代码",
+				"social": "社交",
+				"professional": "专业"
+			},
+			"links": {
+				"blog": {
+					"name": "AIYA Blog",
+					"description": "技术博客和个人思考"
+				},
+				"github": {
+					"name": "GitHub",
+					"description": "开源项目和代码贡献"
+				},
+				"frontend": {
+					"name": "前端技术栈",
+					"description": "前端工程化和性能优化"
+				},
+				"pm": {
+					"name": "项目管理",
+					"description": "PMP知识体系和实践经验"
+				},
+				"juejin": {
+					"name": "掘金",
+					"description": "技术文章和社区交流"
+				}
+			}
+		},
+		"responseTime": {
+			"title": "响应时间",
+			"description": "我通常在工作日24-48小时内回复"
+		},
+		"preferredContact": {
+			"title": "首选联系方式",
+			"description": "商务咨询和详细讨论建议使用邮箱联系"
+		}
+	},
+	"certifications": {
+		"title": "专业认证",
+		"subtitle": "经过验证的专业技能和持续学习",
+		"issued": "颁发日期",
+		"expires": "到期日期",
+		"credential": "证书编号",
+		"verify": "验证证书",
+		"empty": {
+			"title": "暂无认证",
+			"description": "认证信息将在此处显示。"
+		}
+	},
+	"about": {
+		"hero": {
+			"label": "关于我"
+		},
+		"story": {
+			"journeyLabel": "旅程"
+		},
+		"skills": {
+			"titlePart1": "专业技能 &",
+			"titlePart2": "认证"
+		}
+	},
+	"brandStory": {
+		"title": "我的历程",
+		"subtitle": "从前端开发者到技术领导者",
+		"timeline": {
+			"title": "职业时间线",
+			"start": "开始前端开发",
+			"startDesc": "从HTML、CSS和JavaScript开始前端开发之旅"
+		},
+		"philosophy": {
+			"title": "职业理念",
+			"technical": "技术应该服务于业务目标和用户需求",
+			"management": "优秀的团队建立在信任、沟通和共同愿景之上",
+			"growth": "持续学习和适应是长期成功的关键"
+		},
+		"journey": {
+			"title": "职业历程",
+			"content": "从前端开发者到技术领导者的十年历程，将深厚的技术专长与战略思维和团队领导力相结合。"
+		}
+	},
+	"ui": {
+		"button": {
+			"primary": "主要按钮",
+			"secondary": "次要按钮",
+			"success": "成功",
+			"warning": "警告",
+			"danger": "危险",
+			"info": "信息",
+			"light": "浅色",
+			"dark": "深色"
+		},
+		"card": {
+			"title": "卡片标题",
+			"content": "卡片内容",
+			"footer": "卡片底部"
+		},
+		"modal": {
+			"title": "模态框",
+			"close": "关闭",
+			"confirm": "确认",
+			"cancel": "取消"
+		},
+		"form": {
+			"required": "此字段为必填项",
+			"invalid": "输入格式不正确",
+			"tooShort": "输入内容过短",
+			"tooLong": "输入内容过长",
+			"emailInvalid": "请输入有效的邮箱地址",
+			"phoneInvalid": "请输入有效的手机号码",
+			"urlInvalid": "请输入有效的网址",
+			"passwordWeak": "密码强度过弱",
+			"passwordMismatch": "两次输入的密码不一致"
+		},
+		"navigation": {
+			"home": "首页",
+			"back": "返回",
+			"next": "下一步",
+			"previous": "上一步",
+			"breadcrumb": "面包屑导航",
+			"menu": "菜单",
+			"search": "搜索",
+			"filter": "筛选",
+			"sort": "排序"
+		},
+		"status": {
+			"online": "在线",
+			"offline": "离线",
+			"loading": "加载中",
+			"success": "成功",
+			"error": "错误",
+			"warning": "警告",
+			"info": "信息",
+			"pending": "待处理",
+			"completed": "已完成",
+			"cancelled": "已取消"
+		},
+		"actions": {
+			"add": "添加",
+			"create": "创建",
+			"edit": "编辑",
+			"update": "更新",
+			"delete": "删除",
+			"remove": "移除",
+			"copy": "复制",
+			"paste": "粘贴",
+			"cut": "剪切",
+			"undo": "撤销",
+			"redo": "重做",
+			"refresh": "刷新",
+			"reset": "重置",
+			"clear": "清除",
+			"submit": "提交",
+			"send": "发送",
+			"download": "下载",
+			"upload": "上传",
+			"import": "导入",
+			"export": "导出",
+			"print": "打印",
+			"share": "分享"
+		}
+	},
+	"errors": {
+		"network": {
+			"title": "网络错误",
+			"description": "网络连接失败，请检查网络设置",
+			"timeout": "请求超时，请稍后重试",
+			"serverError": "服务器错误，请稍后重试",
+			"notFound": "请求的资源不存在",
+			"forbidden": "没有权限访问此资源",
+			"unauthorized": "请先登录"
+		},
+		"validation": {
+			"required": "此字段为必填项",
+			"minLength": "至少需要 {min} 个字符",
+			"maxLength": "最多允许 {max} 个字符",
+			"email": "请输入有效的邮箱地址",
+			"phone": "请输入有效的手机号码",
+			"url": "请输入有效的网址",
+			"number": "请输入有效的数字",
+			"integer": "请输入整数",
+			"positive": "请输入正数",
+			"range": "请输入 {min} 到 {max} 之间的值"
+		},
+		"system": {
+			"title": "系统错误",
+			"description": "系统出现异常，请稍后重试",
+			"maintenance": "系统维护中，请稍后访问",
+			"upgrade": "系统升级中，请稍后访问"
+		}
+	},
+	"messages": {
+		"success": {
+			"saved": "保存成功",
+			"updated": "更新成功",
+			"deleted": "删除成功",
+			"created": "创建成功",
+			"sent": "发送成功",
+			"uploaded": "上传成功",
+			"downloaded": "下载成功"
+		},
+		"info": {
+			"noData": "暂无数据",
+			"noResults": "未找到相关结果",
+			"loading": "正在加载...",
+			"processing": "正在处理...",
+			"saving": "正在保存...",
+			"uploading": "正在上传...",
+			"downloading": "正在下载..."
+		},
+		"warning": {
+			"unsavedChanges": "有未保存的更改",
+			"confirmDelete": "确定要删除吗？",
+			"confirmLeave": "确定要离开此页面吗？",
+			"dataLoss": "此操作可能导致数据丢失"
+		}
+	},
+	"accessibility": {
+		"skipToContent": "跳转到主要内容",
+		"openMenu": "打开菜单",
+		"closeMenu": "关闭菜单",
+		"toggleTheme": "切换主题",
+		"toggleLanguage": "切换语言",
+		"previousPage": "上一页",
+		"nextPage": "下一页",
+		"currentPage": "当前页",
+		"pageOf": "第 {current} 页，共 {total} 页",
+		"sortBy": "按 {field} 排序",
+		"filterBy": "按 {field} 筛选",
+		"searchResults": "搜索结果：{count} 项",
+		"noSearchResults": "没有搜索结果",
+		"loadingContent": "正在加载内容",
+		"errorLoadingContent": "加载内容时出错",
+		"backToTop": "回到顶部"
+	},
+	"common": {
+		"loading": "加载中...",
+		"error": "出错了",
+		"retry": "重试",
+		"close": "关闭",
+		"save": "保存",
+		"cancel": "取消",
+		"confirm": "确认",
+		"edit": "编辑",
+		"delete": "删除",
+		"view": "查看",
+		"more": "更多",
+		"yes": "是",
+		"no": "否",
+		"ok": "确定",
+		"apply": "应用",
+		"reset": "重置",
+		"clear": "清除",
+		"search": "搜索",
+		"filter": "筛选",
+		"sort": "排序",
+		"refresh": "刷新",
+		"back": "返回",
+		"next": "下一步",
+		"previous": "上一步",
+		"submit": "提交",
+		"send": "发送",
+		"copy": "复制",
+		"share": "分享",
+		"download": "下载",
+		"upload": "上传",
+		"print": "打印"
+	},
+	"search": {
+		"suggestions": "搜索建议"
+	},
+	"footer": {
+		"allRightsReserved": "版权所有。",
+		"builtWith": "构建于",
+		"github": "GitHub",
+		"email": "邮件"
+	},
+	"projectData": {
+		"groups": {
+			"digital-garden": {
+				"title": "数字花园",
+				"description": "个人技术博客和知识分享平台，记录技术成长和项目管理实践"
+			},
+			"featured-work": {
+				"title": "精选作品",
+				"description": "核心技术项目和创新实践，展示前端技术深度和架构能力"
+			},
+			"community": {
+				"title": "社区项目",
+				"description": "开源贡献和社区参与，推动技术生态发展"
+			}
+		},
+		"projects": {
+			"aiyazone-blog": {
+				"name": "AIYAZONE Blog",
+				"description": "基于VitePress的技术博客，分享前端开发和项目管理经验",
+				"features": [
+					"技术文章分享",
+					"项目管理知识体系",
+					"前端技术栈深度解析",
+					"自动化部署流程",
+					"SEO优化实践"
+				],
+				"fullDescription": "基于VitePress的技术博客，分享前端开发和项目管理经验 - 这是一个详细的项目描述，包含了项目的背景、目标、实现方案和技术细节。",
+				"challenges": ["性能优化挑战", "用户体验设计", "技术架构选择"],
+				"solutions": [
+					"采用懒加载和代码分割",
+					"实现响应式设计",
+					"使用现代前端技术栈"
+				],
+				"learnings": [
+					"深入理解前端性能优化",
+					"掌握现代开发工具链",
+					"提升用户体验设计能力"
+				]
+			},
+			"fe-docs": {
+				"name": "前端技术栈文档",
+				"description": "系统化的前端技术知识体系，涵盖基础、进阶到架构设计",
+				"features": [
+					"前端技术体系梳理",
+					"最佳实践总结",
+					"案例分析和代码示例",
+					"性能优化指南",
+					"工程化实践"
+				],
+				"fullDescription": "系统化的前端技术知识体系，涵盖基础、进阶到架构设计 - 这是一个详细的项目描述，包含了项目的背景、目标、实现方案和技术细节。",
+				"challenges": ["性能优化挑战", "用户体验设计", "技术架构选择"],
+				"solutions": [
+					"采用懒加载和代码分割",
+					"实现响应式设计",
+					"使用现代前端技术栈"
+				],
+				"learnings": [
+					"深入理解前端性能优化",
+					"掌握现代开发工具链",
+					"提升用户体验设计能力"
+				]
+			},
+			"pm-knowledge": {
+				"name": "项目管理知识体系",
+				"description": "PMP/ACP学习资料和实践经验分享，助力项目管理能力提升",
+				"features": [
+					"PMP知识点整理",
+					"ACP敏捷实践",
+					"项目管理案例分析",
+					"工具和模板分享",
+					"认证考试经验"
+				],
+				"fullDescription": "PMP/ACP学习资料和实践经验分享，助力项目管理能力提升 - 这是一个详细的项目描述，包含了项目的背景、目标、实现方案和技术细节。",
+				"challenges": ["性能优化挑战", "用户体验设计", "技术架构选择"],
+				"solutions": [
+					"采用懒加载和代码分割",
+					"实现响应式设计",
+					"使用现代前端技术栈"
+				],
+				"learnings": [
+					"深入理解前端性能优化",
+					"掌握现代开发工具链",
+					"提升用户体验设计能力"
+				]
+			},
+			"zenparticles": {
+				"name": "ZenParticles",
+				"description": "基于WebGL的粒子系统可视化项目，探索前端图形渲染技术",
+				"features": [
+					"实时粒子系统渲染",
+					"GPU加速计算",
+					"交互式参数调节",
+					"性能监控面板",
+					"多种粒子效果预设"
+				],
+				"fullDescription": "基于WebGL的粒子系统可视化项目，探索前端图形渲染技术 - 这是一个详细的项目描述，包含了项目的背景、目标、实现方案和技术细节。",
+				"challenges": ["性能优化挑战", "用户体验设计", "技术架构选择"],
+				"solutions": [
+					"采用懒加载和代码分割",
+					"实现响应式设计",
+					"使用现代前端技术栈"
+				],
+				"learnings": [
+					"深入理解前端性能优化",
+					"掌握现代开发工具链",
+					"提升用户体验设计能力"
+				]
+			},
+			"sun-travel": {
+				"name": "Sun Travel",
+				"description": "现代化的旅游规划应用，集成地图、路线规划和行程管理功能",
+				"features": [
+					"智能路线规划",
+					"景点推荐系统",
+					"行程管理工具",
+					"地图集成服务",
+					"用户评价系统"
+				],
+				"fullDescription": "现代化的旅游规划应用，集成地图、路线规划和行程管理功能 - 这是一个详细的项目描述，包含了项目的背景、目标、实现方案和技术细节。",
+				"challenges": ["性能优化挑战", "用户体验设计", "技术架构选择"],
+				"solutions": [
+					"采用懒加载和代码分割",
+					"实现响应式设计",
+					"使用现代前端技术栈"
+				],
+				"learnings": [
+					"深入理解前端性能优化",
+					"掌握现代开发工具链",
+					"提升用户体验设计能力"
+				]
+			},
+			"personal-brand-system": {
+				"name": "个人品牌展示系统",
+				"description": "当前正在开发的个人品牌网站，展示完整的技术栈和项目管理能力",
+				"features": [
+					"响应式品牌展示",
+					"技能可视化展示",
+					"作品集管理系统",
+					"SWOT分析展示",
+					"职业规划路线图",
+					"多语言国际化支持"
+				],
+				"fullDescription": "当前正在开发的个人品牌网站，展示完整的技术栈和项目管理能力 - 这是一个详细的项目描述，包含了项目的背景、目标、实现方案和技术细节。",
+				"challenges": ["性能优化挑战", "用户体验设计", "技术架构选择"],
+				"solutions": [
+					"采用懒加载和代码分割",
+					"实现响应式设计",
+					"使用现代前端技术栈"
+				],
+				"learnings": [
+					"深入理解前端性能优化",
+					"掌握现代开发工具链",
+					"提升用户体验设计能力"
+				]
+			},
+			"vue-performance-toolkit": {
+				"name": "Vue性能优化工具包",
+				"description": "Vue.js应用性能分析和优化工具集，帮助开发者提升应用性能",
+				"features": [
+					"组件性能分析",
+					"内存泄漏检测",
+					"渲染性能监控",
+					"优化建议生成",
+					"性能报告导出"
+				],
+				"fullDescription": "Vue.js应用性能分析和优化工具集，帮助开发者提升应用性能 - 这是一个详细的项目描述，包含了项目的背景、目标、实现方案和技术细节。",
+				"challenges": ["性能优化挑战", "用户体验设计", "技术架构选择"],
+				"solutions": [
+					"采用懒加载和代码分割",
+					"实现响应式设计",
+					"使用现代前端技术栈"
+				],
+				"learnings": [
+					"深入理解前端性能优化",
+					"掌握现代开发工具链",
+					"提升用户体验设计能力"
+				]
+			},
+			"frontend-interview-guide": {
+				"name": "前端面试指南",
+				"description": "系统化的前端面试准备资料，涵盖技术和项目管理双重维度",
+				"features": [
+					"技术面试题库",
+					"项目管理面试准备",
+					"简历优化建议",
+					"面试经验分享",
+					"职业发展规划"
+				],
+				"fullDescription": "系统化的前端面试准备资料，涵盖技术和项目管理双重维度 - 这是一个详细的项目描述，包含了项目的背景、目标、实现方案和技术细节。",
+				"challenges": ["性能优化挑战", "用户体验设计", "技术架构选择"],
+				"solutions": [
+					"采用懒加载和代码分割",
+					"实现响应式设计",
+					"使用现代前端技术栈"
+				],
+				"learnings": [
+					"深入理解前端性能优化",
+					"掌握现代开发工具链",
+					"提升用户体验设计能力"
+				]
+			},
+			"open-source-contributions": {
+				"name": "开源贡献集合",
+				"description": "参与的各类开源项目贡献，包括Vue生态、工具库等",
+				"features": [
+					"Vue生态贡献",
+					"工具库开发",
+					"文档完善",
+					"Bug修复",
+					"功能增强"
+				],
+				"fullDescription": "参与的各类开源项目贡献，包括Vue生态、工具库等 - 这是一个详细的项目描述，包含了项目的背景、目标、实现方案和技术细节。",
+				"challenges": ["性能优化挑战", "用户体验设计", "技术架构选择"],
+				"solutions": [
+					"采用懒加载和代码分割",
+					"实现响应式设计",
+					"使用现代前端技术栈"
+				],
+				"learnings": [
+					"深入理解前端性能优化",
+					"掌握现代开发工具链",
+					"提升用户体验设计能力"
+				]
+			}
+		}
+	},
+	"careerData": {
+		"swot": {
+			"strengths": {
+				"1": {
+					"title": "10年前端开发经验",
+					"description": "深厚的前端技术积累和项目实战经验，熟悉现代前端技术栈"
+				},
+				"2": {
+					"title": "PMP/ACP双认证",
+					"description": "项目管理和敏捷开发的专业认证，具备系统的管理理论基础"
+				},
+				"3": {
+					"title": "技术与管理结合",
+					"description": "既有技术深度又有管理广度，能够胜任技术管理岗位"
+				}
+			},
+			"weaknesses": {
+				"1": {
+					"title": "大型系统架构经验不足",
+					"description": "缺乏大规模分布式系统的架构设计经验"
+				},
+				"2": {
+					"title": "团队管理经验有限",
+					"description": "管理大型技术团队的实战经验相对不足"
+				}
+			},
+			"opportunities": {
+				"1": {
+					"title": "前端架构师需求增长",
+					"description": "市场对高级前端架构师和技术管理者需求旺盛"
+				},
+				"2": {
+					"title": "数字化转型趋势",
+					"description": "企业数字化转型带来更多前端技术机会"
+				},
+				"3": {
+					"title": "深圳科技环境",
+					"description": "深圳作为科技创新中心，提供丰富的职业机会"
+				}
+			},
+			"threats": {
+				"1": {
+					"title": "技术更新迭代快",
+					"description": "前端技术栈更新频繁，需要持续学习跟上趋势"
+				},
+				"2": {
+					"title": "年龄竞争压力",
+					"description": "34岁在技术行业面临年龄相关的竞争压力"
+				},
+				"3": {
+					"title": "市场竞争激烈",
+					"description": "深圳前端开发者众多，竞争激烈"
+				}
+			},
+			"analysis": {
+				"keyInsights": [
+					"技术深度与管理广度结合是核心竞争优势",
+					"需要重点补强大型系统架构设计能力",
+					"市场机会与个人能力发展方向高度匹配",
+					"应该充分利用深圳的科技环境和机会"
+				],
+				"strategicRecommendations": [
+					"重点发展前端架构设计和系统设计能力",
+					"深化性能优化和工程化专业技能",
+					"积累大型团队管理经验",
+					"建立个人技术品牌和影响力"
+				],
+				"actionItems": {
+					"1": {
+						"title": "完成前端架构学习路径",
+						"description": "系统学习前端架构设计理论和实践，完成相关项目"
+					},
+					"2": {
+						"title": "参与大型项目架构设计",
+						"description": "寻找机会参与或主导大型系统的前端架构设计"
+					},
+					"3": {
+						"title": "建立技术影响力",
+						"description": "通过技术博客、开源项目和技术分享建立个人品牌"
+					}
+				}
+			}
+		},
+		"roadmap": {
+			"title": "前端架构师发展路线图",
+			"description": "24个月分阶段学习+实战路线，目标成为深圳市场40-60K档位的前端架构师",
+			"phases": {
+				"1": {
+					"name": "架构基础阶段 (0-6个月)",
+					"objectives": [
+						"建立前端架构理论基础",
+						"掌握系统设计方法论",
+						"完成中小型项目架构设计",
+						"建立性能优化知识体系"
+					],
+					"milestones": {
+						"1": {
+							"title": "架构理论学习完成",
+							"description": "完成《前端架构设计》等相关书籍学习",
+							"metrics": ["完成3本架构相关书籍", "输出学习笔记"]
+						},
+						"2": {
+							"title": "第一个架构设计方案",
+							"description": "独立完成一个中型项目的前端架构设计",
+							"metrics": ["架构文档", "技术选型报告", "实施方案"]
+						}
+					},
+					"learningGoals": {
+						"1": {
+							"title": "前端架构设计原理",
+							"description": "学习前端架构设计的基本原理、模式和最佳实践",
+							"resources": {
+								"1": {
+									"title": "前端架构：从入门到微前端"
+								}
+							},
+							"projects": {
+								"1": {
+									"name": "个人品牌网站架构重构",
+									"description": "重新设计当前个人网站的架构",
+									"outputs": [
+										"架构设计文档",
+										"重构后的代码",
+										"性能对比报告"
+									]
+								}
+							},
+							"successCriteria": [
+								"能够独立设计中型项目的前端架构",
+								"掌握微前端、模块联邦等现代架构模式",
+								"具备架构决策的理论依据"
+							]
+						}
+					},
+					"deliverables": {
+						"1": {
+							"title": "前端架构设计方案",
+							"description": "完整的前端架构设计文档和实施方案"
+						}
+					}
+				},
+				"2": {
+					"name": "架构实践阶段 (6-12个月)",
+					"objectives": [
+						"实践大型项目架构设计",
+						"深入性能优化专项能力",
+						"建立工程化体系经验",
+						"开始技术团队管理实践"
+					],
+					"milestones": {
+						"3": {
+							"title": "大型项目架构实践",
+							"description": "主导或深度参与大型项目的前端架构设计",
+							"metrics": [
+								"项目规模>10人团队",
+								"架构复杂度评估",
+								"性能指标达成"
+							]
+						}
+					}
+				},
+				"3": {
+					"name": "专家定位阶段 (12-18个月)",
+					"objectives": [
+						"建立前端架构专家定位",
+						"具备兜底复杂技术问题的能力",
+						"形成个人技术影响力",
+						"达到40-50K薪资水平"
+					]
+				},
+				"4": {
+					"name": "架构师成熟阶段 (18-24个月)",
+					"objectives": [
+						"成为公认的前端架构师",
+						"具备技术决策和团队管理能力",
+						"建立行业影响力",
+						"达到50-60K薪资目标"
+					]
+				}
+			}
+		},
+		"learningPath": {
+			"title": "前端架构师学习路径",
+			"description": "前端架构、性能、工程化三线并行的系统学习路径",
+			"phases": {
+				"1": {
+					"name": "基础建设阶段"
+				}
+			}
+		}
+	}
 }

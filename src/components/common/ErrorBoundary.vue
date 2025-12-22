@@ -11,7 +11,7 @@
         
         <!-- 错误详情（开发环境） -->
         <details v-if="showDetails" class="error-details">
-          <summary>错误详情</summary>
+          <summary>{{ $t('common.errorDetails') }}</summary>
           <pre class="error-stack">{{ errorStack }}</pre>
         </details>
         

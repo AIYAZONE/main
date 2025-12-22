@@ -38,7 +38,7 @@ export interface TimelineEvent {
   date: Date;
   title: string;
   description: string;
-  type: 'achievement' | 'milestone' | 'transition';
+  type: 'achievement' | 'milestone' | 'transition' | 'education';
 }
 
 export interface BrandHeroProps {

@@ -1,7 +1,7 @@
 <template>
   <div class="skill-showcase">
     <div class="skill-showcase__header">
-      <h2 class="skill-showcase__title skills-title">{{ $t('skills.title') }}</h2>
+      <h2 class="skill-showcase__title skills-title">{{ $t("skills.title") }}</h2>
       <div class="skill-showcase__filters">
         <button
           v-for="filter in filterOptions"
@@ -9,7 +9,7 @@
           :class="[
             'skill-showcase__filter-btn',
             'filter-btn',
-            { 'skill-showcase__filter-btn--active': activeFilter === filter.value }
+            { 'skill-showcase__filter-btn--active': activeFilter === filter.value },
           ]"
           @click="setActiveFilter(filter.value)"
         >
@@ -20,13 +20,13 @@
 
     <div class="skill-showcase__content">
       <div v-if="loading" class="skill-showcase__loading">
-        {{ $t('common.loading') }}
+        {{ $t("common.loading") }}
       </div>
-      
+
       <div v-else-if="error" class="skill-showcase__error">
         <p>{{ error }}</p>
         <button @click="retryLoad" class="skill-showcase__retry-btn">
-          {{ $t('common.retry') }}
+          {{ $t("common.retry") }}
         </button>
       </div>
 
@@ -39,7 +39,7 @@
           <div class="skill-category__header">
             <h3 class="skill-category__title">{{ category.name }}</h3>
             <span class="skill-category__count">
-              {{ category.skills.length }} {{ $t('skills.title') }}
+              {{ category.skills.length }} {{ $t("skills.title") }}
             </span>
           </div>
 
@@ -55,7 +55,7 @@
                 <h4 class="skill-item__name">{{ skill.name }}</h4>
                 <div class="skill-item__level">
                   <div class="skill-level-bar">
-                    <div 
+                    <div
                       class="skill-level-bar__fill"
                       :style="{ width: `${(skill.level / 10) * 100}%` }"
                     ></div>
@@ -63,13 +63,13 @@
                   <span class="skill-level-text">Level {{ skill.level }}/10</span>
                 </div>
               </div>
-              
+
               <div class="skill-item__meta">
                 <span class="skill-item__experience">
-                  {{ skill.yearsOfExperience }} {{ $t('skills.yearsExp') }}
+                  {{ skill.yearsOfExperience }} {{ $t("skills.yearsExp") }}
                 </span>
                 <span class="skill-item__projects">
-                  {{ skill.projects.length }} 项目
+                  {{ skill.projects.length }} {{ $t("skills.projects") }}
                 </span>
               </div>
 
@@ -84,12 +84,12 @@
     <div v-if="selectedSkill" class="skill-modal" @click="closeModal">
       <div class="skill-modal__content" @click.stop>
         <button class="skill-modal__close" @click="closeModal">×</button>
-        
+
         <div class="skill-modal__header">
           <h3 class="skill-modal__title">{{ selectedSkill.name }}</h3>
           <div class="skill-modal__level">
             <div class="skill-level-bar skill-level-bar--large">
-              <div 
+              <div
                 class="skill-level-bar__fill"
                 :style="{ width: `${(selectedSkill.level / 10) * 100}%` }"
               ></div>
@@ -103,25 +103,29 @@
         <div class="skill-modal__body">
           <div class="skill-modal__meta">
             <div class="skill-meta-item">
-              <span class="skill-meta-item__label">{{ $t('skills.yearsExp') }}:</span>
-              <span class="skill-meta-item__value">{{ selectedSkill.yearsOfExperience }} 年</span>
+              <span class="skill-meta-item__label">{{ $t("skills.yearsExp") }}:</span>
+              <span class="skill-meta-item__value"
+                >{{ selectedSkill.yearsOfExperience }} {{ $t("skills.years") }}</span
+              >
             </div>
             <div class="skill-meta-item">
-              <span class="skill-meta-item__label">相关项目:</span>
-              <span class="skill-meta-item__value">{{ selectedSkill.projects.length }} 个</span>
+              <span class="skill-meta-item__label">{{ $t("skills.relatedProjects") }}:</span>
+              <span class="skill-meta-item__value"
+                >{{ selectedSkill.projects.length }} {{ $t("skills.count") }}</span
+              >
             </div>
           </div>
 
           <div class="skill-modal__description">
-            <h4>技能描述</h4>
+            <h4>{{ $t("skills.skillDescription") }}</h4>
             <p>{{ selectedSkill.description }}</p>
           </div>
 
           <div class="skill-modal__projects">
-            <h4>相关项目</h4>
+            <h4>{{ $t("skills.relatedProjects") }}</h4>
             <ul class="skill-projects-list">
-              <li 
-                v-for="project in selectedSkill.projects" 
+              <li
+                v-for="project in selectedSkill.projects"
                 :key="project"
                 class="skill-projects-list__item"
               >
@@ -136,11 +140,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, watch } from 'vue';
-import { useI18n } from 'vue-i18n';
-import { useSkillStore } from '../../stores/skillStore';
-import type { SkillCategory, Skill } from '../../types/skills';
-import type { Certification } from '../../types/brand';
+import { ref, computed, onMounted, watch } from "vue";
+import { useI18n } from "vue-i18n";
+import { useSkillStore } from "../../stores/skillStore";
+import type { SkillCategory, Skill } from "../../types/skills";
+import type { Certification } from "../../types/brand";
 
 // Props
 interface Props {
@@ -152,7 +156,7 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
   skills: () => [],
   certifications: () => [],
-  experience: () => []
+  experience: () => [],
 });
 
 // Composables
@@ -160,7 +164,7 @@ const { t } = useI18n();
 const skillStore = useSkillStore();
 
 // Reactive state
-const activeFilter = ref<string>('all');
+const activeFilter = ref<string>("all");
 const selectedSkill = ref<Skill | null>(null);
 
 // Computed properties
@@ -173,17 +177,17 @@ const skillCategories = computed(() => {
 });
 
 const filterOptions = computed(() => [
-  { value: 'all', label: '全部技能' },
-  { value: 'frontend', label: t('skills.frontend') },
-  { value: 'management', label: t('skills.management') },
-  { value: 'leadership', label: t('skills.leadership') }
+  { value: "all", label: t("skills.allSkills") },
+  { value: "frontend", label: t("skills.categories.frontend.name") },
+  { value: "management", label: t("skills.categories.management.name") },
+  { value: "leadership", label: t("skills.categories.leadership.name") },
 ]);
 
 const filteredCategories = computed(() => {
-  if (activeFilter.value === 'all') {
+  if (activeFilter.value === "all") {
     return skillCategories.value;
   }
-  return skillCategories.value.filter(category => category.type === activeFilter.value);
+  return skillCategories.value.filter((category) => category.type === activeFilter.value);
 });
 
 // Methods
@@ -212,11 +216,15 @@ onMounted(async () => {
 });
 
 // Watch for prop changes
-watch(() => props.skills, (newSkills) => {
-  if (newSkills.length > 0) {
-    skillStore.setSkillCategories(newSkills);
-  }
-}, { immediate: true });
+watch(
+  () => props.skills,
+  (newSkills) => {
+    if (newSkills.length > 0) {
+      skillStore.setSkillCategories(newSkills);
+    }
+  },
+  { immediate: true }
+);
 </script>
 
 <style scoped lang="less">

@@ -1,24 +1,24 @@
 <template>
   <footer class="brand-footer">
     <!-- Huge Background Text -->
-    <div class="big-text-bg" aria-hidden="true">AIYAZONE</div>
+    <div class="big-text-bg" aria-hidden="true">{{ t('brand.title') }}</div>
 
     <div class="middle-box">
       <div class="footer-content">
         <div class="footer-left">
-          <p class="copyright">&copy; {{ year }} AIYAZONE. All Rights Reserved.</p>
+          <p class="copyright">&copy; {{ year }} {{ t('brand.title') }}. {{ t('footer.allRightsReserved') }}</p>
         </div>
 
         <div class="footer-right">
           <div class="social-links">
-            <a href="https://github.com/brucewang" target="_blank" rel="noopener">GitHub</a>
-            <a href="mailto:hello@aiyazone.cn">Email</a>
+            <a href="https://github.com/brucewang" target="_blank" rel="noopener">{{ t('footer.github') }}</a>
+            <a href="mailto:hello@aiyazone.cn">{{ t('footer.email') }}</a>
           </div>
           
           <div class="legal-links">
-            <a :href="copyright.siteLink" class="site-link">{{ copyright.title }}</a>
+            <a :href="siteLink" class="site-link">{{ t('brand.title') }}</a>
             <span class="sep">/</span>
-            <a :href="copyright.link" target="_blank" rel="nofollow">{{ copyright.info }}</a>
+            <a :href="beianLink" target="_blank" rel="nofollow">{{ icpInfo }}</a>
           </div>
         </div>
       </div>
@@ -26,39 +26,25 @@
   </footer>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script setup lang="ts">
+import { defineComponent, computed, ref, onMounted } from "vue";
+import { useI18n } from "vue-i18n";
 
-export default defineComponent({
+defineComponent({
   name: "Footer",
-  data() {
-    return {
-      copyright: {
-        year: new Date().getFullYear(),
-        siteLink: "",
-        title: "AIYAZONE",
-        link: "https://beian.miit.gov.cn/",
-        info: "粤ICP备2022083499号",
-      },
-    };
-  },
-  mounted() {
-    this.getCurrentSite();
-  },
-  methods: {
-    getCurrentSite: function () {
-      this.copyright.siteLink = location.origin + "/";
-      if (this.copyright.siteLink.indexOf("aiyazone.cn") > 0) {
-        this.copyright.info = "鲁ICP备14028542号-2";
-      }
-    },
-  },
-  computed: {
-    year: function () {
-      const time = new Date();
-      return time.getFullYear();
-    },
-  },
+});
+
+const { t } = useI18n();
+const year = computed(() => new Date().getFullYear());
+const siteLink = ref("");
+const icpInfo = ref("粤ICP备2022083499号");
+const beianLink = "https://beian.miit.gov.cn/";
+
+onMounted(() => {
+  siteLink.value = location.origin + "/";
+  if (siteLink.value.indexOf("aiyazone.cn") > 0) {
+    icpInfo.value = "鲁ICP备14028542号-2";
+  }
 });
 </script>
 

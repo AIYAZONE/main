@@ -5,17 +5,336 @@
 		"portfolio": "Portfolio",
 		"career": "Career",
 		"contact": "Contact",
-		"quickLinks": "Quick Links"
+		"quickLinks": "Quick Links",
+		"frontend": "Frontend",
+		"management": "Management",
+		"blog": "Blog"
+	},
+	"footer": {
+		"allRightsReserved": "All Rights Reserved",
+		"github": "GitHub",
+		"email": "Email"
+	},
+	"home": {
+		"hero": {
+			"title": "AIYAZONE",
+			"subtitle": "Frontend Developer & Project Manager",
+			"intro": "Crafting digital experiences with precision and purpose. <br>Focusing on personal branding, engineering excellence, and product thinking."
+		},
+		"focus": {
+			"title": "What I do best",
+			"subtitle": "Engineering-first frontend systems with performance rigor and delivery discipline.",
+			"items": {
+				"architecture": {
+					"title": "Architecture & Engineering",
+					"description": "Scalable boundaries, maintainable systems, and pragmatic build strategies.",
+					"tags": ["System design", "Component system", "DX"]
+				},
+				"performance": {
+					"title": "Performance & UX",
+					"description": "Metrics-driven optimization from load to interaction—fast and reliable.",
+					"tags": ["Profiling", "Rendering", "UX details"]
+				},
+				"delivery": {
+					"title": "Delivery & Collaboration",
+					"description": "Clear milestones, aligned teams, and quality-first execution.",
+					"tags": ["Planning", "Collaboration", "Quality"]
+				}
+			}
+		},
+		"now": {
+			"title": "What I'm building now",
+			"subtitle": "Refining the personal brand system while turning practices into reusable playbooks.",
+			"chips": ["Systematic", "High quality", "Reusable"],
+			"items": {
+				"brandSystem": {
+					"kicker": "01",
+					"title": "Personal brand showcase system",
+					"description": "Unifying visual identity and information architecture into stable modules."
+				},
+				"engineering": {
+					"kicker": "02",
+					"title": "Engineering playbooks",
+					"description": "Codifying practices around performance, stability, and maintainability."
+				},
+				"learning": {
+					"kicker": "03",
+					"title": "Long-term learning tracks",
+					"description": "Deepening architecture, performance, and engineering through real projects."
+				}
+			}
+		},
+		"cta": {
+			"kicker": "NEXT",
+			"title": "Ready to explore?",
+			"subtitle": "Check the portfolio for results, career for methods, or contact for dialogue.",
+			"actions": {
+				"portfolio": "View Portfolio",
+				"career": "Career Path",
+				"contact": "Contact Me"
+			}
+		}
 	},
 	"brand": {
 		"title": "AIYAZONE",
 		"subtitle": "Frontend Architect & Tech Lead",
-		"intro": "10 years of frontend development experience, PMP/ACP certified, focusing on frontend architecture, performance optimization and engineering",
+		"intro": "{experience} years of frontend development experience, PMP/ACP certified, focusing on frontend architecture, performance optimization, and engineering",
+		"tagline": "Perfect Combination of Technical Depth and Management Breadth",
+		"location": "Shenzhen",
 		"valueProposition": {
 			"architecture": "Frontend Architecture Design & Implementation",
 			"performance": "Performance Optimization & Monitoring",
 			"engineering": "Engineering System Development",
 			"management": "Technical Team Management"
+		},
+		"certificationsData": {
+			"1": {
+				"name": "Project Management Professional (PMP)",
+				"issuer": "Project Management Institute"
+			},
+			"2": {
+				"name": "Agile Certified Practitioner (ACP)",
+				"issuer": "Project Management Institute"
+			}
+		},
+		"story": {
+			"1": {
+				"title": "Technical Beginning",
+				"content": "Started as a frontend developer, diving deep into modern frontend tech stack"
+			},
+			"2": {
+				"title": "Management Transition",
+				"content": "Obtained PMP/ACP certifications, began taking on technical management responsibilities"
+			},
+			"3": {
+				"title": "Architectural Evolution",
+				"content": "Focusing on frontend architecture, performance optimization, and engineering systems"
+			}
+		},
+		"timeline": {
+			"1": {
+				"title": "Started Frontend Career",
+				"description": "Joined the first internet company, started frontend development work"
+			},
+			"2": {
+				"title": "Obtained PMP Certification",
+				"description": "Passed Project Management Professional certification exam"
+			},
+			"3": {
+				"title": "Obtained ACP Certification",
+				"description": "Passed Agile Certified Practitioner exam"
+			}
+		},
+		"philosophy": [
+			"Equal emphasis on technology and management, depth and breadth",
+			"Continuous learning, embracing change",
+			"User-centric, value-oriented",
+			"Team collaboration, growing together"
+		]
+	},
+	"skills": {
+		"title": "Skills & Expertise",
+		"yearsExp": "Years Exp",
+		"years": "years",
+		"count": "items",
+		"relatedProjects": "Related Projects",
+		"allSkills": "All Skills",
+		"skillDescription": "Skill Description",
+		"projects": "Projects",
+		"categories": {
+			"frontend": {
+				"name": "Frontend Development",
+				"skills": {
+					"vue": {
+						"name": "Vue.js",
+						"description": "Deep mastery of Vue 2/3 ecosystem, including Composition API, Pinia state management, etc.",
+						"projects": [
+							"AIYAZONE Personal Site",
+							"Enterprise Management System",
+							"Mobile App"
+						]
+					},
+					"typescript": {
+						"name": "TypeScript",
+						"description": "Proficient in using TypeScript for large-scale project development, experienced in type system design",
+						"projects": [
+							"Large-scale Frontend Project",
+							"Component Library Development",
+							"Engineering Tools"
+						]
+					},
+					"react": {
+						"name": "React",
+						"description": "Experienced in React ecosystem development, including Hooks, Redux, etc.",
+						"projects": [
+							"Enterprise Application",
+							"Component Library",
+							"Mobile Hybrid App"
+						]
+					},
+					"javascript": {
+						"name": "JavaScript",
+						"description": "JavaScript language expert, deep understanding of ES6+ features and asynchronous programming",
+						"projects": [
+							"All Frontend Projects",
+							"Node.js Backend",
+							"Tool Scripts"
+						]
+					},
+					"css": {
+						"name": "CSS/Less/Sass",
+						"description": "Mastery of CSS3, preprocessors, and modern layout technologies, experienced in building design systems",
+						"projects": [
+							"Responsive Website",
+							"Component Library Styles",
+							"Mobile Adaptation"
+						]
+					},
+					"webpack": {
+						"name": "Webpack/Vite",
+						"description": "Deep mastery of modern frontend build tools, experienced in complex project build optimization",
+						"projects": [
+							"Build System Optimization",
+							"Multi-environment Configuration",
+							"Performance Optimization"
+						]
+					},
+					"performance": {
+						"name": "Performance Optimization",
+						"description": "Rich experience in frontend performance optimization, including code splitting, caching strategies, etc.",
+						"projects": [
+							"Large Application Optimization",
+							"Mobile Performance",
+							"First Screen Loading Optimization"
+						]
+					}
+				}
+			},
+			"management": {
+				"name": "Project Management",
+				"skills": {
+					"pmp": {
+						"name": "Project Management (PMP)",
+						"description": "PMP certified, possessing complete project management theoretical knowledge and practical experience",
+						"projects": [
+							"Large-scale Frontend Project",
+							"Cross-department Collaboration Project",
+							"Product Iteration Management"
+						]
+					},
+					"agile": {
+						"name": "Agile Development (ACP)",
+						"description": "ACP certified, skilled in using Scrum, Kanban, and other agile methodologies",
+						"projects": [
+							"Agile Team Management",
+							"Scrum Practice",
+							"Continuous Delivery"
+						]
+					},
+					"risk-management": {
+						"name": "Risk Management",
+						"description": "Experienced in project risk identification, assessment, and response",
+						"projects": [
+							"Project Risk Assessment",
+							"Technical Risk Control",
+							"Schedule Risk Management"
+						]
+					},
+					"stakeholder": {
+						"name": "Stakeholder Management",
+						"description": "Good at effective communication and coordination with stakeholders at different levels and departments",
+						"projects": [
+							"Cross-department Communication",
+							"Customer Requirement Management",
+							"Team Coordination"
+						]
+					}
+				}
+			},
+			"leadership": {
+				"name": "Team Leadership",
+				"skills": {
+					"team-building": {
+						"name": "Team Building",
+						"description": "Experienced in team building, training, and motivation",
+						"projects": [
+							"Frontend Team Building",
+							"Skill Training",
+							"Team Culture Building"
+						]
+					},
+					"mentoring": {
+						"name": "Technical Mentoring",
+						"description": "Good at guiding junior and intermediate developers in technical growth, establishing technical standards and best practices",
+						"projects": [
+							"Newcomer Training",
+							"Technical Sharing",
+							"Code Review"
+						]
+					},
+					"architecture": {
+						"name": "Technical Architecture",
+						"description": "Capable of frontend architecture design and technical decision-making, focusing on maintainability and scalability",
+						"projects": [
+							"Frontend Architecture Design",
+							"Technology Selection",
+							"System Refactoring"
+						]
+					},
+					"communication": {
+						"name": "Communication & Coordination",
+						"description": "Excellent communication skills, able to clearly express technical concepts and project progress",
+						"projects": [
+							"Cross-team Collaboration",
+							"Requirement Clarification",
+							"Technical Solution Presentation"
+						]
+					}
+				}
+			}
+		},
+		"experience": {
+			"current-role": {
+				"company": "A Shenzhen Internet Company",
+				"position": "Senior Frontend Engineer / Tech Lead",
+				"achievements": [
+					"Responsible for frontend team technical architecture design and tech stack selection",
+					"Established frontend engineering system, improving team efficiency by 30%",
+					"Led large-scale project refactoring, improving performance by over 50%",
+					"Mentored 3 junior developers to become intermediate engineers",
+					"Obtained PMP and ACP certifications, enhancing project management capabilities"
+				]
+			},
+			"previous-role-1": {
+				"company": "A Shenzhen Tech Company",
+				"position": "Frontend Engineer",
+				"achievements": [
+					"Independently responsible for development and maintenance of multiple medium-to-large frontend projects",
+					"Established component library and design system, improving development efficiency",
+					"Optimized project build process, reducing build time by 60%",
+					"Participated in mobile hybrid app development, accumulating cross-platform experience"
+				]
+			},
+			"previous-role-2": {
+				"company": "A Shenzhen Startup",
+				"position": "Frontend Developer",
+				"achievements": [
+					"Built frontend tech stack and development standards from scratch",
+					"Responsible for frontend development of company official website and management backend",
+					"Implemented responsive design, supporting multi-terminal access",
+					"Participated in product requirement analysis and technical solution design"
+				]
+			},
+			"early-career": {
+				"company": "A Shenzhen Traditional Enterprise",
+				"position": "Junior Frontend Developer",
+				"achievements": [
+					"Learned modern frontend development technologies and tools",
+					"Participated in frontend development of internal enterprise systems",
+					"Mastered basic HTML, CSS, JavaScript skills",
+					"Established good programming habits and code standard awareness"
+				]
+			}
 		}
 	},
 	"skills": {
@@ -47,6 +366,18 @@
 		"years": "years"
 	},
 	"portfolio": {
+		"hero": {
+			"titlePart1": "SELECTED",
+			"titlePart2": "WORKS",
+			"description": "A curation of my exploration in frontend engineering and project management over the last decade. Each project is a pursuit of excellence."
+		},
+		"stats": {
+			"projects": "PROJECTS",
+			"stars": "STARS"
+		},
+		"techStack": {
+			"title": "TECH STACK"
+		},
 		"title": "Portfolio",
 		"digitalGarden": "Digital Garden",
 		"featuredWork": "Featured Work",
@@ -79,7 +410,278 @@
 		"totalVisitors": "Total Visitors",
 		"githubForks": "GitHub Forks"
 	},
+	"projectData": {
+		"groups": {
+			"digital-garden": {
+				"title": "Digital Garden",
+				"description": "Personal tech blog and knowledge sharing platform, recording technical growth and project management practices."
+			},
+			"featured-work": {
+				"title": "Featured Work",
+				"description": "Core technical projects and innovative practices, showcasing frontend depth and architectural capabilities."
+			},
+			"community": {
+				"title": "Community Projects",
+				"description": "Open source contributions and community participation, driving technical ecosystem development."
+			}
+		},
+		"projects": {
+			"aiyazone-blog": {
+				"name": "AIYAZONE Blog",
+				"description": "VitePress-based tech blog sharing frontend development and project management experiences.",
+				"features": [
+					"Tech Articles",
+					"Project Management Knowledge",
+					"Frontend Tech Stack Deep Dive",
+					"Automated Deployment",
+					"SEO Optimization"
+				],
+				"fullDescription": "AIYAZONE Blog is a modern technical blog built with VitePress, aimed at sharing deep articles on frontend development, architecture design, and project management. Content is written in Markdown and deployed automatically via Git workflows.",
+				"challenges": [
+					"How to implement efficient content management and publishing",
+					"How to optimize SEO and loading performance",
+					"How to design a clear knowledge navigation system"
+				],
+				"solutions": [
+					"Use VitePress as SSG combined with GitHub Actions",
+					"Custom theme and layout for better reading experience",
+					"Multi-dimensional classification and tagging system"
+				],
+				"learnings": [
+					"Deep understanding of VitePress build principles",
+					"Mastered GitHub Actions workflow",
+					"Improved technical writing skills"
+				]
+			},
+			"fe-docs": {
+				"name": "Frontend Tech Stack Docs",
+				"description": "Systematic frontend technical knowledge system, covering basics to architecture design.",
+				"features": [
+					"Frontend Tech System",
+					"Best Practices",
+					"Case Studies",
+					"Performance Guide",
+					"Engineering Practices"
+				],
+				"fullDescription": "A comprehensive frontend knowledge base covering HTML/CSS/JS basics, Vue/React framework principles, engineering, and performance optimization. Aimed at helping developers build a complete technical system.",
+				"challenges": [
+					"Keeping docs up to date with fast-moving tech",
+					"Connecting fragmented knowledge points",
+					"Providing high quality examples and cases"
+				],
+				"solutions": [
+					"Regular review and updates monitoring community",
+					"Mind maps and knowledge graphs to link concepts",
+					"Runnable code examples with online tools"
+				],
+				"learnings": [
+					"Systematized frontend knowledge",
+					"Deepened understanding of underlying principles",
+					"Improved documentation and knowledge sharing skills"
+				]
+			},
+			"pm-knowledge": {
+				"name": "Project Management Knowledge",
+				"description": "PMP/ACP learning materials and practice sharing, boosting PM capabilities.",
+				"features": [
+					"PMP Knowledge Points",
+					"ACP Agile Practices",
+					"Case Analysis",
+					"Tools & Templates",
+					"Exam Experience"
+				],
+				"fullDescription": "Integrated PMP and ACP core knowledge with practical project experience, providing a pragmatic project management methodology.",
+				"challenges": [
+					"Combining theory with practical projects",
+					"Balancing waterfall and agile models",
+					"Solving common PM pain points (communication, risks)"
+				],
+				"solutions": [
+					"Real case analysis demonstrating theory application",
+					"Hybrid model best practices",
+					"Practical tools like communication templates and risk registers"
+				],
+				"learnings": [
+					"Deep understanding of PMBOK process groups and knowledge areas",
+					"Mastered agile values and principles",
+					"Improved ability to solve complex project problems"
+				]
+			},
+			"zenparticles": {
+				"name": "ZenParticles",
+				"description": "WebGL-based particle system visualization project exploring frontend graphics.",
+				"features": [
+					"Real-time Rendering",
+					"GPU Acceleration",
+					"Interactive Parameters",
+					"Performance Monitor",
+					"Multiple Presets"
+				],
+				"fullDescription": "ZenParticles is a high-performance visualization project focusing on WebGL particle effects. Using Three.js and custom Shaders, it achieves real-time rendering of million-level particles.",
+				"challenges": [
+					"Efficient rendering of massive particles in browser",
+					"Complex physical motion simulation",
+					"Maintaining high frame rate and low memory usage"
+				],
+				"solutions": [
+					"GPU Instanced Rendering technology",
+					"Custom Shaders for position and color calculation",
+					"Optimized memory management avoiding frequent GC"
+				],
+				"learnings": [
+					"Mastered WebGL and Shader programming",
+					"Understood GPU rendering pipeline",
+					"Improved graphics algorithms and performance optimization"
+				]
+			},
+			"sun-travel": {
+				"name": "Sun Travel",
+				"description": "Modern travel planning app integrating maps, routes, and itinerary management.",
+				"features": [
+					"Smart Route Planning",
+					"Attraction Recommendation",
+					"Itinerary Management",
+					"Map Integration",
+					"User Reviews"
+				],
+				"fullDescription": "Sun Travel is a one-stop travel planning app. Integrated with Amap API, it provides intelligent route planning, attraction recommendations, and itinerary management.",
+				"challenges": [
+					"Handling complex map interactions and route calculations",
+					"Data synchronization and offline access",
+					"Personalized attraction recommendations"
+				],
+				"solutions": [
+					"Encapsulated map components for unified state management",
+					"PWA technology for offline access and cloud sync",
+					"Preference-based recommendation algorithm"
+				],
+				"learnings": [
+					"Mastered Map API development and integration",
+					"Practiced PWA and offline-first architecture",
+					"Improved ability to handle complex business logic"
+				]
+			},
+			"personal-brand-system": {
+				"name": "Personal Brand System",
+				"description": "Personal brand website showcasing tech stack and project management capabilities.",
+				"features": [
+					"Responsive Showcase",
+					"Skill Visualization",
+					"Portfolio Management",
+					"SWOT Analysis",
+					"Career Roadmap",
+					"I18n Support"
+				],
+				"fullDescription": "My digital business card showcasing my tech stack, project experience, career planning, and personal brand. Built with the latest frontend stack, focusing on design and UX.",
+				"challenges": [
+					"Designing a unique and professional visual style",
+					"Building a maintainable and scalable architecture",
+					"Implementing smooth animations and interactions"
+				],
+				"solutions": [
+					"Unified visual system (typography, color, spacing)",
+					"Modular architecture with Vue 3 Composition API",
+					"CSS animations and transitions for enhanced UX"
+				],
+				"learnings": [
+					"Improved full-stack and product design skills",
+					"Practiced large-scale project architecture",
+					"Deepened understanding of personal branding"
+				]
+			},
+			"vue-performance-toolkit": {
+				"name": "Vue Performance Toolkit",
+				"description": "Performance analysis and optimization tools for Vue.js applications.",
+				"features": [
+					"Component Profiling",
+					"Memory Leak Detection",
+					"Render Monitoring",
+					"Optimization Suggestions",
+					"Report Export"
+				],
+				"fullDescription": "A suite of performance analysis and optimization tools designed for Vue.js developers to quickly identify bottlenecks and provide optimization suggestions.",
+				"challenges": [
+					"Accurately collecting Vue component performance metrics",
+					"Minimizing the tool's own performance overhead",
+					"Providing intuitive and easy-to-understand reports"
+				],
+				"solutions": [
+					"Using Vue Devtools API and Performance API",
+					"Lightweight design with lazy loading analysis modules",
+					"Visualized dashboard for performance data"
+				],
+				"learnings": [
+					"Deep understanding of Vue internals and rendering mechanism",
+					"Mastered browser performance analysis APIs",
+					"Improved tool development and DX design skills"
+				]
+			},
+			"frontend-interview-guide": {
+				"name": "Frontend Interview Guide",
+				"description": "Systematic interview preparation materials covering technical and management dimensions.",
+				"features": [
+					"Tech Question Bank",
+					"PM Interview Prep",
+					"Resume Advice",
+					"Experience Sharing",
+					"Career Planning"
+				],
+				"fullDescription": "More than just a question bank, a complete interview preparation scheme covering basics to system design, technical depth to management breadth.",
+				"challenges": [
+					"Covering broad frontend knowledge points",
+					"Providing deep answer analysis",
+					"Helping candidates showcase comprehensive abilities"
+				],
+				"solutions": [
+					"Categorized knowledge graph",
+					"Principle analysis combined with practical cases",
+					"Added soft skills and project management content"
+				],
+				"learnings": [
+					"Consolidated frontend basic knowledge",
+					"Improved summarization and expression skills",
+					"Helped more developers pass interviews"
+				]
+			},
+			"open-source-contributions": {
+				"name": "Open Source Contributions",
+				"description": "Contributions to various open source projects including Vue ecosystem and tools.",
+				"features": [
+					"Vue Ecosystem",
+					"Tool Libraries",
+					"Documentation",
+					"Bug Fixes",
+					"Feature Enhancements"
+				],
+				"fullDescription": "A record of my participation in the open source community. Giving back through PRs, bug fixes, and documentation improvements.",
+				"challenges": [
+					"Quickly understanding large codebase structures",
+					"Following different project contribution guidelines",
+					"Efficient communication with global developers"
+				],
+				"solutions": [
+					"Reading source and docs, starting from small issues",
+					"Strict adherence to code standards and commit guides",
+					"Open and humble communication mindset"
+				],
+				"learnings": [
+					"Improved code reading and debugging skills",
+					"Learned excellent open source architecture and practices",
+					"Expanded professional network"
+				]
+			}
+		}
+	},
 	"career": {
+		"header": {
+			"titlePart1": "CAREER",
+			"titlePart2": "PATH"
+		},
+		"nav": {
+			"roadmap": "ROADMAP",
+			"swot": "SWOT",
+			"learning": "LEARNING"
+		},
 		"title": "Career Planning",
 		"swot": {
 			"title": "SWOT Analysis",
@@ -172,10 +774,65 @@
 				"completed": "Completed"
 			}
 		},
+		"timeline": {
+			"title": "Professional Experience",
+			"summary": {
+				"yearsExp": "Years Exp",
+				"companies": "Companies",
+				"achievements": "Achievements"
+			},
+			"present": "Present",
+			"sections": {
+				"achievements": "Key Achievements",
+				"technologies": "Tech Stack"
+			},
+			"metrics": {
+				"achievements": "Achievements",
+				"technologies": "Technologies",
+				"level": "Level"
+			},
+			"levels": {
+				"techLead": "Tech Lead",
+				"senior": "Senior Engineer",
+				"frontend": "Frontend Engineer",
+				"junior": "Junior Engineer",
+				"engineer": "Engineer"
+			},
+			"duration": {
+				"months": "months",
+				"years": "years"
+			},
+			"milestones": {
+				"title": "Career Milestones",
+				"items": {
+					"pmp-cert": {
+						"title": "PMP Certification",
+						"description": "Obtained Project Management Professional certification"
+					},
+					"acp-cert": {
+						"title": "ACP Certification",
+						"description": "Obtained Agile Certified Practitioner certification"
+					},
+					"tech-lead": {
+						"title": "Tech Lead",
+						"description": "Promoted to Tech Lead, taking on team management responsibilities"
+					},
+					"senior-dev": {
+						"title": "Senior Engineer",
+						"description": "Promoted to Senior Frontend Engineer"
+					},
+					"first-job": {
+						"title": "Career Start",
+						"description": "Started frontend development career"
+					}
+				}
+			}
+		},
 		"learning": {
 			"title": "Learning Path",
 			"description": "Systematic learning path with three parallel tracks: frontend architecture, performance, and engineering",
 			"totalDuration": "Total Duration",
+			"defaultDuration": "24 months",
 			"focusAreas": "Focus Areas",
 			"threeFocus": "Three Parallel Tracks",
 			"approach": "Approach",
@@ -235,10 +892,252 @@
 					"projects": "Lead important project success",
 					"industry": "Build technical influence"
 				}
+			},
+			"trackPhases": {
+				"architecture": {
+					"1": {
+						"title": "Architecture Fundamentals (0-3 months)",
+						"duration": "3 months",
+						"goals": [
+							"Master frontend architecture principles",
+							"Understand micro-frontend patterns",
+							"Learn system design methodology",
+							"Establish architecture mindset"
+						],
+						"projects": [
+							{
+								"name": "Personal site refactoring",
+								"estimatedTime": "40h"
+							},
+							{
+								"name": "Micro-frontend demo",
+								"estimatedTime": "60h"
+							}
+						]
+					},
+					"2": {
+						"title": "Architecture Practice (3-9 months)",
+						"duration": "6 months",
+						"goals": [
+							"Participate in large-scale architecture design",
+							"Practice modular architecture",
+							"Master architecture decision making",
+							"Establish evaluation system"
+						],
+						"projects": [
+							{
+								"name": "Enterprise architecture design",
+								"estimatedTime": "120h"
+							},
+							{
+								"name": "Architecture migration project",
+								"estimatedTime": "80h"
+							}
+						]
+					},
+					"3": {
+						"title": "Architecture Expert (9-18 months)",
+						"duration": "9 months",
+						"goals": [
+							"Large system architecture capability",
+							"Form personal methodology",
+							"Build technical influence",
+							"Guide team practice"
+						],
+						"projects": [
+							{
+								"name": "Architecture whitepaper",
+								"estimatedTime": "100h"
+							},
+							{
+								"name": "Open source tool development",
+								"estimatedTime": "150h"
+							}
+						]
+					}
+				},
+				"performance": {
+					"1": {
+						"title": "Performance Basics (0-4 months)",
+						"duration": "4 months",
+						"goals": [
+							"Master monitoring system",
+							"Understand optimization principles",
+							"Establish testing methods",
+							"Learn profiling tools"
+						],
+						"projects": [
+							{
+								"name": "Monitoring platform setup",
+								"estimatedTime": "50h"
+							},
+							{
+								"name": "Optimization case study",
+								"estimatedTime": "30h"
+							}
+						]
+					},
+					"2": {
+						"title": "Optimization Practice (4-12 months)",
+						"duration": "8 months",
+						"goals": [
+							"Full-stack optimization",
+							"Establish optimization process",
+							"Master advanced techniques",
+							"Form optimization solutions"
+						],
+						"projects": [
+							{
+								"name": "Large app optimization",
+								"estimatedTime": "100h"
+							},
+							{
+								"name": "Optimization tool development",
+								"estimatedTime": "80h"
+							}
+						]
+					},
+					"3": {
+						"title": "Performance Expert (12-20 months)",
+						"duration": "8 months",
+						"goals": [
+							"Build optimization system",
+							"Guide team practice",
+							"Build technical influence",
+							"Push industry standards"
+						],
+						"projects": [
+							{
+								"name": "Best practices guide",
+								"estimatedTime": "120h"
+							},
+							{
+								"name": "Training system",
+								"estimatedTime": "60h"
+							}
+						]
+					}
+				},
+				"engineering": {
+					"1": {
+						"title": "Engineering Basics (0-3 months)",
+						"duration": "3 months",
+						"goals": [
+							"Master build tools",
+							"Understand CI/CD",
+							"Learn code quality",
+							"Establish engineering mindset"
+						],
+						"projects": [
+							{
+								"name": "Scaffolding development",
+								"estimatedTime": "40h"
+							},
+							{ "name": "CI/CD setup", "estimatedTime": "30h" }
+						]
+					},
+					"2": {
+						"title": "Engineering Practice (3-12 months)",
+						"duration": "9 months",
+						"goals": [
+							"Build engineering system",
+							"Implement automated testing",
+							"Push code standardization",
+							"Optimize efficiency tools"
+						],
+						"projects": [
+							{
+								"name": "Engineering platform",
+								"estimatedTime": "150h"
+							},
+							{
+								"name": "Testing system",
+								"estimatedTime": "100h"
+							}
+						]
+					},
+					"3": {
+						"title": "Engineering Expert (12-24 months)",
+						"duration": "12 months",
+						"goals": [
+							"Design enterprise solutions",
+							"Establish standards",
+							"Promote best practices",
+							"Cultivate engineering team"
+						],
+						"projects": [
+							{
+								"name": "Enterprise standards",
+								"estimatedTime": "80h"
+							},
+							{
+								"name": "Open source project",
+								"estimatedTime": "200h"
+							}
+						]
+					}
+				}
+			},
+			"resourceItems": {
+				"books": {
+					"1": {
+						"title": "Frontend Architecture: From Entry to Micro-frontends",
+						"description": "Comprehensive guide to architecture design",
+						"estimatedTime": "40h"
+					},
+					"2": {
+						"title": "Web Performance Authority Guide",
+						"description": "Deep dive into web performance theory and practice",
+						"estimatedTime": "35h"
+					},
+					"3": {
+						"title": "Frontend Engineering Design & Practice",
+						"description": "Systematic introduction to engineering construction",
+						"estimatedTime": "30h"
+					}
+				},
+				"courses": {
+					"1": {
+						"title": "Frontend Architect Bootcamp",
+						"description": "Systematic architect capability training",
+						"estimatedTime": "80h"
+					},
+					"2": {
+						"title": "Web Performance Optimization",
+						"description": "Real-world project based optimization course",
+						"estimatedTime": "60h"
+					},
+					"3": {
+						"title": "Modern Frontend Engineering",
+						"description": "Covering build, test, deploy practices",
+						"estimatedTime": "50h"
+					}
+				},
+				"practices": {
+					"1": {
+						"title": "Open Source Contribution",
+						"description": "Participate in famous projects, build influence",
+						"estimatedTime": "Ongoing"
+					},
+					"2": {
+						"title": "Tech Blogging",
+						"description": "Regular writing, build personal brand",
+						"estimatedTime": "4h/week"
+					},
+					"3": {
+						"title": "Tech Speaking",
+						"description": "Share at conferences and internal teams",
+						"estimatedTime": "8h/month"
+					}
+				}
 			}
 		}
 	},
 	"contact": {
+		"hero": {
+			"getIn": "GET IN",
+			"touch": "TOUCH"
+		},
 		"title": "Contact Me",
 		"subtitle": "Let's connect and explore opportunities for collaboration",
 		"name": "Name",
@@ -266,7 +1165,48 @@
 		"wechat": "WeChat",
 		"wechatDescription": "Quick communication and daily interaction",
 		"social": {
-			"title": "Follow Me"
+			"feedError": "Failed to load feed, please try again later",
+			"title": "Follow Me",
+			"description": "Stay updated with my latest posts and tech shares",
+			"latestUpdates": "Latest Updates",
+			"followers": "Followers",
+			"viewPost": "Read Article",
+			"viewOnGitHub": "View on GitHub",
+			"githubActivity": "GitHub Activity",
+			"timeAgo": {
+				"seconds": "Just now",
+				"minutes": "{n} min ago",
+				"hours": "{n} hr ago",
+				"days": "{n} days ago"
+			},
+			"types": {
+				"blog": "Blog",
+				"code": "Code",
+				"social": "Social",
+				"professional": "Professional"
+			},
+			"links": {
+				"blog": {
+					"name": "AIYA Blog",
+					"description": "Tech blog and personal thoughts"
+				},
+				"github": {
+					"name": "GitHub",
+					"description": "Open source projects and code"
+				},
+				"frontend": {
+					"name": "Frontend Stack",
+					"description": "Engineering and performance"
+				},
+				"pm": {
+					"name": "Project Management",
+					"description": "PMP and agile practices"
+				},
+				"juejin": {
+					"name": "Juejin",
+					"description": "Tech articles and community"
+				}
+			}
 		},
 		"responseTime": {
 			"title": "Response Time",
@@ -287,6 +1227,18 @@
 		"empty": {
 			"title": "No Certifications",
 			"description": "Certifications will appear here when available."
+		}
+	},
+	"about": {
+		"hero": {
+			"label": "ABOUT ME"
+		},
+		"story": {
+			"journeyLabel": "THE JOURNEY"
+		},
+		"skills": {
+			"titlePart1": "EXPERTISE &",
+			"titlePart2": "CERTIFICATIONS"
 		}
 	},
 	"brandStory": {
@@ -500,6 +1452,468 @@
 	},
 	"footer": {
 		"allRightsReserved": "All rights reserved.",
-		"builtWith": "Built with"
+		"builtWith": "Built with",
+		"github": "GitHub",
+		"email": "Email"
+	},
+	"projectData": {
+		"groups": {
+			"digital-garden": {
+				"title": "Digital Garden",
+				"description": "Personal technical blog and knowledge sharing platform, recording technical growth and project management practices"
+			},
+			"featured-work": {
+				"title": "Featured Work",
+				"description": "Core technical projects and innovative practices, demonstrating frontend technical depth and architectural capabilities"
+			},
+			"community": {
+				"title": "Community Projects",
+				"description": "Open source contributions and community participation, promoting technical ecosystem development"
+			}
+		},
+		"projects": {
+			"aiyazone-blog": {
+				"name": "AIYAZONE Blog",
+				"description": "VitePress-based technical blog sharing frontend development and project management experiences",
+				"features": [
+					"Technical Article Sharing",
+					"Project Management Knowledge System",
+					"Frontend Tech Stack Deep Dive",
+					"Automated Deployment Flow",
+					"SEO Optimization Practice"
+				],
+				"fullDescription": "VitePress-based technical blog sharing frontend development and project management experiences - This is a detailed project description containing background, goals, implementation, and technical details.",
+				"challenges": [
+					"Performance Optimization Challenges",
+					"User Experience Design",
+					"Technical Architecture Selection"
+				],
+				"solutions": [
+					"Lazy Loading and Code Splitting",
+					"Responsive Design Implementation",
+					"Modern Frontend Tech Stack"
+				],
+				"learnings": [
+					"Deep Understanding of Frontend Performance",
+					"Mastering Modern Dev Tools",
+					"Improving UX Design Capabilities"
+				]
+			},
+			"fe-docs": {
+				"name": "Frontend Tech Docs",
+				"description": "Systematic frontend technical knowledge system, covering basics to architecture design",
+				"features": [
+					"Frontend Tech System Overview",
+					"Best Practices Summary",
+					"Case Studies and Code Examples",
+					"Performance Optimization Guide",
+					"Engineering Practices"
+				],
+				"fullDescription": "Systematic frontend technical knowledge system, covering basics to architecture design - This is a detailed project description containing background, goals, implementation, and technical details.",
+				"challenges": [
+					"Performance Optimization Challenges",
+					"User Experience Design",
+					"Technical Architecture Selection"
+				],
+				"solutions": [
+					"Lazy Loading and Code Splitting",
+					"Responsive Design Implementation",
+					"Modern Frontend Tech Stack"
+				],
+				"learnings": [
+					"Deep Understanding of Frontend Performance",
+					"Mastering Modern Dev Tools",
+					"Improving UX Design Capabilities"
+				]
+			},
+			"pm-knowledge": {
+				"name": "Project Management Knowledge",
+				"description": "PMP/ACP study materials and practical experience sharing for project management capability improvement",
+				"features": [
+					"PMP Knowledge Points",
+					"ACP Agile Practices",
+					"Project Management Case Studies",
+					"Tools and Templates Sharing",
+					"Certification Exam Experience"
+				],
+				"fullDescription": "PMP/ACP study materials and practical experience sharing for project management capability improvement - This is a detailed project description containing background, goals, implementation, and technical details.",
+				"challenges": [
+					"Performance Optimization Challenges",
+					"User Experience Design",
+					"Technical Architecture Selection"
+				],
+				"solutions": [
+					"Lazy Loading and Code Splitting",
+					"Responsive Design Implementation",
+					"Modern Frontend Tech Stack"
+				],
+				"learnings": [
+					"Deep Understanding of Frontend Performance",
+					"Mastering Modern Dev Tools",
+					"Improving UX Design Capabilities"
+				]
+			},
+			"zenparticles": {
+				"name": "ZenParticles",
+				"description": "WebGL-based particle system visualization project exploring frontend graphics rendering technology",
+				"features": [
+					"Real-time Particle System Rendering",
+					"GPU Accelerated Computing",
+					"Interactive Parameter Adjustment",
+					"Performance Monitoring Panel",
+					"Multiple Particle Effect Presets"
+				],
+				"fullDescription": "WebGL-based particle system visualization project exploring frontend graphics rendering technology - This is a detailed project description containing background, goals, implementation, and technical details.",
+				"challenges": [
+					"Performance Optimization Challenges",
+					"User Experience Design",
+					"Technical Architecture Selection"
+				],
+				"solutions": [
+					"Lazy Loading and Code Splitting",
+					"Responsive Design Implementation",
+					"Modern Frontend Tech Stack"
+				],
+				"learnings": [
+					"Deep Understanding of Frontend Performance",
+					"Mastering Modern Dev Tools",
+					"Improving UX Design Capabilities"
+				]
+			},
+			"sun-travel": {
+				"name": "Sun Travel",
+				"description": "Modern travel planning application integrating maps, route planning, and itinerary management",
+				"features": [
+					"Smart Route Planning",
+					"Attraction Recommendation System",
+					"Itinerary Management Tool",
+					"Map Integration Service",
+					"User Review System"
+				],
+				"fullDescription": "Modern travel planning application integrating maps, route planning, and itinerary management - This is a detailed project description containing background, goals, implementation, and technical details.",
+				"challenges": [
+					"Performance Optimization Challenges",
+					"User Experience Design",
+					"Technical Architecture Selection"
+				],
+				"solutions": [
+					"Lazy Loading and Code Splitting",
+					"Responsive Design Implementation",
+					"Modern Frontend Tech Stack"
+				],
+				"learnings": [
+					"Deep Understanding of Frontend Performance",
+					"Mastering Modern Dev Tools",
+					"Improving UX Design Capabilities"
+				]
+			},
+			"personal-brand-system": {
+				"name": "Personal Brand System",
+				"description": "Personal brand website under development, showcasing complete tech stack and project management capabilities",
+				"features": [
+					"Responsive Brand Showcase",
+					"Skills Visualization",
+					"Portfolio Management System",
+					"SWOT Analysis Display",
+					"Career Planning Roadmap",
+					"Multi-language Internationalization Support"
+				],
+				"fullDescription": "Personal brand website under development, showcasing complete tech stack and project management capabilities - This is a detailed project description containing background, goals, implementation, and technical details.",
+				"challenges": [
+					"Performance Optimization Challenges",
+					"User Experience Design",
+					"Technical Architecture Selection"
+				],
+				"solutions": [
+					"Lazy Loading and Code Splitting",
+					"Responsive Design Implementation",
+					"Modern Frontend Tech Stack"
+				],
+				"learnings": [
+					"Deep Understanding of Frontend Performance",
+					"Mastering Modern Dev Tools",
+					"Improving UX Design Capabilities"
+				]
+			},
+			"vue-performance-toolkit": {
+				"name": "Vue Performance Toolkit",
+				"description": "Vue.js application performance analysis and optimization toolkit helping developers improve app performance",
+				"features": [
+					"Component Performance Analysis",
+					"Memory Leak Detection",
+					"Rendering Performance Monitoring",
+					"Optimization Suggestion Generation",
+					"Performance Report Export"
+				],
+				"fullDescription": "Vue.js application performance analysis and optimization toolkit helping developers improve app performance - This is a detailed project description containing background, goals, implementation, and technical details.",
+				"challenges": [
+					"Performance Optimization Challenges",
+					"User Experience Design",
+					"Technical Architecture Selection"
+				],
+				"solutions": [
+					"Lazy Loading and Code Splitting",
+					"Responsive Design Implementation",
+					"Modern Frontend Tech Stack"
+				],
+				"learnings": [
+					"Deep Understanding of Frontend Performance",
+					"Mastering Modern Dev Tools",
+					"Improving UX Design Capabilities"
+				]
+			},
+			"frontend-interview-guide": {
+				"name": "Frontend Interview Guide",
+				"description": "Systematic frontend interview preparation materials covering both technical and project management dimensions",
+				"features": [
+					"Technical Interview Question Bank",
+					"Project Management Interview Prep",
+					"Resume Optimization Advice",
+					"Interview Experience Sharing",
+					"Career Development Planning"
+				],
+				"fullDescription": "Systematic frontend interview preparation materials covering both technical and project management dimensions - This is a detailed project description containing background, goals, implementation, and technical details.",
+				"challenges": [
+					"Performance Optimization Challenges",
+					"User Experience Design",
+					"Technical Architecture Selection"
+				],
+				"solutions": [
+					"Lazy Loading and Code Splitting",
+					"Responsive Design Implementation",
+					"Modern Frontend Tech Stack"
+				],
+				"learnings": [
+					"Deep Understanding of Frontend Performance",
+					"Mastering Modern Dev Tools",
+					"Improving UX Design Capabilities"
+				]
+			},
+			"open-source-contributions": {
+				"name": "Open Source Contributions",
+				"description": "Collection of various open source contributions including Vue ecosystem, tool libraries, etc.",
+				"features": [
+					"Vue Ecosystem Contribution",
+					"Tool Library Development",
+					"Documentation Improvement",
+					"Bug Fixes",
+					"Feature Enhancements"
+				],
+				"fullDescription": "Collection of various open source contributions including Vue ecosystem, tool libraries, etc. - This is a detailed project description containing background, goals, implementation, and technical details.",
+				"challenges": [
+					"Performance Optimization Challenges",
+					"User Experience Design",
+					"Technical Architecture Selection"
+				],
+				"solutions": [
+					"Lazy Loading and Code Splitting",
+					"Responsive Design Implementation",
+					"Modern Frontend Tech Stack"
+				],
+				"learnings": [
+					"Deep Understanding of Frontend Performance",
+					"Mastering Modern Dev Tools",
+					"Improving UX Design Capabilities"
+				]
+			}
+		}
+	},
+	"careerData": {
+		"swot": {
+			"strengths": {
+				"1": {
+					"title": "10 Years Frontend Experience",
+					"description": "Deep accumulation of frontend technology and project experience, familiar with modern frontend stack"
+				},
+				"2": {
+					"title": "PMP/ACP Certified",
+					"description": "Professional certification in project management and agile development, possessing systematic management theoretical foundation"
+				},
+				"3": {
+					"title": "Tech & Management Combination",
+					"description": "Possessing both technical depth and management breadth, capable of handling technical management roles"
+				}
+			},
+			"weaknesses": {
+				"1": {
+					"title": "Insufficient Large-scale Architecture Experience",
+					"description": "Lack of architecture design experience for large-scale distributed systems"
+				},
+				"2": {
+					"title": "Limited Team Management Experience",
+					"description": "Relatively insufficient practical experience in managing large technical teams"
+				}
+			},
+			"opportunities": {
+				"1": {
+					"title": "Growing Demand for Frontend Architects",
+					"description": "Strong market demand for senior frontend architects and technical managers"
+				},
+				"2": {
+					"title": "Digital Transformation Trend",
+					"description": "Enterprise digital transformation brings more frontend technical opportunities"
+				},
+				"3": {
+					"title": "Shenzhen Tech Environment",
+					"description": "Shenzhen as a tech innovation center provides abundant career opportunities"
+				}
+			},
+			"threats": {
+				"1": {
+					"title": "Fast Tech Iteration",
+					"description": "Frontend stack updates frequently, requiring continuous learning to keep up with trends"
+				},
+				"2": {
+					"title": "Age Competition Pressure",
+					"description": "Facing age-related competitive pressure in the tech industry at 34"
+				},
+				"3": {
+					"title": "Intense Market Competition",
+					"description": "Numerous frontend developers in Shenzhen, leading to intense competition"
+				}
+			},
+			"analysis": {
+				"keyInsights": [
+					"Combination of technical depth and management breadth is a core competitive advantage",
+					"Need to focus on strengthening large-scale system architecture design capabilities",
+					"Market opportunities highly match personal capability development direction",
+					"Should fully utilize Shenzhen's tech environment and opportunities"
+				],
+				"strategicRecommendations": [
+					"Focus on developing frontend architecture design and system design capabilities",
+					"Deepen performance optimization and engineering professional skills",
+					"Accumulate large team management experience",
+					"Build personal technical brand and influence"
+				],
+				"actionItems": {
+					"1": {
+						"title": "Complete Frontend Architecture Learning Path",
+						"description": "Systematically learn frontend architecture design theory and practice, complete related projects"
+					},
+					"2": {
+						"title": "Participate in Large-scale Project Architecture",
+						"description": "Seek opportunities to participate in or lead frontend architecture design for large systems"
+					},
+					"3": {
+						"title": "Build Technical Influence",
+						"description": "Build personal brand through tech blogs, open source projects, and technical sharing"
+					}
+				}
+			}
+		},
+		"roadmap": {
+			"title": "Frontend Architect Development Roadmap",
+			"description": "24-month phased learning + practice roadmap, aiming to become a 40-60K tier frontend architect in Shenzhen market",
+			"phases": {
+				"1": {
+					"name": "Architecture Foundation Phase (0-6 Months)",
+					"objectives": [
+						"Establish frontend architecture theoretical foundation",
+						"Master system design methodology",
+						"Complete small to medium project architecture design",
+						"Establish performance optimization knowledge system"
+					],
+					"milestones": {
+						"1": {
+							"title": "Architecture Theory Learning Completed",
+							"description": "Complete study of 'Frontend Architecture Design' and related books",
+							"metrics": [
+								"Complete 3 architecture related books",
+								"Output learning notes"
+							]
+						},
+						"2": {
+							"title": "First Architecture Design Proposal",
+							"description": "Independently complete frontend architecture design for a medium-sized project",
+							"metrics": [
+								"Architecture Document",
+								"Tech Selection Report",
+								"Implementation Plan"
+							]
+						}
+					},
+					"learningGoals": {
+						"1": {
+							"title": "Frontend Architecture Design Principles",
+							"description": "Learn basic principles, patterns, and best practices of frontend architecture design",
+							"resources": {
+								"1": {
+									"title": "Frontend Architecture: From Entry to Micro-frontends"
+								}
+							},
+							"projects": {
+								"1": {
+									"name": "Personal Brand Website Architecture Refactoring",
+									"description": "Redesign the architecture of the current personal website",
+									"outputs": [
+										"Architecture Design Document",
+										"Refactored Code",
+										"Performance Comparison Report"
+									]
+								}
+							},
+							"successCriteria": [
+								"Able to independently design frontend architecture for medium projects",
+								"Master modern architecture patterns like micro-frontends and module federation",
+								"Possess theoretical basis for architectural decisions"
+							]
+						}
+					},
+					"deliverables": {
+						"1": {
+							"title": "Frontend Architecture Design Proposal",
+							"description": "Complete frontend architecture design document and implementation plan"
+						}
+					}
+				},
+				"2": {
+					"name": "Architecture Practice Phase (6-12 Months)",
+					"objectives": [
+						"Practice large-scale project architecture design",
+						"Deepen specialized performance optimization capabilities",
+						"Establish engineering system experience",
+						"Start technical team management practice"
+					],
+					"milestones": {
+						"3": {
+							"title": "Large-scale Project Architecture Practice",
+							"description": "Lead or deeply participate in frontend architecture design for large projects",
+							"metrics": [
+								"Project scale > 10 person team",
+								"Architecture complexity assessment",
+								"Performance metrics achievement"
+							]
+						}
+					}
+				},
+				"3": {
+					"name": "Expert Positioning Phase (12-18 Months)",
+					"objectives": [
+						"Establish frontend architecture expert positioning",
+						"Capability to handle complex technical issues",
+						"Form personal technical influence",
+						"Reach 40-50K salary level"
+					]
+				},
+				"4": {
+					"name": "Architect Maturity Phase (18-24 Months)",
+					"objectives": [
+						"Become a recognized frontend architect",
+						"Possess technical decision-making and team management capabilities",
+						"Establish industry influence",
+						"Reach 50-60K salary target"
+					]
+				}
+			}
+		},
+		"learningPath": {
+			"title": "Frontend Architect Learning Path",
+			"description": "Systematic learning path parallel in frontend architecture, performance, and engineering",
+			"phases": {
+				"1": {
+					"name": "Foundation Phase"
+				}
+			}
+		}
 	}
 }

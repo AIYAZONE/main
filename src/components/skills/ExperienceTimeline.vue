@@ -1,20 +1,20 @@
 <template>
   <div class="experience-timeline">
     <div class="experience-timeline__header">
-      <h3 class="experience-timeline__title">{{ title || '职业发展历程' }}</h3>
+      <h3 class="experience-timeline__title">{{ title || $t('career.timeline.title') }}</h3>
       <div class="experience-timeline__summary">
         <div class="timeline-summary">
           <div class="timeline-summary__item">
             <span class="timeline-summary__value">{{ totalYears }}</span>
-            <span class="timeline-summary__label">年工作经验</span>
+            <span class="timeline-summary__label">{{ $t('career.timeline.summary.yearsExp') }}</span>
           </div>
           <div class="timeline-summary__item">
             <span class="timeline-summary__value">{{ experienceItems.length }}</span>
-            <span class="timeline-summary__label">家公司</span>
+            <span class="timeline-summary__label">{{ $t('career.timeline.summary.companies') }}</span>
           </div>
           <div class="timeline-summary__item">
             <span class="timeline-summary__value">{{ totalAchievements }}</span>
-            <span class="timeline-summary__label">项关键成就</span>
+            <span class="timeline-summary__label">{{ $t('career.timeline.summary.achievements') }}</span>
           </div>
         </div>
       </div>
@@ -48,7 +48,7 @@
                 <div class="experience-card__duration">
                   <span class="experience-card__dates">
                     {{ formatDate(item.startDate) }} - 
-                    {{ item.endDate ? formatDate(item.endDate) : '至今' }}
+                    {{ item.endDate ? formatDate(item.endDate) : $t('career.timeline.present') }}
                   </span>
                   <span class="experience-card__period">
                     {{ calculateDuration(item.startDate, item.endDate) }}
@@ -58,7 +58,7 @@
 
               <div class="experience-card__body">
                 <div class="experience-card__achievements">
-                  <h6 class="experience-card__section-title">关键成就</h6>
+                  <h6 class="experience-card__section-title">{{ $t('career.timeline.sections.achievements') }}</h6>
                   <ul class="achievement-list">
                     <li
                       v-for="(achievement, achIndex) in item.achievements"
@@ -71,7 +71,7 @@
                 </div>
 
                 <div class="experience-card__technologies">
-                  <h6 class="experience-card__section-title">技术栈</h6>
+                  <h6 class="experience-card__section-title">{{ $t('career.timeline.sections.technologies') }}</h6>
                   <div class="tech-tags">
                     <span
                       v-for="tech in item.technologies"
@@ -89,15 +89,15 @@
                 <div class="experience-card__metrics">
                   <div class="metric-item">
                     <span class="metric-item__value">{{ item.achievements.length }}</span>
-                    <span class="metric-item__label">项成就</span>
+                    <span class="metric-item__label">{{ $t('career.timeline.metrics.achievements') }}</span>
                   </div>
                   <div class="metric-item">
                     <span class="metric-item__value">{{ item.technologies.length }}</span>
-                    <span class="metric-item__label">项技术</span>
+                    <span class="metric-item__label">{{ $t('career.timeline.metrics.technologies') }}</span>
                   </div>
                   <div class="metric-item">
                     <span class="metric-item__value">{{ getExperienceLevel(index) }}</span>
-                    <span class="metric-item__label">职级</span>
+                    <span class="metric-item__label">{{ $t('career.timeline.metrics.level') }}</span>
                   </div>
                 </div>
               </div>
@@ -109,7 +109,7 @@
 
     <!-- Career Milestones -->
     <div class="experience-timeline__milestones">
-      <h4 class="milestones__title">职业里程碑</h4>
+      <h4 class="milestones__title">{{ $t('career.timeline.milestones.title') }}</h4>
       <div class="milestones__grid">
         <div
           v-for="milestone in careerMilestones"
@@ -132,6 +132,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
+import { useI18n } from 'vue-i18n';
 import type { ExperienceItem } from '../../types/skills';
 
 // Props
@@ -144,6 +145,8 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
   highlightCurrent: true
 });
+
+const { t } = useI18n();
 
 // Computed properties
 const sortedExperience = computed(() => {
@@ -179,40 +182,40 @@ const totalAchievements = computed(() => {
 const careerMilestones = computed(() => [
   {
     id: 'pmp-cert',
-    title: 'PMP认证获得',
-    description: '获得项目管理专业人士认证，提升项目管理能力',
+    title: t('career.timeline.milestones.items.pmp-cert.title'),
+    description: t('career.timeline.milestones.items.pmp-cert.description'),
     year: '2022',
     icon: '🏆',
     iconClass: 'milestone-icon--achievement'
   },
   {
     id: 'acp-cert',
-    title: 'ACP认证获得',
-    description: '获得敏捷认证专家认证，掌握敏捷开发方法论',
+    title: t('career.timeline.milestones.items.acp-cert.title'),
+    description: t('career.timeline.milestones.items.acp-cert.description'),
     year: '2021',
     icon: '⚡',
     iconClass: 'milestone-icon--skill'
   },
   {
     id: 'tech-lead',
-    title: '技术负责人',
-    description: '晋升为技术负责人，开始承担团队管理职责',
+    title: t('career.timeline.milestones.items.tech-lead.title'),
+    description: t('career.timeline.milestones.items.tech-lead.description'),
     year: '2021',
     icon: '👥',
     iconClass: 'milestone-icon--leadership'
   },
   {
     id: 'senior-dev',
-    title: '高级工程师',
-    description: '晋升为高级前端工程师，技术能力得到认可',
+    title: t('career.timeline.milestones.items.senior-dev.title'),
+    description: t('career.timeline.milestones.items.senior-dev.description'),
     year: '2018',
     icon: '💻',
     iconClass: 'milestone-icon--technical'
   },
   {
     id: 'first-job',
-    title: '职业起步',
-    description: '开始前端开发职业生涯，踏入互联网行业',
+    title: t('career.timeline.milestones.items.first-job.title'),
+    description: t('career.timeline.milestones.items.first-job.description'),
     year: '2014',
     icon: '🚀',
     iconClass: 'milestone-icon--start'
@@ -233,11 +236,13 @@ const calculateDuration = (startDate: Date | string, endDate?: Date | string): s
   const diffMonths = Math.ceil(diffTime / (1000 * 60 * 60 * 24 * 30));
   
   if (diffMonths < 12) {
-    return `${diffMonths}个月`;
+    return `${diffMonths}${t('career.timeline.duration.months')}`;
   } else {
     const years = Math.floor(diffMonths / 12);
     const months = diffMonths % 12;
-    return months > 0 ? `${years}年${months}个月` : `${years}年`;
+    return months > 0 
+      ? `${years}${t('career.timeline.duration.years')}${months}${t('career.timeline.duration.months')}` 
+      : `${years}${t('career.timeline.duration.years')}`;
   }
 };
 
@@ -268,8 +273,13 @@ const getTechTagClass = (tech: string): string => {
 };
 
 const getExperienceLevel = (index: number): string => {
-  const levels = ['技术负责人', '高级工程师', '前端工程师', '初级工程师'];
-  return levels[index] || '工程师';
+  const levels = [
+    t('career.timeline.levels.techLead'),
+    t('career.timeline.levels.senior'),
+    t('career.timeline.levels.frontend'),
+    t('career.timeline.levels.junior')
+  ];
+  return levels[index] || t('career.timeline.levels.engineer');
 };
 </script>
 

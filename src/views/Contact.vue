@@ -3,20 +3,20 @@
     <div class="contact-hero">
       <div class="middle-box">
         <div class="hero-title" role="heading" aria-level="1">
-          <div class="hero-line">GET IN</div>
-          <div class="hero-line hero-line--accent">TOUCH</div>
+          <div class="hero-line">{{ t('contact.hero.getIn') }}</div>
+          <div class="hero-line hero-line--accent">{{ t('contact.hero.touch') }}</div>
         </div>
-        <div class="hero-subtitle">{{ $t("contact.subtitle") }}</div>
+        <div class="hero-subtitle">{{ t("contact.subtitle") }}</div>
       </div>
     </div>
     <div class="contact-content">
       <div class="middle-box">
         <div class="panel panel--primary">
-          <div class="panel-kicker">{{ $t("contact.title") }}</div>
+          <div class="panel-kicker">{{ t("contact.title") }}</div>
           <div class="contact-details-list">
             <div class="contact-detail">
               <div class="contact-detail-label">
-                {{ $t("contact.email", "邮箱") }}
+                {{ t("contact.email", "邮箱") }}
               </div>
               <div class="contact-detail-value">aiyazone@163.com</div>
             </div>

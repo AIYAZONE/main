@@ -1,9 +1,9 @@
 <template>
   <div class="home-editorial">
     <BrandHero
-      :title="brandInfo?.name || content?.hero?.title"
-      :subtitle="brandInfo?.subtitle || content?.hero?.subtitle"
-      :intro="brandInfo?.intro || content?.hero?.intro"
+      :title="brandInfo?.name || t('home.hero.title')"
+      :subtitle="brandInfo?.subtitle || t('home.hero.subtitle')"
+      :intro="brandInfo?.intro || t('home.hero.intro')"
       :profile-image="brandInfo?.profileImage"
       :certifications="certifications"
       :value-proposition="brandInfo?.valueProposition || []"
@@ -12,12 +12,12 @@
     <section class="home-section home-section--focus">
       <div class="middle-box">
         <div class="section-header">
-          <h2 class="section-title">{{ content?.focus?.title }}</h2>
-          <p class="section-description">{{ content?.focus?.subtitle }}</p>
+          <h2 class="section-title">{{ t('home.focus.title') }}</h2>
+          <p class="section-description">{{ t('home.focus.subtitle') }}</p>
         </div>
 
         <div class="focus-grid">
-          <div v-for="item in content?.focus?.items" :key="item.title" class="focus-card">
+          <div v-for="item in focusItems" :key="item.title" class="focus-card">
             <div class="focus-card__top">
               <div class="focus-card__icon">{{ item.icon }}</div>
               <div class="focus-card__title">{{ item.title }}</div>
@@ -35,18 +35,18 @@
       <div class="middle-box">
         <div class="section-header section-header--split">
           <div class="section-header__left">
-            <h2 class="section-title">{{ content?.now?.title }}</h2>
-            <p class="section-description">{{ content?.now?.subtitle }}</p>
+            <h2 class="section-title">{{ t('home.now.title') }}</h2>
+            <p class="section-description">{{ t('home.now.subtitle') }}</p>
           </div>
           <div class="section-header__right">
             <div class="now-chips">
-              <span v-for="chip in content?.now?.chips" :key="chip" class="now-chip">{{ chip }}</span>
+              <span v-for="chip in nowChips" :key="chip" class="now-chip">{{ chip }}</span>
             </div>
           </div>
         </div>
 
         <div class="now-grid">
-          <div v-for="item in content?.now?.items" :key="item.title" class="now-item">
+          <div v-for="item in nowItems" :key="item.title" class="now-item">
             <div class="now-item__kicker">{{ item.kicker }}</div>
             <div class="now-item__title">{{ item.title }}</div>
             <div class="now-item__desc">{{ item.description }}</div>
@@ -59,14 +59,14 @@
       <div class="middle-box">
         <div class="cta-card">
           <div class="cta-card__content">
-            <div class="cta-kicker">{{ content?.cta?.kicker }}</div>
-            <div class="cta-title">{{ content?.cta?.title }}</div>
-            <div class="cta-subtitle">{{ content?.cta?.subtitle }}</div>
+            <div class="cta-kicker">{{ t('home.cta.kicker') }}</div>
+            <div class="cta-title">{{ t('home.cta.title') }}</div>
+            <div class="cta-subtitle">{{ t('home.cta.subtitle') }}</div>
           </div>
           <div class="cta-card__actions">
-            <router-link to="/portfolio" class="cta-btn cta-btn--primary">{{ content?.cta?.actions?.portfolio }}</router-link>
-            <router-link to="/career" class="cta-btn">{{ content?.cta?.actions?.career }}</router-link>
-            <router-link to="/contact" class="cta-btn">{{ content?.cta?.actions?.contact }}</router-link>
+            <router-link to="/portfolio" class="cta-btn cta-btn--primary">{{ t('home.cta.actions.portfolio') }}</router-link>
+            <router-link to="/career" class="cta-btn">{{ t('home.cta.actions.career') }}</router-link>
+            <router-link to="/contact" class="cta-btn">{{ t('home.cta.actions.contact') }}</router-link>
           </div>
         </div>
       </div>
@@ -76,145 +76,56 @@
 
 <script setup lang="ts">
 import { computed, onMounted } from "vue";
-import { useLangStore } from '../store/lang';
+import { useI18n } from 'vue-i18n';
 import { useBrandStore } from '../stores/brandStore';
 import BrandHero from '../components/brand/BrandHero.vue';
 
-const contentData = {
-  zh: {
-    hero: {
-      title: "AIYAZONE",
-      subtitle: "前端开发工程师 & 项目管理探索者",
-      intro: "打造个人品牌，追求工程卓越，探索产品思维。<br>在数字花园中沉淀价值。",
-    },
-    focus: {
-      title: "我擅长的",
-      subtitle: "偏工程化与性能的前端体系建设，也能把复杂事情拆解成可交付的里程碑。",
-      items: [
-        {
-          icon: "🏗️",
-          title: "架构与工程化",
-          description: "从模块边界到构建策略，确保系统可扩展、可维护、可演进。",
-          tags: ["架构设计", "组件体系", "工程规范"]
-        },
-        {
-          icon: "⚡️",
-          title: "性能与体验",
-          description: "以指标驱动优化，从加载到交互，把体验做到“快且稳”。",
-          tags: ["性能分析", "渲染优化", "体验细节"]
-        },
-        {
-          icon: "🧭",
-          title: "交付与协作",
-          description: "用清晰的节奏与共识推进协作，把风险前置，把结果交付。",
-          tags: ["项目推进", "跨团队协作", "质量保障"]
-        }
-      ]
-    },
-    now: {
-      title: "当前在做",
-      subtitle: "持续打磨个人品牌系统，同时沉淀可复用的工程方法论。",
-      chips: ["系统化", "高质量", "可复用"],
-      items: [
-        {
-          kicker: "01",
-          title: "个人品牌展示系统",
-          description: "统一视觉与信息架构，形成稳定的展示模块与设计语言。"
-        },
-        {
-          kicker: "02",
-          title: "工程实践沉淀",
-          description: "围绕性能、稳定性与可维护性整理方法，形成可迁移的模板。"
-        },
-        {
-          kicker: "03",
-          title: "长期学习路线",
-          description: "以架构、性能、工程三条主线持续精进，并在项目中验证。"
-        }
-      ]
-    },
-    cta: {
-      kicker: "NEXT",
-      title: "想快速了解我？",
-      subtitle: "从作品集看结果，从职业规划看方法，从联系页直接对话。",
-      actions: {
-        portfolio: "查看作品集",
-        career: "职业规划",
-        contact: "联系我"
-      }
-    }
-  },
-  en: {
-    hero: {
-      title: "AIYAZONE",
-      subtitle: "Frontend Developer & Project Manager",
-      intro: "Crafting digital experiences with precision and purpose. <br>Focusing on personal branding, engineering excellence, and product thinking.",
-    },
-    focus: {
-      title: "What I do best",
-      subtitle: "Engineering-first frontend systems with performance rigor and delivery discipline.",
-      items: [
-        {
-          icon: "🏗️",
-          title: "Architecture & Engineering",
-          description: "Scalable boundaries, maintainable systems, and pragmatic build strategies.",
-          tags: ["System design", "Component system", "DX"]
-        },
-        {
-          icon: "⚡️",
-          title: "Performance & UX",
-          description: "Metrics-driven optimization from load to interaction—fast and reliable.",
-          tags: ["Profiling", "Rendering", "UX details"]
-        },
-        {
-          icon: "🧭",
-          title: "Delivery & Collaboration",
-          description: "Clear milestones, aligned teams, and quality-first execution.",
-          tags: ["Planning", "Collaboration", "Quality"]
-        }
-      ]
-    },
-    now: {
-      title: "What I'm building now",
-      subtitle: "Refining the personal brand system while turning practices into reusable playbooks.",
-      chips: ["Systematic", "High quality", "Reusable"],
-      items: [
-        {
-          kicker: "01",
-          title: "Personal brand showcase system",
-          description: "Unifying visual identity and information architecture into stable modules."
-        },
-        {
-          kicker: "02",
-          title: "Engineering playbooks",
-          description: "Codifying practices around performance, stability, and maintainability."
-        },
-        {
-          kicker: "03",
-          title: "Long-term learning tracks",
-          description: "Deepening architecture, performance, and engineering through real projects."
-        }
-      ]
-    },
-    cta: {
-      kicker: "NEXT",
-      title: "Want the quick version?",
-      subtitle: "See outcomes in Portfolio, methods in Career, and reach out directly in Contact.",
-      actions: {
-        portfolio: "View Portfolio",
-        career: "Career Path",
-        contact: "Contact"
-      }
-    }
-  }
-};
-
-const langStore = useLangStore();
+const { t, tm } = useI18n();
 const brandStore = useBrandStore();
 
-const content = computed(() => contentData[langStore.language as keyof typeof contentData]);
 const brandInfo = computed(() => brandStore.brandInfo);
 const certifications = computed(() => brandStore.certifications);
+
+const focusItems = computed(() => [
+  {
+    icon: "🏗️",
+    title: t('home.focus.items.architecture.title'),
+    description: t('home.focus.items.architecture.description'),
+    tags: tm('home.focus.items.architecture.tags') as string[]
+  },
+  {
+    icon: "⚡️",
+    title: t('home.focus.items.performance.title'),
+    description: t('home.focus.items.performance.description'),
+    tags: tm('home.focus.items.performance.tags') as string[]
+  },
+  {
+    icon: "🧭",
+    title: t('home.focus.items.delivery.title'),
+    description: t('home.focus.items.delivery.description'),
+    tags: tm('home.focus.items.delivery.tags') as string[]
+  }
+]);
+
+const nowChips = computed(() => tm('home.now.chips') as string[]);
+
+const nowItems = computed(() => [
+  {
+    kicker: t('home.now.items.brandSystem.kicker'),
+    title: t('home.now.items.brandSystem.title'),
+    description: t('home.now.items.brandSystem.description')
+  },
+  {
+    kicker: t('home.now.items.engineering.kicker'),
+    title: t('home.now.items.engineering.title'),
+    description: t('home.now.items.engineering.description')
+  },
+  {
+    kicker: t('home.now.items.learning.kicker'),
+    title: t('home.now.items.learning.title'),
+    description: t('home.now.items.learning.description')
+  }
+]);
 
 // Load brand data on component mount
 onMounted(() => {
