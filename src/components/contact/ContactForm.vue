@@ -400,32 +400,6 @@
         </a>
 
         <a
-          href="https://linkedin.com/in/aiyazone"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="contact-method"
-          aria-label="LinkedIn"
-        >
-          <span class="method-icon" aria-hidden="true">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.75"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M10 7V6a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v1" />
-              <path d="M4 9h16v11H4z" />
-              <path d="M8 9v11" />
-              <path d="M16 9v11" />
-              <path d="M4 13h16" />
-            </svg>
-          </span>
-          <span class="method-text">LinkedIn</span>
-        </a>
-
-        <a
           href="https://github.com/AIYAZONE"
           target="_blank"
           rel="noopener noreferrer"

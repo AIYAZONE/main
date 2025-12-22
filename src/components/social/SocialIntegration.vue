@@ -229,17 +229,6 @@ const socialLinks: SocialLink[] = [
     external: true
   },
   {
-    id: 'linkedin',
-    name: 'LinkedIn',
-    description: '职业动态和行业见解',
-    url: 'https://linkedin.com/in/aiyazone',
-    platform: 'linkedin',
-    type: 'professional',
-    icon: '💼',
-    external: true,
-    followers: 650
-  },
-  {
     id: 'juejin',
     name: '掘金',
     description: '技术文章和社区交流',
@@ -341,17 +330,6 @@ const loadSocialFeed = async () => {
         likes: 234,
         comments: 45,
         shares: 67
-      },
-      {
-        id: '4',
-        platform: 'linkedin',
-        platformName: 'LinkedIn',
-        content: '参加了深圳前端技术大会，分享了关于"前端工程化实践"的主题演讲。感谢大家的热情参与和宝贵建议！',
-        url: 'https://linkedin.com/posts/aiyazone-tech-talk',
-        publishedAt: new Date(Date.now() - 10 * 24 * 60 * 60 * 1000),
-        tags: ['技术分享', '前端工程化', '深圳'],
-        likes: 78,
-        comments: 15
       }
     ];
     

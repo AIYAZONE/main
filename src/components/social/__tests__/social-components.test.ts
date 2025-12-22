@@ -17,7 +17,6 @@ describe('Social Components', () => {
 					'social.title': 'Social Media',
 					'social.github': 'GitHub',
 					'social.blog': 'Blog',
-					'social.linkedin': 'LinkedIn',
 					'social.twitter': 'Twitter',
 					'social.follow': 'Follow me on',
 					'social.latest': 'Latest Updates',
