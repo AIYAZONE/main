@@ -94,6 +94,8 @@ const brandStore = useBrandStore();
 const brandInfo = computed(() => brandStore.brandInfo);
 const certifications = computed(() => brandStore.certifications);
 
+const heroValueProposition = computed(() => tm('brand.valueProposition') as string[]);
+
 const focusItems = computed(() => [
   {
     icon: "🏗️",

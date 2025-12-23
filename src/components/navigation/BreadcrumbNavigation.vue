@@ -42,6 +42,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';
+import { useI18n } from 'vue-i18n';
 
 interface BreadcrumbItem {
   title: string;
@@ -50,6 +51,7 @@ interface BreadcrumbItem {
 }
 
 const route = useRoute();
+const { t } = useI18n();
 
 const breadcrumbs = computed((): BreadcrumbItem[] => {
   const crumbs: BreadcrumbItem[] = [];
