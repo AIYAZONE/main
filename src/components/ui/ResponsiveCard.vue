@@ -50,7 +50,7 @@
     <!-- 加载状态 -->
     <div v-if="loading" class="card-loading">
       <div class="loading-spinner"></div>
-      <span class="loading-text">{{ $t('common.loading') }}</span>
+      <span class="loading-text">{{ t('common.loading') }}</span>
     </div>
 
     <!-- 悬浮指示器 -->

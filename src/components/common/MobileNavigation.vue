@@ -5,7 +5,7 @@
       class="mobile-nav-toggle"
       :class="{ active: isMenuOpen }"
       @click="toggleMenu"
-      :aria-label="isMenuOpen ? $t('accessibility.closeMenu') : $t('accessibility.openMenu')"
+      :aria-label="isMenuOpen ? t('accessibility.closeMenu') : t('accessibility.openMenu')"
       :aria-expanded="isMenuOpen"
     >
       <span class="hamburger-line"></span>
@@ -20,11 +20,11 @@
       :aria-hidden="!isMenuOpen"
     >
       <div class="mobile-nav-header">
-        <h2 class="nav-title">{{ $t('nav.menu') }}</h2>
+        <h2 class="nav-title">{{ t('nav.menu') }}</h2>
         <button 
           class="nav-close-btn"
           @click="closeMenu"
-          :aria-label="$t('accessibility.closeMenu')"
+          :aria-label="t('accessibility.closeMenu')"
         >
           ✕
         </button>
@@ -38,7 +38,7 @@
             @click="closeMenu"
             :class="{ active: $route.path === '/' }"
           >
-            {{ $t('nav.home') }}
+            {{ t('nav.home') }}
           </router-link>
         </li>
         <li class="mobile-nav-item">
@@ -48,7 +48,7 @@
             @click="closeMenu"
             :class="{ active: $route.path === '/about' }"
           >
-            {{ $t('nav.about') }}
+            {{ t('nav.about') }}
           </router-link>
         </li>
         <li class="mobile-nav-item">
@@ -58,7 +58,7 @@
             @click="closeMenu"
             :class="{ active: $route.path === '/portfolio' }"
           >
-            {{ $t('nav.portfolio') }}
+            {{ t('nav.portfolio') }}
           </router-link>
         </li>
         <li class="mobile-nav-item">
@@ -68,7 +68,7 @@
             @click="closeMenu"
             :class="{ active: $route.path === '/career' }"
           >
-            {{ $t('nav.career') }}
+            {{ t('nav.career') }}
           </router-link>
         </li>
         <li class="mobile-nav-item">
@@ -78,7 +78,7 @@
             @click="closeMenu"
             :class="{ active: $route.path === '/contact' }"
           >
-            {{ $t('nav.contact') }}
+            {{ t('nav.contact') }}
           </router-link>
         </li>
       </ul>

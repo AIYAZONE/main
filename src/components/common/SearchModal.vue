@@ -1,17 +1,22 @@
 <template>
   <div class="search-modal-overlay" @click="handleOverlayClick">
-    <div class="search-modal" role="dialog" aria-labelledby="search-title" aria-modal="true">
+    <div
+      class="search-modal"
+      role="dialog"
+      aria-labelledby="search-title"
+      aria-modal="true"
+    >
       <div class="search-header">
-        <h2 id="search-title" class="search-title">{{ $t('common.search') }}</h2>
-        <button 
+        <h2 id="search-title" class="search-title">{{ t("common.search") }}</h2>
+        <button
           class="search-close"
           @click="$emit('close')"
-          :aria-label="$t('common.close')"
+          :aria-label="t('common.close')"
         >
           ✕
         </button>
       </div>
-      
+
       <div class="search-content">
         <div class="search-input-wrapper">
           <input
@@ -19,46 +24,40 @@
             v-model="searchQuery"
             type="text"
             class="search-input"
-            :placeholder="$t('portfolio.searchPlaceholder')"
+            :placeholder="t('portfolio.searchPlaceholder')"
             @input="handleSearch"
             @keydown.escape="$emit('close')"
           />
           <div class="search-icon">🔍</div>
         </div>
-        
+
         <div class="search-results" v-if="searchResults.length > 0">
-          <h3 class="results-title">{{ $t('accessibility.searchResults', { count: searchResults.length }) }}</h3>
+          <h3 class="results-title">
+            {{ t("accessibility.searchResults", { count: searchResults.length }) }}
+          </h3>
           <ul class="results-list">
-            <li 
-              v-for="result in searchResults" 
-              :key="result.id"
-              class="result-item"
-            >
-              <router-link 
-                :to="result.path"
-                class="result-link"
-                @click="$emit('close')"
-              >
+            <li v-for="result in searchResults" :key="result.id" class="result-item">
+              <router-link :to="result.path" class="result-link" @click="$emit('close')">
                 <div class="result-icon">{{ result.icon }}</div>
                 <div class="result-content">
-                  <h4 class="result-title">{{ $t(result.title) }}</h4>
-                  <p class="result-description">{{ result.description }}</p>
+                  <h4 class="result-title">{{ t(result.title) }}</h4>
+                  <p class="result-description">{{ t(result.description) }}</p>
                 </div>
               </router-link>
             </li>
           </ul>
         </div>
-        
+
         <div class="search-empty" v-else-if="searchQuery && !isSearching">
           <div class="empty-icon">🔍</div>
-          <h3 class="empty-title">{{ $t('accessibility.noSearchResults') }}</h3>
-          <p class="empty-description">{{ $t('portfolio.tryDifferentFilters') }}</p>
+          <h3 class="empty-title">{{ t("accessibility.noSearchResults") }}</h3>
+          <p class="empty-description">{{ t("portfolio.tryDifferentFilters") }}</p>
         </div>
-        
+
         <div class="search-suggestions" v-else>
-          <h3 class="suggestions-title">{{ $t('search.suggestions') }}</h3>
+          <h3 class="suggestions-title">{{ t("search.suggestions") }}</h3>
           <div class="suggestion-tags">
-            <button 
+            <button
               v-for="suggestion in suggestions"
               :key="suggestion"
               class="suggestion-tag"
@@ -74,15 +73,15 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent } from "vue";
 
-export default defineComponent({ name: 'SearchModal' });
+export default defineComponent({ name: "SearchModal" });
 </script>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, nextTick } from 'vue';
-import { useI18n } from 'vue-i18n';
-import { useRouter } from 'vue-router';
+import { ref, onMounted, onUnmounted, nextTick, computed } from "vue";
+import { useI18n } from "vue-i18n";
+import { useRouter } from "vue-router";
 
 interface SearchResult {
   id: string;
@@ -90,67 +89,65 @@ interface SearchResult {
   description: string;
   path: string;
   icon: string;
-  type: 'page' | 'project' | 'skill';
+  type: "page" | "project" | "skill";
 }
 
 const emit = defineEmits<{
   close: [];
 }>();
 
-const { t } = useI18n();
+const { t, tm } = useI18n();
 const router = useRouter();
 
 const searchInput = ref<HTMLInputElement>();
-const searchQuery = ref('');
+const searchQuery = ref("");
 const searchResults = ref<SearchResult[]>([]);
 const isSearching = ref(false);
 
-const suggestions = [
-  'Vue', 'TypeScript', 'Frontend', 'Architecture', 'Performance', 'SWOT', 'Career'
-];
+const suggestions = computed(() => tm("search.suggestions") as string[]);
 
 // 模拟搜索数据
 const searchData: SearchResult[] = [
   {
-    id: 'about',
-    title: 'nav.about',
-    description: 'Personal introduction and professional background',
-    path: '/about',
-    icon: '👤',
-    type: 'page'
+    id: "about",
+    title: "nav.about",
+    description: "nav.aboutDesc",
+    path: "/about",
+    icon: "👤",
+    type: "page",
   },
   {
-    id: 'portfolio',
-    title: 'nav.portfolio',
-    description: 'Projects and technical achievements',
-    path: '/portfolio',
-    icon: '💼',
-    type: 'page'
+    id: "portfolio",
+    title: "nav.portfolio",
+    description: "nav.portfolioDesc",
+    path: "/portfolio",
+    icon: "💼",
+    type: "page",
   },
   {
-    id: 'career',
-    title: 'nav.career',
-    description: 'Career planning and development roadmap',
-    path: '/career',
-    icon: '🚀',
-    type: 'page'
+    id: "career",
+    title: "nav.career",
+    description: "nav.careerDesc",
+    path: "/career",
+    icon: "🚀",
+    type: "page",
   },
   {
-    id: 'swot',
-    title: 'career.swot.title',
-    description: 'SWOT analysis and strategic planning',
-    path: '/career/swot',
-    icon: '📊',
-    type: 'page'
+    id: "swot",
+    title: "career.swot.title",
+    description: "career.swot.description",
+    path: "/career/swot",
+    icon: "📊",
+    type: "page",
   },
   {
-    id: 'learning',
-    title: 'career.learning.title',
-    description: 'Learning path and skill development',
-    path: '/career/learning',
-    icon: '📚',
-    type: 'page'
-  }
+    id: "learning",
+    title: "career.learning.title",
+    description: "career.learning.description",
+    path: "/career/learning",
+    icon: "📚",
+    type: "page",
+  },
 ];
 
 const handleSearch = () => {
@@ -160,14 +157,15 @@ const handleSearch = () => {
   }
 
   isSearching.value = true;
-  
+
   // 模拟搜索延迟
   setTimeout(() => {
     const query = searchQuery.value.toLowerCase();
-    searchResults.value = searchData.filter(item => 
-      t(item.title).toLowerCase().includes(query) ||
-      item.description.toLowerCase().includes(query) ||
-      item.id.toLowerCase().includes(query)
+    searchResults.value = searchData.filter(
+      (item) =>
+        t(item.title).toLowerCase().includes(query) ||
+        t(item.description).toLowerCase().includes(query) ||
+        item.id.toLowerCase().includes(query)
     );
     isSearching.value = false;
   }, 200);
@@ -175,26 +173,26 @@ const handleSearch = () => {
 
 const handleOverlayClick = (event: MouseEvent) => {
   if (event.target === event.currentTarget) {
-    emit('close');
+    emit("close");
   }
 };
 
 const handleKeydown = (event: KeyboardEvent) => {
-  if (event.key === 'Escape') {
-    emit('close');
+  if (event.key === "Escape") {
+    emit("close");
   }
 };
 
 onMounted(async () => {
   await nextTick();
   searchInput.value?.focus();
-  document.addEventListener('keydown', handleKeydown);
-  document.body.style.overflow = 'hidden';
+  document.addEventListener("keydown", handleKeydown);
+  document.body.style.overflow = "hidden";
 });
 
 onUnmounted(() => {
-  document.removeEventListener('keydown', handleKeydown);
-  document.body.style.overflow = '';
+  document.removeEventListener("keydown", handleKeydown);
+  document.body.style.overflow = "";
 });
 </script>
 

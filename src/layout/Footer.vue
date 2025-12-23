@@ -37,14 +37,16 @@ defineComponent({
 const { t } = useI18n();
 const year = computed(() => new Date().getFullYear());
 const siteLink = ref("");
-const icpInfo = ref("粤ICP备2022083499号");
+const icpInfo = computed(() => {
+  if (siteLink.value.indexOf("aiyazone.cn") > 0) {
+    return t('footer.icp.aiyazone');
+  }
+  return t('footer.icp.default');
+});
 const beianLink = "https://beian.miit.gov.cn/";
 
 onMounted(() => {
   siteLink.value = location.origin + "/";
-  if (siteLink.value.indexOf("aiyazone.cn") > 0) {
-    icpInfo.value = "鲁ICP备14028542号-2";
-  }
 });
 </script>
 

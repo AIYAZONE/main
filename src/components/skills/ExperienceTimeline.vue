@@ -1,20 +1,20 @@
 <template>
   <div class="experience-timeline">
     <div class="experience-timeline__header">
-      <h3 class="experience-timeline__title">{{ title || $t('career.timeline.title') }}</h3>
+      <h3 class="experience-timeline__title">{{ title || t('career.timeline.title') }}</h3>
       <div class="experience-timeline__summary">
         <div class="timeline-summary">
           <div class="timeline-summary__item">
             <span class="timeline-summary__value">{{ totalYears }}</span>
-            <span class="timeline-summary__label">{{ $t('career.timeline.summary.yearsExp') }}</span>
+            <span class="timeline-summary__label">{{ t('career.timeline.summary.yearsExp') }}</span>
           </div>
           <div class="timeline-summary__item">
             <span class="timeline-summary__value">{{ experienceItems.length }}</span>
-            <span class="timeline-summary__label">{{ $t('career.timeline.summary.companies') }}</span>
+            <span class="timeline-summary__label">{{ t('career.timeline.summary.companies') }}</span>
           </div>
           <div class="timeline-summary__item">
             <span class="timeline-summary__value">{{ totalAchievements }}</span>
-            <span class="timeline-summary__label">{{ $t('career.timeline.summary.achievements') }}</span>
+            <span class="timeline-summary__label">{{ t('career.timeline.summary.achievements') }}</span>
           </div>
         </div>
       </div>
@@ -48,7 +48,7 @@
                 <div class="experience-card__duration">
                   <span class="experience-card__dates">
                     {{ formatDate(item.startDate) }} - 
-                    {{ item.endDate ? formatDate(item.endDate) : $t('career.timeline.present') }}
+                    {{ item.endDate ? formatDate(item.endDate) : t('career.timeline.present') }}
                   </span>
                   <span class="experience-card__period">
                     {{ calculateDuration(item.startDate, item.endDate) }}
@@ -58,7 +58,7 @@
 
               <div class="experience-card__body">
                 <div class="experience-card__achievements">
-                  <h6 class="experience-card__section-title">{{ $t('career.timeline.sections.achievements') }}</h6>
+                  <h6 class="experience-card__section-title">{{ t('career.timeline.sections.achievements') }}</h6>
                   <ul class="achievement-list">
                     <li
                       v-for="(achievement, achIndex) in item.achievements"
@@ -71,7 +71,7 @@
                 </div>
 
                 <div class="experience-card__technologies">
-                  <h6 class="experience-card__section-title">{{ $t('career.timeline.sections.technologies') }}</h6>
+                  <h6 class="experience-card__section-title">{{ t('career.timeline.sections.technologies') }}</h6>
                   <div class="tech-tags">
                     <span
                       v-for="tech in item.technologies"
@@ -89,15 +89,15 @@
                 <div class="experience-card__metrics">
                   <div class="metric-item">
                     <span class="metric-item__value">{{ item.achievements.length }}</span>
-                    <span class="metric-item__label">{{ $t('career.timeline.metrics.achievements') }}</span>
+                    <span class="metric-item__label">{{ t('career.timeline.metrics.achievements') }}</span>
                   </div>
                   <div class="metric-item">
                     <span class="metric-item__value">{{ item.technologies.length }}</span>
-                    <span class="metric-item__label">{{ $t('career.timeline.metrics.technologies') }}</span>
+                    <span class="metric-item__label">{{ t('career.timeline.metrics.technologies') }}</span>
                   </div>
                   <div class="metric-item">
                     <span class="metric-item__value">{{ getExperienceLevel(index) }}</span>
-                    <span class="metric-item__label">{{ $t('career.timeline.metrics.level') }}</span>
+                    <span class="metric-item__label">{{ t('career.timeline.metrics.level') }}</span>
                   </div>
                 </div>
               </div>
@@ -109,7 +109,7 @@
 
     <!-- Career Milestones -->
     <div class="experience-timeline__milestones">
-      <h4 class="milestones__title">{{ $t('career.timeline.milestones.title') }}</h4>
+      <h4 class="milestones__title">{{ t('career.timeline.milestones.title') }}</h4>
       <div class="milestones__grid">
         <div
           v-for="milestone in careerMilestones"

@@ -11,7 +11,7 @@
         
         <!-- 错误详情（开发环境） -->
         <details v-if="showDetails" class="error-details">
-          <summary>{{ $t('common.errorDetails') }}</summary>
+          <summary>{{ t('common.errorDetails') }}</summary>
           <pre class="error-stack">{{ errorStack }}</pre>
         </details>
         
@@ -22,14 +22,14 @@
             @click="handleRetry"
             :disabled="retrying"
           >
-            {{ retrying ? $t('common.retrying', 'Retrying...') : $t('common.retry', 'Retry') }}
+            {{ retrying ? t('common.retrying', 'Retrying...') : t('common.retry', 'Retry') }}
           </button>
           
           <button 
             class="reload-button" 
             @click="handleReload"
           >
-            {{ $t('common.reload', 'Reload Page') }}
+            {{ t('common.reload', 'Reload Page') }}
           </button>
           
           <button 
@@ -38,7 +38,7 @@
             @click="handleReport"
             :disabled="reported"
           >
-            {{ reported ? $t('common.reported', 'Reported') : $t('common.report', 'Report Issue') }}
+            {{ reported ? t('common.reported', 'Reported') : t('common.report', 'Report Issue') }}
           </button>
         </div>
       </div>

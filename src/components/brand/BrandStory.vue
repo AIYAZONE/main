@@ -3,8 +3,8 @@
     <div class="middle-box">
       <!-- Section Header -->
       <div class="section-header">
-        <h2 class="story-title">{{ $t('brandStory.title', 'My Journey') }}</h2>
-        <p class="section-subtitle">{{ $t('brandStory.subtitle', 'From frontend developer to technical leader') }}</p>
+        <h2 class="story-title">{{ t('brandStory.title', 'My Journey') }}</h2>
+        <p class="section-subtitle">{{ t('brandStory.subtitle', 'From frontend developer to technical leader') }}</p>
       </div>
 
       <!-- Story Content -->
@@ -34,11 +34,11 @@
 
         <!-- Timeline -->
         <div class="timeline-container">
-          <h3 class="timeline-title">{{ $t('brandStory.timeline.title', 'Career Timeline') }}</h3>
+          <h3 class="timeline-title">{{ t('brandStory.timeline.title', 'Career Timeline') }}</h3>
           
           <div class="timeline">
             <div 
-              v-for="(event, index) in sortedTimeline" 
+              v-for="event in sortedTimeline" 
               :key="event.id"
               class="timeline-event"
               :class="getTimelineItemClass(event.type)"
@@ -58,7 +58,7 @@
 
         <!-- Philosophy -->
         <div class="philosophy-container">
-          <h3 class="philosophy-title">{{ $t('brandStory.philosophy.title', 'Professional Philosophy') }}</h3>
+          <h3 class="philosophy-title">{{ t('brandStory.philosophy.title', 'Professional Philosophy') }}</h3>
           
           <div class="philosophy-grid">
             <div 
@@ -78,6 +78,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
+import { useI18n } from 'vue-i18n';
 import type { StorySection, TimelineEvent } from '../../types/brand';
 
 interface Props {
@@ -91,6 +92,8 @@ const props = withDefaults(defineProps<Props>(), {
   timeline: () => [],
   philosophy: () => []
 });
+
+const { t } = useI18n();
 
 // Sort story sections by order
 const sortedStory = computed(() => {

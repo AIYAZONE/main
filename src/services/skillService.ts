@@ -23,20 +23,14 @@ class SkillServiceImpl implements SkillService {
 			// const result: ApiResponse<SkillCategory[]> = await response.json();
 
 			// Use local data for now
-			return skillsData.skillCategories.map((category) => ({
+			return skillsData.skillCategories.map(category => ({
 				...category,
 				name: i18n.global.t(`skills.categories.${category.id}.name`),
-				skills: category.skills.map((skill) => ({
+				skills: category.skills.map(skill => ({
 					...skill,
-					name: i18n.global.t(
-						`skills.categories.${category.id}.skills.${skill.id}.name`
-					),
-					description: i18n.global.t(
-						`skills.categories.${category.id}.skills.${skill.id}.description`
-					),
-					projects: i18n.global.tm(
-						`skills.categories.${category.id}.skills.${skill.id}.projects`
-					) as string[]
+					name: i18n.global.t(`skills.categories.${category.id}.skills.${skill.id}.name`),
+					description: i18n.global.t(`skills.categories.${category.id}.skills.${skill.id}.description`),
+					projects: i18n.global.tm(`skills.categories.${category.id}.skills.${skill.id}.projects`) as string[]
 				}))
 			})) as SkillCategory[];
 		} catch (error) {

@@ -1,6 +1,6 @@
 <template>
   <div class="skills-demo">
-    <h2>技能展示系统演示</h2>
+    <h2>{{ t('skills.demo.title') }}</h2>
     
     <!-- Skills Showcase Component -->
     <section class="demo-section">
@@ -16,7 +16,7 @@
       <SkillRadar 
         :categories="skillCategories"
         :max-level="10"
-        title="技能雷达分析"
+        :title="t('skills.radar.title')"
         :size="450"
       />
     </section>
@@ -25,7 +25,7 @@
     <section class="demo-section">
       <ExperienceTimeline 
         :experience-items="experienceItems"
-        title="职业发展历程"
+        :title="t('skills.experience.title')"
         :highlight-current="true"
       />
     </section>
@@ -34,11 +34,14 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
+import { useI18n } from 'vue-i18n';
 import { useSkillStore } from '../../stores/skillStore';
 import { useBrandStore } from '../../stores/brandStore';
 import SkillShowcase from './SkillShowcase.vue';
 import SkillRadar from './SkillRadar.vue';
 import ExperienceTimeline from './ExperienceTimeline.vue';
+
+const { t } = useI18n();
 
 // Stores
 const skillStore = useSkillStore();

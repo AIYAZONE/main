@@ -1,34 +1,34 @@
 <template>
   <div class="learning-path">
     <div class="learning-header">
-      <h2 class="learning-title">{{ learningPath?.title || $t('career.learning.title') }}</h2>
-      <p class="learning-description">{{ learningPath?.description || $t('career.learning.description') }}</p>
+      <h2 class="learning-title">{{ learningPath?.title || t('career.learning.title') }}</h2>
+      <p class="learning-description">{{ learningPath?.description || t('career.learning.description') }}</p>
       
       <div class="learning-overview">
         <div class="overview-item">
-          <span class="overview-label">{{ $t('career.learning.totalDuration') }}</span>
-          <span class="overview-value">{{ learningPath?.totalDuration || $t('career.learning.defaultDuration') }}</span>
+          <span class="overview-label">{{ t('career.learning.totalDuration') }}</span>
+          <span class="overview-value">{{ learningPath?.totalDuration || t('career.learning.defaultDuration') }}</span>
         </div>
         <div class="overview-item">
-          <span class="overview-label">{{ $t('career.learning.focusAreas') }}</span>
-          <span class="overview-value">{{ $t('career.learning.threeFocus') }}</span>
+          <span class="overview-label">{{ t('career.learning.focusAreas') }}</span>
+          <span class="overview-value">{{ t('career.learning.threeFocus') }}</span>
         </div>
         <div class="overview-item">
-          <span class="overview-label">{{ $t('career.learning.approach') }}</span>
-          <span class="overview-value">{{ $t('career.learning.parallelLearning') }}</span>
+          <span class="overview-label">{{ t('career.learning.approach') }}</span>
+          <span class="overview-value">{{ t('career.learning.parallelLearning') }}</span>
         </div>
       </div>
     </div>
 
     <!-- Three-Track Parallel Learning -->
     <div class="learning-tracks">
-      <h3 class="tracks-title">{{ $t('career.learning.parallelTracks') }}</h3>
+      <h3 class="tracks-title">{{ t('career.learning.parallelTracks') }}</h3>
       <div class="tracks-container">
         <div class="track architecture-track">
           <div class="track-header">
             <div class="track-icon">🏗️</div>
-            <h4 class="track-title">{{ $t('career.learning.tracks.architecture') }}</h4>
-            <p class="track-subtitle">{{ $t('career.learning.tracks.architectureDesc') }}</p>
+            <h4 class="track-title">{{ t('career.learning.tracks.architecture') }}</h4>
+            <p class="track-subtitle">{{ t('career.learning.tracks.architectureDesc') }}</p>
           </div>
           <div class="track-content">
             <div class="track-phases">
@@ -39,7 +39,7 @@
                   <li v-for="goal in phase.goals" :key="goal">{{ goal }}</li>
                 </ul>
                 <div class="phase-projects" v-if="phase.projects.length > 0">
-                  <h6>{{ $t('career.learning.practicalProjects') }}</h6>
+                  <h6>{{ t('career.learning.practicalProjects') }}</h6>
                   <div class="project-list">
                     <div v-for="project in phase.projects" :key="project.name" class="project-item">
                       <span class="project-name">{{ project.name }}</span>
@@ -55,8 +55,8 @@
         <div class="track performance-track">
           <div class="track-header">
             <div class="track-icon">⚡</div>
-            <h4 class="track-title">{{ $t('career.learning.tracks.performance') }}</h4>
-            <p class="track-subtitle">{{ $t('career.learning.tracks.performanceDesc') }}</p>
+            <h4 class="track-title">{{ t('career.learning.tracks.performance') }}</h4>
+            <p class="track-subtitle">{{ t('career.learning.tracks.performanceDesc') }}</p>
           </div>
           <div class="track-content">
             <div class="track-phases">
@@ -67,7 +67,7 @@
                   <li v-for="goal in phase.goals" :key="goal">{{ goal }}</li>
                 </ul>
                 <div class="phase-projects" v-if="phase.projects.length > 0">
-                  <h6>{{ $t('career.learning.practicalProjects') }}</h6>
+                  <h6>{{ t('career.learning.practicalProjects') }}</h6>
                   <div class="project-list">
                     <div v-for="project in phase.projects" :key="project.name" class="project-item">
                       <span class="project-name">{{ project.name }}</span>
@@ -83,8 +83,8 @@
         <div class="track engineering-track">
           <div class="track-header">
             <div class="track-icon">🔧</div>
-            <h4 class="track-title">{{ $t('career.learning.tracks.engineering') }}</h4>
-            <p class="track-subtitle">{{ $t('career.learning.tracks.engineeringDesc') }}</p>
+            <h4 class="track-title">{{ t('career.learning.tracks.engineering') }}</h4>
+            <p class="track-subtitle">{{ t('career.learning.tracks.engineeringDesc') }}</p>
           </div>
           <div class="track-content">
             <div class="track-phases">
@@ -95,7 +95,7 @@
                   <li v-for="goal in phase.goals" :key="goal">{{ goal }}</li>
                 </ul>
                 <div class="phase-projects" v-if="phase.projects.length > 0">
-                  <h6>{{ $t('career.learning.practicalProjects') }}</h6>
+                  <h6>{{ t('career.learning.practicalProjects') }}</h6>
                   <div class="project-list">
                     <div v-for="project in phase.projects" :key="project.name" class="project-item">
                       <span class="project-name">{{ project.name }}</span>
@@ -178,10 +178,10 @@
 
     <!-- Learning Resources -->
     <div class="learning-resources">
-      <h3 class="resources-title">{{ $t('career.learning.recommendedResources') }}</h3>
+      <h3 class="resources-title">{{ t('career.learning.recommendedResources') }}</h3>
       <div class="resources-categories">
         <div class="resource-category">
-          <h4 class="category-title">{{ $t('career.learning.resources.books') }}</h4>
+          <h4 class="category-title">{{ t('career.learning.resources.books') }}</h4>
           <div class="resource-list">
             <div v-for="book in recommendedBooks" :key="book.id" class="resource-item">
               <div class="resource-info">
@@ -190,7 +190,7 @@
                 <div class="resource-meta">
                   <span class="resource-time">{{ book.estimatedTime }}</span>
                   <span :class="['resource-priority', book.priority]">
-                    {{ $t(`career.learning.priority.${book.priority}`) }}
+                    {{ t(`career.learning.priority.${book.priority}`) }}
                   </span>
                 </div>
               </div>
@@ -199,7 +199,7 @@
         </div>
 
         <div class="resource-category">
-          <h4 class="category-title">{{ $t('career.learning.resources.courses') }}</h4>
+          <h4 class="category-title">{{ t('career.learning.resources.courses') }}</h4>
           <div class="resource-list">
             <div v-for="course in recommendedCourses" :key="course.id" class="resource-item">
               <div class="resource-info">
@@ -208,7 +208,7 @@
                 <div class="resource-meta">
                   <span class="resource-time">{{ course.estimatedTime }}</span>
                   <span :class="['resource-priority', course.priority]">
-                    {{ $t(`career.learning.priority.${course.priority}`) }}
+                    {{ t(`career.learning.priority.${course.priority}`) }}
                   </span>
                 </div>
               </div>
@@ -217,7 +217,7 @@
         </div>
 
         <div class="resource-category">
-          <h4 class="category-title">{{ $t('career.learning.resources.practices') }}</h4>
+          <h4 class="category-title">{{ t('career.learning.resources.practices') }}</h4>
           <div class="resource-list">
             <div v-for="practice in recommendedPractices" :key="practice.id" class="resource-item">
               <div class="resource-info">
@@ -226,7 +226,7 @@
                 <div class="resource-meta">
                   <span class="resource-time">{{ practice.estimatedTime }}</span>
                   <span :class="['resource-priority', practice.priority]">
-                    {{ $t(`career.learning.priority.${practice.priority}`) }}
+                    {{ t(`career.learning.priority.${practice.priority}`) }}
                   </span>
                 </div>
               </div>
@@ -238,35 +238,35 @@
 
     <!-- Success Metrics -->
     <div class="success-metrics">
-      <h3 class="metrics-title">{{ $t('career.learning.successMetrics') }}</h3>
+      <h3 class="metrics-title">{{ t('career.learning.successMetrics') }}</h3>
       <div class="metrics-grid">
         <div class="metric-card">
           <div class="metric-icon">📊</div>
-          <h4 class="metric-title">{{ $t('career.learning.metrics.technical') }}</h4>
+          <h4 class="metric-title">{{ t('career.learning.metrics.technical') }}</h4>
           <ul class="metric-list">
-            <li>{{ $t('career.learning.metrics.technicalItems.architecture') }}</li>
-            <li>{{ $t('career.learning.metrics.technicalItems.performance') }}</li>
-            <li>{{ $t('career.learning.metrics.technicalItems.engineering') }}</li>
+            <li>{{ t('career.learning.metrics.technicalItems.architecture') }}</li>
+            <li>{{ t('career.learning.metrics.technicalItems.performance') }}</li>
+            <li>{{ t('career.learning.metrics.technicalItems.engineering') }}</li>
           </ul>
         </div>
 
         <div class="metric-card">
           <div class="metric-icon">🎯</div>
-          <h4 class="metric-title">{{ $t('career.learning.metrics.career') }}</h4>
+          <h4 class="metric-title">{{ t('career.learning.metrics.career') }}</h4>
           <ul class="metric-list">
-            <li>{{ $t('career.learning.metrics.careerItems.position') }}</li>
-            <li>{{ $t('career.learning.metrics.careerItems.salary') }}</li>
-            <li>{{ $t('career.learning.metrics.careerItems.recognition') }}</li>
+            <li>{{ t('career.learning.metrics.careerItems.position') }}</li>
+            <li>{{ t('career.learning.metrics.careerItems.salary') }}</li>
+            <li>{{ t('career.learning.metrics.careerItems.recognition') }}</li>
           </ul>
         </div>
 
         <div class="metric-card">
           <div class="metric-icon">🌟</div>
-          <h4 class="metric-title">{{ $t('career.learning.metrics.impact') }}</h4>
+          <h4 class="metric-title">{{ t('career.learning.metrics.impact') }}</h4>
           <ul class="metric-list">
-            <li>{{ $t('career.learning.metrics.impactItems.team') }}</li>
-            <li>{{ $t('career.learning.metrics.impactItems.projects') }}</li>
-            <li>{{ $t('career.learning.metrics.impactItems.industry') }}</li>
+            <li>{{ t('career.learning.metrics.impactItems.team') }}</li>
+            <li>{{ t('career.learning.metrics.impactItems.projects') }}</li>
+            <li>{{ t('career.learning.metrics.impactItems.industry') }}</li>
           </ul>
         </div>
       </div>

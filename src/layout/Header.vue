@@ -19,7 +19,7 @@
           </nav>
 
           <button class="lang-switch" @click="toggleLang">
-            {{ locale === "zh" ? "EN" : "中" }}
+            {{ locale === "zh" ? t('locale.en.label') : t('locale.zh.label') }}
           </button>
 
           <!-- Mobile Menu Toggle -->

@@ -5,7 +5,7 @@
       <div class="middle-box">
         <div class="hero-content">
           <div class="hero-meta">
-            <span class="meta-label">ABOUT ME</span>
+            <span class="meta-label">{{ t('nav.meta.label') }}</span>
             <div class="meta-line"></div>
           </div>
           <h1 class="hero-title">{{ brandInfo.title }}</h1>
@@ -100,7 +100,7 @@ import { onMounted, computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useBrandStore } from '../stores/brandStore';
 
-const { t } = useI18n();
+const { t, tm } = useI18n();
 const brandStore = useBrandStore();
 
 // 品牌信息
@@ -108,12 +108,7 @@ const brandInfo = computed(() => ({
   title: 'AIYAZONE',
   subtitle: t('brand.subtitle'),
   intro: t('brand.intro'),
-  valueProposition: [
-    t('brand.valueProposition.architecture'),
-    t('brand.valueProposition.performance'),
-    t('brand.valueProposition.engineering'),
-    t('brand.valueProposition.management')
-  ]
+  valueProposition: tm('brand.valueProposition') as string[]
 }));
 
 const certifications = computed(() => brandStore.certifications || []);

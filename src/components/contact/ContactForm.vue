@@ -1,9 +1,9 @@
 <template>
   <div class="contact-form">
     <div class="form-header">
-      <h2 class="form-title">{{ $t("contact.title") }}</h2>
+      <h2 class="form-title">{{ t("contact.title") }}</h2>
       <p class="form-description">
-        {{ $t("contact.description", "欢迎与我联系，我会尽快回复您的消息。") }}
+        {{ t("contact.description", "欢迎与我联系，我会尽快回复您的消息。") }}
       </p>
     </div>
 
@@ -11,8 +11,8 @@
       <!-- 姓名字段 -->
       <div class="form-group">
         <label for="name" class="form-label">
-          {{ $t("contact.name") }}
-          <span class="required-indicator" :aria-label="$t('contact.required')">*</span>
+          {{ t("contact.name") }}
+          <span class="required-indicator" :aria-label="t('contact.required')">*</span>
         </label>
         <input
           id="name"
@@ -20,7 +20,7 @@
           type="text"
           class="form-input"
           :class="{ 'form-input--error': errors.name }"
-          :placeholder="$t('contact.namePlaceholder', '请输入您的姓名')"
+          :placeholder="t('contact.namePlaceholder')"
           :aria-describedby="errors.name ? 'name-error' : undefined"
           :aria-invalid="errors.name ? 'true' : 'false'"
           required
@@ -52,8 +52,8 @@
       <!-- 邮箱字段 -->
       <div class="form-group">
         <label for="email" class="form-label">
-          {{ $t("contact.email") }}
-          <span class="required-indicator" :aria-label="$t('contact.required')">*</span>
+          {{ t("contact.email") }}
+          <span class="required-indicator" :aria-label="t('contact.required')">*</span>
         </label>
         <input
           id="email"
@@ -61,7 +61,7 @@
           type="email"
           class="form-input"
           :class="{ 'form-input--error': errors.email }"
-          :placeholder="$t('contact.emailPlaceholder', '请输入您的邮箱地址')"
+          :placeholder="t('contact.emailPlaceholder', '请输入您的邮箱地址')"
           :aria-describedby="errors.email ? 'email-error' : undefined"
           :aria-invalid="errors.email ? 'true' : 'false'"
           required
@@ -93,8 +93,8 @@
       <!-- 主题字段 -->
       <div class="form-group">
         <label for="subject" class="form-label">
-          {{ $t("contact.subject") }}
-          <span class="required-indicator" :aria-label="$t('contact.required')">*</span>
+          {{ t("contact.subject") }}
+          <span class="required-indicator" :aria-label="t('contact.required')">*</span>
         </label>
         <input
           id="subject"
@@ -102,7 +102,7 @@
           type="text"
           class="form-input"
           :class="{ 'form-input--error': errors.subject }"
-          :placeholder="$t('contact.subjectPlaceholder', '请输入邮件主题')"
+          :placeholder="t('contact.subjectPlaceholder', '请输入邮件主题')"
           :aria-describedby="errors.subject ? 'subject-error' : undefined"
           :aria-invalid="errors.subject ? 'true' : 'false'"
           required
@@ -133,7 +133,7 @@
       <!-- 类别字段 -->
       <div class="form-group">
         <label for="category" class="form-label">
-          {{ $t("contact.category") }}
+          {{ t("contact.category") }}
         </label>
         <select
           id="category"
@@ -143,16 +143,16 @@
           :aria-describedby="errors.category ? 'category-error' : undefined"
           @change="clearFieldError('category')"
         >
-          <option value="">{{ $t("contact.selectCategory", "请选择联系类别") }}</option>
-          <option value="business">{{ $t("contact.categories.business") }}</option>
+          <option value="">{{ t("contact.selectCategory", "请选择联系类别") }}</option>
+          <option value="business">{{ t("contact.categories.business") }}</option>
           <option value="collaboration">
-            {{ $t("contact.categories.collaboration") }}
+            {{ t("contact.categories.collaboration") }}
           </option>
-          <option value="general">{{ $t("contact.categories.general") }}</option>
+          <option value="general">{{ t("contact.categories.general") }}</option>
           <option value="feedback">
-            {{ $t("contact.categories.feedback", "反馈建议") }}
+            {{ t("contact.categories.feedback", "反馈建议") }}
           </option>
-          <option value="other">{{ $t("contact.categories.other", "其他") }}</option>
+          <option value="other">{{ t("contact.categories.other", "其他") }}</option>
         </select>
         <div v-if="errors.category" id="category-error" class="form-error" role="alert">
           <span class="form-error-icon" aria-hidden="true">
@@ -178,15 +178,15 @@
       <!-- 消息字段 -->
       <div class="form-group">
         <label for="message" class="form-label">
-          {{ $t("contact.message") }}
-          <span class="required-indicator" :aria-label="$t('contact.required')">*</span>
+          {{ t("contact.message") }}
+          <span class="required-indicator" :aria-label="t('contact.required')">*</span>
         </label>
         <textarea
           id="message"
           v-model="formData.message"
           class="form-textarea"
           :class="{ 'form-textarea--error': errors.message }"
-          :placeholder="$t('contact.messagePlaceholder', '请输入您的消息内容...')"
+          :placeholder="t('contact.messagePlaceholder', '请输入您的消息内容...')"
           :aria-describedby="errors.message ? 'message-error' : 'message-help'"
           :aria-invalid="errors.message ? 'true' : 'false'"
           required
@@ -196,7 +196,7 @@
         ></textarea>
         <div v-if="!errors.message" id="message-help" class="form-help">
           {{
-            $t(
+            t(
               "contact.messageHelp",
               "请详细描述您的需求或问题，这将帮助我更好地为您提供帮助。"
             )
@@ -240,12 +240,12 @@
           />
           <span class="checkbox-indicator"></span>
           <span class="checkbox-text">
-            {{ $t("contact.privacyAgreement", "我同意") }}
+            {{ t("contact.privacyAgreement", "我同意") }}
             <a href="/privacy" target="_blank" class="privacy-link">
-              {{ $t("contact.privacyPolicy", "隐私政策") }}
+              {{ t("contact.privacyPolicy", "隐私政策") }}
             </a>
-            {{ $t("contact.privacyAgreementSuffix", "并允许处理我的个人信息") }}
-            <span class="required-indicator" :aria-label="$t('contact.required')">*</span>
+            {{ t("contact.privacyAgreementSuffix", "并允许处理我的个人信息") }}
+            <span class="required-indicator" :aria-label="t('contact.required')">*</span>
           </span>
         </label>
         <div
@@ -298,10 +298,10 @@
                 <path d="m22 7-10 7L2 7" />
               </svg>
             </span>
-            {{ $t("contact.send") }}
+            {{ t("contact.send") }}
           </template>
           <template v-else>
-            {{ $t("contact.sending", "发送中...") }}
+            {{ t("contact.sending", "发送中...") }}
           </template>
         </TouchButton>
 
@@ -311,7 +311,7 @@
           :disabled="isSubmitting"
           @click="resetForm"
         >
-          {{ $t("common.reset") }}
+          {{ t("common.reset") }}
         </button>
       </div>
 
@@ -375,13 +375,13 @@
     <!-- 其他联系方式 -->
     <div class="alternative-contact">
       <h3 class="alt-contact-title">
-        {{ $t("contact.alternativeContact", "其他联系方式") }}
+        {{ t("contact.alternativeContact", "其他联系方式") }}
       </h3>
       <div class="contact-methods">
         <a
           href="mailto:aiyazone@163.com"
           class="contact-method"
-          :aria-label="$t('contact.emailDirect', '直接发送邮件')"
+          :aria-label="t('contact.emailDirect', '直接发送邮件')"
         >
           <span class="method-icon" aria-hidden="true">
             <svg
@@ -441,7 +441,7 @@
               <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
             </svg>
           </span>
-          {{ $t("contact.responseTime", "通常在24小时内回复") }}
+          {{ t("contact.responseTime", "通常在24小时内回复") }}
         </p>
       </div>
     </div>

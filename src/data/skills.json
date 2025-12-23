@@ -2,7 +2,7 @@
   "skillCategories": [
     {
       "id": "frontend",
-      "name": "前端开发",
+      "name": "Frontend Development",
       "type": "frontend",
       "skills": [
         {
@@ -10,134 +10,194 @@
           "name": "Vue.js",
           "level": 9,
           "yearsOfExperience": 6,
-          "projects": ["AIYAZONE个人网站", "企业级管理系统", "移动端应用"],
-          "description": "深度掌握Vue 2/3生态系统，包括Composition API、Pinia状态管理等"
+          "projects": [
+            "AIYAZONE Personal Site",
+            "Enterprise Management System",
+            "Mobile App"
+          ],
+          "description": "Deep mastery of Vue 2/3 ecosystem, including Composition API, Pinia state management, etc."
         },
         {
           "id": "typescript",
           "name": "TypeScript",
           "level": 8,
           "yearsOfExperience": 5,
-          "projects": ["大型前端项目", "组件库开发", "工程化工具"],
-          "description": "熟练使用TypeScript进行大型项目开发，类型系统设计经验丰富"
+          "projects": [
+            "Large-scale Frontend Project",
+            "Component Library Development",
+            "Engineering Tools"
+          ],
+          "description": "Proficient in using TypeScript for large-scale project development, experienced in type system design"
         },
         {
           "id": "react",
           "name": "React",
           "level": 7,
           "yearsOfExperience": 4,
-          "projects": ["企业级应用", "组件库", "移动端混合应用"],
-          "description": "具备React生态系统开发经验，包括Hooks、Redux等"
+          "projects": [
+            "Enterprise Application",
+            "Component Library",
+            "Mobile Hybrid App"
+          ],
+          "description": "Experienced in React ecosystem development, including Hooks, Redux, etc."
         },
         {
           "id": "javascript",
           "name": "JavaScript",
           "level": 9,
           "yearsOfExperience": 10,
-          "projects": ["所有前端项目", "Node.js后端", "工具脚本"],
-          "description": "JavaScript语言专家，深入理解ES6+特性和异步编程"
+          "projects": [
+            "All Frontend Projects",
+            "Node.js Backend",
+            "Tool Scripts"
+          ],
+          "description": "JavaScript language expert, deep understanding of ES6+ features and asynchronous programming"
         },
         {
           "id": "css",
           "name": "CSS/Less/Sass",
           "level": 8,
           "yearsOfExperience": 10,
-          "projects": ["响应式网站", "组件库样式", "移动端适配"],
-          "description": "精通CSS3、预处理器和现代布局技术，具备设计系统构建经验"
+          "projects": [
+            "Responsive Website",
+            "Component Library Styles",
+            "Mobile Adaptation"
+          ],
+          "description": "Mastery of CSS3, preprocessors, and modern layout technologies, experienced in building design systems"
         },
         {
           "id": "webpack",
           "name": "Webpack/Vite",
           "level": 8,
           "yearsOfExperience": 6,
-          "projects": ["构建系统优化", "多环境配置", "性能优化"],
-          "description": "深度掌握现代前端构建工具，具备复杂项目构建优化经验"
+          "projects": [
+            "Build System Optimization",
+            "Multi-environment Configuration",
+            "Performance Optimization"
+          ],
+          "description": "Deep mastery of modern frontend build tools, experienced in complex project build optimization"
         },
         {
           "id": "performance",
-          "name": "性能优化",
+          "name": "Performance Optimization",
           "level": 8,
           "yearsOfExperience": 7,
-          "projects": ["大型应用优化", "移动端性能", "首屏加载优化"],
-          "description": "具备丰富的前端性能优化经验，包括代码分割、缓存策略等"
+          "projects": [
+            "Large Application Optimization",
+            "Mobile Performance",
+            "First Screen Loading Optimization"
+          ],
+          "description": "Rich experience in frontend performance optimization, including code splitting, caching strategies, etc."
         }
       ]
     },
     {
       "id": "management",
-      "name": "项目管理",
+      "name": "Project Management",
       "type": "management",
       "skills": [
         {
           "id": "pmp",
-          "name": "项目管理(PMP)",
+          "name": "Project Management (PMP)",
           "level": 8,
           "yearsOfExperience": 3,
-          "projects": ["大型前端项目", "跨部门协作项目", "产品迭代管理"],
-          "description": "PMP认证持有者，具备完整的项目管理理论知识和实践经验"
+          "projects": [
+            "Large-scale Frontend Project",
+            "Cross-department Collaboration Project",
+            "Product Iteration Management"
+          ],
+          "description": "PMP certified, possessing complete project management theoretical knowledge and practical experience"
         },
         {
           "id": "agile",
-          "name": "敏捷开发(ACP)",
+          "name": "Agile Development (ACP)",
           "level": 8,
           "yearsOfExperience": 4,
-          "projects": ["敏捷团队管理", "Scrum实践", "持续交付"],
-          "description": "ACP认证持有者，熟练运用Scrum、Kanban等敏捷方法论"
+          "projects": [
+            "Agile Team Management",
+            "Scrum Practice",
+            "Continuous Delivery"
+          ],
+          "description": "ACP certified, skilled in using Scrum, Kanban, and other agile methodologies"
         },
         {
           "id": "risk-management",
-          "name": "风险管理",
+          "name": "Risk Management",
           "level": 7,
           "yearsOfExperience": 3,
-          "projects": ["项目风险评估", "技术风险控制", "进度风险管理"],
-          "description": "具备项目风险识别、评估和应对的实践经验"
+          "projects": [
+            "Project Risk Assessment",
+            "Technical Risk Control",
+            "Schedule Risk Management"
+          ],
+          "description": "Experienced in project risk identification, assessment, and response"
         },
         {
           "id": "stakeholder",
-          "name": "干系人管理",
+          "name": "Stakeholder Management",
           "level": 7,
           "yearsOfExperience": 4,
-          "projects": ["跨部门沟通", "客户需求管理", "团队协调"],
-          "description": "擅长与不同层级和部门的干系人进行有效沟通和协调"
+          "projects": [
+            "Cross-department Communication",
+            "Customer Requirement Management",
+            "Team Coordination"
+          ],
+          "description": "Good at effective communication and coordination with stakeholders at different levels and departments"
         }
       ]
     },
     {
       "id": "leadership",
-      "name": "团队领导",
+      "name": "Team Leadership",
       "type": "leadership",
       "skills": [
         {
           "id": "team-building",
-          "name": "团队建设",
+          "name": "Team Building",
           "level": 7,
           "yearsOfExperience": 4,
-          "projects": ["前端团队组建", "技能培训", "团队文化建设"],
-          "description": "具备团队组建、培养和激励的实践经验"
+          "projects": [
+            "Frontend Team Building",
+            "Skill Training",
+            "Team Culture Building"
+          ],
+          "description": "Experienced in team building, training, and motivation"
         },
         {
           "id": "mentoring",
-          "name": "技术指导",
+          "name": "Technical Mentoring",
           "level": 8,
           "yearsOfExperience": 5,
-          "projects": ["新人培养", "技术分享", "代码评审"],
-          "description": "擅长指导初中级开发者技术成长，建立技术标准和最佳实践"
+          "projects": [
+            "Newcomer Training",
+            "Technical Sharing",
+            "Code Review"
+          ],
+          "description": "Good at guiding junior and intermediate developers in technical growth, establishing technical standards and best practices"
         },
         {
           "id": "architecture",
-          "name": "技术架构",
+          "name": "Technical Architecture",
           "level": 7,
           "yearsOfExperience": 4,
-          "projects": ["前端架构设计", "技术选型", "系统重构"],
-          "description": "具备前端架构设计和技术决策能力，关注可维护性和扩展性"
+          "projects": [
+            "Frontend Architecture Design",
+            "Technology Selection",
+            "System Refactoring"
+          ],
+          "description": "Capable of frontend architecture design and technical decision-making, focusing on maintainability and scalability"
         },
         {
           "id": "communication",
-          "name": "沟通协调",
+          "name": "Communication & Coordination",
           "level": 8,
           "yearsOfExperience": 6,
-          "projects": ["跨团队协作", "需求澄清", "技术方案讲解"],
-          "description": "优秀的沟通能力，能够清晰表达技术概念和项目进展"
+          "projects": [
+            "Cross-team Collaboration",
+            "Requirement Clarification",
+            "Technical Solution Presentation"
+          ],
+          "description": "Excellent communication skills, able to clearly express technical concepts and project progress"
         }
       ]
     }
@@ -145,60 +205,87 @@
   "experienceItems": [
     {
       "id": "current-role",
-      "company": "深圳某互联网公司",
-      "position": "高级前端工程师/技术负责人",
+      "company": "A Shenzhen Internet Company",
+      "position": "Senior Frontend Engineer / Tech Lead",
       "startDate": "2021-03-01",
       "endDate": null,
       "achievements": [
-        "负责前端团队技术架构设计和技术选型决策",
-        "建立前端工程化体系，提升团队开发效率30%",
-        "主导大型项目重构，性能提升50%以上",
-        "培养3名初级开发者成长为中级工程师",
-        "获得PMP和ACP双认证，提升项目管理能力"
+        "Responsible for frontend team technical architecture design and tech stack selection",
+        "Established frontend engineering system, improving team efficiency by 30%",
+        "Led large-scale project refactoring, improving performance by over 50%",
+        "Mentored 3 junior developers to become intermediate engineers",
+        "Obtained PMP and ACP certifications, enhancing project management capabilities"
       ],
-      "technologies": ["Vue 3", "TypeScript", "Vite", "Pinia", "Element Plus", "微前端"]
+      "technologies": [
+        "Vue 3",
+        "TypeScript",
+        "Vite",
+        "Pinia",
+        "Element Plus",
+        "Micro Frontends"
+      ]
     },
     {
       "id": "previous-role-1",
-      "company": "深圳某科技公司",
-      "position": "前端工程师",
+      "company": "A Shenzhen Tech Company",
+      "position": "Frontend Engineer",
       "startDate": "2018-06-01",
       "endDate": "2021-02-28",
       "achievements": [
-        "独立负责多个中大型前端项目的开发和维护",
-        "建立组件库和设计系统，提升开发效率",
-        "优化项目构建流程，减少构建时间60%",
-        "参与移动端混合应用开发，积累跨平台经验"
+        "Independently responsible for development and maintenance of multiple medium-to-large frontend projects",
+        "Established component library and design system, improving development efficiency",
+        "Optimized project build process, reducing build time by 60%",
+        "Participated in mobile hybrid app development, accumulating cross-platform experience"
       ],
-      "technologies": ["Vue 2", "React", "Webpack", "Less", "Ant Design", "React Native"]
+      "technologies": [
+        "Vue 2",
+        "React",
+        "Webpack",
+        "Less",
+        "Ant Design",
+        "React Native"
+      ]
     },
     {
       "id": "previous-role-2",
-      "company": "深圳某创业公司",
-      "position": "前端开发工程师",
+      "company": "A Shenzhen Startup",
+      "position": "Frontend Developer",
       "startDate": "2015-09-01",
       "endDate": "2018-05-31",
       "achievements": [
-        "从零开始搭建前端技术栈和开发规范",
-        "负责公司官网和管理后台的前端开发",
-        "实现响应式设计，支持多终端访问",
-        "参与产品需求分析和技术方案设计"
+        "Built frontend tech stack and development standards from scratch",
+        "Responsible for frontend development of company official website and management backend",
+        "Implemented responsive design, supporting multi-terminal access",
+        "Participated in product requirement analysis and technical solution design"
       ],
-      "technologies": ["jQuery", "Bootstrap", "Gulp", "Sass", "PHP", "MySQL"]
+      "technologies": [
+        "jQuery",
+        "Bootstrap",
+        "Gulp",
+        "Sass",
+        "PHP",
+        "MySQL"
+      ]
     },
     {
       "id": "early-career",
-      "company": "深圳某传统企业",
-      "position": "初级前端开发工程师",
+      "company": "A Shenzhen Traditional Enterprise",
+      "position": "Junior Frontend Developer",
       "startDate": "2014-07-01",
       "endDate": "2015-08-31",
       "achievements": [
-        "学习现代前端开发技术和工具",
-        "参与企业内部系统的前端开发",
-        "掌握基础的HTML、CSS、JavaScript技能",
-        "建立良好的编程习惯和代码规范意识"
+        "Learned modern frontend development technologies and tools",
+        "Participated in frontend development of internal enterprise systems",
+        "Mastered basic HTML, CSS, JavaScript skills",
+        "Established good programming habits and code standard awareness"
       ],
-      "technologies": ["HTML", "CSS", "JavaScript", "jQuery", "Bootstrap"]
+      "technologies": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "jQuery",
+        "Bootstrap"
+      ]
     }
   ]
 }

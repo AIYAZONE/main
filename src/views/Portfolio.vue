@@ -5,19 +5,19 @@
       <div class="middle-box">
         <div class="header-content">
           <h1 class="page-title">
-            <span class="block">SELECTED</span>
-            <span class="block italic text-gradient-gold">WORKS</span>
+            <span class="block">{{ t('portfolio.hero.titlePart1') }}</span>
+            <span class="block italic text-gradient-gold">{{ t('portfolio.hero.titlePart2') }}</span>
           </h1>
           <p class="page-desc">{{ content.portfolioDescription }}</p>
           
           <div class="stats-row">
             <div class="stat-item">
               <span class="stat-num">{{ portfolioStatistics?.totalProjects || 0 }}</span>
-              <span class="stat-label">PROJECTS</span>
+              <span class="stat-label">{{ t('portfolio.stats.projects') }}</span>
             </div>
             <div class="stat-item">
               <span class="stat-num">{{ formatNumber(portfolioStatistics?.totalStars || 0) }}</span>
-              <span class="stat-label">STARS</span>
+              <span class="stat-label">{{ t('portfolio.stats.stars') }}</span>
             </div>
           </div>
         </div>
@@ -38,7 +38,7 @@
     <section class="tech-stack-section">
       <div class="middle-box">
         <div class="section-title-row">
-          <h2 class="section-title">{{ t('portfolio.techStack.title') }}</h2>
+          <h2 class="section-title">{{ t('portfolio.techStack') }}</h2>
           <div class="line"></div>
         </div>
         

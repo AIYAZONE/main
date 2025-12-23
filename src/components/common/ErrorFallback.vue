@@ -2,21 +2,21 @@
   <div class="error-fallback">
     <div class="error-content">
       <div class="error-icon">⚠️</div>
-      <h3 class="error-title">{{ title || $t('errors.componentLoadFailed', 'Component failed to load') }}</h3>
-      <p class="error-message">{{ message || $t('errors.componentLoadFailedDesc', 'There was an error loading this component. Please try refreshing the page.') }}</p>
+      <h3 class="error-title">{{ title || t('errors.componentLoadFailed', 'Component failed to load') }}</h3>
+      <p class="error-message">{{ message || t('errors.componentLoadFailedDesc', 'There was an error loading this component. Please try refreshing the page.') }}</p>
       <div class="error-actions">
         <button 
           class="retry-button" 
           @click="handleRetry"
           :disabled="retrying"
         >
-          {{ retrying ? $t('common.retrying', 'Retrying...') : $t('common.retry', 'Retry') }}
+          {{ retrying ? t('common.retrying', 'Retrying...') : t('common.retry', 'Retry') }}
         </button>
         <button 
           class="refresh-button" 
           @click="handleRefresh"
         >
-          {{ $t('common.refresh', 'Refresh Page') }}
+          {{ t('common.refresh', 'Refresh Page') }}
         </button>
       </div>
     </div>

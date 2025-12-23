@@ -1,8 +1,8 @@
 <template>
   <div class="social-integration">
     <div class="social-header">
-      <h2 class="social-title">{{ $t('contact.social.title', '社交媒体') }}</h2>
-      <p class="social-description">{{ $t('contact.social.description', '关注我的最新动态和技术分享') }}</p>
+      <h2 class="social-title">{{ t('contact.social.title') }}</h2>
+      <p class="social-description">{{ t('contact.social.description') }}</p>
     </div>
 
     <!-- 社交媒体链接 -->
@@ -24,9 +24,9 @@
           <h3 class="link-title">{{ link.name }}</h3>
           <p class="link-description">{{ link.description }}</p>
           <div class="link-meta">
-            <span class="link-type">{{ $t(`contact.social.types.${link.type}`) }}</span>
+            <span class="link-type">{{ t(`contact.social.types.${link.type}`) }}</span>
             <span v-if="link.followers" class="link-followers">
-              {{ formatNumber(link.followers) }} {{ $t('contact.social.followers', '关注者') }}
+              {{ formatNumber(link.followers) }} {{ t('contact.social.followers', '关注者') }}
             </span>
           </div>
         </div>
@@ -38,18 +38,18 @@
 
     <!-- 最新动态 -->
     <div class="blog-posts" v-if="showFeed">
-      <h3 class="feed-title">{{ $t('contact.social.latestUpdates', '最新动态') }}</h3>
+      <h3 class="feed-title">{{ t('contact.social.latestUpdates') }}</h3>
       
       <div v-if="isLoadingFeed" class="feed-loading">
         <div class="loading-spinner"></div>
-        <span>{{ $t('common.loading') }}</span>
+        <span>{{ t('common.loading') }}</span>
       </div>
 
       <div v-else-if="feedError" class="feed-error">
         <span class="error-icon">⚠️</span>
         <p>{{ feedError }}</p>
         <button @click="loadSocialFeed" class="retry-btn">
-          {{ $t('common.retry') }}
+          {{ t('common.retry') }}
         </button>
       </div>
 
@@ -111,7 +111,7 @@
               rel="noopener noreferrer"
               class="feed-link"
             >
-              {{ $t('contact.social.viewPost', '查看原文') }}
+              {{ t('contact.social.viewPost', '查看原文') }}
               <span class="external-icon">↗</span>
             </a>
           </div>
@@ -121,7 +121,7 @@
 
     <!-- GitHub Activity -->
     <div class="github-activity" v-if="showFeed && socialFeed.some(post => post.platform === 'github')">
-      <h3 class="activity-title">{{ $t('contact.social.githubActivity', 'GitHub Activity') }}</h3>
+      <h3 class="activity-title">{{ t('contact.social.githubActivity', 'GitHub Activity') }}</h3>
       <div class="activity-content">
         <div 
           v-for="post in socialFeed.filter(p => p.platform === 'github')" 
@@ -131,7 +131,7 @@
           <h4 class="activity-title">{{ post.title }}</h4>
           <p class="activity-description">{{ post.content }}</p>
           <a :href="post.url" target="_blank" rel="noopener noreferrer" class="activity-link">
-            {{ $t('contact.social.viewOnGitHub', 'View on GitHub') }}
+            {{ t('contact.social.viewOnGitHub', 'View on GitHub') }}
           </a>
         </div>
       </div>

@@ -1,7 +1,7 @@
 <template>
   <nav 
     class="breadcrumb-navigation" 
-    :aria-label="$t('ui.navigation.breadcrumb')"
+    :aria-label="t('ui.navigation.breadcrumb')"
     v-if="breadcrumbs.length > 1"
   >
     <div class="container">
@@ -18,12 +18,12 @@
             class="breadcrumb-link"
           >
             <span v-if="crumb.icon" class="breadcrumb-icon">{{ crumb.icon }}</span>
-            <span class="breadcrumb-text">{{ $t(crumb.title) }}</span>
+            <span class="breadcrumb-text">{{ t(crumb.title) }}</span>
           </router-link>
           
           <span v-else class="breadcrumb-current">
             <span v-if="crumb.icon" class="breadcrumb-icon">{{ crumb.icon }}</span>
-            <span class="breadcrumb-text">{{ $t(crumb.title) }}</span>
+            <span class="breadcrumb-text">{{ t(crumb.title) }}</span>
           </span>
           
           <span 

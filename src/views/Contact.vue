@@ -16,7 +16,7 @@
           <div class="contact-details-list">
             <div class="contact-detail">
               <div class="contact-detail-label">
-                {{ t("contact.email", "邮箱") }}
+                {{ t("contact.email") }}
               </div>
               <div class="contact-detail-value">aiyazone@163.com</div>
             </div>
@@ -26,7 +26,7 @@
             </div>
             <div class="contact-detail">
               <div class="contact-detail-label">
-                {{ $t("contact.wechat", "微信") }}
+                {{ t("contact.wechat") }}
               </div>
               <div class="contact-detail-value">AIYAZONE2045</div>
             </div>

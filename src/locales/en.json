@@ -1,7 +1,72 @@
 {
+	"common": {
+		"loading": "Loading...",
+		"error": "An error occurred",
+		"retry": "Retry",
+		"close": "Close",
+		"save": "Save",
+		"cancel": "Cancel",
+		"confirm": "Confirm",
+		"edit": "Edit",
+		"delete": "Delete",
+		"view": "View",
+		"more": "More",
+		"yes": "Yes",
+		"no": "No",
+		"ok": "OK",
+		"apply": "Apply",
+		"reset": "Reset",
+		"clear": "Clear",
+		"search": "Search",
+		"filter": "Filter",
+		"sort": "Sort",
+		"refresh": "Refresh",
+		"back": "Back",
+		"next": "Next",
+		"previous": "Previous",
+		"submit": "Submit",
+		"send": "Send",
+		"copy": "Copy",
+		"share": "Share",
+		"download": "Download",
+		"upload": "Upload",
+		"print": "Print"
+	},
+	"accessibility": {
+		"skipToContent": "Skip to main content",
+		"openMenu": "Open menu",
+		"closeMenu": "Close menu",
+		"toggleTheme": "Toggle theme",
+		"toggleLanguage": "Toggle language",
+		"previousPage": "Previous page",
+		"nextPage": "Next page",
+		"currentPage": "Current page",
+		"pageOf": "Page {current} of {total}",
+		"sortBy": "Sort by {field}",
+		"filterBy": "Filter by {field}",
+		"searchResults": "Search results: {count} items",
+		"noSearchResults": "No search results",
+		"loadingContent": "Loading content",
+		"errorLoadingContent": "Error loading content",
+		"backToTop": "Back to top"
+	},
+	"search": {
+		"suggestions": "Search Suggestions"
+	},
+	"locale": {
+		"zh": {
+			"label": "中文"
+		},
+		"en": {
+			"label": "EN"
+		}
+	},
 	"nav": {
 		"home": "Home",
 		"about": "About",
+		"meta": {
+			"label": "ABOUT ME"
+		},
 		"portfolio": "Portfolio",
 		"career": "Career",
 		"contact": "Contact",
@@ -11,7 +76,8 @@
 		"blog": "Blog"
 	},
 	"footer": {
-		"allRightsReserved": "All Rights Reserved",
+		"allRightsReserved": "All rights reserved.",
+		"builtWith": "Built with",
 		"github": "GitHub",
 		"email": "Email"
 	},
@@ -76,17 +142,19 @@
 		}
 	},
 	"brand": {
-		"title": "AIYAZONE",
+		"name": "AIYAZONE",
+		"title": "Frontend Architect & Tech Lead",
 		"subtitle": "Frontend Architect & Tech Lead",
+		"metaLabel": "Personal IP & Tech Leader",
 		"intro": "{experience} years of frontend development experience, PMP/ACP certified, focusing on frontend architecture, performance optimization, and engineering",
-		"tagline": "Perfect Combination of Technical Depth and Management Breadth",
+		"tagline": "Perfect combination of technical depth and management breadth",
 		"location": "Shenzhen",
-		"valueProposition": {
-			"architecture": "Frontend Architecture Design & Implementation",
-			"performance": "Performance Optimization & Monitoring",
-			"engineering": "Engineering System Development",
-			"management": "Technical Team Management"
-		},
+		"valueProposition": [
+			"Frontend Architecture Design & Implementation",
+			"Performance Optimization & Monitoring",
+			"Engineering System Construction",
+			"Technical Team Management"
+		],
 		"certificationsData": {
 			"1": {
 				"name": "Project Management Professional (PMP)",
@@ -133,6 +201,28 @@
 		]
 	},
 	"skills": {
+		"radar": {
+			"title": "Skill Radar",
+			"views": {
+				"radar": "Radar",
+				"bars": "Bars",
+				"matrix": "Matrix"
+			},
+			"columns": {
+				"skill": "Skill",
+				"category": "Category",
+				"proficiency": "Proficiency",
+				"experience": "Experience",
+				"projects": "Projects"
+			},
+			"units": {
+				"years": "yrs",
+				"count": ""
+			}
+		},
+		"demo": {
+			"title": "Skills Showcase Demo"
+		},
 		"title": "Skills & Expertise",
 		"yearsExp": "Years Exp",
 		"years": "years",
@@ -337,34 +427,6 @@
 			}
 		}
 	},
-	"skills": {
-		"title": "Professional Skills",
-		"frontend": "Frontend Development",
-		"management": "Project Management",
-		"leadership": "Team Leadership",
-		"yearsExp": "Years Experience",
-		"level": "Proficiency",
-		"allSkills": "All Skills",
-		"skillDetails": "Skill Details",
-		"relatedProjects": "Related Projects",
-		"skillDescription": "Skill Description",
-		"proficiencyLevel": "Proficiency Level",
-		"experienceYears": "Experience Years",
-		"projectCount": "Project Count",
-		"radarChart": "Radar Chart",
-		"barChart": "Bar Chart",
-		"skillMatrix": "Skill Matrix",
-		"careerTimeline": "Career Timeline",
-		"careerMilestones": "Career Milestones",
-		"keyAchievements": "Key Achievements",
-		"techStack": "Tech Stack",
-		"workExperience": "Work Experience",
-		"companies": "Companies",
-		"achievements": "Key Achievements",
-		"currentPosition": "Present",
-		"months": "months",
-		"years": "years"
-	},
 	"portfolio": {
 		"hero": {
 			"titlePart1": "SELECTED",
@@ -375,9 +437,7 @@
 			"projects": "PROJECTS",
 			"stars": "STARS"
 		},
-		"techStack": {
-			"title": "TECH STACK"
-		},
+		"techStack": "Tech Stack",
 		"title": "Portfolio",
 		"digitalGarden": "Digital Garden",
 		"featuredWork": "Featured Work",
@@ -403,7 +463,6 @@
 		"loading": "Loading...",
 		"errorTitle": "Failed to load",
 		"retry": "Retry",
-		"techStack": "Tech Stack",
 		"keyFeatures": "Key Features",
 		"performanceScore": "Performance Score",
 		"githubStars": "GitHub Stars",
@@ -414,266 +473,158 @@
 		"groups": {
 			"digital-garden": {
 				"title": "Digital Garden",
-				"description": "Personal tech blog and knowledge sharing platform, recording technical growth and project management practices."
+				"description": "Personal technical blog and knowledge sharing platform, recording technical growth and project management practices"
 			},
 			"featured-work": {
 				"title": "Featured Work",
-				"description": "Core technical projects and innovative practices, showcasing frontend depth and architectural capabilities."
+				"description": "Core technical projects and innovative practices, demonstrating frontend technical depth and architectural capabilities"
 			},
 			"community": {
 				"title": "Community Projects",
-				"description": "Open source contributions and community participation, driving technical ecosystem development."
+				"description": "Open source contributions and community participation, promoting technical ecosystem development"
 			}
 		},
 		"projects": {
 			"aiyazone-blog": {
 				"name": "AIYAZONE Blog",
-				"description": "VitePress-based tech blog sharing frontend development and project management experiences.",
+				"description": "VitePress-based technical blog sharing frontend development and project management experiences",
 				"features": [
-					"Tech Articles",
-					"Project Management Knowledge",
+					"Technical Article Sharing",
+					"Project Management Knowledge System",
 					"Frontend Tech Stack Deep Dive",
-					"Automated Deployment",
-					"SEO Optimization"
+					"Automated Deployment Flow",
+					"SEO Optimization Practice"
 				],
-				"fullDescription": "AIYAZONE Blog is a modern technical blog built with VitePress, aimed at sharing deep articles on frontend development, architecture design, and project management. Content is written in Markdown and deployed automatically via Git workflows.",
-				"challenges": [
-					"How to implement efficient content management and publishing",
-					"How to optimize SEO and loading performance",
-					"How to design a clear knowledge navigation system"
-				],
-				"solutions": [
-					"Use VitePress as SSG combined with GitHub Actions",
-					"Custom theme and layout for better reading experience",
-					"Multi-dimensional classification and tagging system"
-				],
-				"learnings": [
-					"Deep understanding of VitePress build principles",
-					"Mastered GitHub Actions workflow",
-					"Improved technical writing skills"
-				]
+				"fullDescription": "VitePress-based technical blog sharing frontend development and project management experiences (Full details to be added)",
+				"challenges": ["Challenge 1", "Challenge 2"],
+				"solutions": ["Solution 1", "Solution 2"],
+				"learnings": ["Learning 1", "Learning 2"]
 			},
 			"fe-docs": {
-				"name": "Frontend Tech Stack Docs",
-				"description": "Systematic frontend technical knowledge system, covering basics to architecture design.",
+				"name": "Frontend Tech Docs",
+				"description": "Systematic frontend technical knowledge system, covering basics to architecture design",
 				"features": [
-					"Frontend Tech System",
-					"Best Practices",
-					"Case Studies",
-					"Performance Guide",
+					"Frontend Tech System Overview",
+					"Best Practices Summary",
+					"Case Studies and Code Examples",
+					"Performance Optimization Guide",
 					"Engineering Practices"
 				],
-				"fullDescription": "A comprehensive frontend knowledge base covering HTML/CSS/JS basics, Vue/React framework principles, engineering, and performance optimization. Aimed at helping developers build a complete technical system.",
-				"challenges": [
-					"Keeping docs up to date with fast-moving tech",
-					"Connecting fragmented knowledge points",
-					"Providing high quality examples and cases"
-				],
-				"solutions": [
-					"Regular review and updates monitoring community",
-					"Mind maps and knowledge graphs to link concepts",
-					"Runnable code examples with online tools"
-				],
-				"learnings": [
-					"Systematized frontend knowledge",
-					"Deepened understanding of underlying principles",
-					"Improved documentation and knowledge sharing skills"
-				]
+				"fullDescription": "Systematic frontend technical knowledge system, covering basics to architecture design (Full details to be added)",
+				"challenges": ["Challenge 1", "Challenge 2"],
+				"solutions": ["Solution 1", "Solution 2"],
+				"learnings": ["Learning 1", "Learning 2"]
 			},
 			"pm-knowledge": {
 				"name": "Project Management Knowledge",
-				"description": "PMP/ACP learning materials and practice sharing, boosting PM capabilities.",
+				"description": "PMP/ACP study materials and practical experience sharing for project management capability improvement",
 				"features": [
 					"PMP Knowledge Points",
 					"ACP Agile Practices",
-					"Case Analysis",
-					"Tools & Templates",
-					"Exam Experience"
+					"Project Management Case Studies",
+					"Tools and Templates Sharing",
+					"Certification Exam Experience"
 				],
-				"fullDescription": "Integrated PMP and ACP core knowledge with practical project experience, providing a pragmatic project management methodology.",
-				"challenges": [
-					"Combining theory with practical projects",
-					"Balancing waterfall and agile models",
-					"Solving common PM pain points (communication, risks)"
-				],
-				"solutions": [
-					"Real case analysis demonstrating theory application",
-					"Hybrid model best practices",
-					"Practical tools like communication templates and risk registers"
-				],
-				"learnings": [
-					"Deep understanding of PMBOK process groups and knowledge areas",
-					"Mastered agile values and principles",
-					"Improved ability to solve complex project problems"
-				]
+				"fullDescription": "PMP/ACP study materials and practical experience sharing for project management capability improvement (Full details to be added)",
+				"challenges": ["Challenge 1", "Challenge 2"],
+				"solutions": ["Solution 1", "Solution 2"],
+				"learnings": ["Learning 1", "Learning 2"]
 			},
 			"zenparticles": {
 				"name": "ZenParticles",
-				"description": "WebGL-based particle system visualization project exploring frontend graphics.",
+				"description": "WebGL-based particle system visualization project exploring frontend graphics rendering technology",
 				"features": [
-					"Real-time Rendering",
-					"GPU Acceleration",
-					"Interactive Parameters",
-					"Performance Monitor",
-					"Multiple Presets"
+					"Real-time Particle System Rendering",
+					"GPU Accelerated Computing",
+					"Interactive Parameter Adjustment",
+					"Performance Monitoring Panel",
+					"Multiple Particle Effect Presets"
 				],
-				"fullDescription": "ZenParticles is a high-performance visualization project focusing on WebGL particle effects. Using Three.js and custom Shaders, it achieves real-time rendering of million-level particles.",
-				"challenges": [
-					"Efficient rendering of massive particles in browser",
-					"Complex physical motion simulation",
-					"Maintaining high frame rate and low memory usage"
-				],
-				"solutions": [
-					"GPU Instanced Rendering technology",
-					"Custom Shaders for position and color calculation",
-					"Optimized memory management avoiding frequent GC"
-				],
-				"learnings": [
-					"Mastered WebGL and Shader programming",
-					"Understood GPU rendering pipeline",
-					"Improved graphics algorithms and performance optimization"
-				]
+				"fullDescription": "WebGL-based particle system visualization project exploring frontend graphics rendering technology (Full details to be added)",
+				"challenges": ["Challenge 1", "Challenge 2"],
+				"solutions": ["Solution 1", "Solution 2"],
+				"learnings": ["Learning 1", "Learning 2"]
 			},
 			"sun-travel": {
 				"name": "Sun Travel",
-				"description": "Modern travel planning app integrating maps, routes, and itinerary management.",
+				"description": "Modern travel planning application integrating maps, route planning, and itinerary management",
 				"features": [
 					"Smart Route Planning",
-					"Attraction Recommendation",
-					"Itinerary Management",
-					"Map Integration",
-					"User Reviews"
+					"Attraction Recommendation System",
+					"Itinerary Management Tool",
+					"Map Integration Service",
+					"User Review System"
 				],
-				"fullDescription": "Sun Travel is a one-stop travel planning app. Integrated with Amap API, it provides intelligent route planning, attraction recommendations, and itinerary management.",
-				"challenges": [
-					"Handling complex map interactions and route calculations",
-					"Data synchronization and offline access",
-					"Personalized attraction recommendations"
-				],
-				"solutions": [
-					"Encapsulated map components for unified state management",
-					"PWA technology for offline access and cloud sync",
-					"Preference-based recommendation algorithm"
-				],
-				"learnings": [
-					"Mastered Map API development and integration",
-					"Practiced PWA and offline-first architecture",
-					"Improved ability to handle complex business logic"
-				]
+				"fullDescription": "Modern travel planning application integrating maps, route planning, and itinerary management (Full details to be added)",
+				"challenges": ["Challenge 1", "Challenge 2"],
+				"solutions": ["Solution 1", "Solution 2"],
+				"learnings": ["Learning 1", "Learning 2"]
 			},
 			"personal-brand-system": {
 				"name": "Personal Brand System",
-				"description": "Personal brand website showcasing tech stack and project management capabilities.",
+				"description": "Personal brand website under development, showcasing complete tech stack and project management capabilities",
 				"features": [
-					"Responsive Showcase",
-					"Skill Visualization",
-					"Portfolio Management",
-					"SWOT Analysis",
-					"Career Roadmap",
-					"I18n Support"
+					"Responsive Brand Showcase",
+					"Skills Visualization",
+					"Portfolio Management System",
+					"SWOT Analysis Display",
+					"Career Planning Roadmap",
+					"Multi-language Internationalization Support"
 				],
-				"fullDescription": "My digital business card showcasing my tech stack, project experience, career planning, and personal brand. Built with the latest frontend stack, focusing on design and UX.",
-				"challenges": [
-					"Designing a unique and professional visual style",
-					"Building a maintainable and scalable architecture",
-					"Implementing smooth animations and interactions"
-				],
-				"solutions": [
-					"Unified visual system (typography, color, spacing)",
-					"Modular architecture with Vue 3 Composition API",
-					"CSS animations and transitions for enhanced UX"
-				],
-				"learnings": [
-					"Improved full-stack and product design skills",
-					"Practiced large-scale project architecture",
-					"Deepened understanding of personal branding"
-				]
+				"fullDescription": "Personal brand website under development, showcasing complete tech stack and project management capabilities (Full details to be added)",
+				"challenges": ["Challenge 1", "Challenge 2"],
+				"solutions": ["Solution 1", "Solution 2"],
+				"learnings": ["Learning 1", "Learning 2"]
 			},
 			"vue-performance-toolkit": {
 				"name": "Vue Performance Toolkit",
-				"description": "Performance analysis and optimization tools for Vue.js applications.",
+				"description": "Vue.js application performance analysis and optimization toolkit helping developers improve app performance",
 				"features": [
-					"Component Profiling",
+					"Component Performance Analysis",
 					"Memory Leak Detection",
-					"Render Monitoring",
-					"Optimization Suggestions",
-					"Report Export"
+					"Rendering Performance Monitoring",
+					"Optimization Suggestion Generation",
+					"Performance Report Export"
 				],
-				"fullDescription": "A suite of performance analysis and optimization tools designed for Vue.js developers to quickly identify bottlenecks and provide optimization suggestions.",
-				"challenges": [
-					"Accurately collecting Vue component performance metrics",
-					"Minimizing the tool's own performance overhead",
-					"Providing intuitive and easy-to-understand reports"
-				],
-				"solutions": [
-					"Using Vue Devtools API and Performance API",
-					"Lightweight design with lazy loading analysis modules",
-					"Visualized dashboard for performance data"
-				],
-				"learnings": [
-					"Deep understanding of Vue internals and rendering mechanism",
-					"Mastered browser performance analysis APIs",
-					"Improved tool development and DX design skills"
-				]
+				"fullDescription": "Vue.js application performance analysis and optimization toolkit helping developers improve app performance (Full details to be added)",
+				"challenges": ["Challenge 1", "Challenge 2"],
+				"solutions": ["Solution 1", "Solution 2"],
+				"learnings": ["Learning 1", "Learning 2"]
 			},
 			"frontend-interview-guide": {
 				"name": "Frontend Interview Guide",
-				"description": "Systematic interview preparation materials covering technical and management dimensions.",
+				"description": "Systematic frontend interview preparation materials covering both technical and project management dimensions",
 				"features": [
-					"Tech Question Bank",
-					"PM Interview Prep",
-					"Resume Advice",
-					"Experience Sharing",
-					"Career Planning"
+					"Technical Interview Question Bank",
+					"Project Management Interview Prep",
+					"Resume Optimization Advice",
+					"Interview Experience Sharing",
+					"Career Development Planning"
 				],
-				"fullDescription": "More than just a question bank, a complete interview preparation scheme covering basics to system design, technical depth to management breadth.",
-				"challenges": [
-					"Covering broad frontend knowledge points",
-					"Providing deep answer analysis",
-					"Helping candidates showcase comprehensive abilities"
-				],
-				"solutions": [
-					"Categorized knowledge graph",
-					"Principle analysis combined with practical cases",
-					"Added soft skills and project management content"
-				],
-				"learnings": [
-					"Consolidated frontend basic knowledge",
-					"Improved summarization and expression skills",
-					"Helped more developers pass interviews"
-				]
+				"fullDescription": "Systematic frontend interview preparation materials covering both technical and project management dimensions (Full details to be added)",
+				"challenges": ["Challenge 1", "Challenge 2"],
+				"solutions": ["Solution 1", "Solution 2"],
+				"learnings": ["Learning 1", "Learning 2"]
 			},
 			"open-source-contributions": {
 				"name": "Open Source Contributions",
-				"description": "Contributions to various open source projects including Vue ecosystem and tools.",
+				"description": "Collection of various open source contributions including Vue ecosystem, tool libraries, etc.",
 				"features": [
-					"Vue Ecosystem",
-					"Tool Libraries",
-					"Documentation",
+					"Vue Ecosystem Contribution",
+					"Tool Library Development",
+					"Documentation Improvement",
 					"Bug Fixes",
 					"Feature Enhancements"
 				],
-				"fullDescription": "A record of my participation in the open source community. Giving back through PRs, bug fixes, and documentation improvements.",
-				"challenges": [
-					"Quickly understanding large codebase structures",
-					"Following different project contribution guidelines",
-					"Efficient communication with global developers"
-				],
-				"solutions": [
-					"Reading source and docs, starting from small issues",
-					"Strict adherence to code standards and commit guides",
-					"Open and humble communication mindset"
-				],
-				"learnings": [
-					"Improved code reading and debugging skills",
-					"Learned excellent open source architecture and practices",
-					"Expanded professional network"
-				]
+				"fullDescription": "Collection of various open source contributions including Vue ecosystem, tool libraries, etc. (Full details to be added)",
+				"challenges": ["Challenge 1", "Challenge 2"],
+				"solutions": ["Solution 1", "Solution 2"],
+				"learnings": ["Learning 1", "Learning 2"]
 			}
 		}
 	},
 	"career": {
-		"header": {
+		"hero": {
 			"titlePart1": "CAREER",
 			"titlePart2": "PATH"
 		},
@@ -682,20 +633,16 @@
 			"swot": "SWOT",
 			"learning": "LEARNING"
 		},
-		"title": "Career Planning",
 		"swot": {
 			"title": "SWOT Analysis",
-			"description": "Comprehensive analysis of personal strengths, weaknesses, opportunities and threats to develop scientific career strategies",
+			"description": "SWOT analysis and strategic planning",
 			"strengths": "Strengths",
 			"weaknesses": "Weaknesses",
 			"opportunities": "Opportunities",
 			"threats": "Threats",
-			"keyInsights": "Key Insights",
-			"recommendations": "Strategic Recommendations",
-			"actionItems": "Action Items",
 			"modes": {
 				"quadrant": "Quadrant",
-				"radar": "Radar Chart",
+				"radar": "Radar",
 				"matrix": "Matrix"
 			},
 			"impact": {
@@ -704,10 +651,13 @@
 				"low": "Low Impact"
 			},
 			"categories": {
-				"technical": "Technical Skills",
-				"management": "Management Skills",
-				"market": "Market Opportunities",
-				"personal": "Personal Factors"
+				"technical": "Technical",
+				"management": "Management",
+				"market": "Market",
+				"personal": "Personal",
+				"industry": "Industry",
+				"location": "Location",
+				"hybrid": "Hybrid"
 			},
 			"priority": {
 				"high": "High Priority",
@@ -719,132 +669,32 @@
 				"in-progress": "In Progress",
 				"completed": "Completed"
 			},
-			"deadline": "Deadline",
 			"matrix": {
-				"internal": "Internal Factors",
-				"external": "External Factors"
-			}
-		},
-		"roadmap": {
-			"title": "Career Development Roadmap",
-			"description": "24-month phased learning + practical roadmap, targeting frontend architect position with 40-60K salary in Shenzhen market",
-			"targetRole": "Target Role",
-			"targetSalary": "Target Salary",
-			"currentPhase": "Current Phase",
-			"notStarted": "Not Started",
-			"objectives": "Phase Objectives",
-			"keyMilestones": "Key Milestones",
-			"learningGoals": "Learning Goals",
-			"deliverables": "Deliverables",
-			"progress": "Progress",
-			"completed": "Completed",
-			"pending": "Pending",
-			"metrics": "Metrics",
-			"dueDate": "Due Date",
-			"categories": {
-				"architecture": "Architecture",
-				"performance": "Performance",
-				"engineering": "Engineering"
+				"internal": "Internal Factors (Strengths & Weaknesses)",
+				"external": "External Factors (Opportunities & Threats)"
 			},
-			"resources": "Resources",
-			"practicalProjects": "Practical Projects",
-			"successCriteria": "Success Criteria",
-			"resourceTypes": {
-				"book": "Book",
-				"course": "Course",
-				"article": "Article",
-				"video": "Video",
-				"documentation": "Documentation"
-			},
-			"difficulty": {
-				"beginner": "Beginner",
-				"intermediate": "Intermediate",
-				"advanced": "Advanced"
-			},
-			"outputs": "Outputs",
-			"deliverableTypes": {
-				"code": "Code",
-				"document": "Document",
-				"presentation": "Presentation",
-				"analysis": "Analysis"
-			},
-			"deliverableStatus": {
-				"pending": "Pending",
-				"in-progress": "In Progress",
-				"completed": "Completed"
-			}
-		},
-		"timeline": {
-			"title": "Professional Experience",
-			"summary": {
-				"yearsExp": "Years Exp",
-				"companies": "Companies",
-				"achievements": "Achievements"
-			},
-			"present": "Present",
-			"sections": {
-				"achievements": "Key Achievements",
-				"technologies": "Tech Stack"
-			},
-			"metrics": {
-				"achievements": "Achievements",
-				"technologies": "Technologies",
-				"level": "Level"
-			},
-			"levels": {
-				"techLead": "Tech Lead",
-				"senior": "Senior Engineer",
-				"frontend": "Frontend Engineer",
-				"junior": "Junior Engineer",
-				"engineer": "Engineer"
-			},
-			"duration": {
-				"months": "months",
-				"years": "years"
-			},
-			"milestones": {
-				"title": "Career Milestones",
-				"items": {
-					"pmp-cert": {
-						"title": "PMP Certification",
-						"description": "Obtained Project Management Professional certification"
-					},
-					"acp-cert": {
-						"title": "ACP Certification",
-						"description": "Obtained Agile Certified Practitioner certification"
-					},
-					"tech-lead": {
-						"title": "Tech Lead",
-						"description": "Promoted to Tech Lead, taking on team management responsibilities"
-					},
-					"senior-dev": {
-						"title": "Senior Engineer",
-						"description": "Promoted to Senior Frontend Engineer"
-					},
-					"first-job": {
-						"title": "Career Start",
-						"description": "Started frontend development career"
-					}
-				}
-			}
+			"keyInsights": "Key Insights",
+			"recommendations": "Strategic Recommendations",
+			"actionItems": "Action Items",
+			"deadline": "Deadline"
 		},
 		"learning": {
 			"title": "Learning Path",
-			"description": "Systematic learning path with three parallel tracks: frontend architecture, performance, and engineering",
+			"description": "Learning path and skill development",
 			"totalDuration": "Total Duration",
-			"defaultDuration": "24 months",
+			"defaultDuration": "24 Months",
 			"focusAreas": "Focus Areas",
-			"threeFocus": "Three Parallel Tracks",
+			"threeFocus": "Architecture · Performance · Engineering",
 			"approach": "Approach",
-			"parallelLearning": "Parallel Learning",
-			"parallelTracks": "Three Parallel Learning Tracks",
+			"parallelLearning": "Parallel Tracks",
+			"parallelTracks": "Parallel Learning Tracks",
 			"tracks": {
-				"architecture": "Frontend Architecture",
-				"architectureDesc": "System design, architecture patterns, technology selection",
-				"performance": "Performance Optimization",
-				"performanceDesc": "Monitoring systems, optimization strategies, performance analysis",
+				"architecture": "Architecture",
+				"architectureDesc": "From system design to micro-frontends",
+				"performance": "Performance",
+				"performanceDesc": "UX and core metrics optimization",
 				"engineering": "Engineering",
-				"engineeringDesc": "Build tools, CI/CD, code quality"
+				"engineeringDesc": "Standardization and automation"
 			},
 			"phaseTimeline": "Phase Timeline",
 			"focus": {
@@ -854,225 +704,138 @@
 			},
 			"learningGoals": "Learning Goals",
 			"practicalProjects": "Practical Projects",
+			"expectedOutputs": "Expected Outputs",
 			"successCriteria": "Success Criteria",
 			"difficulty": {
 				"beginner": "Beginner",
 				"intermediate": "Intermediate",
 				"advanced": "Advanced"
 			},
-			"expectedOutputs": "Expected Outputs",
 			"recommendedResources": "Recommended Resources",
 			"resources": {
-				"books": "Recommended Books",
-				"courses": "Recommended Courses",
-				"practices": "Practice Recommendations"
+				"books": "Books",
+				"courses": "Courses",
+				"practices": "Practices"
 			},
 			"priority": {
-				"high": "High Priority",
-				"medium": "Medium Priority",
-				"low": "Low Priority"
+				"high": "Essential",
+				"medium": "Optional",
+				"low": "Extra"
 			},
 			"successMetrics": "Success Metrics",
 			"metrics": {
 				"technical": "Technical Metrics",
-				"career": "Career Metrics",
-				"impact": "Impact Metrics",
 				"technicalItems": {
-					"architecture": "Independently design large-scale system architecture",
-					"performance": "Establish comprehensive performance optimization system",
-					"engineering": "Build enterprise-level engineering platform"
+					"architecture": "Design large-scale system architecture",
+					"performance": "Master full-link performance optimization",
+					"engineering": "Build complete engineering system"
 				},
+				"career": "Career Metrics",
 				"careerItems": {
-					"position": "Obtain frontend architect position",
-					"salary": "Achieve 40-60K salary target",
-					"recognition": "Gain industry technical recognition"
+					"position": "Promote to Senior Architect",
+					"salary": "Salary increase 30%+",
+					"recognition": "Industry technical recognition"
 				},
+				"impact": "Impact Metrics",
 				"impactItems": {
-					"team": "Guide team technical growth",
-					"projects": "Lead important project success",
-					"industry": "Build technical influence"
+					"team": "Improve team efficiency",
+					"projects": "Lead core projects",
+					"industry": "Publish high-quality articles"
 				}
 			},
 			"trackPhases": {
 				"architecture": {
 					"1": {
-						"title": "Architecture Fundamentals (0-3 months)",
-						"duration": "3 months",
+						"title": "Modularity & Components",
+						"duration": "1-3 Months",
 						"goals": [
-							"Master frontend architecture principles",
-							"Understand micro-frontend patterns",
-							"Learn system design methodology",
-							"Establish architecture mindset"
+							"Advanced Vue/React patterns",
+							"SOLID principles",
+							"Design system basics"
 						],
 						"projects": [
 							{
-								"name": "Personal site refactoring",
-								"estimatedTime": "40h"
-							},
-							{
-								"name": "Micro-frontend demo",
-								"estimatedTime": "60h"
+								"name": "Enterprise Component Library",
+								"estimatedTime": "4 weeks"
 							}
 						]
 					},
 					"2": {
-						"title": "Architecture Practice (3-9 months)",
-						"duration": "6 months",
+						"title": "Frontend Engineering Arch",
+						"duration": "4-8 Months",
 						"goals": [
-							"Participate in large-scale architecture design",
-							"Practice modular architecture",
-							"Master architecture decision making",
-							"Establish evaluation system"
+							"Monorepo practice",
+							"Micro-frontends",
+							"BFF design"
 						],
 						"projects": [
 							{
-								"name": "Enterprise architecture design",
-								"estimatedTime": "120h"
-							},
-							{
-								"name": "Architecture migration project",
-								"estimatedTime": "80h"
-							}
-						]
-					},
-					"3": {
-						"title": "Architecture Expert (9-18 months)",
-						"duration": "9 months",
-						"goals": [
-							"Large system architecture capability",
-							"Form personal methodology",
-							"Build technical influence",
-							"Guide team practice"
-						],
-						"projects": [
-							{
-								"name": "Architecture whitepaper",
-								"estimatedTime": "100h"
-							},
-							{
-								"name": "Open source tool development",
-								"estimatedTime": "150h"
+								"name": "Micro-frontend Console",
+								"estimatedTime": "6 weeks"
 							}
 						]
 					}
 				},
 				"performance": {
 					"1": {
-						"title": "Performance Basics (0-4 months)",
-						"duration": "4 months",
+						"title": "Metrics & Analysis",
+						"duration": "1-2 Months",
 						"goals": [
-							"Master monitoring system",
-							"Understand optimization principles",
-							"Establish testing methods",
-							"Learn profiling tools"
+							"Web Vitals details",
+							"Chrome DevTools advanced",
+							"Performance monitoring"
 						],
 						"projects": [
 							{
-								"name": "Monitoring platform setup",
-								"estimatedTime": "50h"
-							},
-							{
-								"name": "Optimization case study",
-								"estimatedTime": "30h"
+								"name": "Performance SDK",
+								"estimatedTime": "3 weeks"
 							}
 						]
 					},
 					"2": {
-						"title": "Optimization Practice (4-12 months)",
-						"duration": "8 months",
+						"title": "Rendering & Network",
+						"duration": "3-6 Months",
 						"goals": [
-							"Full-stack optimization",
-							"Establish optimization process",
-							"Master advanced techniques",
-							"Form optimization solutions"
+							"SSR/SSG practice",
+							"Service Worker cache",
+							"WASM application"
 						],
 						"projects": [
 							{
-								"name": "Large app optimization",
-								"estimatedTime": "100h"
-							},
-							{
-								"name": "Optimization tool development",
-								"estimatedTime": "80h"
-							}
-						]
-					},
-					"3": {
-						"title": "Performance Expert (12-20 months)",
-						"duration": "8 months",
-						"goals": [
-							"Build optimization system",
-							"Guide team practice",
-							"Build technical influence",
-							"Push industry standards"
-						],
-						"projects": [
-							{
-								"name": "Best practices guide",
-								"estimatedTime": "120h"
-							},
-							{
-								"name": "Training system",
-								"estimatedTime": "60h"
+								"name": "Instant H5 Page",
+								"estimatedTime": "4 weeks"
 							}
 						]
 					}
 				},
 				"engineering": {
 					"1": {
-						"title": "Engineering Basics (0-3 months)",
-						"duration": "3 months",
+						"title": "Standardization & Automation",
+						"duration": "1-3 Months",
 						"goals": [
-							"Master build tools",
-							"Understand CI/CD",
-							"Learn code quality",
-							"Establish engineering mindset"
+							"ESLint/Prettier system",
+							"Git Hooks automation",
+							"CI/CD pipeline"
 						],
 						"projects": [
 							{
-								"name": "Scaffolding development",
-								"estimatedTime": "40h"
-							},
-							{ "name": "CI/CD setup", "estimatedTime": "30h" }
-						]
-					},
-					"2": {
-						"title": "Engineering Practice (3-12 months)",
-						"duration": "9 months",
-						"goals": [
-							"Build engineering system",
-							"Implement automated testing",
-							"Push code standardization",
-							"Optimize efficiency tools"
-						],
-						"projects": [
-							{
-								"name": "Engineering platform",
-								"estimatedTime": "150h"
-							},
-							{
-								"name": "Testing system",
-								"estimatedTime": "100h"
+								"name": "Automated CLI",
+								"estimatedTime": "3 weeks"
 							}
 						]
 					},
-					"3": {
-						"title": "Engineering Expert (12-24 months)",
-						"duration": "12 months",
+					"2": {
+						"title": "Build Tools Deep Dive",
+						"duration": "4-6 Months",
 						"goals": [
-							"Design enterprise solutions",
-							"Establish standards",
-							"Promote best practices",
-							"Cultivate engineering team"
+							"Vite/Webpack plugins",
+							"AST transformation",
+							"Serverless practice"
 						],
 						"projects": [
 							{
-								"name": "Enterprise standards",
-								"estimatedTime": "80h"
-							},
-							{
-								"name": "Open source project",
-								"estimatedTime": "200h"
+								"name": "Custom Build Plugin",
+								"estimatedTime": "4 weeks"
 							}
 						]
 					}
@@ -1081,56 +844,83 @@
 			"resourceItems": {
 				"books": {
 					"1": {
-						"title": "Frontend Architecture: From Entry to Micro-frontends",
-						"description": "Comprehensive guide to architecture design",
-						"estimatedTime": "40h"
+						"title": "Professional JavaScript for Web Developers",
+						"description": "The Red Book, solid foundation",
+						"estimatedTime": "2 months",
+						"priority": "high"
 					},
 					"2": {
-						"title": "Web Performance Authority Guide",
-						"description": "Deep dive into web performance theory and practice",
-						"estimatedTime": "35h"
-					},
-					"3": {
-						"title": "Frontend Engineering Design & Practice",
-						"description": "Systematic introduction to engineering construction",
-						"estimatedTime": "30h"
+						"title": "Clean Architecture",
+						"description": "A Craftsman's Guide to Software Structure",
+						"estimatedTime": "1 month",
+						"priority": "high"
 					}
 				},
 				"courses": {
 					"1": {
-						"title": "Frontend Architect Bootcamp",
-						"description": "Systematic architect capability training",
-						"estimatedTime": "80h"
-					},
-					"2": {
-						"title": "Web Performance Optimization",
-						"description": "Real-world project based optimization course",
-						"estimatedTime": "60h"
-					},
-					"3": {
-						"title": "Modern Frontend Engineering",
-						"description": "Covering build, test, deploy practices",
-						"estimatedTime": "50h"
+						"title": "Vue.js 3 Deep Dive",
+						"description": "Understand Vue core principles",
+						"estimatedTime": "1 month",
+						"priority": "high"
 					}
 				},
 				"practices": {
 					"1": {
 						"title": "Open Source Contribution",
-						"description": "Participate in famous projects, build influence",
-						"estimatedTime": "Ongoing"
-					},
-					"2": {
-						"title": "Tech Blogging",
-						"description": "Regular writing, build personal brand",
-						"estimatedTime": "4h/week"
-					},
-					"3": {
-						"title": "Tech Speaking",
-						"description": "Share at conferences and internal teams",
-						"estimatedTime": "8h/month"
+						"description": "Participate in major open source PRs",
+						"estimatedTime": "Long term",
+						"priority": "medium"
 					}
 				}
 			}
+		},
+		"roadmap": {
+			"title": "Development Roadmap",
+			"description": "24-month phased learning + practice roadmap, aiming for Senior Frontend Architect",
+			"targetRole": "Target Role",
+			"targetSalary": "Target Salary",
+			"currentPhase": "Current Phase",
+			"notStarted": "Not Started",
+			"objectives": "Objectives",
+			"keyMilestones": "Key Milestones",
+			"metrics": "Metrics",
+			"completed": "Completed",
+			"pending": "Pending",
+			"learningGoals": "Learning Goals",
+			"categories": {
+				"architecture": "Architecture",
+				"performance": "Performance",
+				"engineering": "Engineering"
+			},
+			"resources": "Resources",
+			"resourceTypes": {
+				"book": "Book",
+				"course": "Course",
+				"article": "Article",
+				"project": "Project"
+			},
+			"practicalProjects": "Practical Projects",
+			"difficulty": {
+				"beginner": "Beginner",
+				"intermediate": "Intermediate",
+				"advanced": "Advanced"
+			},
+			"outputs": "Outputs",
+			"successCriteria": "Success Criteria",
+			"deliverables": "Deliverables",
+			"deliverableTypes": {
+				"document": "Document",
+				"code": "Code",
+				"presentation": "Presentation",
+				"analysis": "Analysis"
+			},
+			"dueDate": "Due Date",
+			"deliverableStatus": {
+				"pending": "Pending",
+				"in-progress": "In Progress",
+				"completed": "Completed"
+			},
+			"progress": "Overall Progress"
 		}
 	},
 	"contact": {
@@ -1394,328 +1184,6 @@
 			"confirmDelete": "Are you sure you want to delete?",
 			"confirmLeave": "Are you sure you want to leave this page?",
 			"dataLoss": "This action may result in data loss"
-		}
-	},
-	"accessibility": {
-		"skipToContent": "Skip to main content",
-		"openMenu": "Open menu",
-		"closeMenu": "Close menu",
-		"toggleTheme": "Toggle theme",
-		"toggleLanguage": "Toggle language",
-		"previousPage": "Previous page",
-		"nextPage": "Next page",
-		"currentPage": "Current page",
-		"pageOf": "Page {current} of {total}",
-		"sortBy": "Sort by {field}",
-		"filterBy": "Filter by {field}",
-		"searchResults": "Search results: {count} items",
-		"noSearchResults": "No search results",
-		"loadingContent": "Loading content",
-		"errorLoadingContent": "Error loading content",
-		"backToTop": "Back to top"
-	},
-	"common": {
-		"loading": "Loading...",
-		"error": "An error occurred",
-		"retry": "Retry",
-		"close": "Close",
-		"save": "Save",
-		"cancel": "Cancel",
-		"confirm": "Confirm",
-		"edit": "Edit",
-		"delete": "Delete",
-		"view": "View",
-		"more": "More",
-		"yes": "Yes",
-		"no": "No",
-		"ok": "OK",
-		"apply": "Apply",
-		"reset": "Reset",
-		"clear": "Clear",
-		"search": "Search",
-		"filter": "Filter",
-		"sort": "Sort",
-		"refresh": "Refresh",
-		"back": "Back",
-		"next": "Next",
-		"previous": "Previous",
-		"submit": "Submit",
-		"send": "Send",
-		"copy": "Copy",
-		"share": "Share",
-		"download": "Download",
-		"upload": "Upload",
-		"print": "Print"
-	},
-	"search": {
-		"suggestions": "Search Suggestions"
-	},
-	"footer": {
-		"allRightsReserved": "All rights reserved.",
-		"builtWith": "Built with",
-		"github": "GitHub",
-		"email": "Email"
-	},
-	"projectData": {
-		"groups": {
-			"digital-garden": {
-				"title": "Digital Garden",
-				"description": "Personal technical blog and knowledge sharing platform, recording technical growth and project management practices"
-			},
-			"featured-work": {
-				"title": "Featured Work",
-				"description": "Core technical projects and innovative practices, demonstrating frontend technical depth and architectural capabilities"
-			},
-			"community": {
-				"title": "Community Projects",
-				"description": "Open source contributions and community participation, promoting technical ecosystem development"
-			}
-		},
-		"projects": {
-			"aiyazone-blog": {
-				"name": "AIYAZONE Blog",
-				"description": "VitePress-based technical blog sharing frontend development and project management experiences",
-				"features": [
-					"Technical Article Sharing",
-					"Project Management Knowledge System",
-					"Frontend Tech Stack Deep Dive",
-					"Automated Deployment Flow",
-					"SEO Optimization Practice"
-				],
-				"fullDescription": "VitePress-based technical blog sharing frontend development and project management experiences - This is a detailed project description containing background, goals, implementation, and technical details.",
-				"challenges": [
-					"Performance Optimization Challenges",
-					"User Experience Design",
-					"Technical Architecture Selection"
-				],
-				"solutions": [
-					"Lazy Loading and Code Splitting",
-					"Responsive Design Implementation",
-					"Modern Frontend Tech Stack"
-				],
-				"learnings": [
-					"Deep Understanding of Frontend Performance",
-					"Mastering Modern Dev Tools",
-					"Improving UX Design Capabilities"
-				]
-			},
-			"fe-docs": {
-				"name": "Frontend Tech Docs",
-				"description": "Systematic frontend technical knowledge system, covering basics to architecture design",
-				"features": [
-					"Frontend Tech System Overview",
-					"Best Practices Summary",
-					"Case Studies and Code Examples",
-					"Performance Optimization Guide",
-					"Engineering Practices"
-				],
-				"fullDescription": "Systematic frontend technical knowledge system, covering basics to architecture design - This is a detailed project description containing background, goals, implementation, and technical details.",
-				"challenges": [
-					"Performance Optimization Challenges",
-					"User Experience Design",
-					"Technical Architecture Selection"
-				],
-				"solutions": [
-					"Lazy Loading and Code Splitting",
-					"Responsive Design Implementation",
-					"Modern Frontend Tech Stack"
-				],
-				"learnings": [
-					"Deep Understanding of Frontend Performance",
-					"Mastering Modern Dev Tools",
-					"Improving UX Design Capabilities"
-				]
-			},
-			"pm-knowledge": {
-				"name": "Project Management Knowledge",
-				"description": "PMP/ACP study materials and practical experience sharing for project management capability improvement",
-				"features": [
-					"PMP Knowledge Points",
-					"ACP Agile Practices",
-					"Project Management Case Studies",
-					"Tools and Templates Sharing",
-					"Certification Exam Experience"
-				],
-				"fullDescription": "PMP/ACP study materials and practical experience sharing for project management capability improvement - This is a detailed project description containing background, goals, implementation, and technical details.",
-				"challenges": [
-					"Performance Optimization Challenges",
-					"User Experience Design",
-					"Technical Architecture Selection"
-				],
-				"solutions": [
-					"Lazy Loading and Code Splitting",
-					"Responsive Design Implementation",
-					"Modern Frontend Tech Stack"
-				],
-				"learnings": [
-					"Deep Understanding of Frontend Performance",
-					"Mastering Modern Dev Tools",
-					"Improving UX Design Capabilities"
-				]
-			},
-			"zenparticles": {
-				"name": "ZenParticles",
-				"description": "WebGL-based particle system visualization project exploring frontend graphics rendering technology",
-				"features": [
-					"Real-time Particle System Rendering",
-					"GPU Accelerated Computing",
-					"Interactive Parameter Adjustment",
-					"Performance Monitoring Panel",
-					"Multiple Particle Effect Presets"
-				],
-				"fullDescription": "WebGL-based particle system visualization project exploring frontend graphics rendering technology - This is a detailed project description containing background, goals, implementation, and technical details.",
-				"challenges": [
-					"Performance Optimization Challenges",
-					"User Experience Design",
-					"Technical Architecture Selection"
-				],
-				"solutions": [
-					"Lazy Loading and Code Splitting",
-					"Responsive Design Implementation",
-					"Modern Frontend Tech Stack"
-				],
-				"learnings": [
-					"Deep Understanding of Frontend Performance",
-					"Mastering Modern Dev Tools",
-					"Improving UX Design Capabilities"
-				]
-			},
-			"sun-travel": {
-				"name": "Sun Travel",
-				"description": "Modern travel planning application integrating maps, route planning, and itinerary management",
-				"features": [
-					"Smart Route Planning",
-					"Attraction Recommendation System",
-					"Itinerary Management Tool",
-					"Map Integration Service",
-					"User Review System"
-				],
-				"fullDescription": "Modern travel planning application integrating maps, route planning, and itinerary management - This is a detailed project description containing background, goals, implementation, and technical details.",
-				"challenges": [
-					"Performance Optimization Challenges",
-					"User Experience Design",
-					"Technical Architecture Selection"
-				],
-				"solutions": [
-					"Lazy Loading and Code Splitting",
-					"Responsive Design Implementation",
-					"Modern Frontend Tech Stack"
-				],
-				"learnings": [
-					"Deep Understanding of Frontend Performance",
-					"Mastering Modern Dev Tools",
-					"Improving UX Design Capabilities"
-				]
-			},
-			"personal-brand-system": {
-				"name": "Personal Brand System",
-				"description": "Personal brand website under development, showcasing complete tech stack and project management capabilities",
-				"features": [
-					"Responsive Brand Showcase",
-					"Skills Visualization",
-					"Portfolio Management System",
-					"SWOT Analysis Display",
-					"Career Planning Roadmap",
-					"Multi-language Internationalization Support"
-				],
-				"fullDescription": "Personal brand website under development, showcasing complete tech stack and project management capabilities - This is a detailed project description containing background, goals, implementation, and technical details.",
-				"challenges": [
-					"Performance Optimization Challenges",
-					"User Experience Design",
-					"Technical Architecture Selection"
-				],
-				"solutions": [
-					"Lazy Loading and Code Splitting",
-					"Responsive Design Implementation",
-					"Modern Frontend Tech Stack"
-				],
-				"learnings": [
-					"Deep Understanding of Frontend Performance",
-					"Mastering Modern Dev Tools",
-					"Improving UX Design Capabilities"
-				]
-			},
-			"vue-performance-toolkit": {
-				"name": "Vue Performance Toolkit",
-				"description": "Vue.js application performance analysis and optimization toolkit helping developers improve app performance",
-				"features": [
-					"Component Performance Analysis",
-					"Memory Leak Detection",
-					"Rendering Performance Monitoring",
-					"Optimization Suggestion Generation",
-					"Performance Report Export"
-				],
-				"fullDescription": "Vue.js application performance analysis and optimization toolkit helping developers improve app performance - This is a detailed project description containing background, goals, implementation, and technical details.",
-				"challenges": [
-					"Performance Optimization Challenges",
-					"User Experience Design",
-					"Technical Architecture Selection"
-				],
-				"solutions": [
-					"Lazy Loading and Code Splitting",
-					"Responsive Design Implementation",
-					"Modern Frontend Tech Stack"
-				],
-				"learnings": [
-					"Deep Understanding of Frontend Performance",
-					"Mastering Modern Dev Tools",
-					"Improving UX Design Capabilities"
-				]
-			},
-			"frontend-interview-guide": {
-				"name": "Frontend Interview Guide",
-				"description": "Systematic frontend interview preparation materials covering both technical and project management dimensions",
-				"features": [
-					"Technical Interview Question Bank",
-					"Project Management Interview Prep",
-					"Resume Optimization Advice",
-					"Interview Experience Sharing",
-					"Career Development Planning"
-				],
-				"fullDescription": "Systematic frontend interview preparation materials covering both technical and project management dimensions - This is a detailed project description containing background, goals, implementation, and technical details.",
-				"challenges": [
-					"Performance Optimization Challenges",
-					"User Experience Design",
-					"Technical Architecture Selection"
-				],
-				"solutions": [
-					"Lazy Loading and Code Splitting",
-					"Responsive Design Implementation",
-					"Modern Frontend Tech Stack"
-				],
-				"learnings": [
-					"Deep Understanding of Frontend Performance",
-					"Mastering Modern Dev Tools",
-					"Improving UX Design Capabilities"
-				]
-			},
-			"open-source-contributions": {
-				"name": "Open Source Contributions",
-				"description": "Collection of various open source contributions including Vue ecosystem, tool libraries, etc.",
-				"features": [
-					"Vue Ecosystem Contribution",
-					"Tool Library Development",
-					"Documentation Improvement",
-					"Bug Fixes",
-					"Feature Enhancements"
-				],
-				"fullDescription": "Collection of various open source contributions including Vue ecosystem, tool libraries, etc. - This is a detailed project description containing background, goals, implementation, and technical details.",
-				"challenges": [
-					"Performance Optimization Challenges",
-					"User Experience Design",
-					"Technical Architecture Selection"
-				],
-				"solutions": [
-					"Lazy Loading and Code Splitting",
-					"Responsive Design Implementation",
-					"Modern Frontend Tech Stack"
-				],
-				"learnings": [
-					"Deep Understanding of Frontend Performance",
-					"Mastering Modern Dev Tools",
-					"Improving UX Design Capabilities"
-				]
-			}
 		}
 	},
 	"careerData": {

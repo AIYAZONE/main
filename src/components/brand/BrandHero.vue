@@ -5,7 +5,7 @@
         <!-- Left: Text Content -->
         <div class="hero-text-column">
           <div class="hero-meta">
-            <span class="meta-label">Personal IP & Tech Leader</span>
+            <span class="meta-label">{{ $t('brand.metaLabel') }}</span>
             <div class="meta-line"></div>
           </div>
 
@@ -87,19 +87,15 @@
     <!-- Background Decor -->
     <div class="hero-glow"></div>
   </section>
-</template>
-
-<script lang="ts">
+</template><script setup lang="ts">
 import { defineComponent } from "vue";
-
-export default defineComponent({ name: "BrandHero" });
-</script>
-
-<script setup lang="ts">
 import type { Certification } from "../../types/brand";
 
-interface Props {
-  title: string;
+defineOptions({
+  name: "BrandHero"
+});
+
+interface Props {title: string;
   subtitle: string;
   intro: string;
   profileImage?: string;

@@ -84,13 +84,13 @@
       <!-- Card Content -->
       <div class="card-content">
         <div class="project-header">
-          <h3 class="project-title">{{ project.name }}</h3>
+          <h3 class="project-title">{{ $t(`projectData.projects.${project.id}.name`) }}</h3>
           <div class="project-category">
             <span class="category-tag">{{ getCategoryLabel(project.category) }}</span>
           </div>
         </div>
 
-        <p class="project-description">{{ project.description }}</p>
+        <p class="project-description">{{ $t(`projectData.projects.${project.id}.description`) }}</p>
 
         <!-- Tech Stack -->
         <div class="tech-stack" v-if="project.techStack.length > 0">

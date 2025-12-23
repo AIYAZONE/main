@@ -1,16 +1,16 @@
 <template>
   <div class="skill-radar">
     <div class="skill-radar__header">
-      <h3 class="skill-radar__title">{{ title || '技能雷达图' }}</h3>
+      <h3 class="skill-radar__title">{{ title || t('skills.radar.title') }}</h3>
       <div class="skill-radar__controls">
         <button
           v-for="view in viewModes"
           :key="view.value"
           :class="[
             'skill-radar__view-btn',
-            { 'skill-radar__view-btn--active': currentView === view.value }
+            { 'skill-radar__view-btn--active': currentView === view.value },
           ]"
-          @click="setView(view.value as 'radar' | 'matrix' | 'bars')"
+          @click="setView(view.value)"
         >
           {{ view.label }}
         </button>
@@ -36,7 +36,9 @@
               :style="{ backgroundColor: getColor(index) }"
             ></div>
             <span class="skill-radar__legend-label">{{ category.name }}</span>
-            <span class="skill-radar__legend-value">{{ category.averageLevel.toFixed(1) }}/10</span>
+            <span class="skill-radar__legend-value"
+              >{{ category.averageLevel.toFixed(1) }}/10</span
+            >
           </div>
         </div>
       </div>
@@ -44,18 +46,14 @@
       <div v-else-if="currentView === 'matrix'" class="skill-radar__matrix">
         <div class="skill-matrix">
           <div class="skill-matrix__header">
-            <div class="skill-matrix__cell skill-matrix__cell--header">技能</div>
-            <div class="skill-matrix__cell skill-matrix__cell--header">类别</div>
-            <div class="skill-matrix__cell skill-matrix__cell--header">熟练度</div>
-            <div class="skill-matrix__cell skill-matrix__cell--header">经验年限</div>
-            <div class="skill-matrix__cell skill-matrix__cell--header">项目数量</div>
+            <div class="skill-matrix__cell skill-matrix__cell--header">{{ t("skills.radar.columns.skill") }}</div>
+            <div class="skill-matrix__cell skill-matrix__cell--header">{{ t("skills.radar.columns.category") }}</div>
+            <div class="skill-matrix__cell skill-matrix__cell--header">{{ t("skills.radar.columns.proficiency") }}</div>
+            <div class="skill-matrix__cell skill-matrix__cell--header">{{ t("skills.radar.columns.experience") }}</div>
+            <div class="skill-matrix__cell skill-matrix__cell--header">{{ t("skills.radar.columns.projects") }}</div>
           </div>
           <div class="skill-matrix__body">
-            <div
-              v-for="skill in allSkills"
-              :key="skill.id"
-              class="skill-matrix__row"
-            >
+            <div v-for="skill in allSkills" :key="skill.id" class="skill-matrix__row">
               <div class="skill-matrix__cell">{{ skill.name }}</div>
               <div class="skill-matrix__cell">
                 <span class="skill-category-tag" :data-type="skill.categoryType">
@@ -73,8 +71,12 @@
                   <span class="skill-level-text">{{ skill.level }}/10</span>
                 </div>
               </div>
-              <div class="skill-matrix__cell">{{ skill.yearsOfExperience }} 年</div>
-              <div class="skill-matrix__cell">{{ skill.projects.length }} 个</div>
+              <div class="skill-matrix__cell">
+                {{ skill.yearsOfExperience }} {{ t("skills.radar.units.years") }}
+              </div>
+              <div class="skill-matrix__cell">
+                {{ skill.projects.length }} {{ t("skills.radar.units.count") }}
+              </div>
             </div>
           </div>
         </div>
@@ -89,14 +91,16 @@
           >
             <div class="skill-bar__header">
               <h4 class="skill-bar__title">{{ category.name }}</h4>
-              <span class="skill-bar__value">{{ category.averageLevel.toFixed(1) }}/10</span>
+              <span class="skill-bar__value"
+                >{{ category.averageLevel.toFixed(1) }}/10</span
+              >
             </div>
             <div class="skill-bar__container">
               <div
                 class="skill-bar__fill"
                 :style="{
                   width: `${(category.averageLevel / 10) * 100}%`,
-                  backgroundColor: getColor(index)
+                  backgroundColor: getColor(index),
                 }"
               ></div>
             </div>
@@ -117,8 +121,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, nextTick, watch } from 'vue';
-import type { SkillCategory, Skill } from '../../types/skills';
+import { ref, computed, onMounted, nextTick, watch } from "vue";
+import { useI18n } from "vue-i18n";
+import type { SkillCategory, Skill } from "../../types/skills";
 
 // Props
 interface Props {
@@ -130,55 +135,59 @@ interface Props {
 
 const props = withDefaults(defineProps<Props>(), {
   maxLevel: 10,
-  size: 400
+  size: 400,
 });
+
+const { t } = useI18n();
 
 // Reactive state
 const radarCanvas = ref<HTMLCanvasElement | null>(null);
-const currentView = ref<'radar' | 'matrix' | 'bars'>('radar');
+const currentView = ref<"radar" | "matrix" | "bars">("radar");
 
 // Computed properties
 const canvasSize = computed(() => props.size);
 
 const viewModes = computed(() => [
-  { value: 'radar', label: '雷达图' },
-  { value: 'bars', label: '条形图' },
-  { value: 'matrix', label: '技能矩阵' }
+  { value: "radar", label: t("skills.radar.views.radar") },
+  { value: "bars", label: t("skills.radar.views.bars") },
+  { value: "matrix", label: t("skills.radar.views.matrix") },
 ]);
 
 const processedCategories = computed(() => {
-  return props.categories.map(category => {
-    const averageLevel = category.skills.length > 0
-      ? category.skills.reduce((sum, skill) => sum + skill.level, 0) / category.skills.length
-      : 0;
-    
-    const topSkills = [...category.skills]
-      .sort((a, b) => b.level - a.level)
-      .slice(0, 3);
+  return props.categories.map((category) => {
+    const averageLevel =
+      category.skills.length > 0
+        ? category.skills.reduce((sum, skill) => sum + skill.level, 0) /
+          category.skills.length
+        : 0;
+
+    const topSkills = [...category.skills].sort((a, b) => b.level - a.level).slice(0, 3);
 
     return {
       ...category,
       averageLevel,
       topSkills,
-      skillCount: category.skills.length
+      skillCount: category.skills.length,
     };
   });
 });
 
 const allSkills = computed(() => {
-  return props.categories.flatMap(category =>
-    category.skills.map(skill => ({
-      ...skill,
-      categoryName: category.name,
-      categoryType: category.type
-    }))
-  ).sort((a, b) => b.level - a.level);
+  return props.categories
+    .flatMap((category) =>
+      category.skills.map((skill) => ({
+        ...skill,
+        categoryName: category.name,
+        categoryType: category.type,
+      }))
+    )
+    .sort((a, b) => b.level - a.level);
 });
 
 // Methods
-const setView = (view: 'radar' | 'matrix' | 'bars') => {
-  currentView.value = view;
-  if (view === 'radar') {
+const setView = (view: string) => {
+  currentView.value = view as "radar" | "matrix" | "bars";
+  if (view === "radar") {
     nextTick(() => {
       drawRadarChart();
     });
@@ -187,14 +196,14 @@ const setView = (view: 'radar' | 'matrix' | 'bars') => {
 
 const getColor = (index: number): string => {
   const colors = [
-    '#3B82F6', // Blue
-    '#10B981', // Green
-    '#F59E0B', // Yellow
-    '#EF4444', // Red
-    '#8B5CF6', // Purple
-    '#06B6D4', // Cyan
-    '#F97316', // Orange
-    '#84CC16'  // Lime
+    "#3B82F6", // Blue
+    "#10B981", // Green
+    "#F59E0B", // Yellow
+    "#EF4444", // Red
+    "#8B5CF6", // Purple
+    "#06B6D4", // Cyan
+    "#F97316", // Orange
+    "#84CC16", // Lime
   ];
   return colors[index % colors.length];
 };
@@ -203,7 +212,7 @@ const drawRadarChart = () => {
   if (!radarCanvas.value) return;
 
   const canvas = radarCanvas.value;
-  const ctx = canvas.getContext('2d');
+  const ctx = canvas.getContext("2d");
   if (!ctx) return;
 
   const size = canvasSize.value;
@@ -224,8 +233,13 @@ const drawRadarChart = () => {
   drawLabels(ctx, center, radius, categories);
 };
 
-const drawGrid = (ctx: CanvasRenderingContext2D, center: number, radius: number, segments: number) => {
-  ctx.strokeStyle = '#E5E7EB';
+const drawGrid = (
+  ctx: CanvasRenderingContext2D,
+  center: number,
+  radius: number,
+  segments: number
+) => {
+  ctx.strokeStyle = "#E5E7EB";
   ctx.lineWidth = 1;
 
   // Draw concentric circles
@@ -240,17 +254,14 @@ const drawGrid = (ctx: CanvasRenderingContext2D, center: number, radius: number,
     const angle = (i * 2 * Math.PI) / segments - Math.PI / 2;
     ctx.beginPath();
     ctx.moveTo(center, center);
-    ctx.lineTo(
-      center + radius * Math.cos(angle),
-      center + radius * Math.sin(angle)
-    );
+    ctx.lineTo(center + radius * Math.cos(angle), center + radius * Math.sin(angle));
     ctx.stroke();
   }
 
   // Draw level indicators
-  ctx.fillStyle = '#9CA3AF';
-  ctx.font = '12px sans-serif';
-  ctx.textAlign = 'center';
+  ctx.fillStyle = "#9CA3AF";
+  ctx.font = "12px sans-serif";
+  ctx.textAlign = "center";
   for (let i = 1; i <= 5; i++) {
     const levelRadius = (radius * i) / 5;
     const level = (props.maxLevel * i) / 5;
@@ -258,7 +269,12 @@ const drawGrid = (ctx: CanvasRenderingContext2D, center: number, radius: number,
   }
 };
 
-const drawData = (ctx: CanvasRenderingContext2D, center: number, radius: number, categories: any[]) => {
+const drawData = (
+  ctx: CanvasRenderingContext2D,
+  center: number,
+  radius: number,
+  categories: any[]
+) => {
   if (categories.length === 0) return;
 
   const points: { x: number; y: number }[] = [];
@@ -273,8 +289,8 @@ const drawData = (ctx: CanvasRenderingContext2D, center: number, radius: number,
   });
 
   // Draw filled area
-  ctx.fillStyle = 'rgba(59, 130, 246, 0.2)';
-  ctx.strokeStyle = '#3B82F6';
+  ctx.fillStyle = "rgba(59, 130, 246, 0.2)";
+  ctx.strokeStyle = "#3B82F6";
   ctx.lineWidth = 2;
 
   ctx.beginPath();
@@ -290,17 +306,22 @@ const drawData = (ctx: CanvasRenderingContext2D, center: number, radius: number,
   ctx.stroke();
 
   // Draw points
-  ctx.fillStyle = '#3B82F6';
-  points.forEach(point => {
+  ctx.fillStyle = "#3B82F6";
+  points.forEach((point) => {
     ctx.beginPath();
     ctx.arc(point.x, point.y, 4, 0, 2 * Math.PI);
     ctx.fill();
   });
 };
 
-const drawLabels = (ctx: CanvasRenderingContext2D, center: number, radius: number, categories: any[]) => {
-  ctx.fillStyle = '#374151';
-  ctx.font = '14px sans-serif';
+const drawLabels = (
+  ctx: CanvasRenderingContext2D,
+  center: number,
+  radius: number,
+  categories: any[]
+) => {
+  ctx.fillStyle = "#374151";
+  ctx.font = "14px sans-serif";
 
   categories.forEach((category, index) => {
     const angle = (index * 2 * Math.PI) / categories.length - Math.PI / 2;
@@ -310,11 +331,11 @@ const drawLabels = (ctx: CanvasRenderingContext2D, center: number, radius: numbe
 
     // Adjust text alignment based on position
     if (x < center) {
-      ctx.textAlign = 'right';
+      ctx.textAlign = "right";
     } else if (x > center) {
-      ctx.textAlign = 'left';
+      ctx.textAlign = "left";
     } else {
-      ctx.textAlign = 'center';
+      ctx.textAlign = "center";
     }
 
     ctx.fillText(category.name, x, y + 5);
@@ -323,7 +344,7 @@ const drawLabels = (ctx: CanvasRenderingContext2D, center: number, radius: numbe
 
 // Lifecycle
 onMounted(() => {
-  if (currentView.value === 'radar') {
+  if (currentView.value === "radar") {
     nextTick(() => {
       drawRadarChart();
     });
@@ -331,16 +352,20 @@ onMounted(() => {
 });
 
 // Watch for prop changes
-watch(() => props.categories, () => {
-  if (currentView.value === 'radar') {
-    nextTick(() => {
-      drawRadarChart();
-    });
-  }
-}, { deep: true });
+watch(
+  () => props.categories,
+  () => {
+    if (currentView.value === "radar") {
+      nextTick(() => {
+        drawRadarChart();
+      });
+    }
+  },
+  { deep: true }
+);
 
 watch(currentView, (newView) => {
-  if (newView === 'radar') {
+  if (newView === "radar") {
     nextTick(() => {
       drawRadarChart();
     });
@@ -501,17 +526,17 @@ watch(currentView, (newView) => {
 
   &[data-type="frontend"] {
     background: rgba(59, 130, 246, 0.1);
-    color: #3B82F6;
+    color: #3b82f6;
   }
 
   &[data-type="management"] {
     background: rgba(16, 185, 129, 0.1);
-    color: #10B981;
+    color: #10b981;
   }
 
   &[data-type="leadership"] {
     background: rgba(245, 158, 11, 0.1);
-    color: #F59E0B;
+    color: #f59e0b;
   }
 }
 

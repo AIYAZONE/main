@@ -24,7 +24,7 @@
               v-if="closable"
               class="modal-close"
               @click="handleClose"
-              :aria-label="$t('ui.modal.close')"
+              :aria-label="t('ui.modal.close')"
               type="button"
             >
               <span class="close-icon">✕</span>
@@ -66,7 +66,7 @@
             v-if="closable"
             class="modal-close"
             @click="handleClose"
-            :aria-label="$t('ui.modal.close')"
+            :aria-label="t('ui.modal.close')"
             type="button"
           >
             <span class="close-icon">✕</span>

@@ -1,19 +1,19 @@
 <template>
   <div class="home-editorial">
     <BrandHero
-      :title="brandInfo?.name || t('home.hero.title')"
-      :subtitle="brandInfo?.subtitle || t('home.hero.subtitle')"
-      :intro="brandInfo?.intro || t('home.hero.intro')"
+      :title="t('brand.name')"
+      :subtitle="t('brand.subtitle')"
+      :intro="t('brand.intro', { experience: brandInfo?.experience || 10 })"
       :profile-image="brandInfo?.profileImage"
       :certifications="certifications"
-      :value-proposition="brandInfo?.valueProposition || []"
+      :value-proposition="heroValueProposition || []"
     />
 
     <section class="home-section home-section--focus">
       <div class="middle-box">
         <div class="section-header">
-          <h2 class="section-title">{{ t('home.focus.title') }}</h2>
-          <p class="section-description">{{ t('home.focus.subtitle') }}</p>
+          <h2 class="section-title">{{ t("home.focus.title") }}</h2>
+          <p class="section-description">{{ t("home.focus.subtitle") }}</p>
         </div>
 
         <div class="focus-grid">
@@ -35,12 +35,14 @@
       <div class="middle-box">
         <div class="section-header section-header--split">
           <div class="section-header__left">
-            <h2 class="section-title">{{ t('home.now.title') }}</h2>
-            <p class="section-description">{{ t('home.now.subtitle') }}</p>
+            <h2 class="section-title">{{ t("home.now.title") }}</h2>
+            <p class="section-description">{{ t("home.now.subtitle") }}</p>
           </div>
           <div class="section-header__right">
             <div class="now-chips">
-              <span v-for="chip in nowChips" :key="chip" class="now-chip">{{ chip }}</span>
+              <span v-for="chip in nowChips" :key="chip" class="now-chip">{{
+                chip
+              }}</span>
             </div>
           </div>
         </div>
@@ -59,14 +61,20 @@
       <div class="middle-box">
         <div class="cta-card">
           <div class="cta-card__content">
-            <div class="cta-kicker">{{ t('home.cta.kicker') }}</div>
-            <div class="cta-title">{{ t('home.cta.title') }}</div>
-            <div class="cta-subtitle">{{ t('home.cta.subtitle') }}</div>
+            <div class="cta-kicker">{{ t("home.cta.kicker") }}</div>
+            <div class="cta-title">{{ t("home.cta.title") }}</div>
+            <div class="cta-subtitle">{{ t("home.cta.subtitle") }}</div>
           </div>
           <div class="cta-card__actions">
-            <router-link to="/portfolio" class="cta-btn cta-btn--primary">{{ t('home.cta.actions.portfolio') }}</router-link>
-            <router-link to="/career" class="cta-btn">{{ t('home.cta.actions.career') }}</router-link>
-            <router-link to="/contact" class="cta-btn">{{ t('home.cta.actions.contact') }}</router-link>
+            <router-link to="/portfolio" class="cta-btn cta-btn--primary">{{
+              t("home.cta.actions.portfolio")
+            }}</router-link>
+            <router-link to="/career" class="cta-btn">{{
+              t("home.cta.actions.career")
+            }}</router-link>
+            <router-link to="/contact" class="cta-btn">{{
+              t("home.cta.actions.contact")
+            }}</router-link>
           </div>
         </div>
       </div>
@@ -76,9 +84,9 @@
 
 <script setup lang="ts">
 import { computed, onMounted } from "vue";
-import { useI18n } from 'vue-i18n';
-import { useBrandStore } from '../stores/brandStore';
-import BrandHero from '../components/brand/BrandHero.vue';
+import { useI18n } from "vue-i18n";
+import { useBrandStore } from "../stores/brandStore";
+import BrandHero from "../components/brand/BrandHero.vue";
 
 const { t, tm } = useI18n();
 const brandStore = useBrandStore();
@@ -89,42 +97,42 @@ const certifications = computed(() => brandStore.certifications);
 const focusItems = computed(() => [
   {
     icon: "🏗️",
-    title: t('home.focus.items.architecture.title'),
-    description: t('home.focus.items.architecture.description'),
-    tags: tm('home.focus.items.architecture.tags') as string[]
+    title: t("home.focus.items.architecture.title"),
+    description: t("home.focus.items.architecture.description"),
+    tags: tm("home.focus.items.architecture.tags") as string[],
   },
   {
     icon: "⚡️",
-    title: t('home.focus.items.performance.title'),
-    description: t('home.focus.items.performance.description'),
-    tags: tm('home.focus.items.performance.tags') as string[]
+    title: t("home.focus.items.performance.title"),
+    description: t("home.focus.items.performance.description"),
+    tags: tm("home.focus.items.performance.tags") as string[],
   },
   {
     icon: "🧭",
-    title: t('home.focus.items.delivery.title'),
-    description: t('home.focus.items.delivery.description'),
-    tags: tm('home.focus.items.delivery.tags') as string[]
-  }
+    title: t("home.focus.items.delivery.title"),
+    description: t("home.focus.items.delivery.description"),
+    tags: tm("home.focus.items.delivery.tags") as string[],
+  },
 ]);
 
-const nowChips = computed(() => tm('home.now.chips') as string[]);
+const nowChips = computed(() => tm("home.now.chips") as string[]);
 
 const nowItems = computed(() => [
   {
-    kicker: t('home.now.items.brandSystem.kicker'),
-    title: t('home.now.items.brandSystem.title'),
-    description: t('home.now.items.brandSystem.description')
+    kicker: t("home.now.items.brandSystem.kicker"),
+    title: t("home.now.items.brandSystem.title"),
+    description: t("home.now.items.brandSystem.description"),
   },
   {
-    kicker: t('home.now.items.engineering.kicker'),
-    title: t('home.now.items.engineering.title'),
-    description: t('home.now.items.engineering.description')
+    kicker: t("home.now.items.engineering.kicker"),
+    title: t("home.now.items.engineering.title"),
+    description: t("home.now.items.engineering.description"),
   },
   {
-    kicker: t('home.now.items.learning.kicker'),
-    title: t('home.now.items.learning.title'),
-    description: t('home.now.items.learning.description')
-  }
+    kicker: t("home.now.items.learning.kicker"),
+    title: t("home.now.items.learning.title"),
+    description: t("home.now.items.learning.description"),
+  },
 ]);
 
 // Load brand data on component mount
@@ -397,8 +405,7 @@ onMounted(() => {
   border-radius: 0;
   background: rgba(255, 255, 255, 0.04);
   transition: color var(--brand-transition-base),
-    border-color var(--brand-transition-base),
-    background var(--brand-transition-base),
+    border-color var(--brand-transition-base), background var(--brand-transition-base),
     box-shadow var(--brand-transition-base);
 
   &:hover {

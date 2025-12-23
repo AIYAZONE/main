@@ -25,21 +25,21 @@
         <div class="footer-content">
           <div class="footer-section">
             <h3 class="footer-title">AIYAZONE</h3>
-            <p class="footer-description">{{ $t('brand.subtitle') }}</p>
+            <p class="footer-description">{{ t('brand.subtitle') }}</p>
           </div>
           
           <div class="footer-section">
-            <h4 class="footer-subtitle">{{ $t('nav.quickLinks') }}</h4>
+            <h4 class="footer-subtitle">{{ t('nav.quickLinks') }}</h4>
             <ul class="footer-links">
-              <li><router-link to="/about">{{ $t('nav.about') }}</router-link></li>
-              <li><router-link to="/portfolio">{{ $t('nav.portfolio') }}</router-link></li>
-              <li><router-link to="/career">{{ $t('nav.career') }}</router-link></li>
-              <li><router-link to="/contact">{{ $t('nav.contact') }}</router-link></li>
+              <li><router-link to="/about">{{ t('nav.about') }}</router-link></li>
+              <li><router-link to="/portfolio">{{ t('nav.portfolio') }}</router-link></li>
+              <li><router-link to="/career">{{ t('nav.career') }}</router-link></li>
+              <li><router-link to="/contact">{{ t('nav.contact') }}</router-link></li>
             </ul>
           </div>
           
           <div class="footer-section">
-            <h4 class="footer-subtitle">{{ $t('contact.social.title') }}</h4>
+            <h4 class="footer-subtitle">{{ t('contact.social.title') }}</h4>
             <div class="footer-social">
               <a href="https://github.com/AIYAZONE" target="_blank" rel="noopener noreferrer">GitHub</a>
               <a href="https://blog.aiyazone.com" target="_blank" rel="noopener noreferrer">Blog</a>
@@ -49,7 +49,7 @@
         
         <div class="footer-bottom">
           <p class="copyright">
-            © {{ currentYear }} AIYAZONE. {{ $t('footer.allRightsReserved') }}
+            © {{ currentYear }} AIYAZONE. {{ t('footer.allRightsReserved') }}
           </p>
           <div class="footer-meta">
             <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" class="build-info">粤ICP备2022083499号</a>
@@ -66,8 +66,8 @@
       v-if="showBackToTop"
       class="back-to-top"
       @click="scrollToTop"
-      :aria-label="$t('accessibility.backToTop')"
-      :title="$t('accessibility.backToTop')"
+      :aria-label="t('accessibility.backToTop')"
+      :title="t('accessibility.backToTop')"
     >
       ↑
     </button>

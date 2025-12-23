@@ -9,25 +9,25 @@
       
       <!-- 错误信息区域 -->
       <div class="error-content">
-        <h1 class="error-title">{{ $t('errors.pageNotFound', 'Page Not Found') }}</h1>
+        <h1 class="error-title">{{ t('errors.pageNotFound', 'Page Not Found') }}</h1>
         <p class="error-description">
-          {{ $t('errors.pageNotFoundDesc', 'Sorry, the page you are looking for does not exist. It might have been moved, deleted, or you entered the wrong URL.') }}
+          {{ t('errors.pageNotFoundDesc', 'Sorry, the page you are looking for does not exist. It might have been moved, deleted, or you entered the wrong URL.') }}
         </p>
         
         <!-- 当前路径信息 -->
         <div class="error-path">
-          <span class="path-label">{{ $t('errors.requestedPath', 'Requested path:') }}</span>
+          <span class="path-label">{{ t('errors.requestedPath', 'Requested path:') }}</span>
           <code class="path-value">{{ currentPath }}</code>
         </div>
         
         <!-- 建议操作 -->
         <div class="error-suggestions">
-          <h3 class="suggestions-title">{{ $t('errors.suggestions', 'What you can do:') }}</h3>
+          <h3 class="suggestions-title">{{ t('errors.suggestions', 'What you can do:') }}</h3>
           <ul class="suggestions-list">
-            <li>{{ $t('errors.checkUrl', 'Check the URL for typos') }}</li>
-            <li>{{ $t('errors.useNavigation', 'Use the navigation menu to find what you need') }}</li>
-            <li>{{ $t('errors.goHome', 'Go back to the homepage') }}</li>
-            <li>{{ $t('errors.contactSupport', 'Contact support if you believe this is an error') }}</li>
+            <li>{{ t('errors.checkUrl', 'Check the URL for typos') }}</li>
+            <li>{{ t('errors.useNavigation', 'Use the navigation menu to find what you need') }}</li>
+            <li>{{ t('errors.goHome', 'Go back to the homepage') }}</li>
+            <li>{{ t('errors.contactSupport', 'Contact support if you believe this is an error') }}</li>
           </ul>
         </div>
         
@@ -35,32 +35,32 @@
         <div class="error-actions">
           <router-link to="/" class="action-button primary">
             <span class="button-icon">🏠</span>
-            {{ $t('nav.home', 'Home') }}
+            {{ t('nav.home', 'Home') }}
           </router-link>
           
           <button @click="goBack" class="action-button secondary">
             <span class="button-icon">↩️</span>
-            {{ $t('common.goBack', 'Go Back') }}
+            {{ t('common.goBack', 'Go Back') }}
           </button>
           
           <router-link to="/contact" class="action-button tertiary">
             <span class="button-icon">📧</span>
-            {{ $t('nav.contact', 'Contact') }}
+            {{ t('nav.contact', 'Contact') }}
           </router-link>
         </div>
         
         <!-- 快速导航 -->
         <div class="quick-nav">
-          <h3 class="quick-nav-title">{{ $t('errors.quickNavigation', 'Quick Navigation:') }}</h3>
+          <h3 class="quick-nav-title">{{ t('errors.quickNavigation', 'Quick Navigation:') }}</h3>
           <div class="quick-nav-links">
             <router-link to="/about" class="quick-link">
-              {{ $t('nav.about', 'About') }}
+              {{ t('nav.about', 'About') }}
             </router-link>
             <router-link to="/portfolio" class="quick-link">
-              {{ $t('nav.portfolio', 'Portfolio') }}
+              {{ t('nav.portfolio', 'Portfolio') }}
             </router-link>
             <router-link to="/career" class="quick-link">
-              {{ $t('nav.career', 'Career') }}
+              {{ t('nav.career', 'Career') }}
             </router-link>
           </div>
         </div>

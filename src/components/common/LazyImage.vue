@@ -20,7 +20,7 @@
     <div v-if="hasError" class="error-overlay">
       <div class="error-content">
         <span class="error-icon">🖼️</span>
-        <span class="error-text">{{ $t('common.imageLoadFailed', 'Image failed to load') }}</span>
+        <span class="error-text">{{ t('common.imageLoadFailed', 'Image failed to load') }}</span>
       </div>
     </div>
   </div>
@@ -28,6 +28,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, computed } from 'vue';
+import { useI18n } from 'vue-i18n';
 
 interface Props {
   src: string;
@@ -46,6 +47,7 @@ const props = withDefaults(defineProps<Props>(), {
   threshold: 0.1
 });
 
+const { t } = useI18n();
 const imageRef = ref<HTMLImageElement>();
 const isLoading = ref(true);
 const hasError = ref(false);

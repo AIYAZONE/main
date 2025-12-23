@@ -1,7 +1,7 @@
 <template>
   <div class="skill-showcase">
     <div class="skill-showcase__header">
-      <h2 class="skill-showcase__title skills-title">{{ $t("skills.title") }}</h2>
+      <h2 class="skill-showcase__title skills-title">{{ t("skills.title") }}</h2>
       <div class="skill-showcase__filters">
         <button
           v-for="filter in filterOptions"
@@ -20,13 +20,13 @@
 
     <div class="skill-showcase__content">
       <div v-if="loading" class="skill-showcase__loading">
-        {{ $t("common.loading") }}
+        {{ t("common.loading") }}
       </div>
 
       <div v-else-if="error" class="skill-showcase__error">
         <p>{{ error }}</p>
         <button @click="retryLoad" class="skill-showcase__retry-btn">
-          {{ $t("common.retry") }}
+          {{ t("common.retry") }}
         </button>
       </div>
 
@@ -39,7 +39,7 @@
           <div class="skill-category__header">
             <h3 class="skill-category__title">{{ category.name }}</h3>
             <span class="skill-category__count">
-              {{ category.skills.length }} {{ $t("skills.title") }}
+              {{ category.skills.length }} {{ t("skills.title") }}
             </span>
           </div>
 
@@ -66,10 +66,10 @@
 
               <div class="skill-item__meta">
                 <span class="skill-item__experience">
-                  {{ skill.yearsOfExperience }} {{ $t("skills.yearsExp") }}
+                  {{ skill.yearsOfExperience }} {{ t("skills.yearsExp") }}
                 </span>
                 <span class="skill-item__projects">
-                  {{ skill.projects.length }} {{ $t("skills.projects") }}
+                  {{ skill.projects.length }} {{ t("skills.projects") }}
                 </span>
               </div>
 
@@ -103,26 +103,28 @@
         <div class="skill-modal__body">
           <div class="skill-modal__meta">
             <div class="skill-meta-item">
-              <span class="skill-meta-item__label">{{ $t("skills.yearsExp") }}:</span>
+              <span class="skill-meta-item__label">{{ t("skills.yearsExp") }}:</span>
               <span class="skill-meta-item__value"
-                >{{ selectedSkill.yearsOfExperience }} {{ $t("skills.years") }}</span
+                >{{ selectedSkill.yearsOfExperience }} {{ t("skills.years") }}</span
               >
             </div>
             <div class="skill-meta-item">
-              <span class="skill-meta-item__label">{{ $t("skills.relatedProjects") }}:</span>
+              <span class="skill-meta-item__label"
+                >{{ t("skills.relatedProjects") }}:</span
+              >
               <span class="skill-meta-item__value"
-                >{{ selectedSkill.projects.length }} {{ $t("skills.count") }}</span
+                >{{ selectedSkill.projects.length }} {{ t("skills.count") }}</span
               >
             </div>
           </div>
 
           <div class="skill-modal__description">
-            <h4>{{ $t("skills.skillDescription") }}</h4>
+            <h4>{{ t("skills.skillDescription") }}</h4>
             <p>{{ selectedSkill.description }}</p>
           </div>
 
           <div class="skill-modal__projects">
-            <h4>{{ $t("skills.relatedProjects") }}</h4>
+            <h4>{{ t("skills.relatedProjects") }}</h4>
             <ul class="skill-projects-list">
               <li
                 v-for="project in selectedSkill.projects"

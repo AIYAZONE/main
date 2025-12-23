@@ -3,7 +3,7 @@
     class="main-navigation"
     :class="[navigationClasses, { 'is-scrolled': isScrolled }]"
     role="navigation"
-    :aria-label="$t('ui.navigation.menu')"
+    :aria-label="t('ui.navigation.menu')"
   >
     <div class="nav-container">
       <!-- 品牌Logo -->
@@ -25,7 +25,7 @@
               role="menuitem"
               :aria-current="isActiveRoute(item.path) ? 'page' : undefined"
             >
-              <span class="nav-text">{{ $t(item.label) }}</span>
+              <span class="nav-text">{{ t(item.label) }}</span>
               <span v-if="item.badge" class="nav-badge">{{ item.badge }}</span>
             </router-link>
           </li>
@@ -41,8 +41,8 @@
         <button
           class="nav-action-button theme-toggle"
           @click="toggleTheme"
-          :aria-label="$t('accessibility.toggleTheme')"
-          :title="$t('accessibility.toggleTheme')"
+          :aria-label="t('accessibility.toggleTheme')"
+          :title="t('accessibility.toggleTheme')"
         >
           <span
             class="theme-glyph"
@@ -56,8 +56,8 @@
           v-if="showSearch"
           class="nav-action-button search-toggle"
           @click="toggleSearch"
-          :aria-label="$t('common.search')"
-          :title="$t('common.search')"
+          :aria-label="t('common.search')"
+          :title="t('common.search')"
         >
           <span class="search-glyph" aria-hidden="true"></span>
         </button>
@@ -68,8 +68,8 @@
           @click="toggleMobileMenu"
           :aria-label="
             isMobileMenuOpen
-              ? $t('accessibility.closeMenu')
-              : $t('accessibility.openMenu')
+              ? t('accessibility.closeMenu')
+              : t('accessibility.openMenu')
           "
           :aria-expanded="isMobileMenuOpen"
           :class="{ active: isMobileMenuOpen }"
@@ -105,7 +105,7 @@
               :aria-current="isActiveRoute(item.path) ? 'page' : undefined"
               @click="closeMobileMenu"
             >
-              <span class="nav-text">{{ $t(item.label) }}</span>
+              <span class="nav-text">{{ t(item.label) }}</span>
               <span v-if="item.badge" class="nav-badge">{{ item.badge }}</span>
             </router-link>
           </li>
@@ -120,7 +120,7 @@
             <button
               class="mobile-action-button"
               @click="toggleTheme"
-              :aria-label="$t('accessibility.toggleTheme')"
+              :aria-label="t('accessibility.toggleTheme')"
             >
               <span
                 class="theme-glyph"
@@ -128,7 +128,7 @@
                 aria-hidden="true"
               ></span>
               <span class="action-text">{{
-                isDarkMode ? $t("ui.theme.light") : $t("ui.theme.dark")
+                isDarkMode ? t("ui.theme.light") : t("ui.theme.dark")
               }}</span>
             </button>
           </div>

@@ -1,8 +1,8 @@
 <template>
   <div class="swot-analysis">
     <div class="swot-header">
-      <h2 class="swot-title">{{ $t('career.swot.title') }}</h2>
-      <p class="swot-description">{{ $t('career.swot.description') }}</p>
+      <h2 class="swot-title">{{ t('career.swot.title') }}</h2>
+      <p class="swot-description">{{ t('career.swot.description') }}</p>
       <div class="swot-controls">
         <button 
           v-for="mode in visualModes" 
@@ -10,7 +10,7 @@
           :class="['mode-btn', { active: currentMode === mode.value }]"
           @click="setMode(mode.value)"
         >
-          {{ $t(mode.label) }}
+          {{ t(mode.label) }}
         </button>
       </div>
     </div>
@@ -20,7 +20,7 @@
       <div v-if="currentMode === 'quadrant'" class="swot-quadrant">
         <div class="quadrant-grid">
           <div class="quadrant strengths">
-            <h3 class="quadrant-title">{{ $t('career.swot.strengths') }}</h3>
+            <h3 class="quadrant-title">{{ t('career.swot.strengths') }}</h3>
             <div class="quadrant-items">
               <div 
                 v-for="item in analysis?.strengths" 
@@ -29,13 +29,13 @@
               >
                 <h4 class="item-title">{{ item.title }}</h4>
                 <p class="item-description">{{ item.description }}</p>
-                <span class="item-impact">{{ $t(`career.swot.impact.${item.impact}`) }}</span>
+                <span class="item-impact">{{ t(`career.swot.impact.${item.impact}`) }}</span>
               </div>
             </div>
           </div>
 
           <div class="quadrant weaknesses">
-            <h3 class="quadrant-title">{{ $t('career.swot.weaknesses') }}</h3>
+            <h3 class="quadrant-title">{{ t('career.swot.weaknesses') }}</h3>
             <div class="quadrant-items">
               <div 
                 v-for="item in analysis?.weaknesses" 
@@ -44,13 +44,13 @@
               >
                 <h4 class="item-title">{{ item.title }}</h4>
                 <p class="item-description">{{ item.description }}</p>
-                <span class="item-impact">{{ $t(`career.swot.impact.${item.impact}`) }}</span>
+                <span class="item-impact">{{ t(`career.swot.impact.${item.impact}`) }}</span>
               </div>
             </div>
           </div>
 
           <div class="quadrant opportunities">
-            <h3 class="quadrant-title">{{ $t('career.swot.opportunities') }}</h3>
+            <h3 class="quadrant-title">{{ t('career.swot.opportunities') }}</h3>
             <div class="quadrant-items">
               <div 
                 v-for="item in analysis?.opportunities" 
@@ -59,13 +59,13 @@
               >
                 <h4 class="item-title">{{ item.title }}</h4>
                 <p class="item-description">{{ item.description }}</p>
-                <span class="item-impact">{{ $t(`career.swot.impact.${item.impact}`) }}</span>
+                <span class="item-impact">{{ t(`career.swot.impact.${item.impact}`) }}</span>
               </div>
             </div>
           </div>
 
           <div class="quadrant threats">
-            <h3 class="quadrant-title">{{ $t('career.swot.threats') }}</h3>
+            <h3 class="quadrant-title">{{ t('career.swot.threats') }}</h3>
             <div class="quadrant-items">
               <div 
                 v-for="item in analysis?.threats" 
@@ -74,7 +74,7 @@
               >
                 <h4 class="item-title">{{ item.title }}</h4>
                 <p class="item-description">{{ item.description }}</p>
-                <span class="item-impact">{{ $t(`career.swot.impact.${item.impact}`) }}</span>
+                <span class="item-impact">{{ t(`career.swot.impact.${item.impact}`) }}</span>
               </div>
             </div>
           </div>
@@ -89,7 +89,7 @@
         <div class="radar-legend">
           <div class="legend-item" v-for="category in radarCategories" :key="category.key">
             <span :class="['legend-color', category.key]"></span>
-            <span class="legend-label">{{ $t(category.label) }}</span>
+            <span class="legend-label">{{ t(category.label) }}</span>
           </div>
         </div>
       </div>
@@ -98,12 +98,12 @@
       <div v-else-if="currentMode === 'matrix'" class="swot-matrix">
         <div class="matrix-container">
           <div class="matrix-axis">
-            <div class="axis-label y-axis">{{ $t('career.swot.matrix.internal') }}</div>
-            <div class="axis-label x-axis">{{ $t('career.swot.matrix.external') }}</div>
+            <div class="axis-label y-axis">{{ t('career.swot.matrix.internal') }}</div>
+            <div class="axis-label x-axis">{{ t('career.swot.matrix.external') }}</div>
           </div>
           <div class="matrix-grid">
             <div class="matrix-cell positive internal">
-              <h4>{{ $t('career.swot.strengths') }}</h4>
+              <h4>{{ t('career.swot.strengths') }}</h4>
               <div class="matrix-items">
                 <span v-for="item in analysis?.strengths" :key="item.id" class="matrix-item">
                   {{ item.title }}
@@ -111,7 +111,7 @@
               </div>
             </div>
             <div class="matrix-cell positive external">
-              <h4>{{ $t('career.swot.opportunities') }}</h4>
+              <h4>{{ t('career.swot.opportunities') }}</h4>
               <div class="matrix-items">
                 <span v-for="item in analysis?.opportunities" :key="item.id" class="matrix-item">
                   {{ item.title }}
@@ -119,7 +119,7 @@
               </div>
             </div>
             <div class="matrix-cell negative internal">
-              <h4>{{ $t('career.swot.weaknesses') }}</h4>
+              <h4>{{ t('career.swot.weaknesses') }}</h4>
               <div class="matrix-items">
                 <span v-for="item in analysis?.weaknesses" :key="item.id" class="matrix-item">
                   {{ item.title }}
@@ -127,7 +127,7 @@
               </div>
             </div>
             <div class="matrix-cell negative external">
-              <h4>{{ $t('career.swot.threats') }}</h4>
+              <h4>{{ t('career.swot.threats') }}</h4>
               <div class="matrix-items">
                 <span v-for="item in analysis?.threats" :key="item.id" class="matrix-item">
                   {{ item.title }}
@@ -142,7 +142,7 @@
     <!-- Analysis Results -->
     <div class="swot-analysis-results" v-if="analysis?.analysis">
       <div class="analysis-section">
-        <h3>{{ $t('career.swot.keyInsights') }}</h3>
+        <h3>{{ t('career.swot.keyInsights') }}</h3>
         <ul class="insights-list">
           <li v-for="insight in analysis.analysis.keyInsights" :key="insight">
             {{ insight }}
@@ -151,7 +151,7 @@
       </div>
 
       <div class="analysis-section">
-        <h3>{{ $t('career.swot.recommendations') }}</h3>
+        <h3>{{ t('career.swot.recommendations') }}</h3>
         <ul class="recommendations-list">
           <li v-for="recommendation in analysis.analysis.strategicRecommendations" :key="recommendation">
             {{ recommendation }}
@@ -160,7 +160,7 @@
       </div>
 
       <div class="analysis-section">
-        <h3>{{ $t('career.swot.actionItems') }}</h3>
+        <h3>{{ t('career.swot.actionItems') }}</h3>
         <div class="action-items">
           <div 
             v-for="action in analysis.analysis.actionItems" 
@@ -170,10 +170,10 @@
             <h4 class="action-title">{{ action.title }}</h4>
             <p class="action-description">{{ action.description }}</p>
             <div class="action-meta">
-              <span class="action-priority">{{ $t(`career.swot.priority.${action.priority}`) }}</span>
-              <span class="action-status">{{ $t(`career.swot.status.${action.status}`) }}</span>
+              <span class="action-priority">{{ t(`career.swot.priority.${action.priority}`) }}</span>
+              <span class="action-status">{{ t(`career.swot.status.${action.status}`) }}</span>
               <span v-if="hasValidDeadline(action.deadline)" class="action-deadline">
-                {{ $t('career.swot.deadline') }}: {{ formatDate(action.deadline) }}
+                {{ t('career.swot.deadline') }}: {{ formatDate(action.deadline) }}
               </span>
             </div>
           </div>
@@ -374,13 +374,14 @@ onMounted(() => {
     .swot-title {
       font-size: 2.5rem;
       font-weight: 700;
-      color: var(--color-text-primary);
+      color: var(--brand-text-primary);
       margin-bottom: 1rem;
+      font-family: var(--brand-font-display);
     }
 
     .swot-description {
       font-size: 1.1rem;
-      color: var(--color-text-secondary);
+      color: var(--brand-text-secondary);
       margin-bottom: 2rem;
       max-width: 600px;
       margin-left: auto;
@@ -394,23 +395,26 @@ onMounted(() => {
 
       .mode-btn {
         padding: 0.75rem 1.5rem;
-        border: 2px solid var(--color-border);
-        background: var(--color-bg-secondary);
-        color: var(--color-text-primary);
+        border: 1px solid var(--brand-border);
+        background: transparent;
+        color: var(--brand-text-primary);
         border-radius: 8px;
         cursor: pointer;
-        transition: all 0.3s ease;
+        transition: all var(--brand-transition-base);
         font-weight: 500;
+        font-family: var(--brand-font-body);
 
         &:hover {
-          border-color: var(--color-primary);
-          background: var(--color-primary-light);
+          border-color: var(--brand-electric);
+          color: var(--brand-electric);
+          background: rgba(59, 130, 246, 0.05);
         }
 
         &.active {
-          border-color: var(--color-primary);
-          background: var(--color-primary);
+          border-color: var(--brand-midnight);
+          background: var(--brand-midnight);
           color: white;
+          box-shadow: var(--brand-shadow-card);
         }
       }
     }
@@ -431,27 +435,30 @@ onMounted(() => {
       .quadrant {
         padding: 2rem;
         border-radius: 12px;
-        border: 2px solid var(--color-border);
-        background: var(--color-bg-secondary);
+        border: 1px solid var(--brand-border);
+        background: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(10px);
+        transition: transform var(--brand-transition-base);
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: var(--brand-shadow-card);
+        }
 
         &.strengths {
-          border-color: #28a745;
-          background: linear-gradient(135deg, rgba(40, 167, 69, 0.1), rgba(40, 167, 69, 0.05));
+          border-top: 4px solid #28a745;
         }
 
         &.weaknesses {
-          border-color: #dc3545;
-          background: linear-gradient(135deg, rgba(220, 53, 69, 0.1), rgba(220, 53, 69, 0.05));
+          border-top: 4px solid #dc3545;
         }
 
         &.opportunities {
-          border-color: #007bff;
-          background: linear-gradient(135deg, rgba(0, 123, 255, 0.1), rgba(0, 123, 255, 0.05));
+          border-top: 4px solid #007bff;
         }
 
         &.threats {
-          border-color: #ffc107;
-          background: linear-gradient(135deg, rgba(255, 193, 7, 0.1), rgba(255, 193, 7, 0.05));
+          border-top: 4px solid #ffc107;
         }
 
         .quadrant-title {
@@ -459,6 +466,8 @@ onMounted(() => {
           font-weight: 600;
           margin-bottom: 1.5rem;
           text-align: center;
+          font-family: var(--brand-font-display);
+          color: var(--brand-text-primary);
         }
 
         .quadrant-items {
@@ -469,9 +478,10 @@ onMounted(() => {
 
         .swot-item {
           padding: 1rem;
-          background: var(--color-bg-primary);
+          background: #ffffff;
           border-radius: 8px;
           border-left: 4px solid transparent;
+          box-shadow: 0 2px 4px rgba(0,0,0,0.02);
 
           &.impact-high {
             border-left-color: #dc3545;
@@ -489,12 +499,12 @@ onMounted(() => {
             font-size: 1.1rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
-            color: var(--color-text-primary);
+            color: var(--brand-text-primary);
           }
 
           .item-description {
             font-size: 0.9rem;
-            color: var(--color-text-secondary);
+            color: var(--brand-text-secondary);
             margin-bottom: 0.5rem;
             line-height: 1.5;
           }
@@ -505,8 +515,9 @@ onMounted(() => {
             border-radius: 4px;
             font-size: 0.8rem;
             font-weight: 500;
-            background: var(--color-bg-tertiary);
-            color: var(--color-text-secondary);
+            background: var(--brand-canvas-day);
+            color: var(--brand-text-secondary);
+            border: 1px solid var(--brand-border);
           }
         }
       }
@@ -521,10 +532,11 @@ onMounted(() => {
     gap: 2rem;
 
     .radar-container {
-      background: var(--color-bg-secondary);
+      background: #ffffff;
       border-radius: 12px;
       padding: 2rem;
-      border: 2px solid var(--color-border);
+      border: 1px solid var(--brand-border);
+      box-shadow: var(--brand-shadow-card);
     }
 
     .radar-legend {
@@ -551,7 +563,7 @@ onMounted(() => {
 
         .legend-label {
           font-size: 0.9rem;
-          color: var(--color-text-primary);
+          color: var(--brand-text-primary);
         }
       }
     }
@@ -561,16 +573,17 @@ onMounted(() => {
   .swot-matrix {
     .matrix-container {
       position: relative;
-      background: var(--color-bg-secondary);
+      background: #ffffff;
       border-radius: 12px;
       padding: 3rem;
-      border: 2px solid var(--color-border);
+      border: 1px solid var(--brand-border);
+      box-shadow: var(--brand-shadow-card);
 
       .matrix-axis {
         .axis-label {
           position: absolute;
           font-weight: 600;
-          color: var(--color-text-secondary);
+          color: var(--brand-text-secondary);
 
           &.y-axis {
             top: 1rem;
@@ -595,25 +608,31 @@ onMounted(() => {
         .matrix-cell {
           padding: 1.5rem;
           border-radius: 8px;
-          border: 2px solid var(--color-border);
+          border: 1px solid var(--brand-border);
+          transition: transform var(--brand-transition-base);
+
+          &:hover {
+            transform: scale(1.02);
+            box-shadow: var(--brand-shadow-card);
+          }
 
           &.positive.internal {
-            background: linear-gradient(135deg, rgba(40, 167, 69, 0.1), rgba(40, 167, 69, 0.05));
+            background: linear-gradient(135deg, rgba(40, 167, 69, 0.05), rgba(40, 167, 69, 0.02));
             border-color: #28a745;
           }
 
           &.positive.external {
-            background: linear-gradient(135deg, rgba(0, 123, 255, 0.1), rgba(0, 123, 255, 0.05));
+            background: linear-gradient(135deg, rgba(0, 123, 255, 0.05), rgba(0, 123, 255, 0.02));
             border-color: #007bff;
           }
 
           &.negative.internal {
-            background: linear-gradient(135deg, rgba(220, 53, 69, 0.1), rgba(220, 53, 69, 0.05));
+            background: linear-gradient(135deg, rgba(220, 53, 69, 0.05), rgba(220, 53, 69, 0.02));
             border-color: #dc3545;
           }
 
           &.negative.external {
-            background: linear-gradient(135deg, rgba(255, 193, 7, 0.1), rgba(255, 193, 7, 0.05));
+            background: linear-gradient(135deg, rgba(255, 193, 7, 0.05), rgba(255, 193, 7, 0.02));
             border-color: #ffc107;
           }
 
@@ -622,6 +641,7 @@ onMounted(() => {
             font-weight: 600;
             margin-bottom: 1rem;
             text-align: center;
+            color: var(--brand-text-primary);
           }
 
           .matrix-items {
@@ -631,10 +651,12 @@ onMounted(() => {
 
             .matrix-item {
               padding: 0.5rem;
-              background: var(--color-bg-primary);
+              background: #ffffff;
               border-radius: 4px;
               font-size: 0.9rem;
               text-align: center;
+              box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+              color: var(--brand-text-secondary);
             }
           }
         }
@@ -644,10 +666,12 @@ onMounted(() => {
 
   // Analysis Results Styles
   .swot-analysis-results {
-    background: var(--color-bg-secondary);
+    background: #ffffff;
     border-radius: 12px;
     padding: 2rem;
-    border: 2px solid var(--color-border);
+    border: 1px solid var(--brand-border);
+    box-shadow: var(--brand-shadow-card);
+    margin-top: 3rem;
 
     .analysis-section {
       margin-bottom: 2rem;
@@ -660,7 +684,8 @@ onMounted(() => {
         font-size: 1.3rem;
         font-weight: 600;
         margin-bottom: 1rem;
-        color: var(--color-text-primary);
+        color: var(--brand-text-primary);
+        font-family: var(--brand-font-display);
       }
 
       .insights-list,
@@ -669,13 +694,14 @@ onMounted(() => {
         padding: 0;
 
         li {
-          padding: 0.75rem;
-          margin-bottom: 0.5rem;
-          background: var(--color-bg-primary);
+          padding: 1rem;
+          margin-bottom: 0.75rem;
+          background: var(--brand-canvas-day);
           border-radius: 6px;
-          border-left: 4px solid var(--color-primary);
+          border-left: 4px solid var(--brand-midnight);
           font-size: 0.95rem;
-          line-height: 1.5;
+          line-height: 1.6;
+          color: var(--brand-text-secondary);
         }
       }
 
@@ -686,9 +712,14 @@ onMounted(() => {
 
         .action-item {
           padding: 1.5rem;
-          background: var(--color-bg-primary);
+          background: var(--brand-canvas-day);
           border-radius: 8px;
           border-left: 4px solid transparent;
+          transition: transform var(--brand-transition-base);
+
+          &:hover {
+            transform: translateX(4px);
+          }
 
           &.priority-high {
             border-left-color: #dc3545;
@@ -706,12 +737,12 @@ onMounted(() => {
             font-size: 1.1rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
-            color: var(--color-text-primary);
+            color: var(--brand-text-primary);
           }
 
           .action-description {
             font-size: 0.9rem;
-            color: var(--color-text-secondary);
+            color: var(--brand-text-secondary);
             margin-bottom: 1rem;
             line-height: 1.5;
           }
@@ -722,12 +753,13 @@ onMounted(() => {
             flex-wrap: wrap;
 
             span {
-              padding: 0.25rem 0.5rem;
-              border-radius: 4px;
+              padding: 0.25rem 0.75rem;
+              border-radius: 20px;
               font-size: 0.8rem;
               font-weight: 500;
-              background: var(--color-bg-tertiary);
-              color: var(--color-text-secondary);
+              background: #ffffff;
+              color: var(--brand-text-secondary);
+              border: 1px solid var(--brand-border);
             }
           }
         }

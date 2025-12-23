@@ -20,10 +20,12 @@ export default defineComponent({ name: 'LanguageSwitcher' });
 
 <script setup lang="ts">
 import { computed } from 'vue';
+import { useI18n } from 'vue-i18n';
 import { useUIStore } from '../../stores/uiStore';
 import { localeConfig } from '../../i18n';
 import type { Locale } from '../../types/common';
 
+const { t } = useI18n();
 const uiStore = useUIStore();
 
 const currentLocale = computed(() => uiStore.currentLocale);
@@ -33,8 +35,7 @@ const switchToLocale = (locale: Locale) => {
 };
 
 const getLocaleLabel = (locale: Locale) => {
-  if (locale === 'zh') return '中文';
-  return 'EN';
+  return t(`locale.${locale}.label`);
 };
 </script>
 

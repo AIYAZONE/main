@@ -3,18 +3,18 @@
     <!-- Hero Header -->
     <header class="career-header">
       <div class="middle-box">
-        <h1 class="page-title">CAREER <span class="italic text-gradient-gold">PATH</span></h1>
+        <h1 class="page-title">{{ t('career.hero.titlePart1') }} <span class="italic text-gradient-gold">{{ t('career.hero.titlePart2') }}</span></h1>
         
         <!-- Navigation Tabs -->
         <nav class="career-nav">
           <router-link to="/career" class="nav-item" exact-active-class="active">
-            <span>ROADMAP</span>
+            <span>{{ t('career.nav.roadmap') }}</span>
           </router-link>
           <router-link to="/career/swot" class="nav-item" active-class="active">
-            <span>SWOT</span>
+            <span>{{ t('career.nav.swot') }}</span>
           </router-link>
           <router-link to="/career/learning" class="nav-item" active-class="active">
-            <span>LEARNING</span>
+            <span>{{ t('career.nav.learning') }}</span>
           </router-link>
         </nav>
       </div>
@@ -34,8 +34,17 @@
 </template>
 
 <script setup lang="ts">
+import { watch } from 'vue';
 import { useI18n } from 'vue-i18n';
-const { t } = useI18n();
+import { useCareerStore } from '@/stores/careerStore';
+
+const { t, locale } = useI18n();
+const careerStore = useCareerStore();
+
+// Reload career data when locale changes to ensure translations are updated
+watch(locale, () => {
+  careerStore.loadCareerData();
+});
 </script>
 
 <style scoped lang="less">
