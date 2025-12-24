@@ -281,6 +281,12 @@ onMounted(() => {
   padding: 1.75rem 1.75rem 1.5rem;
   border: 1px solid var(--brand-border);
   background: transparent;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    border-color: var(--brand-gold-start);
+  }
 }
 
 .now-item__kicker {
